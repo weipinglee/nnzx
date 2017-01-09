@@ -1,0 +1,31 @@
+.header_tit{
+ height: 42px;
+ line-height: 42px;
+/* margin:15px 0 10px 0;*/
+ border-bottom: 1px solid #BBB3AF;
+ padding: 0px; 
+}
+.header_tit ul{
+    height: 42px;
+    line-height: 42px;
+    text-indent: 0px;
+    margin-left: 0px!important;
+	padding: 0px!important;
+
+}
+.header_tit ul li{
+	float: left;
+	list-style-type:none;
+	height: 42px;
+    line-height: 42px;
+}
+.header_tit ul li a{
+	padding: 11px 50px;
+  
+}
+.header_tit ul li a.cur{
+	background-color: #ddd;
+}
+.bom_nav,.top_nav,.zidingyi{
+	display: none;
+}

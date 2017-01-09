@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>等级管理</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="js/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        
+        <!-- Compressed Version
+        <link type="text/css" rel="stylesheet" href="min/b=CoreAdmin&f=css/reset.css,css/style.css,css/jqueryui/jqueryui.css,js/jwysiwyg/jquery.wysiwyg.old-school.css,js/zoombox/zoombox.css" />
+        <script type="text/javascript" src="min/b=CoreAdmin/js&f=cookie/jquery.cookie.js,jwysiwyg/jquery.wysiwyg.js,tooltipsy.min.js,iphone-style-checkboxes.js,excanvas.js,zoombox/zoombox.js,visualize.jQuery.js,jquery.uniform.min.js,main.js"></script>
+        -->
+       
+        <link rel="stylesheet" href="css/min.css" />
+        <script type="text/javascript" src="js/min.js"></script>
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/H-ui.min.css" />
+         <!-- 分页 -->
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+        <!-- 分页end -->
+        
+        
+    </head>
+    <body>
+    
+                
+                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="img/icons/posts.png" alt="" /> 等级与信誉值</h1>
+<div class="bloc">
+    <div class="title">
+        等级与信誉值列表
+    </div>
+    <div class="content">
+        <div class="pd-20">
+    		<div class="text-c"> 
+    			<input type="text" class="input-text" style="width:250px" placeholder="" id="" name="">
+    			<button type="submit" class="btn btn-success" id="" name=""><i class=" icon-search"></i> 搜等级</button>
+    		</div>
+            <div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a> <a class="btn btn-primary radius" href="rank-add.html"><i class="icon-plus"></i> 添加等级</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+            <table class="table table-border table-bordered table-hover table-bg">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="6">等级列表</th>
+                    </tr>
+                    <tr class="text-c">
+                        <th width="25"><input type="checkbox" value="" name=""></th>
+                        <th width="40">ID</th>
+                        <th width="200">用户名称</th>
+                        <th>首次划款比率</th>
+                        <th width="300">描述</th>
+                        <th width="70">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>1</td>
+                        <td>钻石会员</td>
+                        <td><a href="#">20%</a></td>
+                        <td>拥有至高无上的权利</td>
+        				<td class="td-manage"> <a title="编辑" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>2</td>
+                        <td>黄金会员</td>
+                        <td><a href="#">张三</a></td>
+                        <td>具有添加、审核、发布、删除内容的权限</td>
+                        <td class="td-manage"> <a title="编辑" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>3</td>
+                        <td>白银会员</td>
+                        <td><a href="#">李四</a>，<a href="#">王五</a></td>
+                        <td>只对所在栏目具有添加、审核、发布、删除内容的权限</td>
+                       <td class="td-manage"> <a title="编辑" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>4</td>
+                        <td>青铜会员</td>
+                        <td><a href="#">赵六</a>，<a href="#">钱七</a></td>
+                        <td>只对所在栏目具有添加、删除草稿等权利。</td>
+                        <td class="td-manage"> <a title="编辑" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>4</td>
+                        <td>黑铁会员</td>
+                        <td><a href="#">赵六</a>，<a href="#">钱七</a></td>
+                        <td>只对所在栏目具有添加、删除草稿等权利。</td>
+                       <td class="td-manage"> <a title="编辑" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="page">
+        <ul class="paginations">
+          <li><a href="#">&laquo;第一页</a></li>
+          <li><a href="#">11</a></li>
+          <li><a href="#">12</a></li>
+          <li class="active"><a href="#">13</a></li>
+          <li><a href="#">14</a></li>
+          <li><a href="#">15</a></li>
+          <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+        </ul>  
+    </div> 
+    </div>
+</div>
+</div>
+    
+    </body>
+</html>

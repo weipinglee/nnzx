@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>会员管理</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="js/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/min.css" />
+        <script type="text/javascript" src="js/min.js"></script>
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/H-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script type="text/javascript" src="js/base.js"></script>
+    </head>
+    <body>                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="img/icons/posts.png" alt="" /> 导航栏目管理</h1>
+<div class="bloc">
+    <div class="title">
+        导航栏目列表
+    </div>
+    <div class="content">
+        <div class="pd-20">
+			<!--<div class="text-c"> 日期范围：
+				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
+				-
+				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
+				<input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
+				<button type="submit" class="btn btn-success radius" id="" name=""><i class="icon-search"></i> 搜用户</button>
+			</div>-->
+			<div class="header_tit">
+				<ul>
+					<li><a class="header_nav main cur">主导航</a></li>
+					<li><a class="header_nav top">顶部导航</a></li>
+					<li><a class="header_nav bom">底部导航</a></li>
+				</ul>
+			</div>
+	<div class="zhu_nav">
+	 	<div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i>批量删除</a> <a class="btn btn-primary radius" href="table_add.html"><i class=" icon-plus"></i> 添加导航</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<tr class="text-c">
+				<th><input type="checkbox" name="" value=""></th>
+				<th>ID</th>
+				<th>导航名称</th>
+				<th>链接地址</th>
+				<th>排序</th>
+				<th>操作</th>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="top_nav">
+	 	<div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i>批量删除</a> <a class="btn btn-primary radius" href="table_add.html"><i class=" icon-plus"></i> 添加导航</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<tr class="text-c">
+				<th><input type="checkbox" name="" value=""></th>
+				<th>ID</th>
+				<th>导航名称</th>
+				<th>链接地址</th>
+				<th>排序</th>
+				<th>操作</th>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+	<div class="bom_nav">
+	 	<div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i>批量删除</a> <a class="btn btn-primary radius" href="table_add.html"><i class=" icon-plus"></i> 添加导航</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<tr class="text-c">
+				<th><input type="checkbox" name="" value=""></th>
+				<th>ID</th>
+				<th>导航名称</th>
+				<th>链接地址</th>
+				<th>排序</th>
+				<th>操作</th>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td><u style="cursor:pointer" class="text-primary">企业文化</u></td>
+				<td>http://company.nainaiwang.com/page.php?id=12</td>
+				<td>11</td>
+				<td class="td-manage"> 
+					<a title="编辑"  style="text-decoration:none"><i class="icon-edit"></i></a> 
+					 <a title="删除"class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</div>
+
+
+     
+        
+    </body>
+</html>
