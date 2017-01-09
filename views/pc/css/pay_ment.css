@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-style:normal;}
+body, div, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4
+{margin:0;padding:0;font-style:normal;font-family:"Hiragino Sans GB W3",Arial, Helvetica,sans-serif;}
+
+
+
+
+/*订单hetong*/
+
+.checkim h2 {
+    border-bottom: 2px solid #C00;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.deal_succeed .botons_box a:hover{text-decoration: none;}
+.page_width .margin_bottom{ margin-bottom: 200px;}
+.detail_title {
+    font-size: 14px;
+    color: #666;
+    background-color: #eee;
+    line-height: 40px;
+    padding-left: 10px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.detail_tab td {
+    padding-left: 10px;
+    color: #666;
+    border: 1px solid #BFBFBF;
+    border-collapse: collapse;
+}
+.detail_tab {
+    border: 1px solid #BFBFBF;
+        margin: 12px auto;
+}                         
+.orange {
+    color: #f38201;
+    font-family: "Hiragino Sans GB W3";
+}
+.price02 {
+    font-family: "Hiragino Sans GB W3";
+}
+
+.yListr {
+    overflow: hidden;
+    font-family: "Hiragino Sans GB W3";
+    margin:0 auto;
+}
+
+.yListr ul {
+    clear: both;
+    padding-bottom: 10px;
+    margin-bottom: 13px;
+}
+
+.yListr ul li {
+    height: 36px;
+    margin-bottom: 8px;
+    float: left;
+}
+
+.yListr ul li span {
+    color: #000000;
+    font-size: 14px;
+    line-height: 36px;
+    display: inline-block;
+    width: 42px;
+    padding-left: 4px;
+}
+
+.yListr ul li em {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #666666;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 10px;
+    font-style: normal;
+    border: 1px solid #dcdcdc;
+    line-height: 32px;
+    height: 32px;
+     width: 100px;
+    text-align: center;
+}
+
+.yListr ul li em.yListrclickem {
+    line-height: 30px;
+    border: 2px solid #c81624;
+    height: 30px;
+    position: relative;
+    padding: 0 9px;
+    width: 100px;
+    text-align: center;
+}
+
+.yListr ul li em.yListrclickem i {
+    display: block;
+    width: 15px;
+    height: 14px;
+    background: url(../images/order/righbt.png) no-repeat 0 0; 
+    right: -1px;
+    bottom: -1px;
+    position: absolute;
+}
+
+.yListr .colorp00 {
+    color: #333333;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.yListr .colorp00 span {
+    color: #ed610c;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.yListr .colorp00 em {
+    font-style: normal;
+}
+
+.yListr form input, .yListr form select {
+    outline: none;
+    border: 1px solid #dcdcdc;
+    width: 86px;
+    height: 34px;
+    font-size: 14px;
+    color: #333333;
+    padding-left: 8px;
+}
+
+.yListr form select {
+    height: 36px;
+}
+
+.yListr form .YImmediatelyininstallment {
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    width: 332px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 3px;
+    background: #e9630a;
+    margin-top: 42px;
+}
+.js_show{
+    color: blue;
+    line-height: 25px;
+    padding-left: 25px;
+    width: 90px;
+}
+.mar_cotent{
+    padding-left: 25px;
+}
+
+.user_c_list.no_bor{
+    border: 0 none;
+}
+.pay_type {
+    width: 600px;
+    margin-top: 30px;
+    float: left;
+}
+.pay_type h3.add_zhifu{
+        float: left;
+    line-height: 33px;
+    margin-right: 18px;
+    color: #c81624;
+    font-weight: bold;
+    font-size: 14px;
+}
+.pay_type h3.addwidth {
+    float: left;
+    padding-top: 6px;
+}
+.sty_online{
+    display: none;
+}
+.sty_offline{
+    display: none;
+}
+.sty_online input {
+    width: 13px;
+    height: 13px;
+    margin-right: 6px;
+}
+.sty_online label{
+    display: block;
+   clear: both;
+   line-height: 30px;
+   font-size: 13px;
+   color: #535353;
+   
+}
+.sty_offline ul li{
+     font-size: 13px; 
+     color: #535353;
+     line-height: 35px;
+}
+.sty_offline ul li input.uplod{
+    
+    width: 170px;
+}
+.sty_offline ul li span{
+    display: block;
+    float: left;
+}
+.pay_bton {
+        width: 300px;
+    float: left;
+    margin-top: 111px;
+}
+.pay_bton h5{
+    line-height: 30px;
+    font-size: 16px;
+    color: #535353;
+    font-weight: normal;
+}
+.pay_bton h5 i{
+    font-weight: bold;
+}
+.pay_bton a{
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    background: #D61515;
+    display: block;
+    width: 108px;
+    border-radius: 25px;
+}
+.pay_bton a:hover{
+    text-decoration: none;
+}
+/* 交易成功CSS */
+.deal_succeed {
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 100px 0 30px 128px;
+}
+.deal_succeed .scsd_img img{ width: 180px; height: 180px; float: left;}
+.deal_succeed .scsd_img h3{
+    font-size: 42px;
+    font-weight: normal;
+    color: #c41e1e;
+    display: block;
+    float: left;
+    margin: 75px 0 0 32px;
+}
+.deal_succeed .scsd_word{
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0 20px 50px;
+}
+.deal_succeed .scsd_word h5{
+    font-size: 18px; 
+        margin:0 0 5px 45px;
+}  
+.deal_succeed .scsd_word p{
+    font-size: 13px;
+    line-height: 28px;
+    margin-left: 70px;
+}
+.deal_succeed .scsd_word p b{ font-weight: normal;}
+.deal_succeed .scsd_word p i{ font-size: 18px; color: #bc1b1b;margin: 0 5px;}
+.deal_succeed .scsd_word p .scsd_red{ color: #cf0606;}
+.deal_succeed .scsd_word p .scsd_red .cored{color: #bc1b1b;font-size: 18px;}
+.deal_succeed .botons_box .pay_continue{
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 100px;
+    height: 32px;
+    background: #cf0606;
+    line-height: 32px;
+    text-align: center;
+    margin-right: 150px;
+}
+.deal_succeed .botons_box .return_order{
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 100px;
+    height: 32px;
+    background: #cf0606;
+    line-height: 32px;
+    text-align: center;
+}
+.deal_succeed .botons_box a{
+    color: #fff; font-size: 12px;
+}
+.deal_succeed .botons_box a:hover{text-decoration: none;}
+.page_width .margin_bottom{ margin-bottom: 200px;}
+.deal_succeed .scsd_word.add{
+    width: 370px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0 20px 50px;
+    text-align: center;
+    position: relative;
+    right: 140px;
+}

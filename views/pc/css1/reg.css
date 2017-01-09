@@ -1,0 +1,105 @@
+body{margin:0;font:12px/1.8 Tahoma,Geneva,'\5B8B\4F53';color:#333;background:white;}
+input,textarea,select{margin:0;padding:0;font-size:12px;outline:none;resize:none;}
+html:root body,html:root input,html:root button,html:root textarea,html:root select{font-family:Tahoma,Geneva,'\5fae\8f6f\96c5\9ed1','\5B8B\4F53';}
+form,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,p{margin:0;padding:0;list-style:none;}
+a{text-decoration:none;color:#224892;outline:none;}
+a:hover{text-decoration:underline;}
+a img{border:none;}
+i,em{font-style:normal;}
+b{color:#F63;}
+button{cursor:pointer;}
+.wrap{
+    background-image:url(../images/mid_banner/banner_01_repeat.png?v=201406241538);
+}
+.register{
+	position: absolute;
+    right: 25%;
+    left: 25%;
+    top: 5%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.register .reg_top{
+	height: 45px;
+    border-bottom: 3px solid #B9B5B5;
+}
+.register .register_top {
+	width: 90%;
+	margin: 0 auto;
+}
+.register .register_top .register_r,.register .register_top .register_l,.register .register_top .jg{
+    float: left;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+}
+.register .register_top .register_r,.register .register_top .register_l{
+	width: 40%;
+	cursor:pointer; 
+}
+.register .register_top .jg{
+	display: block;
+    width: 20%;
+    font-size: 20px;
+}
+.register .register_top .border_bom{
+	border-bottom:3px solid #F70404;
+}
+/*注册内容*/
+.reg_cot{
+	width: 80%;
+    margin: 30px auto;
+}
+.reg_cot .cot{
+	padding: 8px 0px
+}
+.reg_cot .cot .cot_tit{
+	display: block;
+    width: 20%;
+    float: left;
+    text-align: right;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.reg_cot .cot .cot_tit i{
+	color: red;
+}
+.reg_cot .cot .text{
+	width: 200px;
+    height: 15px;
+    line-height: 15px;
+    padding: 5px;
+    border: 1px solid #D8D5D5;
+}
+.reg_cot .cot .zc{
+	display: block;
+    position: relative;
+    left: 24%;
+}
+
+.reg_cot .cot .but{
+	width: 130px;
+    height: 35px;
+    background-color: rgb(254, 150, 57);
+    border: 0px;
+    color: #fff;
+
+}
+/*企业注册*/
+.qy_reg{
+	display: none;
+}
+.reg_cot .cot .select{
+    height: 30px;
+    border: 1px solid #D8D5D5;
+}
+.reg_cot .cot .sel_d{
+    width: 100px;
+}
+.reg_cot .cot .tit_zw{
+    padding: 0 5px;
+    font-size: 15px;
+}
+
+.regis_reg_total {border-width:0px;color:red;width: 360px;font-size: 12px; cursor: default;}

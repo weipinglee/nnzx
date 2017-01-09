@@ -1,0 +1,25 @@
+.details{
+	width: 750px;
+	margin: 0 auto;
+}
+.details .detail_title{
+	padding: 5px 10px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.details .table_details table{
+	border: 1px solid #dadada;
+	width: 100%
+}
+
+.table_details table tr td{
+	padding: 5px 15px;
+	border:1px solid #dadada;
+}
+.table_details table tr.tr_title{
+	background: #f6f7f9;
+}
+.table_details table tr td:first-child{
+ width:100px;
+}

@@ -1,0 +1,14 @@
+.floor_left_box{display:block;position:fixed;_position:absolute;z-index:1001;right:0;bottom:100px;width:44px;margin-right:7%;text-align:center;}
+.floor_left_box img{width:43px;height:43px;}
+.floor_left_box a{display:block;width:61px;height:61px;overflow:hidden;border:1px solid #e6e6e6;background:#fafafa;line-height:38px;}
+.floor_left_box a:hover,.floor_left_box a.cur{background:#ff3c3c;border:1px solid #e60012;}
+.floor_left_box a em{background:#ff3c3c;border:1px solid #e60012;}
+.floor_left_box a em{display:none;}
+.floor_left_box a .two_line{line-height:17px;padding:1px 5px;} 
+.floor_left_box a:hover em,.floor_left_box a.cur em{display:block;color:#fff;}
+.floor_left_box a:hover i,.floor_left_box a.cur i{display:none;}
+.left_iconfont{font-family:"iconfont"!important;line-height:17px;padding:1px 5px;display:block;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale;color:#666;}
+.floor_left_box .leftfloor_red .left_iconfont{color:#fc6061;}
+
+
+.hiddened{display:none;}.showed{display:block;}

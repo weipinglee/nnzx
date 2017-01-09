@@ -1,0 +1,43 @@
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+*{ margin:0; padding:0; list-style:none;}
+body{ font-size:12px;}
+img{ border:none;}
+/*public*/
+.fl{display:inline;float:left}
+.cf:after{content:"";clear:both;display:block;height:0;overflow:hidden}
+.cf{zoom:1}
+.pb10{padding-bottom:10px}
+.mt10{margin-top:10px}
+/*main*/
+.lanrenzhijia{width:740px;margin:15px auto;background:#fff;}
+.lanrenzhijia .title{height:20px;border-bottom: 3px solid #e7e7e7;padding-bottom:10px;}
+.lanrenzhijia .title h2{ font-size: 20px;font-family: "microsoft yahei";}
+.lanrenzhijia .title-list{ position: relative; top: 6px;}
+.lanrenzhijia .title-list li{ width: 146px; line-height: 20px; text-align: center; float: left; display: inline;color: #999;}
+.lanrenzhijia .title-list li.on{ color: #c81623; font-weight: bold;}
+.lanrenzhijia .title-list p{position:absolute;top:24px;left:0px;width:146px;height:7px;border-top: 3px solid #c81623; overflow: hidden; text-align: center;}
+.lanrenzhijia .title-list b{display:inline-block;width:0;height:0;margin-top:-3px;border-style:solid dashed dashed dashed;border-width:9px;border-color: #c81623 #fff #fff #fff;overflow: hidden;zoom: 1;font-size: 0;}
+.product{ height: 340px; position: relative; overflow: hidden; display: none; margin-top: 20px;}
+.product ul{ position: absolute; left: 0px;}
+.product-wrap .show{ display: block;}
+.product-wrap .product .s_group{ width: 732px;height: 140px; padding:20px 5px; border-bottom: 1px solid #ccc;}
+.product-wrap .product .s_group .s_item{width:212px; height:50px; float: left;display: block;font-size: 14px;line-height: 26px;padding-bottom: 15px;text-align: right;margin-right:10px; color: #333;}
+.product-wrap .product .s_group .s_item .button{display: block;width: 80px;text-align:center; height: 35px;line-height: 35px;background-color: #c81623;color: #fff;border-radius: 4px;margin-top: 5px;margin-left: 65px;}
+.product-wrap .product .s_group .s_item .last_item{margin-right: 0px;}
+.product-wrap .product .s_group .s_item .s_item_box{position: relative;display: inline-block;}
+.product-wrap .product .s_group .s_item .s_item_box .inputSel{width: 140px;padding-left: 3px;margin-left: 10px;border: 1px solid #bbb;height: 40px;line-height: 30px;outline: none;color: #333;border: #ccc 1px solid;border-radius: 3px;}
+.product-wrap .product .div_choose{margin:15px;height: 45px;color:#666;}
+.product-wrap .product .div_choose .div_Iam{float: left;line-height: 35px;padding-left: 15px;}
+.product-wrap .product .div_choose .div_Iam label{margin-left:10px;padding:0px;}
+.product-wrap .product .div_choose .div_Iam input{vertical-align: middle; margin-top:-2px;}
+.product-wrap .product .div_choose .div_phone{float: right;height: 45px;}
+.product-wrap .product .div_choose span{color:#f3602d;}
+.product-wrap .product .div_choose .txt_phone{width: 100px;border: 1px solid #ececec;height: 30px;line-height: 30px;border-radius: 8px;padding-left: 5px;vertical-align: middle;}
+
+.product-wrap .product li{ float: left; display: inline; margin-left: 13px;background: #f3f3f3;border: 2px solid #fafafa; transition:0.4s;-webkit-transition:0.4s;-moz-transition: 0.4s;-o-transition: 0.4s;-ms-transition: 0.4s;}
+.product-wrap .product li.ml0{margin-left:0px;}
+.product-wrap .product li a.imgwrap{ display: block; width: 226px; height: 200px; background: #fff; text-align:center;}
+.product-wrap .product li p{padding-left: 15px;color: #666666;line-height: 22px;}
+.product-wrap .product li p a{ color: #666666; text-decoration: none;}
+.product-wrap .product li p a:hover{ color: #c81623; text-decoration: none;}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

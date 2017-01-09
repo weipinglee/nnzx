@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>等级管理</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="js/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        
+        <!-- Compressed Version
+        <link type="text/css" rel="stylesheet" href="min/b=CoreAdmin&f=css/reset.css,css/style.css,css/jqueryui/jqueryui.css,js/jwysiwyg/jquery.wysiwyg.old-school.css,js/zoombox/zoombox.css" />
+        <script type="text/javascript" src="min/b=CoreAdmin/js&f=cookie/jquery.cookie.js,jwysiwyg/jquery.wysiwyg.js,tooltipsy.min.js,iphone-style-checkboxes.js,excanvas.js,zoombox/zoombox.js,visualize.jQuery.js,jquery.uniform.min.js,main.js"></script>
+        -->
+        <link rel="stylesheet" href="css/min.css" />
+        <script type="text/javascript" src="js/min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/H-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="css/H-ui.admin.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css"/>
+        <script type="text/javascript" src="js/base.js"></script>
+    </head>
+    <body>
+
+          
+            
+                
+                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="img/icons/posts.png" alt="" /> 导航栏目管理</h1>
+<div class="bloc">
+    <div class="title">
+        添加导航
+    </div>
+    <div class="content">
+        <div class="pd-20">
+            <div class="header_tit">
+                <ul>
+                    <li><a class="header_nav zhn  cur">添加站内导航</a></li>
+                    <li><a class="header_nav zdy">添加自定义链接</a></li>
+                </ul>
+            </div>
+            <div class="zhannei">
+             <form action="" method="post" class="form form-horizontal" id="form-user-character-add">
+                <div class="row cl">
+                    <label class="form-label col-2"><span class="c-red">*</span>系统内容：</label>
+                    <div class="formControls col-10">
+                        <select>
+                            <option>请您选择链接项目</option>
+                            <option>- 企业简介</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2">导航名称：</label>
+                    <div class="formControls col-10">
+                        <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                    </div>
+                </div>
+                 <div class="row cl">
+                    <label class="form-label col-2">位置：</label>
+                    <div class="formControls col-10">
+                        <input type="radio" name="type" value="middle" checked="true"><span>主导航</span>
+                        <input type="radio" name="type" value="middle" ><span>顶部</span>
+                        <input type="radio" name="type" value="middle" ><span>底部</span>
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2"><span class="c-red">*</span>上级分类：</label>
+                    <div class="formControls col-10">
+                        <select>
+                            <option>无</option>
+                            <option>- 企业简介</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2">排序：</label>
+                    <div class="formControls col-10">
+                        <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <div class="col-10 col-offset-2">
+                        <button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="zidingyi">
+             <form action="" method="post" class="form form-horizontal" id="form-user-character-add">
+                <div class="row cl">
+                    <label class="form-label col-2"><span class="c-red">*</span>系统内容：</label>
+                    <div class="formControls col-10">
+                        <select>
+                            <option>请您选择链接项目</option>
+                            <option>- 企业简介</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2">导航名称：</label>
+                    <div class="formControls col-10">
+                        <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                    </div>
+                </div>
+                 <div class="row cl">
+                    <label class="form-label col-2">位置：</label>
+                    <div class="formControls col-10">
+                        <input type="radio" name="type" value="middle" checked="true"><span>主导航</span>
+                        <input type="radio" name="type" value="middle" ><span>顶部</span>
+                        <input type="radio" name="type" value="middle" ><span>底部</span>
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2"><span class="c-red">*</span>上级分类：</label>
+                    <div class="formControls col-10">
+                        <select>
+                            <option>无</option>
+                            <option>- 企业简介</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-2">排序：</label>
+                    <div class="formControls col-10">
+                        <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <div class="col-10 col-offset-2">
+                        <button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>
+
+     
+        
+    </body>
+</html>

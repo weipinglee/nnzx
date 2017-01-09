@@ -1,0 +1,96 @@
+
+
+#mainContent .mainRow4{
+	background: #fff;
+	height: 435px;
+}
+#mainContent .mainRow4 h2.title{
+	font-size: 20px;
+	display: block;
+	width: 160px;
+	height: 55px;
+	text-align: center;
+	line-height: 60px;
+	border-bottom: 3px solid #d61515;
+}
+#mainContent .mainRow4 .line{
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+    margin-bottom: 40px;
+}
+#mainContent .mainRow4 ul{
+	padding-left: 161px;
+    width: 620px;
+    float: left;
+}
+.found ul li{
+	font-size: 14px;
+	line-height: 50px;
+	clear: both;
+}
+.found ul li .text{
+	width:260px;
+	height:30px;
+	line-height: 30px;
+	border:1px solid #ddd;
+	padding-left: 10px;
+}
+.found ul li .select_found{
+	width:80px;height: 30px;color: #666;
+	padding:4px 3px;
+	display: block;
+	float: left;margin-right: 5px;
+}
+.found ul li .textarea{
+	width:570px;
+	height:80px;
+	border:1px solid #ddd;
+}
+.found span{
+	float: left;
+}
+#mainContent .mainRow4 .pic{
+	float: right;
+	margin-right: 70px;
+}
+#mainContent .mainRow3 .found{
+	width: 650px;
+    padding: 40px 10px 30px 10px;
+    margin-left: 150px;
+    float: left;
+}
+#mainContent .mainRow3 .found span{
+	margin-left: -14px;
+}
+#mainContent .mainRow3 .found .but{
+	margin-top: 40px;
+	margin-left: 40px;
+}
+#mainContent .mainRow3 .found .but span{
+	margin-left:14px;color:#999;
+}
+#mainContent .mainRow3 .found .button{
+	cursor:pointer;
+	float: left;
+	left: 100px;
+}
+
+.submit_edit{
+	width: 102px;
+	height: 39px;
+	background: #D61525;
+	color: #FFF;
+	font-size: 18px;
+	cursor: pointer;
+	border: 1px solid;
+	display: block;
+	text-align: center;
+	line-height: 39px;
+}
+
+#placeProv,#placeCity,#placeDistrict{height: 31px; min-width: 83px;}
+#localProv,#localCity,#localDistrict{height: 31px; min-width: 83px;}
+select#localDistrict {
+    margin-left: 14px;
+}

@@ -1,0 +1,463 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*******************
+基本
+********************/
+body {
+    margin: 0px;
+    padding: 0px;
+}
+ol,ul {
+    list-style: none;
+}
+li {
+    list-style-type: none;
+}
+img {
+    border: 0px;
+    vertical-align: top
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: none;
+}
+.clearfix {
+    clear: both;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.topnav_right ul li .information{
+    display: block;
+    font-style: normal;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    background: red none repeat scroll 0% 0%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    line-height: 15px;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+}
+/******背景******/
+.bg_topnav {
+    background: #f5f5f5;
+    height: 29px;
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 29px;
+    width: 100%
+}
+#bg_topnav {
+    background: #f5f5f5;
+    height: 29px;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    z-index: 1000;
+    line-height: 29px;
+    width: 1000px;
+    margin: auto;
+    z-index: 100
+}
+.bg_topnav ul {
+    height: 29px;
+    line-height: 29px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px
+}
+.bg_topnav ul li {
+    margin: 0px;
+    padding: 0px;
+}
+.topnav_width {
+    width: 1190px;
+    margin: auto;
+    font-size: 12px
+}
+
+/******登录******/
+.topnav_left {
+     float:left; 
+     height:30px; 
+     position:relative; 
+     z-index:10; 
+}
+.topnav_left a {
+    color: #737373
+}
+.topnav_left .login_link {
+    float: left;
+    position: relative
+}
+.topnav_left .top_index{
+	float: left;
+}
+.top_index .index_img{
+	position: relative;
+	top:3px;
+}
+.topnav_left .index_user{
+	float: left;
+	padding-left: 40px;
+	padding-right: 30px;
+}
+.topnav_left .topnav_regsiter {
+	float: left;
+    padding-left: 15px;
+    padding-right: 15px
+}
+/******快捷导航******/
+
+.topnav_right {
+    float: right;
+    color: #4f4f4f;
+    position: relative;
+    z-index: 10
+}
+.topnav_right li a{
+    color: #737373;
+}
+.topnav_right ul li{
+	float: left;
+    position: relative;
+}
+.topnav_right ul li .line_l{
+	padding:0 10px;
+	font-size: 18px;
+    color: #cdcdcd;
+}
+.topnav_right ul li .iphon_img{
+	position: relative;
+	top:6px;
+}
+
+/*下拉显示订制*/
+#buyPanel {
+    width: 130px;
+}
+#salePanel {
+    width: 130px;
+}
+#buyPanel .popue_mask,#salePanel .popue_mask,#quickPanel .popue_mask,#servePanel .popue_mask {
+    right: 0px
+}
+#quickPanel {
+    width: 650px;
+    _width: 637px;
+}
+#servePanel {
+    width: 155px;
+}
+#servePanel {
+    padding: 0px
+}
+#servePanel .server_phone {
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: #626262;
+    background: url(../Images/icon/icon_phone17.gif) no-repeat 5px 25px;
+}
+#servePanel .server_phone font {
+    color: #f55d2c;
+    font-size: 15px;
+    font-family: Arial;
+    padding-left: 20px
+}
+#quickPanel .popue_province a {
+    margin-right: 19px;
+    color: #333333;
+}
+#quickPanel .popue_area a {
+    margin-right: 8px;
+    color: #333333;
+}
+/*网站导航*/
+#quickPanel b {
+    font-size: 14px;
+}
+#quickPanel span {
+    font-weight: bolder
+}
+#quickPanel .quick_market {
+    float: left;
+    width: 320px;
+    padding-left: 10px;
+    padding-right: 20px;
+    border-right: 1px solid #ececec
+}
+#quickPanel .quick_market a {
+    margin-right: 8px;
+    _margin-right: 5px
+}
+#quickPanel .quick_info {
+    float: left;
+    width: 260px;
+    padding-left: 20px;
+    padding-right: 20px;
+    _padding-left: 10px;
+    padding-right: 10px;
+}
+#quickPanel .quick_info .quick_city {
+    float: left;
+    width: 260px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ececec
+}
+#quickPanel .quick_info .quick_info_bottom {
+    border-top: 1px solid #ececec;
+    margin-top: 10px;
+    padding-top: 10px
+}
+#quickPanel .quick_info .quick_info_bottom .red a {
+    color: #ff4800
+}
+#popue_quick {
+    background: url(../Images/icon/icon_3line1.gif) no-repeat left center;
+    padding-left: 6px
+}
+#popue_quick b {
+    background: url(../Images/icon/icon_aorrow_down9.gif) no-repeat 1px -16px;
+    padding: 5px;
+}
+.bg_topnav .popueButton:hover #popue_quick b {
+    background: url(../Images/icon/icon_aorrow_down10.gif) no-repeat 1px -16px;
+    padding: 5px;
+}
+
+
+/********************LOGO 电话**************gtxh_logo2************/
+#index_logo .index_logo {
+    background: url(../Images/logo/logo.png) no-repeat 0 0 scroll;
+    width: 287px;
+    height: 60px;
+    float: left;
+    margin-top: 11px;
+}
+#index_logo .index_logo a {
+    display: block;
+    width: 165px;
+    height: 60px
+}
+#index_logo .index_phone {
+    float: right;
+    background: url(../Images/index/icon_dh.png) no-repeat left center;
+    padding-left: 40px;
+    height: 35px;
+    line-height: 35px;
+    font-family: "微软雅黑", "Arial Unicode MS";
+    font-size: 16px;
+    margin-top: 20px;
+    color: #7a7878;
+    vertical-align: middle
+}
+#index_logo .index_phone span {
+    color: #ff4400;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+
+/********************新LOGO **************************/
+#topdiv_logo_nos {
+    background: url(../Images/logo/logo.png) no-repeat 0 0 scroll;
+    height: 60px;
+    width: 160px;
+    float: left;
+    margin: 17px 0 0;
+    padding: 0px
+}
+#topdiv_logo_nos a {
+    display: block;
+    height: 31px;
+    margin-top: 12px;
+    width: 157px;
+}
+#topdiv_logo, #topdiv_logo2, #topdiv_logo3, #topdiv_logo4 {
+    background: url(../Images/logo/logo2.png) no-repeat 0 0 scroll;
+    height: 60px;
+    width: 420px;
+    float: left;
+    margin: 12px 0 0;
+    padding: 0px
+}
+#topdiv_logo a,#topdiv_logo2 a, #topdiv_logo3 a, #topdiv_logo4 a {
+    display: block;
+    width: 355px;
+    height: 60px
+}
+#topdiv_logo4 {
+    background: url(../Images/logo/logo2.png) no-repeat 0 0 center;
+    height: 60px;
+    width: 355px;
+    float: left;
+    margin-top: 10px;
+    padding: 0px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://pub.prcsteel.com/Images/logo/logo2.png",sizingMethod='crop');
+    _height: 80px;
+    _width: 355px;
+}
+#topdiv_logo4 a {
+    display: block;
+    width: 355px;
+    height: 60px
+}
+#topdiv_logo2,#topdiv_logo3 {
+    margin: 0;
+}
+.gtxh-logo .sub-logo {
+    right: 105px !important;
+}
+/********************新的超市头部 LOGO 搜索**************************/
+.logo {
+    height: 90px;
+    float: left;
+    width: 100%
+}
+.logo .page_width {
+    width: 1000px;
+    margin: auto;
+    position: relative
+}
+/***logo***/
+.logo .div_logo {
+    background: url(../Images/logo/gtxh_logo.gif) no-repeat left center;
+    height: 90px;
+    width: 290px;
+    float: left
+}
+.logo .div_logofont {
+    float: left;
+    color: #0788ed;
+    font-size: 28px;
+    font-family: "微软雅黑";
+    border-left: 2px solid #0788ed;
+    padding-left: 20px;
+    margin-top: 20px;
+    height: 50px;
+    line-height: 50px
+}
+/***搜索***/
+.logo .div_search {
+    width: 360px;
+    _width: 340px;
+    height: 60px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+    position: relative;
+    background-color: #ffffff
+}
+.logo .div_search .search_input {
+    border: 2px solid #cccccc;
+    width: 360px;
+    _width: 340px;
+    float: left;
+    height: 32px;
+    margin-bottom: 10px;
+    border-right: none
+}
+/*下拉*/
+.logo .div_search .search_input .choose {
+    width: 45px;
+    line-height: 30px;
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    padding-left: 15px;
+    background: url(../Images/icon/icon_aorrow_down4.gif) no-repeat 45px 13px #f5f5f5;
+    float: left;
+    position: relative;
+    z-index: 99px;
+    height: 31px
+}
+.logo .div_search .search_input .choose a {
+    color: #464445
+}
+.logo .div_search .search_input .choose .choose_hide {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    background-color: #f5f5f5;
+    z-index: 99px;
+    width: 45px;
+    padding-left: 15px;
+    border: 1px solid #eeeeee;
+    border-top: none;
+    background: url(../Images/icon/icon_aorrow_down4.gif) no-repeat 45px 13px #f5f5f5;
+}
+/*输入框*/
+.logo .div_search .search_input .input_box {
+    float: left
+}
+.logo .div_search .search_input .input_box input {
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    *height: 28px !important;
+    *line-height: 30px !important;
+    color: #848283;
+    padding-left: 5px;
+    width: 220px;
+    _width: 190px;
+    outline: medium none;
+    float: left;
+    background-color: #ffffff
+}
+.logo .div_search .search_input .search_btn {
+    height: 36px;
+    width: 45px;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bolder;
+    font-size: 14px;
+    background: url(../Images/btn/btn_search.gif) no-repeat left center #f55f2d;
+    padding-left: 20px
+}
+/*热门搜索*/
+.logo .div_search .search_link {
+    width: 440px;
+    float: left;
+    color: #848283;
+    padding-left: 10px
+}
+.logo .div_search .search_link a {
+    color: #848283
+}
+/***电话***/
+.logo .logo_phone {
+    background: url(../Images/icon/icon_phone12.gif) no-repeat left center;
+    padding-left: 40px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ff8321;
+    font-weight: bolder;
+    height: 35px;
+    line-height: 35px;
+    width: 100px;
+    position: absolute;
+    left: 820px;
+    top: 0px
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <title>交易管理</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="js/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        
+        <!-- Compressed Version
+        <link type="text/css" rel="stylesheet" href="min/b=CoreAdmin&f=css/reset.css,css/style.css,css/jqueryui/jqueryui.css,js/jwysiwyg/jquery.wysiwyg.old-school.css,js/zoombox/zoombox.css" />
+        <script type="text/javascript" src="min/b=CoreAdmin/js&f=cookie/jquery.cookie.js,jwysiwyg/jquery.wysiwyg.js,tooltipsy.min.js,iphone-style-checkboxes.js,excanvas.js,zoombox/zoombox.js,visualize.jQuery.js,jquery.uniform.min.js,main.js"></script>
+        -->
+        <link rel="stylesheet" href="css/min.css" />
+        <script type="text/javascript" src="js/min.js"></script>
+        
+    </head>
+    <body>
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/H-ui.min.css" />
+
+                
+        <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="img/icons/posts.png" alt="" /> 报盘管理</h1>
+<div class="bloc">
+    <div class="title">
+      报盘信息列表
+    </div>
+    <div class="content">
+        <div class="pd-20">
+			 <div class="text-c"> 
+			<input type="text" class="input-text" style="width:250px" placeholder="输入标号" id="" name="">
+			<button type="submit" class="btn btn-success" id="" name=""><i class="icon-search"></i> 搜标号</button>
+		</div>
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+    <table class="table table-border table-bordered table-hover table-bg">
+        <thead>
+            <tr>
+                <th scope="col" colspan="12">报盘信息</th>
+            </tr>
+            <tr class="text-c">
+                <th><input type="checkbox" value="" name=""></th>
+                <th>ID</th>
+                <th >标的编号</th>
+                <th>客户编码</th>
+                <th>委托方</th>
+                <th>交易方式</th>
+                <th>可否拆分</th>
+                <th>数量</th>
+                <th>挂牌价</th>
+                <th>状态</th>
+                <th>类型</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-c">
+                <td><input type="checkbox" value="" name=""></td>
+                <td>1</td>
+                <td>DG0020160405000002</td>
+                <td>02100078</td>
+                <td><a href="#">admin</a></td>
+                <td>采购</td>
+                <td>否</td>
+                <td>10</td>
+                <td>100.000000</td>
+                <td>待审核</td>
+                <td>保证金</td>
+                 <td class="td-manage"> <a title="查看" href="offerl_details.html" class="ml-5" style="text-decoration:none"><i class="icon-eye-open"></i></a> <a title="删除" href="javascript:;"  class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+
+
+     
+        
+    </body>
+</html>

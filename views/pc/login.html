@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录</title>
+  <meta name="keywords"/>
+  <meta name="description"/>
+  <meta charset="utf-8">
+  <link href="css/home.css?v=2" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner-show" id="js_ban_content">
+    <div class="cell bns-01">
+      <div class="con"> </div>
+    </div>
+    <div class="cell bns-02" style="display:none;">
+      <div class="con"> <a href="#" target="_blank" class="banner-link"> <i>圈子</i></a> </div>
+    </div>
+    <div class="cell bns-03" style="display:none;">
+      <div class="con">
+        <a href="#" target="_blank" class="banner-link"> <i>企业云</i></a>
+      </div>
+    </div>
+  </div>
+  <div class="banner-control" id="js_ban_button_box">
+     <a href="javascript:;" class="left">左</a> 
+     <a href="javascript:;" class="right">右</a>
+  </div>
+  <div class="container">
+    <div class="register-box">
+      <div class="reg-slogan">登录</div>
+      <div class="reg-form" id="js-form-mobile"> <br>
+        <br>
+        <div class="cell">
+          <label for="js-mobile_ipt"></label>
+          <input type="text" name="mobile" id="js-mobile_ipt" class="text" maxlength="11" placeholder="用户名" />
+        </div>
+        <div class="cell">
+          <label for="js-mobile_pwd_ipt"></label>
+          <input type="password" name="passwd" id="js-mobile_pwd_ipt" class="text" />
+          <input type="text" name="passwd" id="js-mobile_pwd_ipt_txt" class="text" maxlength="20" style="display:none;" placeholder="输入密码" />
+        </div>
+        <!-- !短信验证码 -->
+        <div class="cell vcode">
+          <label for="js-mobile_vcode_ipt"></label>
+          <input type="text" name="code" id="js-mobile_vcode_ipt" class="text" maxlength="6"  placeholder="输入验证码" />
+          <a href="javascript:;" id="js-get_mobile_vcode" class="button btn-disabled"> 免费获取验证码</a>
+        </div>
+        <div class="bottom">
+          <a id="js-mobile_btn" href="javascript:;" class="button btn-green"> 立即登录</a>
+        </div>
+		<div class="mm_reg"><a>忘记密码</a><a href="register.html">注册>></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

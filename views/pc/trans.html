@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="baidu-site-verification" content="GEYeUSYelI">
+
+        <title>耐耐网物流中心</title>
+        <meta name="keywords" content="耐耐网">
+        <meta name="description" content="耐耐网物流">
+        
+
+     	<link href="css/common.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<link href="css/jquery.validate.min.css" type="text/css" rel="stylesheet">
+		<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="js/jquery.validate.method.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery-areapop.js"></script>
+		<link href="css/dialog.css" rel="stylesheet" type="text/css">
+		<script src="js/dialog.js" type="text/javascript"></script>
+		<script src="js/form.js" type="text/javascript"></script>
+		<script src="js/js.js" type="text/javascript"></script>
+		<script src="js/common.js" type="text/javascript"></script>		
+    <script async="" src="js/core.php"></script><style>.area-selector-dropdown-menu{position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; list-style: none; background-color: #fff; border: 1px solid #ccc; padding: 0; margin:1px 0 0; min-height:32px; overflow: hidden; overflow-y: auto;}.area-selector-dropdown-menu li a{display: block; padding:6px 14px; clear: both; font-weight: normal; line-height: 20px; color: #333; white-space: nowrap}.area-selector-dropdown-menu li a:hover, .area-selector-dropdown-menu li a:focus{color: #fff; text-decoration: none; background-color: #3399EE;}.area-selector-dropdown-menu .active a, .area-selector-dropdown-menu .active a:hover, .area-selector-dropdown-menu .active a:focus{color: #fff; text-decoration: none; background-color: #3399EE; outline: 0;}.area-selector-dropdown-menu .disabled a, .area-selector-dropdown-menu .disabled a:hover, .area-selector-dropdown-menu .disabled a:focus{color: #999}.area-selector-dropdown-menu .disabled a:hover, .area-selector-dropdown-menu .disabled a:focus{text-decoration: none; cursor: default; background-color: transparent;}.area-selector-pop{display: none; border: 1px solid #999; background: #FFF; padding: 8px 0; width: 408px; position: absolute;}.area-selector-pop ul{list-style: none; margin: 0; padding: 0;}.area-selector-pop a{text-decoration: none;}.area-selector-pop-header{padding: 0 13px; color: #999; position: relative; font-size: 12px;}.area-selector-pop-header a{font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #999; text-decoration: none; font-size: 20px; line-height: 20px; position: absolute; top: -2px; right: 8px; cursor: pointer;}.area-selector-pop-header a:hover{color: #666}.area-selector-pop-body{padding: 18px 0 10px;}.area-selector-pop .area-selector-pop-nav{padding: 0 13px 14px;}.area-selector-pop-nav li{width: 50%; background: #e3e3e3; color: #999; height: 30px; line-height: 30px; text-align: center; cursor: pointer;}.area-selector-pop-nav .active{background: #3295e8; color: #FFF; cursor: default;}.pop-tab{display: none;}.pop-tabs .active{display: block;}.area-selector-pop-city-nav{border-bottom: 2px solid #e9e9e9; font-size: 14px;}.area-selector-pop .area-selector-pop-city-nav{margin-bottom: 12px;}.area-selector-pop-city-nav li{margin: 0 13px; color: #0088dd; line-height: 2em; margin-bottom: -2px; cursor: pointer;}.area-selector-pop-city-nav .active{border-bottom: 2px solid #0088dd; color: #3193e5; font-weight: bold; cursor: default;}.area-selector-value .area-selector-item{padding: 6px 0 6px 20px; display: block; }.area-selector-value .area-selector-item a{display: block;white-space:nowrap}.area-selector-value li{font-size: 12px;}.area-selector-value a{color: #333;}.area-selector-pop .area-selector-value-w{padding: 0 14px;}.area-selector-value-h{padding: 6px 0 6px 0; font-weight: bold;}.area-selector-value-b{padding: 0 0 0 10px;}.area-selector-value a:hover, .area-selector-value .active a{color: #0066ff;}.area-selector-value .active a{cursor: default;}.area-selector-pop .empty-data{text-align: center;}.area-selector-pop .area-selector-pop-country-list{padding-right: 14px;}</style></head>
+<body>
+<link href="css/logistics.css" rel="stylesheet" type="text/css">
+<div id="logistics_banner">
+	<div class="logistics_box">
+		<form id="inputForm">
+      <div class="search_box">
+      	<div class="mid-top">
+         		<div class="mid-top-title1 mid_cur"><b class="">货找车</b></div>
+         		<div class="mid-top-title2"><b>车找货</b></div>
+         </div>
+         <div class="mid">
+             <div class="line_box">
+                 <div class="text">装货点：</div>
+                 <div class="input">
+                     <input type="text" class="input_w area-selector auto-complete-target auto-complete-target-area-selector-0" data-hidden="deliverCountyId" placeholder="请输入/选择装货点" data-idpx="area-selector-0" autocomplete="off" data-idv="440512" style="border: 2px solid rgb(255, 255, 255);"><input type="hidden" name="deliverCountyId" value="">
+                 </div>
+             </div>
+             <div class="line_box mar_t20">
+                 <div class="text">卸货点：</div>
+                 <div class="input">
+                     <input type="text" class="input_w area-selector auto-complete-target auto-complete-target-area-selector-1" data-hidden="takeCountyId" placeholder="请输入/选择卸货点" data-idpx="area-selector-1" autocomplete="off" data-idv="440105" style="border: 2px solid rgb(255, 255, 255);"><input type="hidden" name="takeCountyId" value="">
+                 </div>
+             </div>
+             <div class="line_box mar_t20">
+                 <div class="text">货物形态：</div>
+                 <div class="input">
+                     <select class="select_w" name="natureGoods" style="border: 2px solid rgb(255, 255, 255);">
+                         <option value="">请选择</option>
+                         <option value="1">散货带托</option>
+                         <option value="2">散货不带托</option>
+                         <option value="3">柜货</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="line_box mar_t20" style="display: block;" id="num">
+                 <div class="text">数量：</div>
+                 <div class="input">
+                 	   <p style="display: none;">	
+                       <input type="text" class="small_input" maxlength="4" placeholder="短柜（20）" name="entrustSum" disabled="">
+                       <span class="sp">个</span>
+                       <input type="text" class="small_input" maxlength="4" placeholder="长柜（40）" name="containerSum" disabled="">
+                       <span class="sp">个</span>
+                    </p>
+                    <p style="display: block;">
+                       <input type="text" class="small_input" maxlength="4" placeholder="吨数" name="entrustSum2" style="border: 2px solid rgb(255, 255, 255);">
+                       <span class="sp">吨</span>
+                    </p>
+                    
+                 </div>
+             </div>
+             <div class="line_box mar_t20">
+                  <input type="button" value="查运价" class="c_btn">
+                 <!--  弹出alert框在js.js -->
+                  <input type="button" value="帮我找车" class="b_btn">
+             </div>
+            
+         </div>
+             <div class="mid2">
+             <div class="line_box">
+                 <div class="text">车牌：</div>
+                 <div class="input">
+                 	<select class="line_select">
+                 		<option>晋</option>
+                 		<option>冀</option>
+                 	</select>
+                     <input type="text" class="input_w_c "  placeholder="请输入车牌号"  ><input type="hidden" name="deliverCountyId" value="">
+                 </div>
+             </div>
+             
+             <div class="line_box mar_t20">
+                 <div class="text">车型：</div>
+                 <div class="input">
+                     <select class="select_w" name="natureGoods" style="border: 2px solid rgb(255, 255, 255);">
+                         <option value="">请选择</option>
+                         <option value="1">半挂</option>
+                         <option value="2">散货不带托</option>
+                         <option value="3">柜货</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="line_box mar_t20" style="display: block;" id="num">
+                 <div class="text">载重：</div>
+                 <div class="input">
+                 	   <p style="display: none;">	
+                       <input type="text" class="small_input" maxlength="4" placeholder="短柜（20）" name="entrustSum" disabled="">
+                       <span class="sp">个</span>
+                       <input type="text" class="small_input" maxlength="4" placeholder="长柜（40）" name="containerSum" disabled="">
+                       <span class="sp">个</span>
+                    </p>
+                    <p style="display: block;">
+                       <input type="text" class="small_input" maxlength="4" placeholder="吨数" name="entrustSum2" style="border: 2px solid rgb(255, 255, 255);">
+                       <span class="sp">吨</span>
+                    </p>
+                    
+                 </div>
+             </div>
+             <div class="line_box mar_t20">
+                 <div class="text">路线：</div>
+                 <div class="input">
+                     <input type="text" class="input_w area-selector auto-complete-target auto-complete-target-area-selector-1" data-hidden="takeCountyId" placeholder="路线" data-idpx="area-selector-1" autocomplete="off" data-idv="440105" style="border: 2px solid rgb(255, 255, 255);"><input type="hidden" name="takeCountyId" value="">
+                 </div>
+             </div>
+             
+             <div class="line_box mar_t20">
+                  <input type="button" value="找货源" class="sub_btn">
+             </div>
+            
+         </div>
+      </div> 
+    </form>  
+  </div>
+</div>
+<div class="logistics_record clearfix">
+    <div class="l">
+        <div class="block"></div>
+        <div class="block bg2 mar_l20"></div>
+        <div class="block bg3 mar_t20"></div>
+        <div class="block bg4 mar_l20 mar_t20"></div>
+    </div>
+    <div class="r">
+        <div class="title">
+    		 实时委托记录
+        </div>
+        <div class="list_div">
+            <ul class="list_uls">
+	           		 <li>
+	           		 
+		                  <span class="sp1">159*****714</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LLDPE</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">189*****555</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LDPE</span>
+	             		  <span class="sp4">24吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">139*****838</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">30吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">150*****705</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">40吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">153*****608</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">130*****820</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">5吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">138*****755</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">138*****755</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">136*****834</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">10吨</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">159*****186</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">20吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">182*****515</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LLDPE</span>
+	             		  <span class="sp4">11吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">185*****185</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">35吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">180*****464</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">158*****783</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">50吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">131*****663</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">5柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">136*****287</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">137*****766</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">HDPE</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+           <!-- 
+	            <li>
+	             <span class="sp1">134******32</span>
+	             <span class="sp2">委托运输</span>
+	             <span class="sp3">LLDPE</span>
+	             <span class="sp4">28吨</span>
+	             <span class="sp5 color2">已经成交</span>
+	            </li>
+	             <li>
+	             <span class="sp1">134******32</span>
+	             <span class="sp2">委托运输</span>
+	             <span class="sp3">LLDPE</span>
+	             <span class="sp4">8吨</span>
+	             <span class="sp5 color1">正在洽谈</span>
+	            </li>
+            -->
+            
+	           		 <li>
+	           		 
+		                  <span class="sp1">159*****714</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LLDPE</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">189*****555</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LDPE</span>
+	             		  <span class="sp4">24吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">139*****838</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">30吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">150*****705</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">40吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">153*****608</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">130*****820</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">5吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">138*****755</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">138*****755</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">136*****834</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">10吨</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">159*****186</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">20吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">182*****515</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">LLDPE</span>
+	             		  <span class="sp4">11吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">185*****185</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">35吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+							  <span class="sp5 color1">正在洽谈</span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">135*****215</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">180*****464</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">158*****783</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">50吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">131*****663</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PVC</span>
+	             		  <span class="sp4">5柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">136*****287</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">PP</span>
+	             		  <span class="sp4">1柜</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+	           		 <li>
+	           		 
+		                  <span class="sp1">137*****766</span>
+		                  <span class="sp2">委托运输  </span>
+		                  <span class="sp3">HDPE</span>
+	             		  <span class="sp4">10吨</span>
+			                  <span class="sp5 color2">已经成交 </span>
+		              </li>
+           <!-- 
+	            <li>
+	             <span class="sp1">134******32</span>
+	             <span class="sp2">委托运输</span>
+	             <span class="sp3">LLDPE</span>
+	             <span class="sp4">28吨</span>
+	             <span class="sp5 color2">已经成交</span>
+	            </li>
+	             <li>
+	             <span class="sp1">134******32</span>
+	             <span class="sp2">委托运输</span>
+	             <span class="sp3">LLDPE</span>
+	             <span class="sp4">8吨</span>
+	             <span class="sp5 color1">正在洽谈</span>
+	            </li>
+            -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="mask" style="display: none;"></div>
+
+<div class="bomb1">
+	<div class="title">
+		<span>委托成功</span>
+		<a href="javascript:;"></a>
+	</div>
+	<div class="content">
+	</div>
+	<div class="btn_div">
+		<input type="button" value=" " class="btn">
+	</div>
+</div>
+
+
+<script type="text/javascript" src="trans/mustache.min.js"></script>
+<script type="text/javascript" src="trans/jquery-areaselector-min.js"></script>
+<script type="text/javascript">
+    (function(window, $) {
+        var Main = {
+            init: function() {
+                this.cacheElement();
+                this.addEvent();
+            },
+            cacheElement: function() {
+                var that = this;
+                $.each([
+                    "#mask",
+                    "#inputForm",
+                    ".bomb1",
+                    ".bomb2",
+                    "#num",
+                    ".input_w",
+                    ".select_w",
+                    ".sub_btn"
+                ], function(i, item) {
+                    that["$" + $.camelCase(item.replace(/\#|\./g, ""))] = $(item);
+                });
+            },
+            addEvent: function() {
+                var that = this;
+                that.$select_w.on('change', function() {
+                    that.numToggle(this);
+                });
+                that.$sub_btn.on("click", function() {
+                    that.submitHanlder();
+                });
+               
+                that.$select_w.change(function() {
+                    if ($.trim($(this).val()) != '') {
+                    	$(".tips_box").hide();
+                        $(this).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                });
+                $('[name="entrustSum2"]').keyup(function() {
+                    if ($.trim($(this).val()) != '') {
+                        $(this).val($.trim($(this).val()).replace(/[^\d|.]/g, ''));
+                        $(".tips_box").hide();
+                        $(this).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                });
+
+                $('[name="entrustSum"]').keyup(function() {
+                    if ($.trim($(this).val()) != '') {
+                        $(this).val($.trim($(this).val()).replace(/[^\d|.]/g, ''));
+                        $(".tips_box").hide();
+                        $(this).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                });
+                $('[name="containerSum"]').keyup(function() {
+                    if ($.trim($(this).val()) != '') {
+                        $(this).val($.trim($(this).val()).replace(/[^\d|.]/g, ''));
+                        $(".tips_box").hide();
+                        $(this).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                });
+            },
+            numToggle: function(obj) {
+                var that = this;
+                that.$num.find("input").val('');
+                that.$num.find("input").prop('disabled', true);
+                that.$num.hide();
+                that.$num.find("p").hide();
+                var str = $(obj).val();
+                if (str == '') {
+                    that.$num.hide();
+                } else if (str == 1 || str == 2) {
+                    that.$num.show();
+                    that.$num.find("p").eq(1).find("input").prop('disabled', false);
+                    that.$num.find("p").eq(1).show();
+                } else if (str == 3) {
+                    that.$num.show();
+                    that.$num.find("p").eq(0).find("input").prop('disabled', false);
+                    that.$num.find("p").eq(0).show();
+                }
+            },
+            submitHanlder: function() {
+                var that = this;
+                var json = that.$inputForm.serialize();
+                if ($.trim(that.$input_w.eq(0).val()) == '') {
+                	$(".tips_box").show().html('请选择装货点');
+                    that.$input_w.eq(0).css({
+                        'border': '2px solid #EE3333'
+                    });
+                    return false;
+                } else if ($.trim(that.$input_w.eq(1).val()) == '') {
+                	$(".tips_box").html('请选择卸货点').show();
+                    that.$input_w.eq(1).css({
+                    	'border': '2px solid #EE3333'
+                    });
+                
+                    return false;
+                } else if (that.$select_w.val() == '') {
+                	$(".tips_box").show().html('请选择货物形态');
+                    that.$select_w.css({
+                    	'border': '2px solid #EE3333'
+                    });
+                    
+                    return false;
+                } else if (that.$select_w.val() == 1 || that.$select_w.val() == 2) {
+                    if ($.trim($('[name="entrustSum2"]').val()) == '' || $.trim($('[name="entrustSum2"]').val()) <= 0) {
+                    	$(".tips_box").show().html('请输入吨数');
+                        $('[name="entrustSum2"]').css({
+                        	'border': '2px solid #EE3333'
+                        });
+                       
+                        return false;
+                    } else {
+                        that.ajaxFn(json)
+                    }
+                } else if (that.$select_w.val() == 3) {
+                    if (($.trim($('[name="entrustSum"]').val()) == '' && $.trim($('[name="containerSum"]').val()) == '') || ($.trim($('[name="entrustSum"]').val()) == 0 && $.trim($('[name="containerSum"]').val()) == 0)) {
+                    	$(".tips_box").show().html('请柜货数量');
+                    	$('[name="entrustSum"]').css({
+                        	'border': '2px solid #EE3333'
+                        });
+                    	
+                        return false;
+                    } else {
+                        that.ajaxFn(json)
+                    }
+                }
+            },
+            ajaxFn: function(json) {
+                var that = this;
+                $.ajax({
+                    url: 'http://www.nainaiwnag.com/logistics/apply/save',
+                    type: 'get',
+                    dataType : 'jsonp', 
+                    data: json,
+                    jsonp:"jsoncallback",
+                    success: function(data) {
+                        if (data.status == 1) {
+                            //未登陆
+                            show_dialog_login();
+                        } else if (data.status == 2) {
+                            //体验会员
+                            that.bomb2();
+                        } else if (data.status == 3) {
+                            //成功
+                            that.bomb('委托成功', '<p class="mar_t40">您的物流请求已接收</p><p>我们会尽快与您联系!</p>');
+                        } else {
+                            //出错
+                            window.location = "http://www.nainaiwnag.com/common/error500";
+                        }
+                    }
+                });
+            },
+            bomb: function(title, content) {
+                var that = this;
+                that.$mask.show();
+                that.$bomb1.show();
+                that.$bomb1.find(".title span").html(title);
+                that.$bomb1.find(".content").html(content);
+                that.$bomb1.find(".btn").click(function() {
+                    that.$mask.hide();
+                    that.$bomb1.hide();
+                    that.$inputForm.find("input").val('');
+                    that.$inputForm.find("select").val('');
+                });
+                that.$bomb1.find(".title a").click(function() {
+                    that.$mask.hide();
+                    that.$bomb1.hide();
+                    that.$inputForm.find("input").val('');
+                    that.$inputForm.find("select").val('');
+                });
+            },
+            bomb2: function() {
+                var that = this;
+                that.$mask.show();
+                that.$bomb2.show();
+                that.$bomb2.find(".title a").click(function() {
+                    that.$mask.hide();
+                    that.$bomb2.hide();
+                    that.$inputForm.find("input").val('');
+                    that.$inputForm.find("select").val('');
+                });
+            }
+        };
+        $(function() {
+            $(".area-selector").areaSelector({
+                remote: {
+                    url: {
+                        searchCity: "http://www.nainaiwnag.com/logistics/apply/queryKeyWordAjax", //搜索
+                        getCountry: "http://www.nainaiwnag.com/logistics/apply/queryCountyAjax", //获取区县数据
+                        getCity: "http://www.nainaiwnag.com/resources/fore/plugin/jquery-areaselector/data.json" //获取城市数据
+                    },
+                    parse: function(data) {
+                        return {
+                            data: data
+                        };
+                    }
+                },
+                selectedCallback: function(value, instance, data){
+                   if ($.trim($('[name="deliverCountyId"]').val()) != '') {
+                    	$(".tips_box").hide();
+                        $(".input_w").eq(0).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                    if ($.trim($('[name="takeCountyId"]').val()) != '') {
+                    	
+                    	$(".tips_box").hide();
+                    	$(".input_w").eq(1).css({
+                            'border': '2px solid #FFF'
+                        });
+                    }
+                }
+            });
+            $.fn.scrollcontent = function(interval) {
+                var $this = $(this);
+                var box = $this.closest("div")
+                var m = box.height();
+                var n = $this.height();
+                if (n >= m) {
+                    $this.append($this.html());
+                    var i = 0;
+                    var timer;
+                    var start = function() {
+                        timer = setInterval(function() {
+                            box.scrollTop(i);
+                            i === n ? i = 0 : i++;
+                        }, interval);
+                    }
+                    var stop = function() {
+                        clearInterval(timer);
+                    }
+                    start();
+                    box.on("mouseover", stop).on("mouseout", start);
+                }
+            };
+            // 向上滚动调用
+            $(".list_div .list_uls").scrollcontent(100);
+            Main.init();            
+            
+        });
+    })(this, jQuery, undefined);
+</script>
+
+
+<div class="area-selector-pop" data-idpx="area-selector-1" style="left: 501.5px; min-width: 276px; top: 355px; display: none;"><div class="area-selector-pop-header">支持文字输入<a href="http://wuliu.nainaiwnag.com/#" class="close" data-action="hideAreaSelectorPop">×</a></div><div class="area-selector-pop-body"><ul class="selector-pop-nav area-selector-pop-nav clearfix"><li class="fl" data-target="city">城市</li><li class="fl active" data-target="country">区县</li></ul><div class="pop-tabs area-selector-pop-tabs"><div class="pop-tab" data-target="city"><ul class="selector-pop-nav area-selector-pop-city-nav clearfix"><li class="fl active" data-target="周边城市">周边城市</li><li class="fl" data-target="ABCDE">ABCDE</li><li class="fl" data-target="FGHJ">FGHJ</li><li class="fl" data-target="KLMNP">KLMNP</li><li class="fl" data-target="QRSTW">QRSTW</li><li class="fl" data-target="XYZ">XYZ</li></ul><div class="pop-tabs area-selector-pop-city-tabs"><div class="pop-tab active" data-target="周边城市"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li class="fl area-selector-item" data-id="440100" data-name="广州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">广州市</a></li><li class="fl area-selector-item" data-id="440200" data-name="韶关市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">韶关市</a></li><li class="fl area-selector-item" data-id="440300" data-name="深圳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">深圳市</a></li><li class="fl area-selector-item" data-id="440400" data-name="珠海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">珠海市</a></li><li class="fl area-selector-item" data-id="440500" data-name="汕头市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">汕头市</a></li><li class="fl area-selector-item" data-id="440600" data-name="佛山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">佛山市</a></li><li class="fl area-selector-item" data-id="44060011" data-name="乐从" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乐从</a></li><li class="fl area-selector-item" data-id="440700" data-name="江门市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">江门市</a></li><li class="fl area-selector-item" data-id="440800" data-name="湛江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">湛江市</a></li><li class="fl area-selector-item" data-id="440900" data-name="茂名市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">茂名市</a></li><li class="fl area-selector-item" data-id="441200" data-name="肇庆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">肇庆市</a></li><li class="fl area-selector-item" data-id="441300" data-name="惠州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">惠州市</a></li><li class="fl area-selector-item" data-id="441400" data-name="梅州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">梅州市</a></li><li class="fl area-selector-item" data-id="441500" data-name="汕尾市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">汕尾市</a></li><li class="fl area-selector-item" data-id="441600" data-name="河源市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">河源市</a></li><li class="fl area-selector-item" data-id="441700" data-name="阳江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阳江市</a></li><li class="fl area-selector-item" data-id="441800" data-name="清远市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">清远市</a></li><li class="fl area-selector-item" data-id="441900" data-name="东莞市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">东莞市</a></li><li class="fl area-selector-item" data-id="442000" data-name="中山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">中山市</a></li><li class="fl area-selector-item" data-id="445100" data-name="潮州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">潮州市</a></li><li class="fl area-selector-item" data-id="445200" data-name="揭阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">揭阳市</a></li><li class="fl area-selector-item" data-id="445300" data-name="云浮市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">云浮市</a></li></ul></div><div class="pop-tab" data-target="ABCDE"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>A</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="152900" data-name="阿拉善盟" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阿拉善盟</a></li><li class="fl area-selector-item" data-id="210300" data-name="鞍山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鞍山市</a></li><li class="fl area-selector-item" data-id="340800" data-name="安庆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">安庆市</a></li><li class="fl area-selector-item" data-id="410500" data-name="安阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">安阳市</a></li><li class="fl area-selector-item" data-id="513200" data-name="阿坝藏族羌族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阿坝藏族羌族自治州</a></li><li class="fl area-selector-item" data-id="520400" data-name="安顺市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">安顺市</a></li><li class="fl area-selector-item" data-id="542500" data-name="阿里地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阿里地区</a></li><li class="fl area-selector-item" data-id="610900" data-name="安康市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">安康市</a></li><li class="fl area-selector-item" data-id="652900" data-name="阿克苏地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阿克苏地区</a></li><li class="fl area-selector-item" data-id="654300" data-name="阿勒泰地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阿勒泰地区</a></li><li class="fl area-selector-item" data-id="820100" data-name="澳门半岛" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">澳门半岛</a></li><li class="fl area-selector-item" data-id="820200" data-name="澳门离岛" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">澳门离岛</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>B</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="110100" data-name="北京市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">北京市</a></li><li class="fl area-selector-item" data-id="130600" data-name="保定市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">保定市</a></li><li class="fl area-selector-item" data-id="150200" data-name="包头市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">包头市</a></li><li class="fl area-selector-item" data-id="150800" data-name="巴彦淖尔市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">巴彦淖尔市</a></li><li class="fl area-selector-item" data-id="210500" data-name="本溪市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">本溪市</a></li><li class="fl area-selector-item" data-id="220600" data-name="白山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">白山市</a></li><li class="fl area-selector-item" data-id="220800" data-name="白城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">白城市</a></li><li class="fl area-selector-item" data-id="340300" data-name="蚌埠市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">蚌埠市</a></li><li class="fl area-selector-item" data-id="341600" data-name="亳州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">亳州市</a></li><li class="fl area-selector-item" data-id="371600" data-name="滨州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">滨州市</a></li><li class="fl area-selector-item" data-id="450500" data-name="北海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">北海市</a></li><li class="fl area-selector-item" data-id="451000" data-name="百色市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">百色市</a></li><li class="fl area-selector-item" data-id="511900" data-name="巴中市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">巴中市</a></li><li class="fl area-selector-item" data-id="520500" data-name="毕节市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">毕节市</a></li><li class="fl area-selector-item" data-id="530500" data-name="保山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">保山市</a></li><li class="fl area-selector-item" data-id="610300" data-name="宝鸡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宝鸡市</a></li><li class="fl area-selector-item" data-id="620400" data-name="白银市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">白银市</a></li><li class="fl area-selector-item" data-id="652700" data-name="博尔塔拉蒙古自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">博尔塔拉蒙古自治州</a></li><li class="fl area-selector-item" data-id="652800" data-name="巴音郭楞蒙古自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">巴音郭楞蒙古自治州</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>C</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130800" data-name="承德市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">承德市</a></li><li class="fl area-selector-item" data-id="130900" data-name="沧州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">沧州市</a></li><li class="fl area-selector-item" data-id="150400" data-name="赤峰市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">赤峰市</a></li><li class="fl area-selector-item" data-id="211300" data-name="朝阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">朝阳市</a></li><li class="fl area-selector-item" data-id="320400" data-name="常州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">常州市</a></li><li class="fl area-selector-item" data-id="341100" data-name="滁州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">滁州市</a></li><li class="fl area-selector-item" data-id="341700" data-name="池州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">池州市</a></li><li class="fl area-selector-item" data-id="430700" data-name="常德市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">常德市</a></li><li class="fl area-selector-item" data-id="431000" data-name="郴州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">郴州市</a></li><li class="fl area-selector-item" data-id="445100" data-name="潮州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">潮州市</a></li><li class="fl area-selector-item" data-id="451400" data-name="崇左市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">崇左市</a></li><li class="fl area-selector-item" data-id="510100" data-name="成都市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">成都市</a></li><li class="fl area-selector-item" data-id="532300" data-name="楚雄彝族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">楚雄彝族自治州</a></li><li class="fl area-selector-item" data-id="542100" data-name="昌都地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">昌都地区</a></li><li class="fl area-selector-item" data-id="652300" data-name="昌吉回族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">昌吉回族自治州</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>D</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="140200" data-name="大同市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">大同市</a></li><li class="fl area-selector-item" data-id="210200" data-name="大连市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">大连市</a></li><li class="fl area-selector-item" data-id="210600" data-name="丹东市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">丹东市</a></li><li class="fl area-selector-item" data-id="230600" data-name="大庆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">大庆市</a></li><li class="fl area-selector-item" data-id="232700" data-name="大兴安岭地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">大兴安岭地区</a></li><li class="fl area-selector-item" data-id="370500" data-name="东营市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">东营市</a></li><li class="fl area-selector-item" data-id="371400" data-name="德州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">德州市</a></li><li class="fl area-selector-item" data-id="441900" data-name="东莞市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">东莞市</a></li><li class="fl area-selector-item" data-id="510600" data-name="德阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">德阳市</a></li><li class="fl area-selector-item" data-id="511700" data-name="达州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">达州市</a></li><li class="fl area-selector-item" data-id="532900" data-name="大理白族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">大理白族自治州</a></li><li class="fl area-selector-item" data-id="533100" data-name="德宏傣族景颇族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">德宏傣族景颇族自治州</a></li><li class="fl area-selector-item" data-id="533400" data-name="迪庆藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">迪庆藏族自治州</a></li><li class="fl area-selector-item" data-id="621100" data-name="定西市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">定西市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>E</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="150600" data-name="鄂尔多斯市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鄂尔多斯市</a></li><li class="fl area-selector-item" data-id="420700" data-name="鄂州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鄂州市</a></li><li class="fl area-selector-item" data-id="422800" data-name="恩施土家族苗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">恩施土家族苗族自治州</a></li></ul></li></ul></li></ul></div><div class="pop-tab" data-target="FGHJ"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>F</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="210400" data-name="抚顺市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">抚顺市</a></li><li class="fl area-selector-item" data-id="210900" data-name="阜新市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阜新市</a></li><li class="fl area-selector-item" data-id="341200" data-name="阜阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阜阳市</a></li><li class="fl area-selector-item" data-id="350100" data-name="福州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">福州市</a></li><li class="fl area-selector-item" data-id="361000" data-name="抚州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">抚州市</a></li><li class="fl area-selector-item" data-id="440600" data-name="佛山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">佛山市</a></li><li class="fl area-selector-item" data-id="450600" data-name="防城港市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">防城港市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>G</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="360700" data-name="赣州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">赣州市</a></li><li class="fl area-selector-item" data-id="440100" data-name="广州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">广州市</a></li><li class="fl area-selector-item" data-id="450300" data-name="桂林市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">桂林市</a></li><li class="fl area-selector-item" data-id="450800" data-name="贵港市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">贵港市</a></li><li class="fl area-selector-item" data-id="510800" data-name="广元市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">广元市</a></li><li class="fl area-selector-item" data-id="511600" data-name="广安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">广安市</a></li><li class="fl area-selector-item" data-id="513300" data-name="甘孜藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">甘孜藏族自治州</a></li><li class="fl area-selector-item" data-id="520100" data-name="贵阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">贵阳市</a></li><li class="fl area-selector-item" data-id="623000" data-name="甘南藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">甘南藏族自治州</a></li><li class="fl area-selector-item" data-id="632600" data-name="果洛藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">果洛藏族自治州</a></li><li class="fl area-selector-item" data-id="640400" data-name="固原市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">固原市</a></li><li class="fl area-selector-item" data-id="710200" data-name="高雄市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">高雄市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>H</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130400" data-name="邯郸市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">邯郸市</a></li><li class="fl area-selector-item" data-id="131100" data-name="衡水市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">衡水市</a></li><li class="fl area-selector-item" data-id="150100" data-name="呼和浩特市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">呼和浩特市</a></li><li class="fl area-selector-item" data-id="150700" data-name="呼伦贝尔市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">呼伦贝尔市</a></li><li class="fl area-selector-item" data-id="211400" data-name="葫芦岛市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">葫芦岛市</a></li><li class="fl area-selector-item" data-id="230100" data-name="哈尔滨市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">哈尔滨市</a></li><li class="fl area-selector-item" data-id="230400" data-name="鹤岗市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鹤岗市</a></li><li class="fl area-selector-item" data-id="231100" data-name="黑河市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黑河市</a></li><li class="fl area-selector-item" data-id="320800" data-name="淮安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">淮安市</a></li><li class="fl area-selector-item" data-id="330100" data-name="杭州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">杭州市</a></li><li class="fl area-selector-item" data-id="330500" data-name="湖州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">湖州市</a></li><li class="fl area-selector-item" data-id="340100" data-name="合肥市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">合肥市</a></li><li class="fl area-selector-item" data-id="340400" data-name="淮南市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">淮南市</a></li><li class="fl area-selector-item" data-id="340600" data-name="淮北市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">淮北市</a></li><li class="fl area-selector-item" data-id="341000" data-name="黄山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黄山市</a></li><li class="fl area-selector-item" data-id="371700" data-name="菏泽市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">菏泽市</a></li><li class="fl area-selector-item" data-id="410600" data-name="鹤壁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鹤壁市</a></li><li class="fl area-selector-item" data-id="420200" data-name="黄石市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黄石市</a></li><li class="fl area-selector-item" data-id="421100" data-name="黄冈市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黄冈市</a></li><li class="fl area-selector-item" data-id="430400" data-name="衡阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">衡阳市</a></li><li class="fl area-selector-item" data-id="431200" data-name="怀化市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">怀化市</a></li><li class="fl area-selector-item" data-id="441300" data-name="惠州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">惠州市</a></li><li class="fl area-selector-item" data-id="441600" data-name="河源市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">河源市</a></li><li class="fl area-selector-item" data-id="451100" data-name="贺州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">贺州市</a></li><li class="fl area-selector-item" data-id="451200" data-name="河池市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">河池市</a></li><li class="fl area-selector-item" data-id="460100" data-name="海口市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">海口市</a></li><li class="fl area-selector-item" data-id="532500" data-name="红河哈尼族彝族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">红河哈尼族彝族自治州</a></li><li class="fl area-selector-item" data-id="610700" data-name="汉中市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">汉中市</a></li><li class="fl area-selector-item" data-id="632100" data-name="海东地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">海东地区</a></li><li class="fl area-selector-item" data-id="632200" data-name="海北藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">海北藏族自治州</a></li><li class="fl area-selector-item" data-id="632300" data-name="黄南藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黄南藏族自治州</a></li><li class="fl area-selector-item" data-id="632500" data-name="海南藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">海南藏族自治州</a></li><li class="fl area-selector-item" data-id="632800" data-name="海西蒙古族藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">海西蒙古族藏族自治州</a></li><li class="fl area-selector-item" data-id="652200" data-name="哈密地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">哈密地区</a></li><li class="fl area-selector-item" data-id="653200" data-name="和田地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">和田地区</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>J</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="140500" data-name="晋城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">晋城市</a></li><li class="fl area-selector-item" data-id="140700" data-name="晋中市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">晋中市</a></li><li class="fl area-selector-item" data-id="210700" data-name="锦州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">锦州市</a></li><li class="fl area-selector-item" data-id="220200" data-name="吉林市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">吉林市</a></li><li class="fl area-selector-item" data-id="230300" data-name="鸡西市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鸡西市</a></li><li class="fl area-selector-item" data-id="230800" data-name="佳木斯市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">佳木斯市</a></li><li class="fl area-selector-item" data-id="330400" data-name="嘉兴市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">嘉兴市</a></li><li class="fl area-selector-item" data-id="330700" data-name="金华市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">金华市</a></li><li class="fl area-selector-item" data-id="360200" data-name="景德镇市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">景德镇市</a></li><li class="fl area-selector-item" data-id="360400" data-name="九江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">九江市</a></li><li class="fl area-selector-item" data-id="360800" data-name="吉安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">吉安市</a></li><li class="fl area-selector-item" data-id="370100" data-name="济南市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">济南市</a></li><li class="fl area-selector-item" data-id="370800" data-name="济宁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">济宁市</a></li><li class="fl area-selector-item" data-id="410800" data-name="焦作市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">焦作市</a></li><li class="fl area-selector-item" data-id="420800" data-name="荆门市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">荆门市</a></li><li class="fl area-selector-item" data-id="421000" data-name="荆州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">荆州市</a></li><li class="fl area-selector-item" data-id="440700" data-name="江门市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">江门市</a></li><li class="fl area-selector-item" data-id="445200" data-name="揭阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">揭阳市</a></li><li class="fl area-selector-item" data-id="620200" data-name="嘉峪关市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">嘉峪关市</a></li><li class="fl area-selector-item" data-id="620300" data-name="金昌市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">金昌市</a></li><li class="fl area-selector-item" data-id="620900" data-name="酒泉市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">酒泉市</a></li><li class="fl area-selector-item" data-id="710300" data-name="基隆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">基隆市</a></li><li class="fl area-selector-item" data-id="710700" data-name="嘉义市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">嘉义市</a></li><li class="fl area-selector-item" data-id="810200" data-name="九龙" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">九龙</a></li></ul></li></ul></li></ul></div><div class="pop-tab" data-target="KLMNP"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>K</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="410200" data-name="开封市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">开封市</a></li><li class="fl area-selector-item" data-id="530100" data-name="昆明市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">昆明市</a></li><li class="fl area-selector-item" data-id="650200" data-name="克拉玛依市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">克拉玛依市</a></li><li class="fl area-selector-item" data-id="653000" data-name="克孜勒苏柯尔克孜自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">克孜勒苏柯尔克孜自治州</a></li><li class="fl area-selector-item" data-id="653100" data-name="喀什地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">喀什地区</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>L</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="131000" data-name="廊坊市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">廊坊市</a></li><li class="fl area-selector-item" data-id="141000" data-name="临汾市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">临汾市</a></li><li class="fl area-selector-item" data-id="141100" data-name="吕梁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">吕梁市</a></li><li class="fl area-selector-item" data-id="211000" data-name="辽阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">辽阳市</a></li><li class="fl area-selector-item" data-id="220400" data-name="辽源市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">辽源市</a></li><li class="fl area-selector-item" data-id="320700" data-name="连云港市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">连云港市</a></li><li class="fl area-selector-item" data-id="331100" data-name="丽水市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">丽水市</a></li><li class="fl area-selector-item" data-id="341500" data-name="六安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">六安市</a></li><li class="fl area-selector-item" data-id="350800" data-name="龙岩市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">龙岩市</a></li><li class="fl area-selector-item" data-id="371200" data-name="莱芜市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">莱芜市</a></li><li class="fl area-selector-item" data-id="371300" data-name="临沂市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">临沂市</a></li><li class="fl area-selector-item" data-id="371500" data-name="聊城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">聊城市</a></li><li class="fl area-selector-item" data-id="410300" data-name="洛阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">洛阳市</a></li><li class="fl area-selector-item" data-id="411100" data-name="漯河市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">漯河市</a></li><li class="fl area-selector-item" data-id="431300" data-name="娄底市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">娄底市</a></li><li class="fl area-selector-item" data-id="44060011" data-name="乐从" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乐从</a></li><li class="fl area-selector-item" data-id="450200" data-name="柳州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">柳州市</a></li><li class="fl area-selector-item" data-id="451300" data-name="来宾市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">来宾市</a></li><li class="fl area-selector-item" data-id="510500" data-name="泸州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">泸州市</a></li><li class="fl area-selector-item" data-id="511100" data-name="乐山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乐山市</a></li><li class="fl area-selector-item" data-id="513400" data-name="凉山彝族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">凉山彝族自治州</a></li><li class="fl area-selector-item" data-id="520200" data-name="六盘水市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">六盘水市</a></li><li class="fl area-selector-item" data-id="530700" data-name="丽江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">丽江市</a></li><li class="fl area-selector-item" data-id="530900" data-name="临沧市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">临沧市</a></li><li class="fl area-selector-item" data-id="540100" data-name="拉萨市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">拉萨市</a></li><li class="fl area-selector-item" data-id="542600" data-name="林芝地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">林芝地区</a></li><li class="fl area-selector-item" data-id="620100" data-name="兰州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">兰州市</a></li><li class="fl area-selector-item" data-id="621200" data-name="陇南市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">陇南市</a></li><li class="fl area-selector-item" data-id="622900" data-name="临夏回族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">临夏回族自治州</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>M</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="231000" data-name="牡丹江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">牡丹江市</a></li><li class="fl area-selector-item" data-id="340500" data-name="马鞍山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">马鞍山市</a></li><li class="fl area-selector-item" data-id="440900" data-name="茂名市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">茂名市</a></li><li class="fl area-selector-item" data-id="441400" data-name="梅州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">梅州市</a></li><li class="fl area-selector-item" data-id="510700" data-name="绵阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">绵阳市</a></li><li class="fl area-selector-item" data-id="511400" data-name="眉山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">眉山市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>N</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="320100" data-name="南京市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南京市</a></li><li class="fl area-selector-item" data-id="320600" data-name="南通市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南通市</a></li><li class="fl area-selector-item" data-id="330200" data-name="宁波市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宁波市</a></li><li class="fl area-selector-item" data-id="350700" data-name="南平市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南平市</a></li><li class="fl area-selector-item" data-id="350900" data-name="宁德市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宁德市</a></li><li class="fl area-selector-item" data-id="360100" data-name="南昌市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南昌市</a></li><li class="fl area-selector-item" data-id="411300" data-name="南阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南阳市</a></li><li class="fl area-selector-item" data-id="450100" data-name="南宁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南宁市</a></li><li class="fl area-selector-item" data-id="511000" data-name="内江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">内江市</a></li><li class="fl area-selector-item" data-id="511300" data-name="南充市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">南充市</a></li><li class="fl area-selector-item" data-id="533300" data-name="怒江傈僳族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">怒江傈僳族自治州</a></li><li class="fl area-selector-item" data-id="542400" data-name="那曲地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">那曲地区</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>P</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="211100" data-name="盘锦市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">盘锦市</a></li><li class="fl area-selector-item" data-id="350300" data-name="莆田市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">莆田市</a></li><li class="fl area-selector-item" data-id="360300" data-name="萍乡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">萍乡市</a></li><li class="fl area-selector-item" data-id="410400" data-name="平顶山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">平顶山市</a></li><li class="fl area-selector-item" data-id="410900" data-name="濮阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">濮阳市</a></li><li class="fl area-selector-item" data-id="510400" data-name="攀枝花市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">攀枝花市</a></li><li class="fl area-selector-item" data-id="530800" data-name="普洱市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">普洱市</a></li><li class="fl area-selector-item" data-id="620800" data-name="平凉市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">平凉市</a></li></ul></li></ul></li></ul></div><div class="pop-tab" data-target="QRSTW"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>Q</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130300" data-name="秦皇岛市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">秦皇岛市</a></li><li class="fl area-selector-item" data-id="230200" data-name="齐齐哈尔市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">齐齐哈尔市</a></li><li class="fl area-selector-item" data-id="230900" data-name="七台河市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">七台河市</a></li><li class="fl area-selector-item" data-id="330800" data-name="衢州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">衢州市</a></li><li class="fl area-selector-item" data-id="350500" data-name="泉州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">泉州市</a></li><li class="fl area-selector-item" data-id="370200" data-name="青岛市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">青岛市</a></li><li class="fl area-selector-item" data-id="370781" data-name="青州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">青州市</a></li><li class="fl area-selector-item" data-id="441800" data-name="清远市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">清远市</a></li><li class="fl area-selector-item" data-id="450700" data-name="钦州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">钦州市</a></li><li class="fl area-selector-item" data-id="522300" data-name="黔西南布依族苗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黔西南布依族苗族自治州</a></li><li class="fl area-selector-item" data-id="522600" data-name="黔东南苗族侗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黔东南苗族侗族自治州</a></li><li class="fl area-selector-item" data-id="522700" data-name="黔南布依族苗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">黔南布依族苗族自治州</a></li><li class="fl area-selector-item" data-id="530300" data-name="曲靖市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">曲靖市</a></li><li class="fl area-selector-item" data-id="621000" data-name="庆阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">庆阳市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>R</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="371100" data-name="日照市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">日照市</a></li><li class="fl area-selector-item" data-id="542300" data-name="日喀则地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">日喀则地区</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>S</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130100" data-name="石家庄市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">石家庄市</a></li><li class="fl area-selector-item" data-id="140600" data-name="朔州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">朔州市</a></li><li class="fl area-selector-item" data-id="210100" data-name="沈阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">沈阳市</a></li><li class="fl area-selector-item" data-id="220300" data-name="四平市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">四平市</a></li><li class="fl area-selector-item" data-id="220700" data-name="松原市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">松原市</a></li><li class="fl area-selector-item" data-id="230500" data-name="双鸭山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">双鸭山市</a></li><li class="fl area-selector-item" data-id="231200" data-name="绥化市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">绥化市</a></li><li class="fl area-selector-item" data-id="310100" data-name="上海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">上海市</a></li><li class="fl area-selector-item" data-id="320500" data-name="苏州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">苏州市</a></li><li class="fl area-selector-item" data-id="321300" data-name="宿迁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宿迁市</a></li><li class="fl area-selector-item" data-id="330600" data-name="绍兴市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">绍兴市</a></li><li class="fl area-selector-item" data-id="341300" data-name="宿州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宿州市</a></li><li class="fl area-selector-item" data-id="350200" data-name="厦门市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">厦门市</a></li><li class="fl area-selector-item" data-id="350400" data-name="三明市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">三明市</a></li><li class="fl area-selector-item" data-id="361100" data-name="上饶市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">上饶市</a></li><li class="fl area-selector-item" data-id="411200" data-name="三门峡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">三门峡市</a></li><li class="fl area-selector-item" data-id="411400" data-name="商丘市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">商丘市</a></li><li class="fl area-selector-item" data-id="419000" data-name="省直辖" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">省直辖</a></li><li class="fl area-selector-item" data-id="420300" data-name="十堰市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">十堰市</a></li><li class="fl area-selector-item" data-id="421300" data-name="随州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">随州市</a></li><li class="fl area-selector-item" data-id="429000" data-name="省直辖" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">省直辖</a></li><li class="fl area-selector-item" data-id="430500" data-name="邵阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">邵阳市</a></li><li class="fl area-selector-item" data-id="440200" data-name="韶关市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">韶关市</a></li><li class="fl area-selector-item" data-id="440300" data-name="深圳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">深圳市</a></li><li class="fl area-selector-item" data-id="440500" data-name="汕头市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">汕头市</a></li><li class="fl area-selector-item" data-id="441500" data-name="汕尾市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">汕尾市</a></li><li class="fl area-selector-item" data-id="460200" data-name="三亚市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">三亚市</a></li><li class="fl area-selector-item" data-id="460300" data-name="三沙市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">三沙市</a></li><li class="fl area-selector-item" data-id="469000" data-name="省直辖" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">省直辖</a></li><li class="fl area-selector-item" data-id="510900" data-name="遂宁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">遂宁市</a></li><li class="fl area-selector-item" data-id="542200" data-name="山南地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">山南地区</a></li><li class="fl area-selector-item" data-id="611000" data-name="商洛市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">商洛市</a></li><li class="fl area-selector-item" data-id="640200" data-name="石嘴山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">石嘴山市</a></li><li class="fl area-selector-item" data-id="719000" data-name="省直辖" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">省直辖</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>T</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="120100" data-name="天津市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">天津市</a></li><li class="fl area-selector-item" data-id="130200" data-name="唐山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">唐山市</a></li><li class="fl area-selector-item" data-id="140100" data-name="太原市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">太原市</a></li><li class="fl area-selector-item" data-id="150500" data-name="通辽市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">通辽市</a></li><li class="fl area-selector-item" data-id="211200" data-name="铁岭市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">铁岭市</a></li><li class="fl area-selector-item" data-id="220500" data-name="通化市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">通化市</a></li><li class="fl area-selector-item" data-id="321200" data-name="泰州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">泰州市</a></li><li class="fl area-selector-item" data-id="331000" data-name="台州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">台州市</a></li><li class="fl area-selector-item" data-id="340700" data-name="铜陵市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">铜陵市</a></li><li class="fl area-selector-item" data-id="370900" data-name="泰安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">泰安市</a></li><li class="fl area-selector-item" data-id="520600" data-name="铜仁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">铜仁市</a></li><li class="fl area-selector-item" data-id="610200" data-name="铜川市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">铜川市</a></li><li class="fl area-selector-item" data-id="620500" data-name="天水市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">天水市</a></li><li class="fl area-selector-item" data-id="652100" data-name="吐鲁番地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">吐鲁番地区</a></li><li class="fl area-selector-item" data-id="654200" data-name="塔城地区" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">塔城地区</a></li><li class="fl area-selector-item" data-id="710100" data-name="台北市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">台北市</a></li><li class="fl area-selector-item" data-id="710400" data-name="台中市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">台中市</a></li><li class="fl area-selector-item" data-id="710500" data-name="台南市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">台南市</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>W</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="150300" data-name="乌海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乌海市</a></li><li class="fl area-selector-item" data-id="150900" data-name="乌兰察布市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乌兰察布市</a></li><li class="fl area-selector-item" data-id="320200" data-name="无锡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">无锡市</a></li><li class="fl area-selector-item" data-id="330300" data-name="温州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">温州市</a></li><li class="fl area-selector-item" data-id="340200" data-name="芜湖市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">芜湖市</a></li><li class="fl area-selector-item" data-id="370700" data-name="潍坊市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">潍坊市</a></li><li class="fl area-selector-item" data-id="371000" data-name="威海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">威海市</a></li><li class="fl area-selector-item" data-id="420100" data-name="武汉市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">武汉市</a></li><li class="fl area-selector-item" data-id="450400" data-name="梧州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">梧州市</a></li><li class="fl area-selector-item" data-id="532600" data-name="文山壮族苗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">文山壮族苗族自治州</a></li><li class="fl area-selector-item" data-id="610500" data-name="渭南市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">渭南市</a></li><li class="fl area-selector-item" data-id="620600" data-name="武威市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">武威市</a></li><li class="fl area-selector-item" data-id="640300" data-name="吴忠市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">吴忠市</a></li><li class="fl area-selector-item" data-id="650100" data-name="乌鲁木齐市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">乌鲁木齐市</a></li><li class="fl area-selector-item" data-id="820300" data-name="无堂区划分区域" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">无堂区划分区域</a></li></ul></li></ul></li></ul></div><div class="pop-tab" data-target="XYZ"><ul class="area-selector-value area-selector-pop-city-list clearfix"><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>X</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130500" data-name="邢台市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">邢台市</a></li><li class="fl area-selector-item" data-id="140900" data-name="忻州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">忻州市</a></li><li class="fl area-selector-item" data-id="152200" data-name="兴安盟" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">兴安盟</a></li><li class="fl area-selector-item" data-id="152500" data-name="锡林郭勒盟" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">锡林郭勒盟</a></li><li class="fl area-selector-item" data-id="320300" data-name="徐州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">徐州市</a></li><li class="fl area-selector-item" data-id="341800" data-name="宣城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宣城市</a></li><li class="fl area-selector-item" data-id="360500" data-name="新余市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">新余市</a></li><li class="fl area-selector-item" data-id="410700" data-name="新乡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">新乡市</a></li><li class="fl area-selector-item" data-id="411000" data-name="许昌市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">许昌市</a></li><li class="fl area-selector-item" data-id="411500" data-name="信阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">信阳市</a></li><li class="fl area-selector-item" data-id="420600" data-name="襄阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">襄阳市</a></li><li class="fl area-selector-item" data-id="420900" data-name="孝感市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">孝感市</a></li><li class="fl area-selector-item" data-id="421200" data-name="咸宁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">咸宁市</a></li><li class="fl area-selector-item" data-id="430300" data-name="湘潭市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">湘潭市</a></li><li class="fl area-selector-item" data-id="433100" data-name="湘西土家族苗族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">湘西土家族苗族自治州</a></li><li class="fl area-selector-item" data-id="532800" data-name="西双版纳傣族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">西双版纳傣族自治州</a></li><li class="fl area-selector-item" data-id="610100" data-name="西安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">西安市</a></li><li class="fl area-selector-item" data-id="610400" data-name="咸阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">咸阳市</a></li><li class="fl area-selector-item" data-id="630100" data-name="西宁市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">西宁市</a></li><li class="fl area-selector-item" data-id="710600" data-name="新竹市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">新竹市</a></li><li class="fl area-selector-item" data-id="810100" data-name="香港岛" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">香港岛</a></li><li class="fl area-selector-item" data-id="810300" data-name="新界" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">新界</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>Y</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="140300" data-name="阳泉市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阳泉市</a></li><li class="fl area-selector-item" data-id="140800" data-name="运城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">运城市</a></li><li class="fl area-selector-item" data-id="210800" data-name="营口市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">营口市</a></li><li class="fl area-selector-item" data-id="222400" data-name="延边朝鲜族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">延边朝鲜族自治州</a></li><li class="fl area-selector-item" data-id="230700" data-name="伊春市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">伊春市</a></li><li class="fl area-selector-item" data-id="320900" data-name="盐城市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">盐城市</a></li><li class="fl area-selector-item" data-id="321000" data-name="扬州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">扬州市</a></li><li class="fl area-selector-item" data-id="330281" data-name="余姚市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">余姚市</a></li><li class="fl area-selector-item" data-id="360600" data-name="鹰潭市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">鹰潭市</a></li><li class="fl area-selector-item" data-id="360900" data-name="宜春市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宜春市</a></li><li class="fl area-selector-item" data-id="370600" data-name="烟台市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">烟台市</a></li><li class="fl area-selector-item" data-id="420500" data-name="宜昌市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宜昌市</a></li><li class="fl area-selector-item" data-id="430600" data-name="岳阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">岳阳市</a></li><li class="fl area-selector-item" data-id="430900" data-name="益阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">益阳市</a></li><li class="fl area-selector-item" data-id="431100" data-name="永州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">永州市</a></li><li class="fl area-selector-item" data-id="441700" data-name="阳江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">阳江市</a></li><li class="fl area-selector-item" data-id="445300" data-name="云浮市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">云浮市</a></li><li class="fl area-selector-item" data-id="450900" data-name="玉林市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">玉林市</a></li><li class="fl area-selector-item" data-id="511500" data-name="宜宾市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">宜宾市</a></li><li class="fl area-selector-item" data-id="511800" data-name="雅安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">雅安市</a></li><li class="fl area-selector-item" data-id="530400" data-name="玉溪市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">玉溪市</a></li><li class="fl area-selector-item" data-id="610600" data-name="延安市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">延安市</a></li><li class="fl area-selector-item" data-id="610800" data-name="榆林市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">榆林市</a></li><li class="fl area-selector-item" data-id="632700" data-name="玉树藏族自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">玉树藏族自治州</a></li><li class="fl area-selector-item" data-id="640100" data-name="银川市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">银川市</a></li><li class="fl area-selector-item" data-id="654000" data-name="伊犁哈萨克自治州" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">伊犁哈萨克自治州</a></li></ul></li></ul></li><li><ul class="area-selector-value area-selector-value-w clearfix"><li class="fl area-selector-value-h"><h3>Z</h3></li><li class="area-selector-value-b"><ul class="area-selector-value clearfix"><li class="fl area-selector-item" data-id="130700" data-name="张家口市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">张家口市</a></li><li class="fl area-selector-item" data-id="140400" data-name="长治市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">长治市</a></li><li class="fl area-selector-item" data-id="220100" data-name="长春市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">长春市</a></li><li class="fl area-selector-item" data-id="321100" data-name="镇江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">镇江市</a></li><li class="fl area-selector-item" data-id="330900" data-name="舟山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">舟山市</a></li><li class="fl area-selector-item" data-id="350600" data-name="漳州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">漳州市</a></li><li class="fl area-selector-item" data-id="370300" data-name="淄博市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">淄博市</a></li><li class="fl area-selector-item" data-id="370400" data-name="枣庄市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">枣庄市</a></li><li class="fl area-selector-item" data-id="410100" data-name="郑州市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">郑州市</a></li><li class="fl area-selector-item" data-id="411600" data-name="周口市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">周口市</a></li><li class="fl area-selector-item" data-id="411700" data-name="驻马店市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">驻马店市</a></li><li class="fl area-selector-item" data-id="430100" data-name="长沙市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">长沙市</a></li><li class="fl area-selector-item" data-id="430200" data-name="株洲市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">株洲市</a></li><li class="fl area-selector-item" data-id="430800" data-name="张家界市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">张家界市</a></li><li class="fl area-selector-item" data-id="440400" data-name="珠海市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">珠海市</a></li><li class="fl area-selector-item" data-id="440800" data-name="湛江市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">湛江市</a></li><li class="fl area-selector-item" data-id="441200" data-name="肇庆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">肇庆市</a></li><li class="fl area-selector-item" data-id="442000" data-name="中山市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">中山市</a></li><li class="fl area-selector-item" data-id="500100" data-name="重庆市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">重庆市</a></li><li class="fl area-selector-item" data-id="510300" data-name="自贡市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">自贡市</a></li><li class="fl area-selector-item" data-id="512000" data-name="资阳市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">资阳市</a></li><li class="fl area-selector-item" data-id="520300" data-name="遵义市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">遵义市</a></li><li class="fl area-selector-item" data-id="530600" data-name="昭通市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">昭通市</a></li><li class="fl area-selector-item" data-id="620700" data-name="张掖市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">张掖市</a></li><li class="fl area-selector-item" data-id="640500" data-name="中卫市" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">中卫市</a></li><li class="fl area-selector-item" data-id="659000" data-name="自治区直辖" data-role="selectCity"><a href="http://wuliu.nainaiwnag.com/#">自治区直辖</a></li></ul></li></ul></li></ul></div></div></div><div class="pop-tab active" data-target="country"><ul class="area-selector-value area-selector-pop-country-list clearfix"></ul></div></div></div></div><ul class="area-selector-dropdown-menu" data-idpx="area-selector-1" style="display: none;"></ul><div class="" style="display: none; position: absolute;"><div class="aui_outer"><table class="aui_border"><tbody><tr><td class="aui_nw"></td><td class="aui_n"></td><td class="aui_ne"></td></tr><tr><td class="aui_w"></td><td class="aui_c"><div class="aui_inner"><table class="aui_dialog"><tbody><tr><td colspan="2" class="aui_header"><div class="aui_titleBar"><div class="aui_title" style="cursor: move;"></div><a class="aui_close" href="javascript:/*artDialog*/;">×</a></div></td></tr><tr><td class="aui_icon" style="display: none;"><div class="aui_iconBg" style="background-image: none; background-position: initial initial; background-repeat: initial initial;"></div></td><td class="aui_main" style="width: auto; height: auto;"><div class="aui_content" style="padding: 20px 25px;"></div></td></tr><tr><td colspan="2" class="aui_footer"><div class="aui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="aui_e"></td></tr><tr><td class="aui_sw"></td><td class="aui_s"></td><td class="aui_se" style="cursor: se-resize;"></td></tr></tbody></table></div></div></body></html>

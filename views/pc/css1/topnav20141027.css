@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*******************
+基本
+********************/
+body{margin:0px;padding:0px;}
+ol,ul{list-style:none;}
+li{list-style-type:none;}
+img{border:0px; vertical-align:top}
+a{ text-decoration:none;}
+a:hover{text-decoration:none}
+.clearfix{clear:both;}
+.clearfix:after{clear:both;content: ".";display: block;height: 0; overflow: hidden; visibility: hidden;}
+/******背景******/
+.bg_topnav{background:#f5f5f5; height:29px; border-bottom:1px solid #e1e1e1;line-height:29px; width:100% }
+#bg_topnav{background:#f5f5f5; height:29px; border-bottom:1px solid #e1e1e1;position:relative; z-index:1000; line-height:29px;width:1000px;margin:auto;z-index:100}
+.bg_topnav ul{height:29px; line-height:29px;margin:0px;padding:0px; font-size:12px}
+.bg_topnav ul li{margin:0px;padding:0px;}
+.topnav_width{ width:1190px; margin:auto; font-size:12px}
+
+/******登录******/
+.topnav_left{ float:left; width:220px; height:30px; position:relative; z-index:10}
+.topnav_left a{ color:#737373}
+.topnav_left .login_link{ float:left;position:relative; line-height: 29px;}
+.topnav_left .login_link .topnav_login{ padding-left:15px; padding-right:15px}
+.topnav_left .login_link .topnav_login_in{ position:absolute;left:5px;top:0px;  width:420px; height:30px}
+.topnav_left .login_link .topnav_login_d{ background-color:#ececec; height:30px; text-align:center; line-height:30px; display:block; float:left}
+.topnav_left .login_link .login_box{ display:none; padding:10px 20px;border-left:1px solid #e1e1e1;border-right:2px solid #e1e1e1;border-bottom:2px solid #e1e1e1;position:absolute; background-color:#ffffff;top:30px;_top:31px;left:0px; width:210px; z-index:10}
+
+.topnav_left .login_link .login_box .txt_topnav{ color:#b3b1b1; line-height:25px; height:25px; margin-bottom:10px; border:1px solid #cccccc; padding-left:8px; padding-right:5px; width:190px}
+.topnav_left .login_link .login_box #gtxh_LoginPwd{ line-height:25px; height:25px; margin-bottom:10px; border:1px solid #cccccc; padding-left:8px; padding-right:5px; width:190px}
+.topnav_left .login_link .login_box .btn_topnav_login{ background-color:#ff8500; border:none; color:#ffffff; width:55px; height:25px; line-height:25px}
+.topnav_left .login_link .login_box a{ color:#d78c3b; margin-right:20px;_margin-right:10px}
+
+.topnav_left .topnav_regsiter{ float:right; position:absolute;top:0px; width:100px; left:60px; padding-left:15px; padding-right:15px; line-height: 29px;}
+
+
+/******快捷导航******/
+.icons{background:url(../Images/icon/icons.png) no-repeat 0 0 scroll;width:16px;height:18px;display:inline-block;vertical-align:middle;}
+.bg_topnav .iphone{background-position:0 0;top:5px;}
+.bg_topnav .gd{background-position:0 -21px;top:5px;}
+.bg_topnav .zz{background-position:0 -43px;top:5px;}
+.topnav_right{ float:right; _width:440px; color:#4f4f4f;position:relative; z-index:10}
+.topnav_right ul li a{color:#333333;}
+.topnav_right ul li{float:left; margin:0px 1px; position:relative}
+.topnav_right ul li .topnav_phone{ background:url(../Images/icon/icon_phone18.gif) no-repeat left center; padding-left:15px; height:29px; float:left; width:80px}
+.topnav_right ul li .topnav_phone a{ color:#ff5500}
+.topnav_right ul li .topnav_phone a:hover{text-decoration:none;}
+.bg_topnav .top_app{margin-left: -94px; position: absolute; width: 100px; border:1px solid #f5f5f5;border-top:0;border-bottom:0; line-height: 29px;}
+.bg_topnav .top_app:hover{border:1px solid #ccc;border-top:0;border-bottom:0;background:#fff; line-height: 29px;}
+.bg_topnav .top_app a{display:block;padding:0 5px;color:#ff5500;cursor:pointer;}
+.bg_topnav .top_app a{text-decoration:none;}
+.bg_topnav .top_app .top_a:hover{text-decoration:none !important;background:#f1f1f1;}
+.bg_topnav .top_app .top_a i{color:#999999;margin-right:4px;}
+.bg_topnav .top_app a span{display:inline-block;}
+.bg_topnav .top_a{display:none !important;height:30px;color:#4f4f4f !important;}
+/*.bg_topnav .top_app .top_a{display:none;}*/
+/******下拉区域******/
+.bg_topnav .popueButton{ width:75px; text-align:center; padding-right:5px; color:#4f4f4f;height:30px; line-height:30px;}
+.bg_topnav .popueButton b{ background:url(../Images/icon/icon_aorrow_down9.gif) no-repeat 1px 3px; padding:5px;}
+.bg_topnav .popueButton:hover{ cursor:pointer;}
+.bg_topnav .popueButton:hover b{ background:url(../Images/icon/icon_aorrow_down10.gif) no-repeat 1px 3px; padding:5px;}
+.bg_topnav .hover{border-left:1px solid #e1e1e1;border-right:2px solid #e1e1e1;height:30px; line-height:30px; background-color:#ffffff; cursor:pointer; width:72px;padding-left: 5px;}
+.bg_topnav .hover b{color:#ff8400;}
+.bg_topnav .popuePanel{display:none;text-align:left;position:absolute;background-color:#fff;z-index:10000;top:30px;_top:31px;right:0px;border-left:1px solid #e1e1e1;border-right:2px solid #e1e1e1;border-bottom:2px solid #e1e1e1; padding:10px;line-height:28px;color:#5a5a5a; letter-spacing:1px;color:#737373}
+.bg_topnav .popuePanel a{color:#737373; margin-right:5px}
+.bg_topnav .popuePanel .popue_mask{background-color:#ffffff; height:3px;*height:3px; position:absolute; top:-3px; *top:-3px; width:72px;_width:75px}
+
+/*下拉显示订制*/
+#buyPanel{ width:130px;}
+#salePanel{ width:130px;}
+#buyPanel .popue_mask,#salePanel .popue_mask,#quickPanel .popue_mask,#servePanel .popue_mask{right:0px}
+#quickPanel{ width:650px;_width:637px;}
+#servePanel{ width:155px;}
+#servePanel{ padding:0px}
+#servePanel .server_phone{line-height:25px; padding-left:10px;padding-right:10px;padding-bottom:10px;color:#626262; background:url(../Images/icon/icon_phone17.gif) no-repeat 5px 25px;}
+#servePanel .server_phone font{color:#f55d2c; font-size:15px; font-family:Arial; padding-left:20px}
+#quickPanel .popue_province a{ margin-right:19px; color:#333333;}
+#quickPanel .popue_area a{ margin-right:8px; color:#333333;}
+/*网站导航*/
+#quickPanel b{ font-size:14px;}
+#quickPanel span{ font-weight:bolder}
+#quickPanel .quick_market{float:left; width:320px;padding-left:10px; padding-right:20px; border-right:1px solid #ececec}
+#quickPanel .quick_market a{ margin-right:8px;_margin-right:5px}
+#quickPanel .quick_info{float:left; width:260px; padding-left:20px; padding-right:20px;_padding-left:10px; padding-right:10px; }
+#quickPanel .quick_info .quick_city{float:left; width:260px; margin-bottom:5px; border-bottom:1px solid #ececec}
+#quickPanel .quick_info .quick_info_bottom{ border-top:1px solid #ececec; margin-top:10px; padding-top:10px}
+#quickPanel .quick_info .quick_info_bottom .red a{ color:#ff4800}
+#popue_quick{ background:url(../Images/icon/icon_3line1.gif) no-repeat left center; padding-left:6px}
+#popue_quick b{background:url(../Images/icon/icon_aorrow_down9.gif) no-repeat 1px -16px; padding:5px;}
+.bg_topnav .popueButton:hover #popue_quick b{background:url(../Images/icon/icon_aorrow_down10.gif) no-repeat 1px -16px; padding:5px;}
+ 
+
+/********************LOGO 电话**************gtxh_logo2************/
+#index_logo .index_logo{ background:url(../Images/logo/gtxh_logo2.png) no-repeat 0 0 scroll; width:287px; height:60px; float:left;margin-top:11px;}
+#index_logo .index_logo a{ display:block; width:165px; height:60px}
+#index_logo .index_phone{ float:right; background:url(../Images/icon/icon_phone12.gif) no-repeat left center; padding-left:40px; height:35px; line-height:32px; font-family:"微软雅黑", "Arial Unicode MS"; font-size:16px; margin-top:20px; color:#7a7878; vertical-align:middle}
+#index_logo .index_phone span{ color:#ff4400; font-family:Arial; font-size:20px;}
+
+
+/********************新LOGO **************************/
+#topdiv_logo_nos{ background:url(../Images/logo/logo.png) no-repeat 0 0 scroll; height:60px; width:160px; float:left; margin:17px 0 0; padding:0px}
+#topdiv_logo_nos a{display: block; height: 31px; margin-top: 12px; width: 157px;}
+#topdiv_logo, #topdiv_logo2, #topdiv_logo3, #topdiv_logo4{ background:url(../Images/logo/logo2.png) no-repeat 0 0 scroll; height:60px; width:420px; float:left; margin:12px 0 0; padding:0px}
+#topdiv_logo a,#topdiv_logo2 a, #topdiv_logo3 a, #topdiv_logo4 a{ display:block; width:355px; height:60px}
+#topdiv_logo4{ background:url(../Images/logo/logo2.png) no-repeat 0 0 center; height:60px; width:355px; float:left; margin-top:10px; padding:0px;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://pub.prcsteel.com/Images/logo/logo2.png",sizingMethod='crop');_height:80px;_width:355px;}
+#topdiv_logo4 a{ display:block; width:355px; height:60px}
+#topdiv_logo2,#topdiv_logo3{margin:0;}
+.gtxh-logo .sub-logo{right:105px !important;}
+/********************新的超市头部 LOGO 搜索**************************/
+.logo{height:90px; float:left; width:100%}
+.logo .page_width{ width:1000px; margin:auto; position:relative}
+/***logo***/
+.logo .div_logo{ background:url(../Images/logo/gtxh_logo.gif) no-repeat left center; height:90px; width:290px; float:left}
+.logo .div_logofont{ float:left; color:#0788ed; font-size:28px; font-family:"微软雅黑"; border-left:2px solid #0788ed; padding-left:20px; margin-top:20px; height:50px; line-height:50px}
+/***搜索***/
+.logo .div_search{ width:360px;_width:340px;  height:60px; float:left; margin-top:15px; margin-left:30px; position:relative; background-color:#ffffff}
+.logo .div_search .search_input{ border:2px solid #cccccc; width:360px;_width:340px; float:left; height:32px; margin-bottom:10px; border-right:none}
+/*下拉*/
+.logo .div_search .search_input .choose{ width:45px; line-height:30px; border:1px solid #eeeeee; border-bottom:none; padding-left:15px; background:url(../Images/icon/icon_aorrow_down4.gif) no-repeat 45px 13px #f5f5f5; float:left; position:relative; z-index:99px; height:31px}
+.logo .div_search .search_input .choose a{ color:#464445}
+.logo .div_search .search_input .choose .choose_hide{ display:none; position:absolute; top:0px; left:-1px; background-color:#f5f5f5; z-index:99px; width:45px;padding-left:15px;  border:1px solid #eeeeee; border-top:none; 
+background:url(../Images/icon/icon_aorrow_down4.gif) no-repeat 45px 13px #f5f5f5;}
+/*输入框*/
+.logo .div_search .search_input .input_box{ float:left}
+.logo .div_search .search_input .input_box input{ border:none; height:30px; line-height:30px; *height:28px !important; *line-height:30px !important; color:#848283; padding-left:5px; width:220px;_width:190px;outline: medium none; float:left; background-color:#ffffff}
+.logo .div_search .search_input .search_btn{ height:36px; width:45px; cursor:pointer; float:right; position:absolute; left:300px;top:0px; color:#ffffff; text-align:center; line-height:36px; font-weight:bolder; font-size:14px; background:url(../Images/btn/btn_search.gif) no-repeat left center #f55f2d; padding-left:20px}
+/*热门搜索*/
+.logo .div_search .search_link{ width:440px; float:left;color:#848283; padding-left:10px }
+.logo .div_search .search_link a{ color:#848283}
+/***电话***/
+.logo .logo_phone{ background:url(../Images/icon/icon_phone12.gif) no-repeat left center; padding-left:40px;  float:left; margin-top:15px; margin-left:20px;  font-size:16px; font-family:Arial, Helvetica, sans-serif;  color:#ff8321; font-weight:bolder; height:35px; line-height:35px; width:100px; position:absolute; left:820px;top:0px}
+
+
+
+

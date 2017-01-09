@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>产品管理</title>
+  <meta name="keywords"/>
+  <meta name="description"/>
+  <meta charset="utf-8">
+  <link href="../css/user_index.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+<div class="header">
+		<div class="nav">
+			<div class="logo-box zn-l">
+				<dl>
+					<dt><a href="" class="logo">
+						耐耐网
+					</a></dt>
+					<dd><a href="/" class="back-index">返回耐耐首页</a></dd>
+				</dl>	
+			</div>
+			<div class="nav-tit">
+				<ul class="nav-list">
+					<li>
+						<a href="user_index.html">首页</a>
+					</li>
+					<li>
+						<a href="user_zh.html">账户管理</a>
+					</li>
+					<li>
+						<a href="user_zj.html">资金管理</a>
+					</li>
+					<li>
+						<a href="user_chp.html">产品管理</a>
+					</li>
+					<li>
+						<a href="user_dd.html"class="cur">交易管理</a>
+					</li>
+					<li>
+						<a href="user_gz.html">关注中心</a>
+					</li>
+			 	</ul>
+			</div>
+		</div>
+	</div>
+	<div class="user_body">
+		<div class="user_b">
+			<!--start左侧导航-->	
+			<div class="user_l">
+				<div class="left_navigation">
+					<ul>
+						<li class="let_nav_tit"><h3>交易管理</h3></li>
+						<li><a href="user_dd.html" class="cur">订单管理</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--end左侧导航-->	
+			<!--start中间内容-->	
+			<div class="user_c">
+				<div class="user_zhxi">
+					<div class="zhxi_tit">
+						<p><a>交易管理</a>><a>订单管理</a></p>
+					</div>
+					<div class="chp_xx">
+						<div class="xx_top">
+							<form action="" method="" name="">
+								<ul>
+									<li>单号：<input id="warename" name="warename" value="" type="text"></li>
+									<li>订单状态：
+									<select id="classcode" name="classcode">
+									<option value="">--全部--</option>
+									</select></li>
+									<li>时间：<input class="Wdate" type="text" onclick="WdatePicker()"> <span style="position: relative;left: -3px;">—</span><input class="Wdate" type="text" onclick="WdatePicker()">
+									</li>
+									<li> <a class="chaz">查找</a></li>
+								</ul>
+							</form>
+							<div style="clear:both;"></div>
+						</div>
+						<div class="xx_center">
+							<table border="0"  cellpadding="" cellspacing="">
+								<tr class="title">
+									<td><input onclick="selectAll1();" name="controlAll" style="controlAll" id="controlAll" type="checkbox"></td>
+									<td>单号</td>
+									<td>商品名</td>
+									<td>单价(元)</td>
+									<!-- <td>是否审核</td>-->
+									<td>时间</td>
+									<td>状态</td>
+									<td>操作</td>	
+								</tr>
+								<tr>
+									<td><input name="controlAll" style="controlAll" id="controlAll" type="checkbox"></td>
+									<td>xxx</td>
+									<td>货名</td>
+									<td>￥0.00</td>
+									<!-- <td>是否审核</td>-->
+									<td>2015-09-02 13:25:12</td>
+									<td>待审核</td>
+									<td><a>删除</a> <a>查看</a></td>	
+								</tr>
+							</table>
+						</div>
+						<!--start操作图标-->
+						<!--<div class="tab_bt">
+							<div class="t_bt">
+								<a class="a_1"></a>
+								<a class="a_2"></a>
+								<a class="a_3"></a>
+							</div>
+						</div>-->
+						<!--end操作图标-->
+						<div class="page_num marg">
+							共0条记录&nbsp;当前第<font color="#FF0000">1</font>/0页&nbsp;
+							<a href="#">第一页</a>&nbsp;
+							<a href="#">上一页</a>&nbsp;
+							<a href="#">下一页</a>&nbsp;
+							<a href="#">最后页</a>&nbsp; 
+							跳转到第 <input name="pagefind" id="pagefind" type="text" style="width:20px;font-size: 12px;" maxlength="5" value="1"> 页 
+							<a><span class="style1">确定</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end中间内容-->	
+			<!--start右侧广告-->			
+			<div class="user_r">
+				<div class="wrap_con">
+					<div class="tit clearfix">
+						<h3>公告</h3>
+					</div>
+					<div class="con">
+						<div class="con_medal clearfix">
+							<ul>
+								<li><a>暂无勋章</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end右侧广告-->
+		</div>
+	</div>
+</body>
+</html>

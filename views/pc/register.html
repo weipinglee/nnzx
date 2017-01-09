@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>注册</title>
+  <meta name="keywords"/>
+  <meta name="description"/>
+  <meta charset="utf-8">
+  <link href="css/reg.css" rel="stylesheet" type="text/css" />
+  <link href="css/city.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/reg.js"></script>
+  <script type="text/javascript" src="js/regular.js"></script>
+
+  <!-- 使用QQ的省市区数据 -->
+<!--
+<script type="text/javascript" src="http://ip.qq.com/js/geo.js"></script>
+-->
+<script type="text/javascript" src="js/geo.js"  charset="utf-8"></script>
+</head>
+<body>
+<div class="wrap">
+<img src="images/mid_banner/banner_01.png" style="position: fixed;
+    width: 100%;"/>
+  <!-- <div class="banner-show" id="js_ban_content">
+    <div class="cell bns-01">
+      <div class="con"> </div>
+    </div>
+  </div> -->
+  <div>
+    <div class="register">
+      <div class="reg_top">
+      <div class="register_top">
+          <div class="reg_zc register_l border_bom">个人注册</div>
+          <span class="jg">|</span>
+          <div class="reg_zc register_r">企业注册</div>
+      </div>
+      </div>
+      <!--个人注册-->
+      <div class="reg_cot gr_reg">
+        <form action="" method="">
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>用户名：</span>
+            <span><input class="text" type="text" name="username"/>
+              <input type="text" readonly="readonly" name="checkb" style="" class="regis_reg_total"/></span>
+          </div>
+           
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>密码：</span>
+            <span><input class="text" type="text" name="origin_password"/>
+              <input type="text" readonly="readonly" name="checkc"  class="regis_reg_total"/></span>
+
+          </div>
+          
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>手机号：</span>
+            <span><input class="text" type="text" name="mobile_no"/>
+               <input type="text" readonly="readonly" name="checkh"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i></i>邮箱：</span>
+            <span><input class="text" type="text" name="email"/>
+               <input type="text" readonly="readonly" name="check"  class="regis_reg_total"/></span>
+          </div>
+          
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>姓名：</span>
+            <span><input class="text" type="text" name="realname"/>
+                 <input type="text" readonly="readonly" name="checka"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+           <div class="cot">
+            <span class="zc"><input class="but" type="button"value="完成注册"/></span>
+          </div>
+        </form>
+      </div>
+       <!--个人注册结束-->
+        <!--企业注册-->
+      <div class="reg_cot qy_reg">
+        <form action="" method="">
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>用户名：</span>
+            <span><input class="text" type="text" name="username"/>
+              <input type="text" readonly="readonly" name="checkb"  class="regis_reg_total"/></span>
+          </div>
+           
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>密码：</span>
+            <span><input class="text" type="text" name="origin_password"/>
+                <input type="text" readonly="readonly" name="checkc"  class="regis_reg_total"/></span>
+
+          </div>
+          
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>手机号：</span>
+            <span><input class="text" type="text" name="mobile_no"/>
+                <input type="text" readonly="readonly" name="checkh"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i></i>邮箱：</span>
+            <span><input class="text" type="text" name="email"/>
+                <input type="text" readonly="readonly" name="check"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>公司名称：</span>
+            <span><input class="text" type="text" name="company_name"/>
+                <input type="text" readonly="readonly" name="checkl"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>地址：</span>
+            <div >
+             <select class="select" name="province" id="s1">
+              <option></option>
+             </select>
+             <select class="select" name="city" id="s2">
+              <option></option>
+             </select>
+             <select class="select" name="town" id="s3">
+               <option></option>
+             </select>
+                <input id="address" name="address" type="hidden" value="" />
+            </div>
+          </div>
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>法人：</span>
+            <span><input class="text" type="text" name="realname"/>
+              <input type="text" readonly="readonly" name="checka"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>注册资金：</span>
+            <span>
+              <select class="select sel_d">
+              <option>请选择...</option>
+              <option>10万-20万</option>
+               <option>20万-30万</option>
+             </select>
+           </span>
+          </div>
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>企业类型：</span>
+            <span> 
+              <select class="select sel_d">
+              <option>请选择...</option>
+              <option>建筑</option>
+               <option>钢材</option>
+             </select>
+           </span>
+          </div>
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>企业性质：</span>
+            <span> 
+              <select class="select sel_d">
+              <option>请选择...</option>
+              <option>国有企业</option>
+               <option>私企</option>
+             </select>
+           </span>
+          </div>
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>联系人姓名：</span>
+            <span><input class="text" type="text" name="link_name"/>
+                <input type="text" readonly="readonly" name="checkm"  class="regis_reg_total"/></span>
+          </div>
+         
+
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>电话：</span>
+            <span><input class="text" type="text" name="phone_no"/>
+              <input type="text" readonly="readonly" name="checki"  class="regis_reg_total"/></span>
+          </div>
+          
+
+
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>职务：</span>
+            <span>
+              <input name="zw" type="radio" value="负责人" />
+              <span class="tit_zw">负责人</span>
+              <input name="zw" type="radio" value="高级管理" />
+              <span class="tit_zw">高级管理</span>
+              <input name="zw" type="radio" value="员工" />
+              <span class="tit_zw">员工 </span>
+            </span>
+          </div>
+          <div class="cot">
+            <span class="cot_tit"><i>*</i>选择代理商：</span>
+            <span><input class="text" type="text" name="shang_agent"/>
+                 <input type="text" readonly="readonly" name="checkn" class="regis_reg_total"/></span>
+          </div>
+         
+
+
+
+
+           <div class="cot">
+            <span class="zc"><input class="but" type="button"value="完成注册"/></span>
+          </div>
+        </form>
+      </div>
+       <!--企业注册结束-->
+    </div>
+  </div>
+  <div style=" clear:both"></div>
+</div>
+</body>
+</html>

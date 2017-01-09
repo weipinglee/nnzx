@@ -1,0 +1,373 @@
+.clear{
+	clear: both;
+}
+.tender_content{
+	padding: 0px 5px;
+}
+.tender_content .tender_top{
+	padding: 20px 5px;
+}
+.center_left{
+	float: left;
+	width: 75%;
+}
+.center_right{
+	float: left;
+	width: 25%;
+}
+.cen_time .time_p{
+	height: 40px;
+	line-height: 40px;
+}
+.cen_time .time_p .shoucang{
+	padding: 4px 10px 4px 40px;
+	background: url(../images/icon/shoucang.png) no-repeat #f2f2f2 5px center;
+	margin-left: 18%;
+}
+
+.table_cen tr{
+	height: 30px;
+}
+.table_cen tr th{
+	width: 15%;
+	background: #fafafa;
+	border: 1px solid #ccc;
+}
+.table_cen tr td{
+	width: 35%;
+	padding: 0 10px;
+	font-weight: 700;
+	border: 1px solid #ccc;
+}
+.tishi{
+	padding-left:40px; 
+}
+.tishi p{
+	height: 30px;
+	line-height: 30px;
+	font-weight: 700;
+}
+.tishi p .blue_a{
+	color: #3c56d1;
+}
+.tishi p .reg_a{
+	padding: 5px 20px;
+	background: #f08230;
+	color: #fff;
+}
+.tishi p .reg_a:hover{
+	background: #FA8731;
+	text-decoration: none;
+}
+.announcement p{
+ height: 25px;
+ line-height: 25px;
+ font-size: 13px;
+}
+.announ_table tr td{
+	border: 1px solid #ccc;
+}
+.announ_table tr{
+	height: 40px;
+}
+.ten_comment {
+	padding: 20px 15px;
+	margin-top:15px; 
+	border-top: 2px solid #ccc;
+}
+.ten_comment .com_href a{
+	display: block;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+	width: 130px;
+	margin:0px 20px 10px 0px;
+	cursor: pointer;
+}
+.ten_comment .com_href .fa_com{
+	background: #ee0021;
+}
+
+.ten_comment .com_href .fa_xinxi{
+	background: #c8d21e;
+}
+
+.com_cont .com_cont_top .top_tit{
+	float: left;
+	border: 1px solid #ccc;
+	margin-right: 20px;
+	border-bottom: 0px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #fafafa;
+	cursor: pointer;
+}
+.com_cont .com_cont_top .top_tit b{
+	color: red;
+}
+.com_cont .com_cont_top .top_tit_cur{
+	background: #fff;
+}
+.border_left{border-left: 0px;}
+.com_neirong{
+	padding: 10px 20px;
+	border:1px solid #ccc;
+}
+.center_right .gonggao{
+	border:1px solid #ccc;
+	margin:0 0 30px 30px;
+	padding-bottom: 20px;
+
+}
+.center_right .gonggao h2{
+	background: #fafafa;
+	height: 30px;
+	line-height: 30px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.center_right .gonggao ul li{
+	background: url(../images/icon/square.png) no-repeat 0 center;
+	padding: 0px 20px;
+	margin-left: 20px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	cursor: pointer;
+}
+/*弹框*/
+.cd-popup_fabu,.cd-popup_toubiao{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+    z-index: 20;
+   
+}
+.cd-popup_fabu.is-visible,.cd-popup_toubiao.is-visible{
+  opacity: 1!important;
+  visibility: visible;
+ 
+}
+
+.cd-popup-container_fabu,.cd-popup-container_toubiao {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 488px;
+  margin: 4em auto;
+  background: #FFF;
+  border: 5px solid #a60000;
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+}
+
+ .is-visible .cd-popup-container_fabu, .is-visible .cd-popup-container_toubiao{
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+#bg {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 16;
+    -moz-opacity: 0.7;
+    opacity: .70;
+    filter: alpha(opacity=70);
+}
+/*弹框 end*/
+/*招标评论、投标信息弹框css*/
+.fabiao_tit{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #a60000;
+	color: #fff;
+	font-size: 16px;
+
+}
+.is-visible .cd-popup-close .pop_qx{
+	position: absolute;
+	top: 6px;
+	right: 15px;
+	cursor: pointer;
+}
+.fabu_con {
+	margin: 20px 25px;
+}
+.fabu_con .tit{
+	height: 45px;
+	line-height: 45px;
+	padding-left: 5px;
+}
+.fabu_con .tit .zbgg_color{
+	color:#a60000;
+}
+.fabu_con .tit .zbgg_bule{
+	color: #0b1e70;
+}
+.zbgg_con{
+	border: 2px solid #b6b6b6;
+	background: #f9f9f9;
+	margin: 0 auto;
+}
+.zbgg_con .zbgg_tishi{
+  color: #a60000;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 28px;
+}
+.pl_anniu{
+	text-align: right;
+}
+.pl_anniu .pl_submit{
+	border: 0px;
+	background:#a60000;
+	color: #fff;
+	padding: 5px 15px; 
+	cursor: pointer;
+}
+.toub_shm{
+	border: 1px solid #b6b6b6;
+	background: #f6f6f6;
+	margin: 20px auto;
+	padding: 15px;
+}
+/*登录成功的评论、投标信息*/
+.con_textare{
+	width: 96%;
+	height: 200px;
+	border: 0px;
+	background: #f9f9f9;
+	padding: 10px;
+	outline:none
+}
+.zbgg_con_red{
+	border: 1px solid #ffced0;
+	padding: 10px;
+}
+.zbgg_con_red .xx{
+	padding: 5px 0;
+	font-weight: 700;
+}
+.zbgg_con_red .text_size{
+	width: 95%;
+	height: 60px;
+	padding: 10px;
+}
+
+/*登录成功的评论、投标信息end*/
+/*招标评论、投标信息弹框css end*/
+
+/*招标大厅tender_hall.html css*/
+.tender_hall{
+	border: 1px solid #ececec;
+	margin-bottom: 20px;
+}
+.tender_hall .hall_title{
+	padding: 5px 10px;
+	background: #fafafa;
+	border-top: 2px solid #a60000;
+}
+.tender_hall .hall_con {
+	padding: 5px 10px;
+	border-bottom: 1px solid #fafafa;
+
+}
+/*清除浮动*/
+.hall_con:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }   
+.tender_hall .hall_con .hall_tit{
+	padding: 10px 0;
+	font-weight: 700;
+	font-size: 14px;
+}
+.tender_hall .hall_con .bidStyle{
+	margin-right: 5px;
+	color: #900;
+}
+.tender_hall .hall_con .hall_con_left{
+	float: left;
+}
+.tender_hall .hall_con .hall_con_right{
+	float:right;
+}
+
+.rc_con .rc_con_a{
+	display: block;
+	float: left;
+	width: 33%;
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.dq{
+	margin: 0 30px 0 15px;
+}
+.dq .dq_left,.dq .dq_right{
+	float: left
+}
+.dq .dq_left{
+	background: transparent url("../images/icon/square_red.png") no-repeat scroll 0px center;
+	width: 25%;
+	text-align: center;
+}
+.dq .dq_right{
+	width: 75%;
+}
+.dq .dq_right a{
+	padding: 0 4px;
+	cursor: pointer;
+}
+/*招标大厅tender_hall.html css end*/
+/*tender_announcement.html 搜索按钮样式*/
+.gj{
+	position: absolute;
+	top: 4px;
+	right: 300px;
+	line-height: 20px;
+	overflow: hidden;
+	zoom: 1;
+}
+.gj .gj_ci{
+	height: 20px;
+	border: 1px solid #e15767;
+	font-size: 14px/20px arial,微软雅黑,sans-serif;
+	text-indent: 0.5em;
+}
+.gj .gjcs{
+	border: 0;
+	width: 58px;
+	height: 22px;
+	font-size: 14px/22px arial,微软雅黑,sans-serif;
+	color: #fff;
+	background-color: #e15767;
+}
+/*tender_announcement.html 搜索按钮样式 end*/

@@ -1,0 +1,215 @@
+.clear{
+	clear: both;
+}
+input{
+	outline:none
+}
+.help_sign{
+	float: left;
+	width: auto;
+	height: 63px;
+	background-color: #c81623;
+	font-size: 16px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 63px;
+	font-weight: bolder;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.help_sign img{
+	padding-right: 20px;float: left;
+}
+.help_sign .line{
+	width:2px;
+	height: 50px;
+	margin-top:7px;
+	background: #fff;
+	display: inline-block;float: left;
+}
+.help_sign span{
+	margin-left: 20px;float: left;
+}
+.help_nav{
+	height: 63px;
+	line-height: 63px;
+	float: left;
+	position: absolute;
+	right: 30px;
+	top: 0px;
+}
+#index_nav .help_nav li a{
+	text-decoration: none;
+}
+#index_nav .help_nav li.current {
+background-color: #9e2324;
+}
+#index_nav .help_nav li:hover {
+	
+	background-color: #9e2324;
+}
+#index_nav .help_nav li {
+float: left;
+width: 115px;
+text-align: center;
+border-left: 1px solid #e53f30;
+border-right: 1px solid #9e2324;
+}
+#index_nav .help_nav li a {
+color: #ffffff;
+display: block;
+width: 110px;
+text-align: center;
+height: 63px;
+}
+.help_top{
+	text-align: center;
+	background: url(../images/bg/bgt.jpg);
+	padding: 40px 0;
+}
+.help_top .help_search{
+	outline: none;
+	width: 300px;
+	height: 30px;
+	border: 2px solid #ff9a40;
+	padding: 3px 5px 3px 50px;
+	background: url(../images/icon/search.jpg) no-repeat #fff;
+}
+.button_serch{
+	font-size: 16px;
+	height: 40px;
+	width: 100px;
+	background: #ff9a40;
+	border: 0px;
+	color: #fff;
+	position: relative;
+	left: -3px;
+}
+.help_con{
+	margin: 0 40px
+}
+.help_con h2{
+	color: #c81624;
+	font-weight: 700;
+	padding: 20px 10px;
+}
+.help_text{
+	border: 1px solid #EDEBEB;
+	background:#f2f2f2;
+	padding: 20px 0;
+}
+.help_text ul li{
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.text_a{
+	font-size: 15px;
+	cursor: pointer;
+	padding: 0 20px;
+	background: url(../images/icon/icon_jt.png) no-repeat 0 center;
+}
+
+/*常见问题css*/
+.comm_problem_top{
+	padding: 0px 82px;
+	border-bottom: 1px solid red;
+	height: 45px;
+	line-height: 45px;
+	width: 1190px;
+	margin:0 auto;
+}
+.com_por_tit{
+	float: left;
+}
+.form_right{
+	float: right;
+}
+.form_right .com_pro_search{
+	border: 1px solid #9a9a9a;
+	-moz-border-radius: 15px; /* Firefox */
+    -webkit-border-radius: 15px; /* Safari 和 Chrome */
+    border-radius: 15px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+	padding: 4px;
+}
+.form_right .com_probutton{
+	width: 27px;
+	height: 27px;
+	background: url(../images/icon/search2.png) no-repeat center #9a9a9a;
+	border: 0px;
+	-moz-border-radius: 15px; /* Firefox */
+ 	-webkit-border-radius: 15px; /* Safari 和 Chrome */
+    border-radius: 15px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+	position: relative;
+	left: -30px;
+}
+
+.comm_problem{
+	margin: 20px 0px;
+}
+.comm_problem .dh_left{
+	float: left;
+	width: 14%;
+}
+.comm_problem .dh_left .big_tit{
+	padding: 15px 25px;
+	color: #fff;
+	background: #9a9a9a;
+	text-align: center;
+}
+
+.comm_problem .dh_left ul li{
+	
+	cursor: pointer;
+}
+.comm_problem .dh_left .ul1 li .tow_tit{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	background: url("../images/icon/hengxian.png") no-repeat 23px 0px #F2f2f2;
+	padding-left: 30px;
+}
+.comm_problem .dh_left .ul1 li .cur{
+	
+	background:url("../images/icon/shuxian.png") #fff no-repeat;
+}
+.comm_problem .dh_left .ul1 li .first-title{
+	padding: 0 50px 0 0px;
+}
+
+.comm_problem .dh_left .ul2{
+display: none;
+}
+.comm_problem .dh_left .ul2 li{
+	background: #fafafa;
+}
+.comm_problem .dh_left .ul2 li a {
+	display: block;
+	height: 35px;
+	line-height: 35px;
+	margin-left: 25px;
+	padding-left: 10px;
+	font-weight: 700;
+	background: url("../images/icon/hengxian.png") no-repeat 0px 0px;
+}
+.comm_problem .dh_left .ul2 li a.a_cur {
+	color: #c81624;
+}
+
+.comm_problem .pro_con_right{
+	float: left;
+	width: 80%;
+	margin-left: 3%;
+}
+.comm_problem .pro_con_right .right_conten h1{
+	float: left;
+}
+.pro_con_right .right_conten .con_time{
+	text-align: center;
+	padding-top: 15px;
+	border-bottom: 2px solid #f80005;
+
+}

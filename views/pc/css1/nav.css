@@ -1,0 +1,15 @@
+﻿
+#inner { width: 770px; margin: 0 auto; }
+.hot-event { padding:0; position: relative; left:0;}
+    .hot-event .switch-tab { text-align: center; padding: 10px 0;position: relative; top: 400px;z-index: 2;}
+        .hot-event .switch-tab a, .hot-event .switch-tab .current { margin: 0 2px; display: inline-block; width: 20px; height: 8px; background-image: url(../images/icon/icon-switch-tab.png); font: 0/0 arial; color: transparent; overflow: hidden; vertical-align: top; }
+        .hot-event .switch-tab .current { background-image: url(../images/icon/icon-switch-tab.png); background-position: 0px 9px; }
+
+        .hot-event .event-item { height: 300px; width: 770px; position: absolute; z-index: 1; left: 0; top: 0; }
+        .hot-event .event-item a{ display: block; }
+        
+.hide-clip { position: absolute!important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); padding: 0!important; border: 0!important; height: 1px!important; line-height: 0!important; width: 1px!important; overflow: hidden; }
+a { color: #4385a7; }
+a { text-decoration: none; }
+    a .ico { cursor: pointer; }
+.ico { display: inline-block; width: 16px; height: 16px; vertical-align: middle; overflow: hidden; }

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*******************
+基本
+********************/
+body{margin:0px;padding:0px; font-size:12px; color:#333333; }
+ol,ul,li{list-style:none;margin:0px;padding:0px;}
+img{vertical-align:top;border:0px}
+a{ text-decoration:none}
+a:hover{ text-decoration:underline}
+
+/*页面宽度*/
+
+#footer{ width:100%;_width:99.8%; float:left;_ float:none;text-align:center; line-height:30px; font-family:Arial, Helvetica, sans-serif; margin-top:15px;_ margin-top:0px; background-color:#fff;}
+
+/*******************快速导航********************/
+#footer .quick_link{ background:url(../Images/bg/bg_footer.gif) repeat-x #f1f1f1; height:125px; padding-top:15px; width:100%; float:left}
+#footer .quick_link .quick_link_tab{}
+#footer .quick_link .quick_link_tab td{ vertical-align:top; border-left:1px solid #ffffff; border-right:1px solid #dcdcdc; line-height:24px; padding-left:20px; text-align:left;width:201px;}
+#footer .quick_link .quick_link_tab td b{ font-size:14px;font-family: "Microsoft YaHei",Arial;font-weight:400;}
+#footer .quick_link .quick_link_tab td a{ color:#666666; font-size:12px;margin:0;}
+
+/*******************底部导航********************/
+#footer a{ color:#000000}
+#footer .footer_link{ background-color:#666666;color:#ffffff; margin-bottom:10px}
+#footer .footer_link a{ color:#ffffff; padding:0px 12px;}
+#footer .footer_gscode{ background:#ffffff; width:96px; height:96px;}
+#footer .footer_code{ background:url(../Images/logo/footer_code.gif); width:67px; height:67px; margin-top:5px}
+

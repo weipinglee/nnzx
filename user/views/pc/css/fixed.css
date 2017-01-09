@@ -1,0 +1,71 @@
+
+#fixed {
+	background-color:#c81624;
+	width:55px;
+	left:0;
+	top:0;
+	bottom:0;
+	z-index:15;
+	position: fixed;
+}
+#fixed dl {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+	border-top:1px solid #c81624;
+	width:55px;
+	position:absolute;
+	left:0;
+	top:50%;
+	bottom:0;
+	vertical-align:middle;
+	margin-top:-240px;
+}
+#fixed dt {
+	position:absolute;
+	width:55px;
+	display:block;
+	bottom:85px;
+}
+#fixed dd {
+	border-bottom:1px solid #c81624;
+	font:normal 12px/normal 'microsoft yahei';
+}
+#fixed a,#fixed a:link,#fixed a:visited {
+	text-decoration:none;
+	display:block;
+	height:60px;
+	background:transparent url(../images/fixed.icon.png) top center no-repeat;
+	color:#FFFFFF;
+	text-align:center;
+	line-height:90px;
+	overflow:hidden;
+}
+#fixed a:hover {
+	background-color:#c95b64;
+}
+#fixed a.web {
+	background-position:-2px -10px;
+}
+#fixed a.mb {
+	background-position:-62px -10px;
+}
+#fixed a.dj {
+	background-position:-122px -10px;
+}
+#fixed a.mh {
+	background-position:-182px -10px;
+}
+#fixed a.dh {
+	background-position:-242px -10px;
+}
+#fixed a.pk165 {
+	background-position:-302px -10px;
+}
+#fixed a.w267 {
+	background-position:-362px -10px;
+}
+#fixed a.close {
+	background-color:#c81624;
+	background-position:-422px top;
+}
