@@ -16,6 +16,8 @@
                         <thead>
                         <tr class="text-c">
                             <!-- <th width="25"><input type="checkbox" name="checkall" value=""></th> -->
+
+                            <th width="20">ID</th>
                             <th width="100">名称</th>
                             <th width="60">状态</th>
                             <th width="50">作者</th>
@@ -26,6 +28,7 @@
                         {foreach:items=$list}
                             <tr class="text-c">
                                 <!-- <td><input type="checkbox" value="" name="check"></td> -->
+                                <td><span>{$item['id']}</span></td>
                                 <td><span>{$item['name']}</span></td>
                                 <td class="td-status">
                                     {if:$item['status'] == 1}

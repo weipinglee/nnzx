@@ -5,7 +5,7 @@
  * Date: 2016/3/10 0010
  * Time: ???? 4:43
  */
-namespace Library;
+
 return array(
     'http'=>'http',
     'host'=>array(

@@ -199,6 +199,12 @@ class M{
 									$sql .= $key.' < :'.$key.' AND ';
 								}
 									break;
+								case 'in' : {
+									$sql .= $key.' in ('.$val[1].' ) AND ';
+
+								}
+
+									break;
 								case 'eq' :
 								default : {
 									$sql .= $key.' = :'.$key.' AND ';
@@ -245,6 +251,7 @@ class M{
 
 			}
 			$sql = substr($sql,0,-4);
+
 		}
 		else if(is_string($where)){
 			$sql = ' WHERE '.$where;
@@ -345,6 +352,12 @@ class M{
 	}
 
 	/**
+     * @brief ????????
+	 * @param bool $trans ??????????????
+	 * @return bool
+     */
+
+	/**
 	 * ????????????????id
 	 * @return [type] [description]
 	 */
@@ -378,7 +391,6 @@ class M{
 
 				}
 				$insertVal .= '('.rtrim($temp,',').'),';
-
 
 			}
 			$sql = 'INSERT INTO '.$this->tableName.' ( '.rtrim($insertCol,',').' ) VALUES  '.rtrim($insertVal,',');
@@ -436,6 +448,7 @@ class M{
     public function select()
     {
     	$sql = 'SELECT '.$this->fields.' FROM '.$this->tableName. $this->whereStr.$this->order.$this->limit ;
+    	
     	if ($this->cache) {
 			$cacheKey = md5($sql);
 			$result = $this->cache->get($cacheKey);
@@ -564,7 +577,44 @@ class M{
 			$sql .= '`'.$key.'` = :'.$key.',';
 		}
 		$sql = rtrim($sql,',');
+		var_dump($sql);exit;
 		return $this->bind(array_merge($insert,$update))->query($sql,array(),'UPDATE');
+
+	}
+	//批量
+	public function insertUpdates($insert,$update = array(),$trans=0){
+
+		$sql = 'INSERT INTO '.$this->table();
+		$insertCol = '';
+		$insertVal = '';
+		$bind = array();
+		foreach($insert as $key => $val)
+		{
+			foreach ($val as $k => $v) {
+				if($key == 0)
+					$insertCol .= '`'.$k.'`,';
+				$tmp = $k.chr($key+97);
+				$insertVal .= ':'.$tmp.',';	
+
+				$bind [$tmp] = $v;
+			}
+			$insertVal = rtrim($insertVal,',').'),(';
+		}
+
+		$sql .= ' ( '.rtrim($insertCol,',').' ) VALUES ( '.rtrim($insertVal,',(').($update ? ' ON DUPLICATE KEY UPDATE ':'');
+		
+		$bind = array_merge($bind,$update);
+		foreach($update as $key=>$val){
+			if($val == '+1'){
+				unset($bind[$key]);
+				$sql .= $key.' = '.$key.'+1,';
+			}else{
+				$sql .= '`'.$key.'` = :'.$key.',';
+			}
+		}
+		$sql = rtrim($sql,',');
+
+		return $this->bind($bind)->query($sql,array(),'UPDATE');
 
 	}
 

@@ -24,7 +24,9 @@ class wittyAdapter implements \Yaf\View_Interface {
 		$this->witty = new witty();
 		//³õÊ¼»¯Ä¿Â¼
 		$client = client::getDevice();
+		
 		$templateName = isset($config['template'][$client]) ? $config['template'][$client] : 'pc';
+
 		$this->witty->setTemplateName($templateName);
 		$tpl_dir =  $config['tpl_dir'].'/'.$templateName.'/'  ;
 		$this->witty->setTplDir($tpl_dir);

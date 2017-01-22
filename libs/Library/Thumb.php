@@ -39,6 +39,10 @@ class Thumb
 			$sourcePath = tool::getGlobalConfig(array('rootDir',$imgArr[1])).'/'.trim($imgArr[0],'/');
 			$thumbFileName = $preThumb.basename($imgArr[0]);//缩略图文件名
 			$url = url::getConfigHost($imgArr[1]);
+			$cur_url = url::getBaseUrl();
+			if(strpos($cur_url, 'nzgw') !== false){
+				$url = 'http://info.nainaiwang.com/nzgw/nnys-admin';
+			}
 		}else{
 			$sourcePath = trim($imgSrc,'/');
 			$thumbFileName = $preThumb.basename($imgSrc);

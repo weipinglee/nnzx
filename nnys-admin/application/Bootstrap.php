@@ -16,7 +16,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 			error_reporting(E_ALL);
 		}
 		else{
-			error_reporting(E_ALL);
+			error_reporting(0);
 		}
 		//把配置保存起来
 		$this->config = Yaf\Application::app()->getConfig();

@@ -18,7 +18,7 @@ class ArticleController extends InitController {
 	 * 分类列表
 	 */
 	public function arcListAction(){
-		$page = safe::filterGet('p','int',1);
+		$page = safe::filterGet('page','int',1);
 		$list = $this->Model->arcList($page);
 		$this->getView()->assign('list', $list[0]);
 		$this->getView()->assign('pageBar', $list[1]);
@@ -34,6 +34,7 @@ class ArticleController extends InitController {
 			$data['type'] = \nainai\Article::TYPE_ADMIN;
 			$data['user_id'] = $this->admin_id;			
 			$data['create_time'] = date('Y-m-d H:i:s',time());
+			$data['update_time'] = date('Y-m-d H:i:s',time());
 			$res = $this->Model->arcAdd($data);
 			die(json::encode($res));
 		}else{
@@ -53,6 +54,7 @@ class ArticleController extends InitController {
 			$data['cate_id'] = safe::filterPost('cate_id','int');
 			$data['content'] = htmlspecialchars($_POST['content']);
 			$data['status'] = safe::filterPost('status');
+			$data['update_time'] = date('Y-m-d H:i:s',time());
 			if(strpos('@',$_POST['imgcover']) === false) $data['cover'] = safe::filterPost('imgcover');
 			$res = $this->Model->arcEdit($data);
 			die(json::encode($res));
@@ -89,7 +91,7 @@ class ArticleController extends InitController {
     public function delAction(){
         if (IS_AJAX) {
             $id=safe::filterGet('id');
-            $res = $this->Model->delcate($id);
+            $res = $this->Model->delarc($id);
             die(json::encode($res));
 
         }

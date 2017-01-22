@@ -92,11 +92,9 @@ class MYPDO {
             $type = $this->getSqlType($sql);
 
         }
-
         $DBlink = $this->createDB($type);
 
         $stmt = $DBlink->prepare($sql);
-
         foreach($data as $k=>$v){
             if(is_array($v)){
                 $stmt->bindParam(':'.$k,$data[$k],\PDO::PARAM_LOB);//字段存数组
