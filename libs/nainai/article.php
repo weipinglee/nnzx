@@ -145,7 +145,7 @@ class Article{
 	public function arcInfo($article_id,$user_id = 10){
 		$article_id = intval($article_id);
 		if(!$article_id || $article_id <= 0) return array();
-		
+
 		$arcList = $this->arcList(0,array('id'=>$article_id),'','a.*,ac.content',1);
 		
 		if(!$arcList) return array();
@@ -158,6 +158,7 @@ class Article{
 		
 		if(DEVICE_TYPE != 'pc')
 			$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
+
 		
 		return $arcInfo;
 	}
@@ -179,7 +180,6 @@ class Article{
 	 */
 	public function comArcList($arcInfo,$user_id = 0,$size = 3){
 		if(!$arcInfo) return array();
-		
 		//获取用户常用关键字
 		$fav_keywords = Keyword::userFavKeywords($user_id);
 

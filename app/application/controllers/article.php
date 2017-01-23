@@ -23,7 +23,9 @@ class ArticleController extends AppBaseController{
 		$cate_id = safe::filterPost('id','int');
 		$update_time = safe::filterPost('update_time','trim');
 		$keyword = safe::filterPost('keyword','trim');
-		$where = array('is_del'=>0,'status'=>'1');
+
+		$where = array('status'=>1,'is_del'=>0);
+
 		// $update_time = date('Y-m-d H:i:s',time());
 		$order = 'update_time desc';
 		$fields = 'a.id,a.name,a.create_time,a.update_time,a.user_id,a.type,a.keywords';
@@ -47,7 +49,6 @@ class ArticleController extends AppBaseController{
 		$arcList = $this->article->arcList($page,$where,$order,$fields,10,$user_id);
 		foreach ($arcList as $key => &$value) {
 			$value['cover'] = $value['cover'] && $value['cover'][0] ? $value['cover'] : array();
-			
 			$value['create_time'] = date('y/m/d H:i',strtotime($value['create_time']));
 		}
 		die(json::encode(tool::getSuccInfo(1,$arcList)));

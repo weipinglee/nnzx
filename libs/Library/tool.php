@@ -60,7 +60,7 @@ class tool{
     //获取全局配置信息
     public static function getGlobalConfig($name=null){
         if(empty(self::$globalConfigs)){
-            self::$globalConfigs = require 'configs.php';
+            self::$globalConfigs = require self::getConfig(array('application','baseDir')).'/conf/configs.php';
         }
 
         if($name==null)

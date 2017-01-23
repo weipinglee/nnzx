@@ -41,7 +41,8 @@ class Thumb
 			$thumbFileName = $preThumb.basename($imgArr[0]);//缩略图文件名
 			$url = url::getConfigHost($imgArr[1]);
 			$cur_url = url::getBaseUrl();
-			if(strpos($cur_url,'nzgw')!==false){
+
+			if(strpos($cur_url, 'nzgw') !== false){
 				$url = 'http://info.nainaiwang.com/nzgw/nnys-admin';
 			}
 		}else{

@@ -28,7 +28,6 @@ class ArticleModel
      * @return array
      */
     public function arcList($page=1){
-        
         return $this->article->arcList($page);
         //var_dump($cateTree);
         // return $this->cate->cateList($page);
@@ -123,6 +122,7 @@ class ArticleModel
                     unset($data['content']);
                     $this->articleConModel->where(array('article_id'=>$article_id))->data(array('content'=>$content))->update();
                 }
+                
                 $model->where(array('id'=>$article_id))->data($data)->update();
                 
                 $res = $model->commit();

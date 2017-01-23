@@ -1,6 +1,6 @@
 <?php
 /**
- * url管理类,基于yaf路由
+ * url管理�?基于yaf路由
  * User: weipinglee
  * Date: 2016/2/17 0017
  * Time: 上午 9:25
@@ -11,18 +11,15 @@ class url {
 
     /**
      * 根据不同路由规则产生url
-     * @param string $str 形如：'cli/test/index?key=value&key1=value2@deal '的字符串，如果第一个字符是‘/’,表示module为index,
-     * 如果不是‘/’，第一个'/'前的部分是module,后面以'/'分割的依次是控制器、方法,如果缺失/则默认为index,?后面的是参数对，@后面的是主机名
-     * 注意:必须是//?@的顺序，/可以是一个或0个
-     * @param string $baseUrl 站点路径 如果传递次参数 会忽略$str中@后面的内容
-     * @return string 返回产生的url
+     * @param string $str 形如�?cli/test/index?key=value&key1=value2@deal '的字符串，如果第一个字符是�?�?表示module为index,
+     * 如果不是�?’，第一�?/'前的部分是module,后面�?/'分割的依次是控制器、方�?如果缺失/则默认为index,?后面的是参数对，@后面的是主机�?     * 注意:必须�?/?@的顺序，/可以是一个或0�?     * @param string $baseUrl 站点路径 如果传递次参数 会忽�?str中@后面的内�?     * @return string 返回产生的url
      */
     public static function createUrl($str,$baseUrl=null){
         error_reporting(0);
         $url_str = trim($str);
 
         $pos = array('module'=>'','controller'=>'','action'=>'','param'=>'','host'=>'');
-        //遍历字符串,遇到特殊字符则$pos数组指针移动
+        //遍历字符�?遇到特殊字符�?pos数组指针移动
         $i=0;
         while($i<strlen($url_str)){
             switch($url_str[$i]){
@@ -49,8 +46,7 @@ class url {
             $i++;
         }
 
-        //模块、控制器、方法设置默认值
-        $pos['module'] = $pos['module']=='' ? 'index' : strtolower($pos['module']);
+        //模块、控制器、方法设置默认�?        $pos['module'] = $pos['module']=='' ? 'index' : strtolower($pos['module']);
         $pos['controller'] = $pos['controller']=='' ? 'index' : strtolower($pos['controller']);
         $pos['action'] = $pos['action']=='' ? 'index' : strtolower($pos['action']);
 
@@ -82,10 +78,7 @@ class url {
     /**
      *给定指定的模块、控制器、方法和参数列表，倒序查找application.int配置文件中的路由信息，找到匹配的路由并根据该路由规则生成url,
      * 目前只匹配重写和正则路由，没有匹配到的返回静态路由的结果
-     * @param string $controller 控制器名称
-     * @param string $action 方法名
-     * @param string $module 模块名
-     * @param array $params 传递的参数
+     * @param string $controller 控制器名�?     * @param string $action 方法�?     * @param string $module 模块�?     * @param array $params 传递的参数
      * @return string
      */
     private static function getRoute($controller,$action,$module='index',$params=array() ){
@@ -134,9 +127,8 @@ class url {
                     break;
                     case 'regex' : {
                         $match = $val['match'];
-                        $match = preg_replace('/^#\^?/','',$match);//去掉正则路由match的前导#和^
-                        $match = preg_replace('/\$?#$/','',$match);//去掉最后。。。
-                        //将match中的捕获子组(即圆括号中)替换为‘:’map名称
+                        $match = preg_replace('/^#\^?/','',$match);//去掉正则路由match的前�?和^
+                        $match = preg_replace('/\$?#$/','',$match);//去掉最后。。�?                        //将match中的捕获子组(即圆括号�?替换为�?’map名称
                         foreach($val['map'] as $v){
                             $match = preg_replace(array('/\([^()]*\)/'),':'.$v,$match,1);
                         }
@@ -162,8 +154,7 @@ class url {
                 }
             }
         }
-        //没有匹配到则用yaf_route_static静态路由，/module/controller/action/parms的模式
-
+        //没有匹配到则用yaf_route_static静态路由，/module/controller/action/parms的模�?
         $match = $module=='index' ? '' : $module.'/';
         $match .= $controller.'/'.$action;
         foreach($params as $key=>$val){
@@ -177,8 +168,7 @@ class url {
 
     /**
      * 返回配置文件中主机名对应的基础路径
-     * @param string $name 主机名
-     * @return string
+     * @param string $name 主机�?     * @return string
      */
     public static function getConfigHost($name){
         $host_list = tool::getGlobalConfig('host');
@@ -191,16 +181,15 @@ class url {
      */
     public static function getScriptDir()
     {
+        // $return = strtr(dirname($_SERVER['SCRIPT_NAME']),"\\","/");
         $return = strtr(dirname($_SERVER['SCRIPT_NAME']),"\\","/");
 
         return $return == '/' ? '' : $return.'';
     }
 
     /**
-     * @brief 获取网站根路径
-     * @param  string $protocol 协议  默认为http协议，不需要带'://'
-     * @return String $baseUrl  网站根路径
-     *
+     * @brief 获取网站根路�?     * @param  string $protocol 协议  默认为http协议，不需要带'://'
+     * @return String $baseUrl  网站根路�?     *
      */
     public static function getHost($protocol='')
     {
@@ -274,7 +263,7 @@ class url {
     {
         if( !isset($_SERVER['REQUEST_URI']) ||  $_SERVER['REQUEST_URI'] == "" )
         {
-            // IIS 的两种重写
+            // IIS 的两种重�?           
             if (isset($_SERVER['HTTP_X_ORIGINAL_URL']))
             {
                 $_SERVER['REQUEST_URI'] = $_SERVER['HTTP_X_ORIGINAL_URL'];
@@ -308,7 +297,7 @@ class url {
         return $_SERVER['REQUEST_URI'];
     }
 
-    //获取网站根目录
+    //获取网站根目�?    
     public static function getBaseUrl(){
         return self::getHost().self::getScriptDir();
     }
