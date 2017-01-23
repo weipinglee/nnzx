@@ -71,7 +71,7 @@
                                 <li><a href="{url:system/rbac/accessList}" target="content">权限分配</a></li>
                             </ul>
                         </li>
-                        <li><a target="content">系统配置项</a>
+                        <!-- <li><a target="content">系统配置项</a>
                             <ul>
                                 <li><a href="{url:system/Confsystem/creditList}" target="content">信誉值配置列表</a></li>
                                 <li><a href="{url:system/Confsystem/scaleOfferOper}" target="content">报盘费率设置</a></li>
@@ -79,7 +79,7 @@
                                 <li><a href="{url:system/Confsystem/generalList}" target="content">一般设置</a></li>
                                 <li><a href="{url:system/Confsystem/productset}" target="content">商品排序设置</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">管理员信息</a>
                             <ul>
                                 <li><a href="{url:system/admin/adminAdd}" target="content">新增管理员</a></li>
@@ -91,45 +91,7 @@
 
                     </ul>
                 </li>
-                <li><a target="content"><img src="{views:img/icons/menu/brush.png}" alt="" />会员管理</a>
-                    <ul>
-                        <!--
-                        <li><a href='' target="content">子账户权限管理</a>
-                            <ul>
-                                <li><a href="{url:member/subRoleList}" target="content">角色列表</a></li>
-                                <li><a href="{url:member/roleAdd}" target="content">添加角色</a></li>
-                            </ul>
-                        </li>-->
-
-                        <li><a href="{url:member/usergroup/groupList}" target="content">会员等级</a></li>
-                        <li><a target="content">会员管理</a>
-                            <ul>
-                                <li><a href="{url:member/member/memberList}" target="content">会员列表</a></li>
-                                <li><a href="{url:member/member/OnLineList}" target="content">在线会员信息</a></li>
-                                <li><a href="{url:member/member/userlog}" target="content">会员日志列表</a></li>
-                                <li><a href="{url:member/member/userfund}" target="content">会员资金列表</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a target="content">菜单管理</a>
-                         <ul>
-                                <li><a href="{url:member/Menu/MenuList}" target="content"> 菜单列表</a></li>
-                                <li><a href="{url:member/Menu/addMenu}" target="content">菜单添加</a></li>
-                                <li><a href="{url:member/Menu/menuRoleList}" target="content">菜单角色列表</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a target="content">修改手机号</a>
-                            <ul>
-                                <li><a href="{url:member/member/applyTelList}" target="content" >待审核</a></li>
-                                <li><a href="{url:member/member/resetTelList}" target="content" >修改手机号</a></li>
-                                <li><a href="{url:member/member/checkTelList}" target="content" >已审核</a></li>
-                            </ul>
-                        </li>
-                        <!--<li><a href="shop-list.html" target="content">商铺管理</a></li>-->
-                       <!-- <li><a href="business-list.html" target="content">业务撮合人员列表</a></li>-->
-                    </ul>
-                </li>
+                
                 <li><a   target="content"><img src="{views:img/icons/menu/comment.png}" alt="" /> 资讯管理</a>
                     <ul>
                         <li><a  target="content">分类管理</a>
@@ -144,34 +106,17 @@
                                 <!-- <li><a href="{url:tool/advert/adManageList}" target="content">广告列表</a></li> -->
                             </ul>
                         </li>
-                        <li><a target="content">帮助管理</a>
-                            <ul>
-                                <li><a href="{url:tool/help/helpCatList}" target="content">帮助分类</a></li>
-                                <li><a href="{url:tool/help/helpList}" target="content">帮助列表</a></li>
-                            </ul>
-                        </li>
-                            <li><a href="{url:tool/friendlyLink/frdLinkList}" target="content">友情链接管理</a>
-                                <ul>
-                                    <li><a href="{url:tool/friendlyLink/addFrdLink}" target="content">新增友情链接</a></li>
-                                    <li><a href="{url:tool/friendlyLink/frdLinkList}" target="content">友情链接列表</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{url:tool/slide/slideList}" target="content">幻灯片管理</a>
-                                <ul>
-                                    <li><a href="{url:tool/slide/addSlide}" target="content">新增幻灯片</a></li>
-                                    <li><a href="{url:tool/slide/slideList}" target="content">幻灯片列表</a></li>
-                                </ul>
-                            </li>
+                        
                     </ul>
                 </li>
                 <li><a   target="content"><img src="{views:img/icons/menu/comment.png}" alt="" /> 工具管理</a>
                     <ul>
-                        <li><a  target="content">广告管理</a>
+                        <!-- <li><a  target="content">广告管理</a>
                             <ul>
                                 <li><a target="content" href="{url:tool/advert/adPositionList}">广告位列表</a></li>
                                 <li><a href="{url:tool/advert/adManageList}" target="content">广告列表</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">帮助管理</a>
                             <ul>
                                 <li><a href="{url:tool/help/helpCatList}" target="content">帮助分类</a></li>

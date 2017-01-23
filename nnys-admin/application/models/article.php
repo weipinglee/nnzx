@@ -28,7 +28,8 @@ class ArticleModel
      * @return array
      */
     public function arcList($page=1){
-        return $this->article->arcList();
+        
+        return $this->article->arcList($page);
         //var_dump($cateTree);
         // return $this->cate->cateList($page);
     }
@@ -105,20 +106,25 @@ class ArticleModel
                 $article_id = $data['id'];
                 $model->beginTrans();
                 $covers = array();
-                if(is_array($data['cover'])){
-                    foreach ($data['cover'] as $key => $value) {
-                        $covers []= array('article_id'=>$article_id,'url'=>tool::setImgApp($value));
+                if(isset($data['cover'])){
+                    if(is_array($data['cover'])){
+                        foreach ($data['cover'] as $key => $value) {
+                            $covers []= array('article_id'=>$article_id,'url'=>tool::setImgApp($value));
+                        }
+                    }else{
+                        $covers = array('article_id'=>$article_id,'url'=>tool::setImgApp($data['cover']));
                     }
-                }else{
-                    $covers = array('article_id'=>$article_id,'url'=>tool::setImgApp($data['cover']));
+                    unset($data['cover']);
+                    $this->articleCovModel->where(array('article_id'=>$article_id))->delete();
+                    $this->articleCovModel->data($covers)->add();
                 }
-                $content = $data['content'];
-                unset($data['cover']);
-                unset($data['content']);
-                $this->articleCovModel->where(array('article_id'=>$article_id))->delete();
-                $this->articleCovModel->data($covers)->add();
+                if(isset($data['content'])){
+                    $content = $data['content'];
+                    unset($data['content']);
+                    $this->articleConModel->where(array('article_id'=>$article_id))->data(array('content'=>$content))->update();
+                }
                 $model->where(array('id'=>$article_id))->data($data)->update();
-                $this->articleConModel->where(array('article_id'=>$article_id))->data(array('content'=>$content))->update();
+                
                 $res = $model->commit();
             } catch (PDOException $e) {
                 $model->rollBack();
@@ -135,7 +141,7 @@ class ArticleModel
     }
 
     public function setStatus($data){
-        return $this->cateEdit($data);
+        return $this->arcEdit($data);
     }
 
     /**

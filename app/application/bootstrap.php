@@ -58,8 +58,8 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 	
 	public function _initView(Yaf\Dispatcher $dispatcher){
 		$res = tool::getConfig()['witty'];
-		// $view = new wittyAdapter($res);
-		// $dispatcher->setView($view);
+		$view = new wittyAdapter($res);
+		$dispatcher->setView($view);
 
 	}
 }

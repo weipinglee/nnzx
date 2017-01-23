@@ -18,7 +18,7 @@ class url {
      * @return string 返回产生的url
      */
     public static function createUrl($str,$baseUrl=null){
-        error_reporting(E_ALL);
+        error_reporting(0);
         $url_str = trim($str);
 
         $pos = array('module'=>'','controller'=>'','action'=>'','param'=>'','host'=>'');
@@ -192,6 +192,7 @@ class url {
     public static function getScriptDir()
     {
         $return = strtr(dirname($_SERVER['SCRIPT_NAME']),"\\","/");
+
         return $return == '/' ? '' : $return.'';
     }
 

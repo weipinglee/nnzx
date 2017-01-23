@@ -3,17 +3,17 @@
 <head>
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="/nn2info/nnys-admin/views/pc/css/min.css" />
-	<script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/validform/validform.js"></script>
-	<script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/validform/formacc.js"></script>
-	<script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/layer/layer.js"></script>
-	<link rel="stylesheet" href="/nn2info/nnys-admin/views/pc/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="/nn2info/nnys-admin/views/pc/css/H-ui.min.css">
-	<script type="text/javascript" src="/nn2info/nnys-admin/js/area/Area.js" ></script>
-	<script type="text/javascript" src="/nn2info/nnys-admin/js/area/AreaData_min.js" ></script>
-	<script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
+	<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/css/min.css" />
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/validform.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/formacc.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/layer/layer.js"></script>
+	<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/nnzx/nnys-admin/views/pc/css/H-ui.min.css">
+	<script type="text/javascript" src="/nnzx/nnys-admin/js/area/Area.js" ></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/js/area/AreaData_min.js" ></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
 </head>
 <body>
 
@@ -25,16 +25,16 @@
 
         
         <!-- jQuery AND jQueryUI -->
-        <script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
+        <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="css/min.css" />
         <script type="text/javascript" src="js/min.js"></script>
-        <script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/validform/validform.js"></script>
-        <script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/validform/formacc.js"></script>
-        <script type="text/javascript" src="/nn2info/nnys-admin/views/pc/js/layer/layer.js"></script>
+        <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/validform.js"></script>
+        <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/formacc.js"></script>
+        <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/layer/layer.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="/nn2info/nnys-admin/views/pc/css/H-ui.min.css">
-		<link rel="stylesheet" href="/nn2info/nnys-admin/views/pc/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/nnzx/nnys-admin/views/pc/css/H-ui.min.css">
+		<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/css/font-awesome.min.css" />
     </head>
     <body>     
         <!--            
@@ -45,7 +45,7 @@
                 
 <div class="bloc" style="width: 30%;margin:0 auto;margin-top: 200px;">
    <div class="pd-20">
-  <form action="http://localhost/nn2info/nnys-admin/login/loginhandler" method="post" class="form form-horizontal" id="form-admin-add" auto_submit redirect_url="http://localhost/nn2info/nnys-admin/index/index">
+  <form action="http://localhost/nnzx/nnys-admin/login/loginhandler" method="post" class="form form-horizontal" id="form-admin-add" auto_submit redirect_url="http://localhost/nnzx/nnys-admin/index/index">
     
     <div class="row cl">
       <label class="form-label col-3"><span class="c-red">*</span>用户名：</label>

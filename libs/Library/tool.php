@@ -137,4 +137,8 @@ class tool{
         return $ip; 
     } 
 
+    public static function explode($str){
+        return isset($str) && $str ? (strpos($str,',') ? explode($str,',') : array($str) ): array();
+    }
+
 }

@@ -13,11 +13,11 @@ return array(
         // 'user'=>'http://user.test.com',
         // 'user'=>'http://124.166.246.120:8000/user/public',
         'user'=>'http://localhost/nn2/user',
-        'admin'=>'http://192.168.2.18/nn2info/nnys-admin'
+        'admin'=>'http://localhost/nnzx/nnys-admin'
     ),
     'rootDir'=>array(//é¡¹ç›®æ ¹ç›®å½•ç»å¯¹è·¯å¾?
         'user'=>'E:\wamp\www\nn2\user\public',
-        // 'admin'=>'/Users/panduo/Sites/nn2info/nnys-admin///'
+        'admin'=>'/Users/panduo/Sites/nnzx/nnys-admin/'
         
     ),
 );
