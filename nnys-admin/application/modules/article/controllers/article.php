@@ -106,7 +106,7 @@ class ArticleController extends InitController {
     }
 
     public function uploadifyAction(){
-    	$targetFolder = '/nnzx/nnys-admin/upload/uploadify'; // Relative to the root
+    	$targetFolder = '/nnys-admin/upload/uploadify'; // Relative to the root
     	
 		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
 		if (!empty($_FILES)){//} && $_POST['token'] == $verifyToken) {
