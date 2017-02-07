@@ -37,9 +37,11 @@ class Thumb
 		$preThumb      = "{$width}_{$height}_";
 		if(count($imgArr)>1){
 			$sourcePath = tool::getGlobalConfig(array('rootDir',$imgArr[1])).'/'.trim($imgArr[0],'/');
+			// var_dump(tool::getGlobalConfig(array('rootDir','admin')));exit;
 			$thumbFileName = $preThumb.basename($imgArr[0]);//缩略图文件名
 			$url = url::getConfigHost($imgArr[1]);
 			$cur_url = url::getBaseUrl();
+
 			if(strpos($cur_url, 'nzgw') !== false){
 				$url = 'http://info.nainaiwang.com/nzgw/nnys-admin';
 			}
@@ -48,12 +50,12 @@ class Thumb
 			$thumbFileName = $preThumb.basename($imgSrc);
 			$url = url::getBaseUrl();
 		}
-		// var_dump($sourcePath);exit;
 		//缩略图目录
 		$thumbDir    = self::getThumbDir().'/';
 
 		$webThumbDir = self::$thumbDir.'/';
-
+		// var_dump($sourcePath);
+		// var_dump(is_file($sourcePath));exit;
 		if(is_file($thumbDir.$thumbFileName) == false && is_file($sourcePath))
 		{
 			Image::thumb($sourcePath,$width,$height,$preThumb,$thumbDir);

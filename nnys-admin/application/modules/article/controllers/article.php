@@ -13,7 +13,7 @@ class ArticleController extends InitController {
 		$this->Model = new articleModel();
 		$this->cateModel = new categoryModel();
 	}
-
+	
 	/**
 	 * 分类列表
 	 */
@@ -30,7 +30,11 @@ class ArticleController extends InitController {
 			$data['cate_id'] = safe::filterPost('cate_id','int');
 			$data['content'] = htmlspecialchars($_POST['content']);
 			$data['status'] = safe::filterPost('status');
-			$data['cover'] = tool::setImgApp(safe::filterPost('imgcover'));
+			$imgcover = safe::filterPost('imgcover');
+			foreach ($imgcover as &$value) {
+				$value = str_replace(url::getScriptDir().'/', '',tool::setImgApp($value));
+			}
+			$data['cover'] = implode(',',$imgcover);
 			$data['type'] = \nainai\Article::TYPE_ADMIN;
 			$data['user_id'] = $this->admin_id;			
 			$data['create_time'] = date('Y-m-d H:i:s',time());
@@ -55,7 +59,12 @@ class ArticleController extends InitController {
 			$data['content'] = htmlspecialchars($_POST['content']);
 			$data['status'] = safe::filterPost('status');
 			$data['update_time'] = date('Y-m-d H:i:s',time());
-			if(strpos('@',$_POST['imgcover']) === false) $data['cover'] = safe::filterPost('imgcover');
+			$imgcover = safe::filterPost('imgcover');
+			foreach ($imgcover as &$value) {
+				if(strpos($value, '@') === false)
+					$value = str_replace(url::getScriptDir().'/', '',tool::setImgApp($value));
+			}
+			$data['cover'] = implode(',',$imgcover);
 			$res = $this->Model->arcEdit($data);
 			die(json::encode($res));
 		}else{
@@ -68,7 +77,6 @@ class ArticleController extends InitController {
 			
 			$this->getView()->assign('id',$id);
 			$this->getView()->assign('info',$info);
-
 			$this->getView()->assign('url',url::createUrl('article/article/arcedit'));
 			
 		}
@@ -93,7 +101,35 @@ class ArticleController extends InitController {
             $id=safe::filterGet('id');
             $res = $this->Model->delarc($id);
             die(json::encode($res));
+        
+        }	
+    }
 
-        }
+    public function uploadifyAction(){
+    	$targetFolder = '/nnzx/nnys-admin/upload/uploadify'; // Relative to the root
+    	
+		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
+		if (!empty($_FILES)){//} && $_POST['token'] == $verifyToken) {
+			$tempFile = $_FILES['files']['tmp_name'];
+			$targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+
+			$fileParts = pathinfo($_FILES['files']['name']);
+			// var_dump($fileParts);exit;
+			$targetFile = rtrim($targetPath,'/') . '/' . md5($_FILES['files']['name'].time()).'.'.$fileParts['extension'];
+			$showfile = $targetFolder . '/' . md5($_FILES['files']['name'].time()).'.'.$fileParts['extension'];
+
+			// Validate the file type
+			$fileTypes = array('jpg','jpeg','gif','png'); // File extensions
+			
+			if (in_array($fileParts['extension'],$fileTypes)) {
+				move_uploaded_file($tempFile,$targetFile);
+				$res = $showfile;
+			} else {
+				$res = false;
+			}
+		}else{
+			$res = false;
+		}
+		die(json::encode($res ? tool::getSuccInfo(1,$res):tool::getSuccInfo(0,'上传失败')));
     }
 }

@@ -147,16 +147,18 @@ class Article{
 		if(!$article_id || $article_id <= 0) return array();
 
 		$arcList = $this->arcList(0,array('id'=>$article_id),'','a.*,ac.content',1);
-
+		
 		if(!$arcList) return array();
 		$arcInfo = $arcList[0];
 
 		
 		if($user_id > 0) Keyword::check($user_id,$arcInfo);
-
+		
 		$arcInfo['keywords'] = tool::explode($arcInfo['keywords']);
+		
 		if(DEVICE_TYPE != 'pc')
-		$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
+			$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
+
 		
 		return $arcInfo;
 	}
@@ -178,7 +180,6 @@ class Article{
 	 */
 	public function comArcList($arcInfo,$user_id = 0,$size = 3){
 		if(!$arcInfo) return array();
-
 		//获取用户常用关键字
 		$fav_keywords = Keyword::userFavKeywords($user_id);
 
@@ -191,7 +192,7 @@ class Article{
 		}else{
 			$userarcList = array();
 		}
-
+		
 		//当前文章关键字
 		$arc_keywords = $arcInfo['keywords'];
 

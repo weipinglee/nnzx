@@ -183,6 +183,7 @@ class url {
     {
         // $return = strtr(dirname($_SERVER['SCRIPT_NAME']),"\\","/");
         $return = strtr(dirname($_SERVER['SCRIPT_NAME']),"\\","/");
+
         return $return == '/' ? '' : $return.'';
     }
 

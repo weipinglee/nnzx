@@ -13,7 +13,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 
     public function _initConfig(Yaf\Dispatcher $dispatcher) {
 		if(\Library\tool::getConfig('error')){
-			error_reporting(E_ALL);
+			error_reporting(0);
 		}
 		else{
 			error_reporting(0);

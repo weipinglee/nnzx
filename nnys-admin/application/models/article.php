@@ -117,13 +117,11 @@ class ArticleModel
                     $this->articleCovModel->where(array('article_id'=>$article_id))->delete();
                     $this->articleCovModel->data($covers)->add();
                 }
-
                 if(isset($data['content'])){
                     $content = $data['content'];
                     unset($data['content']);
                     $this->articleConModel->where(array('article_id'=>$article_id))->data(array('content'=>$content))->update();
                 }
-                
                 
                 $model->where(array('id'=>$article_id))->data($data)->update();
                 

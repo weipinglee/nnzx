@@ -71,7 +71,7 @@
                                 <li><a href="{url:system/rbac/accessList}" target="content">权限分配</a></li>
                             </ul>
                         </li>
-                        <li><a target="content">系统配置项</a>
+                        <!-- <li><a target="content">系统配置项</a>
                             <ul>
                                 <li><a href="{url:system/Confsystem/creditList}" target="content">信誉值配置列表</a></li>
                                 <li><a href="{url:system/Confsystem/scaleOfferOper}" target="content">报盘费率设置</a></li>
@@ -79,7 +79,7 @@
                                 <li><a href="{url:system/Confsystem/generalList}" target="content">一般设置</a></li>
                                 <li><a href="{url:system/Confsystem/productset}" target="content">商品排序设置</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">管理员信息</a>
                             <ul>
                                 <li><a href="{url:system/admin/adminAdd}" target="content">新增管理员</a></li>
@@ -111,12 +111,12 @@
                 </li>
                 <li><a   target="content"><img src="{views:img/icons/menu/comment.png}" alt="" /> 工具管理</a>
                     <ul>
-                        <li><a  target="content">广告管理</a>
+                        <!-- <li><a  target="content">广告管理</a>
                             <ul>
                                 <li><a target="content" href="{url:tool/advert/adPositionList}">广告位列表</a></li>
                                 <li><a href="{url:tool/advert/adManageList}" target="content">广告列表</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">帮助管理</a>
                             <ul>
                                 <li><a href="{url:tool/help/helpCatList}" target="content">帮助分类</a></li>

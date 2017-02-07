@@ -29,7 +29,11 @@
                 <div class="item userinfo">
                         <p class="nick">{$info['name']}</p>
                         <p class="location"><span class="author">{$info['author']}</span><span class="time">{$info['create_time']}</span></p>
+<<<<<<< HEAD
                   
+=======
+                        
+>>>>>>> 11948c3cc47f5696aa820b7b3ce15f83a4d9cb13
                 </div>
             </div>
             <div class="settings">
@@ -58,6 +62,10 @@
                 {/foreach}
             </div>
                         
+<<<<<<< HEAD
             <div style='margin-bottom:100px'></div>
+=======
+
+>>>>>>> 11948c3cc47f5696aa820b7b3ce15f83a4d9cb13
 </body>
 </html>
