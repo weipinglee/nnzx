@@ -51,8 +51,8 @@
 						<img src="images/20170123161308.jpg" class="news_pic">
 						<div class="news_content">
 							<h3>
-								<a href="{url:/Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
-								<a href="{url:/Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="{url:Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
@@ -69,8 +69,8 @@
 					{else:}
 						<div class="news_content no_pic">
 							<h3>
-								<a href="{url:/Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
-								<a href="{url:/Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="{url:Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
@@ -102,7 +102,7 @@
 		<div class="data_box search_top">
 			<h3 class="serch_hot">热门搜索</h3>
 			<div class="search_word clear">
-				{foreach:items=$keywords}<a href="{url:/search/index}/keyword/{$item['name']}">{$item['name']}</a>{/foreach}
+				{foreach:items=$keywords}<a href="{url:search/index}/keyword/{$item['name']}">{$item['name']}</a>{/foreach}
 			</div>
 		</div>
 		<!-- <div class="data_box">
