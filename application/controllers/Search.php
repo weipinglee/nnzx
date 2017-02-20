@@ -18,7 +18,7 @@ class SearchController extends InitController {
 
 		// $update_time = date('Y-m-d H:i:s',time());
 		$order = 'update_time desc';
-		$fields = 'a.id,a.name,a.create_time,a.update_time,a.user_id,a.type,a.user_type,a.keywords';
+		$fields = 'a.*';
 		if($cate_id > 0) {
 			//某一分类文章列表  根据更新时间排序
 			$where = array_merge($where,array('cate_id'=>$cate_id));

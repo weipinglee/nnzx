@@ -17,17 +17,25 @@ class HangyeController extends InitController {
 		if($type){
 			$where = array('type'=>$type,'include_child'=>1);
 			if($id) $where['cate_id'] = $id;
-			$data = $this->article->arcList($page,$where,'','',5);
+			$main_data = $this->article->arcList($page,$where,'','',5);
 			$catemodel = new ArcCate();
 			$catelist = $catemodel->cateList(0,0,'pc',array('pid'=>0));
+			
+			$model = new ArcType();
+			$list = $model->typelist();
+			$children = $model->typeFlow($list,$type);
 
+			foreach ($children as $key => $value) {
+				$tmp = $this->article->arcList(1,array('type'=>$value['id']));
+
+				$data[] = $tmp[0];
+			}
 			
-			$this->getView()->assign('data',$data[0]);
+			$this->getView()->assign('main_data',$main_data[0]);
+			$this->getView()->assign('data',$data);
 			$this->getView()->assign('cates',$catelist);
-			$this->getView()->assign('pageBar',$data[1]);
-			
-			// var_dump($children);
-			$this->getView()->assign('type',$type);
+			$this->getView()->assign('pageBar',$main_data[1]);
+			$this->getView()->assign('type',$children);
 			$this->getView()->assign('id',$id);
 			// echo '<pre>';var_dump($data);
 		}
