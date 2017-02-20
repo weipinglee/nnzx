@@ -193,10 +193,10 @@ class Article{
 		
 		if(!$arcList) return array();
 		$arcInfo = $arcList[0];
-
+		$arcInfo['ori_keywords'] = $info['keywords'];
 		$keywords = Keyword::check($user_id,$arcInfo);
 		$arcInfo['keywords'] = $keywords;
-		$arcInfo['ori_keywords'] = $ori_keywords;
+		
 		$arcInfo['keywords_str'] = implode(',',$keywords);
 		
 		// if(DEVICE_TYPE != 'pc')
