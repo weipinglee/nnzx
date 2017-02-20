@@ -64,13 +64,13 @@
 			<div class="content_title clear">
 			<ul class="content_title_ul">
 				<li>
-					<a class="title_a <?php if($id==0){?>on<?php }?>" href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>">全部
+					<a class="title_a <?php if($id==0){?>on<?php }?>" href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type_id)?$type_id:"";?>">全部
 						<div class="c-tip-arrow" style="left: 38px;"><em></em></div>
 					</a>
 				</li>
 				<?php if(!empty($cates)) foreach($cates as $key => $item){?>
 				<li>
-					<a class="title_a <?php if($id==$item['id']){?>on<?php }?>" href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['id'])?$item['id']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?>
+					<a class="title_a <?php if($id==$item['id']){?>on<?php }?>" href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type_id)?$type_id:"";?>/id/<?php echo isset($item['id'])?$item['id']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?>
 						<div class="c-tip-arrow" style="left: 38px;"><em></em></div>
 					</a>
 				</li>
@@ -83,7 +83,7 @@
 					<img src="<?php echo isset($item['cover'][0])?$item['cover'][0]:"";?>" class="news_pic">
 					<div class="news_content">
 						<h3>
-							<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+							<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
 							<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 						</h3>
 						<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
@@ -102,7 +102,7 @@
 				<?php }else{?>
 					<div class="news_content no_pic">
 						<h3>
-							<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+							<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
 							<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 						</h3>
 						<!-- 程序能否控制这里输出的字数，最后加个省略号 -->

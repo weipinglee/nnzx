@@ -94,7 +94,7 @@
 						<img src="<?php echo isset($item['cover'][0])?$item['cover'][0]:"";?>" class="news_pic">
 						<div class="news_content">
 							<h3>
-								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
 								<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
@@ -112,7 +112,7 @@
 					<?php }else{?>
 						<div class="news_content no_pic">
 							<h3>
-								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
 								<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
