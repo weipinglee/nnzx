@@ -138,7 +138,7 @@
 				</li>
 			</ul>
 		</div>
-		<a href><img src="{views:images/ad.png}" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('hangye',0,1)}
 		<div class="data_box">
 			<ul class="data_list addpic">
 				<li class="title">
@@ -189,8 +189,7 @@
 				</li>
 			</ul>
 		</div>
-		<a href><img src="{views:images/ad.png}" class="ad_box"></a>
-		<a href><img src="{views:images/ad.png}" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('hangye',1)}
 		
 	</div>
 

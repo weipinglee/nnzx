@@ -11,7 +11,7 @@ namespace Library;
 
 
 use Library\cache\driver\Memcache;
-
+use Library\Thumb;
 class ad
 {
     //是否加载过js
@@ -32,6 +32,23 @@ class ad
             $adList['height'] = $positionObject['height'];
         }
         return $adList;
+    }
+
+    public static function commonshow($position='',$start=0,$length=100){
+        $data = self::getAdData($position);
+        error_reporting(0);
+        unset($data['width']);
+        unset($data['height']);
+        $data = array_slice($data, $start,$length);
+        foreach ($data as $key => $value) {
+
+          if(!$value['content']) continue;
+          $content = Thumb::getOrigImg($value['content']);
+          $img = "<a href='{$value['link']}'><img src='{$content}' class='ad_box'/></a>";
+          echo <<<STR
+<script>document.write("{$img}")</script>
+STR;
+        }
     }
 
     /**

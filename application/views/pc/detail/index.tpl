@@ -53,10 +53,10 @@
 				<p class="line"></p>
 				<div class="jump">
 					<p>
-						上一篇：<a href>2017北京铁腕治霾 金隅前景水泥厂4月底前停产</a>
+						上一篇：<a href="{$info['siblings']['pre']['href']}">{$info['siblings']['pre']['title']}</a>
 					</p>
 					<p>
-						下一篇：<a href>2017北京铁腕治霾 金隅前景水泥厂4月底前停产</a>
+						下一篇：<a href="{$info['siblings']['next']['href']}">{$info['siblings']['next']['title']}</a>
 					</p>
 				</div>
 			</div>
@@ -94,8 +94,7 @@
 			</ul>
 		</div>
 		
-		<a href><img src="images/ad.png" class="ad_box"></a>
-		<a href><img src="images/ad.png" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('detail')}
 		
 	</div>
 

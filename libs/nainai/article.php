@@ -12,6 +12,7 @@ use Library\Thumb;
 use Library\M;
 use nainai\Keyword;
 use Library\tool;
+use Library\url;
 use \nainai\category\ArcCate;
 use \nainai\category\ArcType;
 class Article{
@@ -124,6 +125,7 @@ class Article{
 	 * @return array
 	 */
 	public function arcList($page = 1,$where=array(),$order='',$fields='',$pageSize=10,$user_id = 0,$author_id = 0,$device=DEVICE_TYPE){
+		
 		$where_str = $this->handleWhere($where);
 		if(!$order) $order = 'update_time desc';
 		$index = 0;
@@ -199,8 +201,53 @@ class Article{
 		// if(DEVICE_TYPE != 'pc')
 			$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
 
+		$arcInfo['siblings'] = $this->siblingArticle($arcInfo);
 		
 		return $arcInfo;
+	}
+
+	public function arcids($cate_id=0){
+		
+	}
+
+	/**
+	 * 获取相邻文章
+	 * @param  array $arcInfo 文章数组
+	 * @return array
+	 */
+	public function siblingArticle($arcInfo){
+		$m = new M('article');
+
+		$where = array('cate_id'=>$arcInfo['cate_id']);
+		$ids = $m->where($where)->order('id asc')->fields('id')->select();
+		$ids = array_column($ids,'id');
+
+		$key = array_search($arcInfo['id'],$ids);
+		if($key == 0){
+			$data['pre']['href'] = 'javascript:;';
+			$data['pre']['title'] = '没有了';
+		}
+		if($key == count($ids)-1){
+			$data['next']['href'] = 'javascript:;';
+			$data['next']['title'] = '没有了';
+		}
+		if(!isset($data['pre'])){
+			$id = $ids[$key-1];
+			$title = $m->where(array('id'=>$id))->getField('name');
+
+			$data['pre']['href'] = url::createUrl('/detail/index?id='.$id);
+			$data['pre']['title'] = $title;
+		}
+		if(!isset($data['next'])){
+			$id = $ids[$key+1];
+
+			$title = $m->where(array('id'=>$id))->getField('name');
+
+			$data['next']['href'] = url::createUrl('/detail/index?id='.$id);
+			$data['next']['title'] = $title;	
+		}
+		
+		return $data;
 	}
 
 	/**

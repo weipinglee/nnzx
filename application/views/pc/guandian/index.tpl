@@ -131,8 +131,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		<a href><img src="{views:images/ad.png}" class="ad_box"></a>
-		<a href><img src="{views:images/ad.png}" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('guandian')}
 	</div>
 
 </div>	
