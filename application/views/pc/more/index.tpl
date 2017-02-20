@@ -74,6 +74,7 @@
 		</div> -->
 	</div>
 	<div class="list_right">
+		{if:isset($data[0]['id'])}
 		<div class="data_box quotation_top">
 			<ul class="data_list addpic">
 				<li class="title">
@@ -98,7 +99,9 @@
 				{/foreach}
 			</ul>
 		</div>
+		{/if}
 		{echo:\Library\Ad::commonshow('more',0,1)}
+		{if:isset($data[1]['id'])}
 		<div class="data_box">
 			<ul class="data_list">
 				<li class="title">
@@ -110,6 +113,7 @@
 				{/foreach}
 			</ul>
 		</div>
+		{/if}
 		{echo:\Library\Ad::commonshow('more',1)}
 		
 	</div>

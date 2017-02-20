@@ -21,7 +21,7 @@
 				{/foreach}
 			</ul>
 		</div>
-			{foreach:items=$data}
+			{foreach:items=$main_data}
 			<div class="news">
 				{if:isset($item['cover'][0])}
 					<img src="{$item['cover'][0]}" class="news_pic">
@@ -79,102 +79,50 @@
 		<div class="data_box quotation_top">
 			<ul class="data_list addpic">
 				<li class="title">
-					<a href><h3>下游信息</h3></a>
-					<a href><span>更多</span></a>
+					<a href="javascript:;"><h3>{$type[0]['name']}</h3></a>
+					<a href="{url:/more/index}/type/{$data[0][0]['type']}"><span>更多</span></a>
 				</li>
+				{foreach:items=$data[0]}
 				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
+					<a href="{url:/detail/index}/id/{$item['id']}">
+						<img src="{$item['cover'][0]}" title="新闻图片" class="list_news_pic">
 					</a>
 					<span class="list_news_title">
 						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
+							<a href="{url:/detail/index}/id/{$item['id']}">{$item['name']}</a>
 						</p>
 						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
+							<span class="time">{$item['create_time']}</span>
+							<span class="count">{$item['collect_num']}次</span>
 						</p>
 					</span>
 				</li>
-				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
-					</a>
-					<span class="list_news_title">
-						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
-						</p>
-						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
-						</p>
-					</span>
-				</li>
-				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
-					</a>
-					<span class="list_news_title">
-						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
-						</p>
-						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
-						</p>
-					</span>
-				</li>
+				{/foreach}
 			</ul>
 		</div>
 		{echo:\Library\Ad::commonshow('hangye',0,1)}
 		<div class="data_box">
 			<ul class="data_list addpic">
 				<li class="title">
-					<a href><h3>展会动态</h3></a>
-					<a href><span>更多</span></a>
+					<a href="javascript:;"><h3>{$type[1]['name']}</h3></a>
+					<a href="{url:/more/index}/type/{$data[1][0]['type']}"><span>更多</span></a>
 				</li>
+				{foreach:items=$data[1]}
 				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
+					<a href="{url:/detail/index}/id/{$item['id']}">
+						<img src="{$item['cover'][0]}" title="新闻图片" class="list_news_pic">
 					</a>
 					<span class="list_news_title">
 						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
+							<a href="{url:/detail/index}/id/{$item['id']}">{$item['name']}</a>
 						</p>
 						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
+							<span class="time">{$item['create_time']}</span>
+							<span class="count">{$item['collect_num']}次</span>
 						</p>
 					</span>
 				</li>
-				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
-					</a>
-					<span class="list_news_title">
-						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
-						</p>
-						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
-						</p>
-					</span>
-				</li>
-				<li>
-					<a href>
-						<img src="{views:images/ad.png}" title="新闻图片" class="list_news_pic">
-					</a>
-					<span class="list_news_title">
-						<p>
-							<a href>福州制造业税收见涨高端制造业表现抢眼</a>
-						</p>
-						<p>
-							<span class="time">2016-12-13</span>
-							<span class="count">225次</span>
-						</p>
-					</span>
-				</li>
+				{/foreach}
 			</ul>
 		</div>
 		{echo:\Library\Ad::commonshow('hangye',1)}
