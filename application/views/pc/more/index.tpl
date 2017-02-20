@@ -109,7 +109,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		<a href><img src="images/ad.png" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('more',0,1)}
 		<div class="data_box">
 			<ul class="data_list">
 				<li class="title">
@@ -121,7 +121,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		{echo:\Library\Ad::commonshow('more')}
+		{echo:\Library\Ad::commonshow('more',1)}
 		
 	</div>
 
