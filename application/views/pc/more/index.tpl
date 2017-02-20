@@ -1,15 +1,4 @@
 
-	<div class="in_nav" id="in_nav">
-		<ul>
-			<img src="images/nav_top.png" class="in_nav_top">
-			<li class="industry1"><a href>建材行业</a></li>
-			<li class="industry2"><a href>耐火行业</a></li>
-			<li class="industry3"><a href>钢铁行业</a></li>
-			<li class="industry4"><a href>冶金化工行业</a></li>
-			<li class="industry5"><a href>设备行业</a></li>
-			<li class="industry6"><a href>其他行业</a></li>
-		</ul>
-	</div>
 	<div class="clear"></div>
 </div>
 <div class="main">
@@ -109,7 +98,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		<a href><img src="images/ad.png" class="ad_box"></a>
+		{echo:\Library\Ad::commonshow('more',0,1)}
 		<div class="data_box">
 			<ul class="data_list">
 				<li class="title">
@@ -121,7 +110,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		{echo:\Library\Ad::commonshow('more')}
+		{echo:\Library\Ad::commonshow('more',1)}
 		
 	</div>
 

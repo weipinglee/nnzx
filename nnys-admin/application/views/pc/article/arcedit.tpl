@@ -49,7 +49,11 @@
                 <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 关键字(英文分号分隔)：</label>
                     <div class="formControls col-5">
+<<<<<<< HEAD
                         <input type="text" name="keywords" class="input-text" value="{$info['keywords_str']}" datatype="*2-100" nullmsg="关键字不能为空">
+=======
+                        <input type="text" name="keywords" class="input-text" value="{$info['ori_keywords']}" datatype="*2-100" nullmsg="关键字不能为空">
+>>>>>>> a6202da7d20427c452f2841d6965b8b415db8912
                     </div>
                     <div class="col-4"> </div>
                 </div>

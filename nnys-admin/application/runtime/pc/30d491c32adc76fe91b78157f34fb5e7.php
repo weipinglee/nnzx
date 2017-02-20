@@ -116,6 +116,7 @@
                         <li><a  target="content">分类管理</a>
                             <ul>
                                 <li><a target="content" href="http://info.nainaiwang.com/nnys-admin/category/arccate/catelist">分类列表</a></li>
+                                <li><a target="content" href="http://info.nainaiwang.com/nnys-admin/category/arctype/typelist">文章类型</a></li>
                                 <!-- <li><a href="http://info.nainaiwang.com/nnys-admin/tool/advert/admanagelist" target="content">广告列表</a></li> -->
                             </ul>
                         </li>
@@ -150,8 +151,15 @@
                             </li>
                             <li><a href="http://info.nainaiwang.com/nnys-admin/tool/slide/slidelist" target="content">幻灯片管理</a>
                                 <ul>
+                                    <li><a href="http://info.nainaiwang.com/nnys-admin/tool/slidepos/slideposlist" target="content">幻灯片位置</a></li>
                                     <li><a href="http://info.nainaiwang.com/nnys-admin/tool/slide/addslide" target="content">新增幻灯片</a></li>
                                     <li><a href="http://info.nainaiwang.com/nnys-admin/tool/slide/slidelist" target="content">幻灯片列表</a></li>
+                                </ul>
+                            </li>
+                            <li><a  target="content">广告管理</a>
+                                <ul>
+                                    <li><a target="content" href="http://info.nainaiwang.com/nnys-admin/tool/advert/adpositionlist">广告位列表</a></li>
+                                    <li><a href="http://info.nainaiwang.com/nnys-admin/tool/advert/admanagelist" target="content">广告列表</a></li>
                                 </ul>
                             </li>
                     </ul>

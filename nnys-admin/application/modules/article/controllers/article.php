@@ -79,6 +79,7 @@ class ArticleController extends InitController {
 		}else{
 			$id = safe::filter($this->_request->getParam('id'));
 			$info = $this->Model->getarcInfo($id);
+			
 			$cateList = $this->cateModel->cateFlowHtml($info['cate_id']);
 			$typelist = $this->typeModel->typeFlowHtml($info['type']);
 			$this->getView()->assign('cateList',$cateList);
