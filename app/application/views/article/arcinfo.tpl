@@ -29,7 +29,7 @@
                 <div class="item userinfo">
                         <p class="nick">{$info['name']}</p>
                         <p class="location"><span class="author">{$info['author']}</span><span class="time">{$info['create_time']}</span></p>
-                        
+
                 </div>
             </div>
             <div class="settings">
@@ -57,7 +57,8 @@
                 </div>
                 {/foreach}
             </div>
-                        
+               
+            <div style='margin-bottom:100px'></div>
 
 </body>
 </html>
