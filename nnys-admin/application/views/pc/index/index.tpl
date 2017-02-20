@@ -137,6 +137,12 @@
                                     <li><a href="{url:tool/slide/slideList}" target="content">幻灯片列表</a></li>
                                 </ul>
                             </li>
+                            <li><a  target="content">广告管理</a>
+                                <ul>
+                                    <li><a target="content" href="{url:tool/advert/adPositionList}">广告位列表</a></li>
+                                    <li><a href="{url:tool/advert/adManageList}" target="content">广告列表</a></li>
+                                </ul>
+                            </li>
                     </ul>
                 </li>
 
