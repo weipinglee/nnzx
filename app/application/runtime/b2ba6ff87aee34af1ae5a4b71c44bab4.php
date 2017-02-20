@@ -29,7 +29,7 @@
                 <div class="item userinfo">
                         <p class="nick"><?php echo isset($info['name'])?$info['name']:"";?></p>
                         <p class="location"><span class="author"><?php echo isset($info['author'])?$info['author']:"";?></span><span class="time"><?php echo isset($info['create_time'])?$info['create_time']:"";?></span></p>
-                  
+
                 </div>
             </div>
             <div class="settings">
@@ -57,7 +57,8 @@
                 </div>
                 <?php }?>
             </div>
-                        
+               
             <div style='margin-bottom:100px'></div>
+
 </body>
 </html>
