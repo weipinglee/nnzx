@@ -90,7 +90,7 @@
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/rbac/accesslist" target="content">权限分配</a></li>
                             </ul>
                         </li>
-                        <li><a target="content">系统配置项</a>
+                        <!-- <li><a target="content">系统配置项</a>
                             <ul>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/confsystem/creditlist" target="content">信誉值配置列表</a></li>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/confsystem/scaleofferoper" target="content">报盘费率设置</a></li>
@@ -98,7 +98,7 @@
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/confsystem/generallist" target="content">一般设置</a></li>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/confsystem/productset" target="content">商品排序设置</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">管理员信息</a>
                             <ul>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/system/admin/adminadd" target="content">新增管理员</a></li>
@@ -130,12 +130,12 @@
                 </li>
                 <li><a   target="content"><img src="/nnys-admin/views/pc/img/icons/menu/comment.png" alt="" /> 工具管理</a>
                     <ul>
-                        <li><a  target="content">广告管理</a>
+                        <!-- <li><a  target="content">广告管理</a>
                             <ul>
                                 <li><a target="content" href="http://info.nainaiwang.com/nnys-admin/tool/advert/adpositionlist">广告位列表</a></li>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/tool/advert/admanagelist" target="content">广告列表</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a target="content">帮助管理</a>
                             <ul>
                                 <li><a href="http://info.nainaiwang.com/nnys-admin/tool/help/helpcatlist" target="content">帮助分类</a></li>
