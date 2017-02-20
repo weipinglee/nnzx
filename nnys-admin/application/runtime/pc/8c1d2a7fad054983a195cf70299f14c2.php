@@ -29,7 +29,7 @@
         </div>
         <div class="content">
             <div class="pd-20">
-                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://localhost/nnzx/nnys-admin/tool/slide/addSlide/"><i class=" icon-plus fa-plus"></i> 添加幻灯片</a> </span>  </div>
+                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://localhost/nnzx/nnys-admin//tool/slide/addSlide/"><i class=" icon-plus fa-plus"></i> 添加幻灯片</a> </span>  </div>
                 <div class="mt-20">
                     <table class="table table-border table-bordered table-hover table-bg table-sort">
                         <thead>
@@ -63,7 +63,7 @@
                                     <?php }elseif($item['status'] == 0){?>
                                         <a style="text-decoration:none" href="javascript:;" title="启用" ajax_status=1 ajax_url="http://localhost/nnzx/nnys-admin/tool/slide/setstatus/id/<?php echo $item['id'];?>"><i class="icon-play fa-play"></i></a>
                                     <?php }?>
-                                    <a title="编辑" href="http://localhost/nnzx/nnys-admin/tool/slide/editSlide/?id=<?php echo isset($item['id'])?$item['id']:"";?>" class="ml-5" style="text-decoration:none"><i class="icon-edit fa-edit"></i></a>
+                                    <a title="编辑" href="http://localhost/nnzx/nnys-admin//tool/slide/editSlide/?id=<?php echo isset($item['id'])?$item['id']:"";?>" class="ml-5" style="text-decoration:none"><i class="icon-edit fa-edit"></i></a>
                                     <a title="删除" href="javascript:void(0);"ajax_status=-1 ajax_url="http://localhost/nnzx/nnys-admin/tool/slide/del/name/<?php echo $item['id'];?>" class="ml-5" style="text-decoration:none"><i class="icon-trash fa-trash"></i></a></td>
                             </tr>
                         <?php }?>
@@ -72,7 +72,7 @@
                             function delFundOut(name,obj){
                                 var obj=$(obj);
                                 var name=name;
-                                var url="http://localhost/nnzx/nnys-admin/tool/slide/del/";
+                                var url="http://localhost/nnzx/nnys-admin//tool/slide/del/";
                                 if(confirm("确定要删除吗")){
                                     $.ajax({
                                         type:'get',

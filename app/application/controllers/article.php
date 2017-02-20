@@ -69,9 +69,9 @@ class ArticleController extends AppBaseController{
 	public function aaAction(){
 		phpinfo();
 	}
-
+	
 	public function hotKeywordsAction(){
 		$keywords = Keyword::hotKeywords();
-		var_dump($keywords);
+		// var_dump($keywords);
 	}
 }

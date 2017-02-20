@@ -34,10 +34,9 @@ class CategoryModel
     public function cateFlowHtml($id=0){
         return $this->cate->cateFlowHtml($id);
     }
-
+    
     public function cateTree(){
         $cateTree = $this->cate->cateTree($this->cateList());
-        var_dump($cateTree);
     }
 
     /**

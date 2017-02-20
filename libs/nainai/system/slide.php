@@ -9,7 +9,7 @@
 namespace nainai\system;
 use Library\cache\driver\Memcache;
 use Library\M;
-
+use Library\Thumb;
 use Library\Query;
 
 
@@ -147,5 +147,24 @@ class slide{
         return $res;
     }
 
+    public static function getSlidebyPos($pos_name=''){
+        // $memcache=new Memcache();
+        // $indexSlide=$memcache->get('Slide'.$pos_id);
+        if(isset($indexSlide)&&$indexSlide){
+            $res=unserialize($indexSlide);
+            return $res;
+        }
+        $slideObj=new Query('slide as s');
+        $slideObj->join = 'left join slide_position as sp on sp.id = s.pos_id';
+        $slideObj->fields = 's.*';
+        $slideObj->where = " s.status=1 and sp.name='".$pos_name."'";
+        $slideObj->order='`order` asc';
+        $res = $slideObj->find();
+        foreach ($res as $key => &$value) {
+            $value['img'] = Thumb::getOrigImg($value['img']);
+        }
+        // $memcache->set('Slide'.$pos_id,serialize($res));
+        return $res;
+    }
 
 }

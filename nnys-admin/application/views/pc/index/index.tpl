@@ -97,6 +97,7 @@
                         <li><a  target="content">分类管理</a>
                             <ul>
                                 <li><a target="content" href="{url:category/arcCate/cateList}">分类列表</a></li>
+                                <li><a target="content" href="{url:category/arctype/typelist}">文章类型</a></li>
                                 <!-- <li><a href="{url:tool/advert/adManageList}" target="content">广告列表</a></li> -->
                             </ul>
                         </li>
@@ -131,6 +132,7 @@
                             </li>
                             <li><a href="{url:tool/slide/slideList}" target="content">幻灯片管理</a>
                                 <ul>
+                                    <li><a href="{url:tool/slidepos/slideposlist}" target="content">幻灯片位置</a></li>
                                     <li><a href="{url:tool/slide/addSlide}" target="content">新增幻灯片</a></li>
                                     <li><a href="{url:tool/slide/slideList}" target="content">幻灯片列表</a></li>
                                 </ul>

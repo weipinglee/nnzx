@@ -12,6 +12,7 @@ class ArticleController extends InitController {
 		parent::init();
 		$this->Model = new articleModel();
 		$this->cateModel = new categoryModel();
+		$this->typeModel = new typeModel();
 	}
 	
 	/**
@@ -30,12 +31,15 @@ class ArticleController extends InitController {
 			$data['cate_id'] = safe::filterPost('cate_id','int');
 			$data['content'] = htmlspecialchars($_POST['content']);
 			$data['status'] = safe::filterPost('status');
+			$data['recommend'] = safe::filterPost('recommend');
+			$data['type'] = safe::filterPost('type');
+			$data['keywords'] = safe::filterPost('keywords');
 			$imgcover = safe::filterPost('imgcover');
 			foreach ($imgcover as &$value) {
 				$value = str_replace(url::getScriptDir().'/', '',tool::setImgApp($value));
 			}
 			$data['cover'] = implode(',',$imgcover);
-			$data['type'] = \nainai\Article::TYPE_ADMIN;
+			$data['user_type'] = \nainai\Article::TYPE_ADMIN;
 			$data['user_id'] = $this->admin_id;			
 			$data['create_time'] = date('Y-m-d H:i:s',time());
 			$data['update_time'] = date('Y-m-d H:i:s',time());
@@ -45,7 +49,9 @@ class ArticleController extends InitController {
 			$this->getView()->assign('oper','添加');
 			\Yaf\Dispatcher::getInstance()->disableView();
 			$cateList = $this->cateModel->cateFlowHtml();
+			$typelist = $this->typeModel->typeFlowHtml();
 			$this->getView()->assign('cateList',$cateList);
+			$this->getView()->assign('typelist',$typelist);
 			$this->getView()->assign('url',url::createUrl('article/article/addarc'));
 			$this->display('arcedit');
 		}
@@ -58,6 +64,9 @@ class ArticleController extends InitController {
 			$data['cate_id'] = safe::filterPost('cate_id','int');
 			$data['content'] = htmlspecialchars($_POST['content']);
 			$data['status'] = safe::filterPost('status');
+			$data['recommend'] = safe::filterPost('recommend');
+			$data['type'] = safe::filterPost('type');
+			$data['keywords'] = safe::filterPost('keywords');
 			$data['update_time'] = date('Y-m-d H:i:s',time());
 			$imgcover = safe::filterPost('imgcover');
 			foreach ($imgcover as &$value) {
@@ -70,9 +79,10 @@ class ArticleController extends InitController {
 		}else{
 			$id = safe::filter($this->_request->getParam('id'));
 			$info = $this->Model->getarcInfo($id);
-			
 			$cateList = $this->cateModel->cateFlowHtml($info['cate_id']);
+			$typelist = $this->typeModel->typeFlowHtml($info['type']);
 			$this->getView()->assign('cateList',$cateList);
+			$this->getView()->assign('typelist',$typelist);
 			$this->getView()->assign('oper','编辑');
 			
 			$this->getView()->assign('id',$id);

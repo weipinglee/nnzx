@@ -73,13 +73,12 @@ class Keyword{
     }
 
     /**
-     * 用户文章访问记录添加
+     * 文章访问记录添加
      * @param  array $arcInfo 文章信息数组
      * @return 
      */
     public static function check($user_id,$arcInfo){
-
-        $arc_keywords = isset($arcInfo['keywords']) && $arcInfo['keywords'] ? (strpos($arcInfo['keywords'],',') ? explode($arcInfo['keywords'],',') : array($arcInfo['keywords']) ): array();
+        $arc_keywords = isset($arcInfo['keywords']) && $arcInfo['keywords'] ? (strpos($arcInfo['keywords'],',') ? explode(',',$arcInfo['keywords']) : array($arcInfo['keywords']) ): array();
         $title = $arcInfo['name'];
         $ans_title = Keyword::commonUse($title);
         
@@ -88,14 +87,17 @@ class Keyword{
         $keywords = array_unique($keywords);
         self::search($keywords);
         
-        $res = self::keywordInfo($keywords);
-        foreach ($res as $key => $value) {
-            $data []= array('keyword'=>$value['id'],'user_id'=>$user_id,'search_num'=>1,'create_time'=>date('Y-m-d H:i:s',time()));
+        if(isset($user_id)){
+            $res = self::keywordInfo($keywords);
+            foreach ($res as $key => $value) {
+                $data []= array('keyword'=>$value['id'],'user_id'=>$user_id,'search_num'=>1,'create_time'=>date('Y-m-d H:i:s',time()));
+            }
+            
+            $user_log = new M('user_keywords');
+            //用户访问记录添加
+            @$user_log->insertUpdates($data,array('search_num'=>'+1'));
         }
-        
-        $user_log = new M('user_keywords');
-        //用户访问记录添加
-        @$user_log->insertUpdates($data,array('search_num'=>'+1'));
+        return $keywords;
     }
 
     /**
@@ -150,9 +152,9 @@ class Keyword{
      * 热门关键字列表
      * @return [type] [description]
      */
-    public static function hotKeywords(){
+    public static function hotKeywords($limit = 10){
         $article_keyword = new M('article_keyword');
-        return $article_keyword->fields('name,search_num*base_score as score')->order('score desc')->limit(10)->select();
+        return $article_keyword->fields('name,search_num*base_score as score')->order('score desc')->limit($limit)->select();
     }
 
 }

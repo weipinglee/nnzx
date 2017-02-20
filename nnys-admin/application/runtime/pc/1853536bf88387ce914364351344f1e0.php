@@ -44,6 +44,15 @@
 
             <form action="http://localhost/nnzx/nnys-admin/tool/slide/addslide" method="post" class="form form-horizontal" id="form-member-add" auto_submit redirect_url="http://localhost/nnzx/nnys-admin/tool/slide/slidelist">
                 <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span> 位置：</label>
+                    <div class="formControls col-5">
+                        <select name='pos_id'>
+                            <?php echo isset($pos_list)?$pos_list:"";?>
+                        </select>
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 名称：</label>
                     <div class="formControls col-5">
                         <input type="text" name="name" class="input-text" datatype="s2-50" nullmsg="名称不能为空" />
@@ -54,7 +63,7 @@
                     <label class="form-label col-3"><span class="c-red">*</span>图片：</label>
                     <div class="formControls col-5">
                         <div class="">
-                            <input type="hidden" name="uploadUrl"  value="http://localhost/nzgw/nnys-admin/tool/slide/upload" />
+                            <input type="hidden" name="uploadUrl"  value="http://info.nainaiwang.com/nnzx/nnys-admin/tool/slide/upload" />
                             <input type='file' name="file2" id="file2"  onchange="javascript:uploadImg(this);" />
                         </div>
                         <div>

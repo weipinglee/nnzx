@@ -67,7 +67,8 @@ class ArticleModel
                     if($id>0){
                         $this->articleConModel->data(array('article_id'=>$id,'content'=>$content))->add();
 
-                        $this->articleCovModel->data(array('article_id'=>$id,'url'=>$cover))->add();
+                        if($cover)
+                            $this->articleCovModel->data(array('article_id'=>$id,'url'=>$cover))->add();
                     }
                     $res = $model->commit();
                 } catch (PDOException $e) {
@@ -105,18 +106,20 @@ class ArticleModel
                 $article_id = $data['id'];
                 $model->beginTrans();
                 $covers = array();
-                if(isset($data['cover'])){
-                    if(is_array($data['cover'])){
+                if(isset($data['cover']) && $data['cover']){
+                    if(is_array($data['cover']) ){
                         foreach ($data['cover'] as $key => $value) {
                             $covers []= array('article_id'=>$article_id,'url'=>tool::setImgApp($value));
                         }
                     }else{
                         $covers = array('article_id'=>$article_id,'url'=>tool::setImgApp($data['cover']));
                     }
-                    unset($data['cover']);
+                    
                     $this->articleCovModel->where(array('article_id'=>$article_id))->delete();
                     $this->articleCovModel->data($covers)->add();
                 }
+                unset($data['cover']);
+
                 if(isset($data['content'])){
                     $content = $data['content'];
                     unset($data['content']);

@@ -25,6 +25,15 @@
 
             <form action="{url:tool/slide/addSlide}" method="post" class="form form-horizontal" id="form-member-add" auto_submit redirect_url="{url:tool/slide/slideList}">
                 <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span> 位置：</label>
+                    <div class="formControls col-5">
+                        <select name='pos_id'>
+                            {$pos_list}
+                        </select>
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 名称：</label>
                     <div class="formControls col-5">
                         <input type="text" name="name" class="input-text" datatype="s2-50" nullmsg="名称不能为空" />

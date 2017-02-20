@@ -52,22 +52,34 @@ class ArcCate{
 	}
 
 	//顺序分类树
-	public function cateFlow($list,$pid=0,$level=1,$repeat=3,&$arr=array()){
+	public function cateFlow($list,$pid=0,$include_self=0,$level=1,$repeat=3,&$arr=array()){
 		foreach ($list as $key => $value) {
-			unset($list[$key]);
+			if($include_self == 1){
+				if($value['id'] == $pid){
+					$value['level'] = $level-1;
+					$arr []= $value;
+				}
+			}
+
 			if($value['pid'] == $pid){
+				unset($list[$key]);
 				$value['level'] = $level;
 				$value['level_name'] = $level == 1 ? $value['name'] : str_repeat("&emsp;",($level-1)*$repeat).'|-'.$value['name'];
 				$arr []= $value;
-				$this->cateFlow($list,$value['id'],$level+1,$repeat,$arr);
+				$this->cateFlow($list,$value['id'],$include_self,$level+1,$repeat,$arr);
 			}
 		}
 		return $arr;
 	}
 
+	public function getChildren($cate_id=0,$include_self=0){
+		$list = $this->cateList();
+		return $this->cateFlow($list,$cate_id,$include_self);
+	}
+
 	public function cateFlowHtml($id=0){
 		$list = $this->cateList();
-		$cateFlow = $this->cateFlow($list,0,1,1);
+		$cateFlow = $this->cateFlow($list,0,0,1,1);
 		$html = '<option value="0">顶级分类</option>';
 		foreach ($cateFlow as $key => $value) {
 			$is_select = $value['id'] == $id ? 'selected = selected' : '';
