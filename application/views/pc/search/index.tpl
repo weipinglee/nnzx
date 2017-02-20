@@ -48,7 +48,7 @@
 			{foreach:items=$list}
 				<div class="news">
 					{if:isset($item['cover'][0])}
-						<img src="images/20170123161308.jpg" class="news_pic">
+						<img src="{$item['cover'][0]}" class="news_pic">
 						<div class="news_content">
 							<h3>
 								<a href="{url:/Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>

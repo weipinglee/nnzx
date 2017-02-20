@@ -155,6 +155,7 @@ class Page
             $url = url::getUri();
             $url = preg_replace('/page=\d?&/','',$url);
             $url = preg_replace('/(\?|&|\/)page(\/|=).*/i','',$url);
+            $url = str_replace('//', '/', $url);
             $mark = '=';
             if(strpos($url,'?') !== false)
                 $index = '&page';
