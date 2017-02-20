@@ -20,17 +20,40 @@
     <div class="content">
         <div class="logo"></div>
         <ul class="nav">
-            <li><a href='http://localhost/nnzx//index/index' class="on">首页</a></li>
-            <li id="industry"><a href='http://localhost/nnzx//hangye/index/type/<?php echo isset($typelist[0]['id'])?$typelist[0]['id']:"";?>'>行业</a></li>
-            <li><a href="http://localhost/nnzx//shuju/index/type/<?php echo isset($typelist[1]['id'])?$typelist[1]['id']:"";?>">数据</a></li>
-            <li><a href='http://localhost/nnzx//guandian/index/type/<?php echo isset($typelist[2]['id'])?$typelist[2]['id']:"";?>'>观点</a></li>
+            <li><a href='http://localhost/nnzx//index/index' <?php if($type_id == 0){?>class='on'<?php }?>>首页</a></li>
+            <li id="industry"><a href='http://localhost/nnzx//hangye/index/type/<?php echo isset($typelist[0]['id'])?$typelist[0]['id']:"";?>' <?php if($type_id ==$typelist[0]['id']){?>class="on"<?php }?>>行业</a></li>
+
+            <li><a href="http://localhost/nnzx//shuju/index/type/<?php echo isset($typelist[1]['id'])?$typelist[1]['id']:"";?>" <?php if($type_id == $typelist[1]['id']){?>class="on"<?php }?>>数据</a></li>
+            <li><a href='http://localhost/nnzx//guandian/index/type/<?php echo isset($typelist[2]['id'])?$typelist[2]['id']:"";?>' <?php if($type_id == $typelist[2]['id']){?>class="on"<?php }?>>观点</a></li>
         </ul>
         <form class="search">
-            <input type="text" value="请输入关键字查询" class="text"><input type="button" value="搜索" class="button">
+            <input type="text" placeholder="请输入关键字查询" class="text"><input type="button" value="搜索" class="button">
         </form>
     </div>
+    <script type="text/javascript">
+        $(function(){
+            $('.search .button').click(function(){
+                var k = $(this).siblings('input').val();
+                if(k != '' && k != '请输入关键字查询')
+                window.location.href = "http://localhost/nnzx//search/index/keyword/"+k;
+            });
+        })
+    </script>
+    
+    <div class="in_nav" id="in_nav">
+        <ul>
+            <img src="/nnzx/views/pc/images/nav_top.png" class="in_nav_top">
 
-
+            <?php if(!empty($cates)) foreach($cates as $key => $item){?>
+            <li>
+                <a class="title_a" href="http://localhost/nnzx//hangye/index/type/3/id/<?php echo isset($item['id'])?$item['id']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?>
+                    <div class="c-tip-arrow" style="left: 38px;"><em></em></div>
+                </a>
+            </li>
+            <?php }?>
+            <!-- <li class="industry1"><a href>建材行业</a></li> -->
+        </ul>
+    </div>
 
     
 <style type="text/css">
@@ -39,17 +62,7 @@
 	.news .news_content .title{font-size: 20px;font-weight: bold;}
 	.bshare-custom.icon-medium-plus, .bshare-custom.icon-large{padding-left: 25px;}
 </style>
-	<div class="in_nav" id="in_nav">
-		<ul>
-			<img src="images/nav_top.png" class="in_nav_top">
-			<li class="industry1"><a href>建材行业</a></li>
-			<li class="industry2"><a href>耐火行业</a></li>
-			<li class="industry3"><a href>钢铁行业</a></li>
-			<li class="industry4"><a href>冶金化工行业</a></li>
-			<li class="industry5"><a href>设备行业</a></li>
-			<li class="industry6"><a href>其他行业</a></li>
-		</ul>
-	</div>
+	
 	<div class="clear"></div>
 </div>
 <div class="main">
@@ -86,10 +99,10 @@
 				<p class="line"></p>
 				<div class="jump">
 					<p>
-						上一篇：<a href>2017北京铁腕治霾 金隅前景水泥厂4月底前停产</a>
+						上一篇：<a href="<?php echo isset($info['siblings']['pre']['href'])?$info['siblings']['pre']['href']:"";?>"><?php echo isset($info['siblings']['pre']['title'])?$info['siblings']['pre']['title']:"";?></a>
 					</p>
 					<p>
-						下一篇：<a href>2017北京铁腕治霾 金隅前景水泥厂4月底前停产</a>
+						下一篇：<a href="<?php echo isset($info['siblings']['next']['href'])?$info['siblings']['next']['href']:"";?>"><?php echo isset($info['siblings']['next']['title'])?$info['siblings']['next']['title']:"";?></a>
 					</p>
 				</div>
 			</div>
@@ -127,8 +140,7 @@
 			</ul>
 		</div>
 		
-		<a href><img src="images/ad.png" class="ad_box"></a>
-		<a href><img src="images/ad.png" class="ad_box"></a>
+		<?php echo \Library\Ad::commonshow('detail');?>
 		
 	</div>
 

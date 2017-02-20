@@ -24,7 +24,7 @@
 <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/layer/layer.js"></script>
 <script type="text/javascript" src='/nnzx/nnys-admin/js/upload/ajaxfileupload.js'></script>
 <script type="text/javascript" src='/nnzx/nnys-admin/js/upload/upload.js'></script>
-<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/time/WdatePicker.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
 <link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/content/settings/style.css" />
 
 
@@ -35,69 +35,80 @@
       CONTENT
                 -->
 <div id="content" class="white">
-    <h1><img src="/nnzx/nnys-admin/views/pc/img/icons/posts.png" alt="" />幻灯片修改</h1>
+    <h1><img src="/nnzx/nnys-admin/views/pc/img/icons/posts.png" alt="" />广告添加</h1>
+
     <div class="bloc">
         <div class="title">
-            幻灯片修改
+            广告添加
         </div>
-        <div class="content">
+        <div >
             <div class="pd-20">
-                <form action="http://localhost/nnzx/nnys-admin/tool/slide/editslide" method="post"  class="form form-horizontal"
-                      id="adPositionAdd" auto_submit redirect_url="http://localhost/nnzx/nnys-admin/tool/slide/slidelist">
-                    <div class="row cl">
-                        <label class="form-label col-2"><span class="c-red">*</span> 位置：</label>
-                        <div class="formControls col-5">
-                            <select name='pos_id'>
-                                <?php echo isset($pos_list)?$pos_list:"";?>
-                            </select>
-                        </div>
-                        <div class="col-4"> </div>
-                    </div>
+                <form action="http://localhost/nnzx/nnys-admin/tool/advert/admanageadd" method="post"  class="form form-horizontal"
+                      id="adPositionAdd" auto_submit redirect_url="http://localhost/nnzx/nnys-admin/tool/advert/admanagelist">
+
                     <div class="row cl">
                         <label class="form-label col-2">名称：</label>
-                        <div class="formControls col-10">
-                            <input type="text" name="name" value="<?php echo isset($slideInfo['name'])?$slideInfo['name']:"";?>" datatype="s2-50" nullmsg="名称不能为空" />
+                        <div class="formControls col-2">
+                            <input class="input-text" type="text" name="name" />
                         </div>
                     </div>
+
                     <div class="row cl">
-                        <label class="form-label col-2">上传图片就替换原图片：</label>
+                        <label class="form-label col-2">图片：</label>
                         <div class="formControls col-10">
-                            <input type="hidden" name="uploadUrl"  value="http://info.nainaiwang.com/nnzx/nnys-admin/tool/slide/upload" />
-                            <input type='file' name="file2" id="file2"  onchange="javascript:uploadImg(this);" />
+                            <input type='file' name="file2" id="file2"  onchange="javascript:uploadImg(this,'http://localhost/nnzx/nnys-admin//upload/upload');" />
                         </div>
                         <div>
-                            <img name="file2" src="<?php echo  \Library\Thumb::get($slideInfo['img']);?>"  />
-                            <input type="hidden" name="imgfile2" value="<?php echo isset($slideInfo['img'])?$slideInfo['img']:"";?>" />
+                            <img name="file2" />
+                            <input type="hidden" name="imgfile2"  />
 
                         </div>
                     </div>
                     <div class="row cl">
-                        <label class="form-label col-2"><span class="c-red"></span> 背景颜色：</label>
+                        <label class="form-label col-2">广告位：</label>
                         <div class="formControls col-10">
-                            <input type="text" name="bgcolor" class="input-text" value="<?php echo isset($slideInfo['bgcolor'])?$slideInfo['bgcolor']:"";?>" />
+                            <select name="position_id" >
+                                <option value="0">选择广告位</option>
+                                <?php if(!empty($adPoDate)) foreach($adPoDate as $key => $item){?>
+                                <option value="<?php echo isset($item['id'])?$item['id']:"";?>">
+                                    <?php echo isset($item['name'])?$item['name']:"";?>
+                                </option>
+                                <?php }?>
+                            </select>
                         </div>
-                        <div class="col-4"> </div>
                     </div>
-
+                    <div class="row cl">
+                        <label class="form-label col-2">链接地址：</label>
+                        <div class="formControls col-2">
+                            <input type="text" class="input-text" name="link" />
+                        </div>
+                    </div>
                     <div class="row cl">
                         <label class="form-label col-2">排序：</label>
-                        <div class="formControls col-10">
-                            <input type="text" name="order" value="<?php echo isset($slideInfo['order'])?$slideInfo['order']:"";?>" class="input-text" datatype="n1-100" nullmsg="排序字段不能为空" /> 数字越小，排列越靠前
+                        <div class="formControls col-2">
+                            <input type="text" class="input-text" name="order" /> 数字越小，排列越靠前
                         </div>
                     </div>
                     <div class="row cl">
-                        <label class="form-label col-3"><span class="c-red">*</span>是否开启：</label>
-                        <div class="formControls col-5">
-
-                            <input type="radio" name="status" value='1' <?php if($slideInfo['status']==1){?>checked="checked"<?php }?> id="">是
-                            <input type="radio" name="status" value='0'<?php if($slideInfo['status']==0){?>checked="checked"<?php }?> id="">否
-
+                        <label class="form-label col-2">开始时间：</label>
+                        <div class="formControls col-2">
+                            <input class="Wdate input-text"  onclick="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" name="start_time" />
                         </div>
-                        <div class="col-4"> </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-2">结束时间：</label>
+                        <div class="formControls col-2">
+                            <input class="Wdate input-text" onclick="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd HH:mm:ss'})"  type="text" name="end_time" />
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-2">描述：</label>
+                        <div class="formControls col-2">
+                            <input type="text" name="description" class="input-text"/>
+                        </div>
                     </div>
                     <div class="row cl">
                         <div class="col-10 col-offset-2">
-                            <input type="hidden" value="<?php echo isset($slideInfo['id'])?$slideInfo['id']:"";?>" name="id">
                             <button type="submit" class="btn btn-success radius" id="offline-save" name="admin-role-save"><i class="icon-ok fa-ok"></i> 确定</button>
                         </div>
                     </div>

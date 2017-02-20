@@ -55,9 +55,9 @@
                 <?php echo isset($info['role'])?$info['role']:"";?>
                 <a href="#"><?php echo isset($info['name'])?$info['name']:"";?></a>
                 |
-                <a href="http://localhost/nnzx/nnys-admin/login/logout">退出</a>
-                <a href="http://124.166.246.120:8000/user//index/index">返回网站首页</a>
-                <a name='clearCache' href="javascript:void(0)" onclick="clearCache('http://localhost/nnzx/nnys-admin/index/clearcache')">清除缓存</a>
+                <a href="http://localhost/nnzx/nnys-admin//login/logout">退出</a>
+                <a href="http://124.166.246.120:8000/user///index/index">返回网站首页</a>
+                <a name='clearCache' href="javascript:void(0)" onclick="clearCache('http://localhost/nnzx/nnys-admin//index/clearcache')">清除缓存</a>
                 <a name='clearCache' href="http://localhost/nnzx/nnys-admin/system/admin/comadminpwd/id/<?php echo $info['id'];?>" target="content">修改密码</a>
 
             </div>
@@ -116,6 +116,7 @@
                         <li><a  target="content">分类管理</a>
                             <ul>
                                 <li><a target="content" href="http://localhost/nnzx/nnys-admin/category/arccate/catelist">分类列表</a></li>
+                                <li><a target="content" href="http://localhost/nnzx/nnys-admin/category/arctype/typelist">文章类型</a></li>
                                 <!-- <li><a href="http://localhost/nnzx/nnys-admin/tool/advert/admanagelist" target="content">广告列表</a></li> -->
                             </ul>
                         </li>
@@ -150,8 +151,15 @@
                             </li>
                             <li><a href="http://localhost/nnzx/nnys-admin/tool/slide/slidelist" target="content">幻灯片管理</a>
                                 <ul>
+                                    <li><a href="http://localhost/nnzx/nnys-admin/tool/slidepos/slideposlist" target="content">幻灯片位置</a></li>
                                     <li><a href="http://localhost/nnzx/nnys-admin/tool/slide/addslide" target="content">新增幻灯片</a></li>
                                     <li><a href="http://localhost/nnzx/nnys-admin/tool/slide/slidelist" target="content">幻灯片列表</a></li>
+                                </ul>
+                            </li>
+                            <li><a  target="content">广告管理</a>
+                                <ul>
+                                    <li><a target="content" href="http://localhost/nnzx/nnys-admin/tool/advert/adpositionlist">广告位列表</a></li>
+                                    <li><a href="http://localhost/nnzx/nnys-admin/tool/advert/admanagelist" target="content">广告列表</a></li>
                                 </ul>
                             </li>
                     </ul>
@@ -239,7 +247,7 @@
 
      </div>
 </div>
-        <!-- <input type="hidden" name="getMsgUrl" value="http://localhost/nnzx/nnys-admin/index/getmsg" /> -->
+        <!-- <input type="hidden" name="getMsgUrl" value="http://localhost/nnzx/nnys-admin//index/getmsg" /> -->
         <!-- <script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/index/index.js"></script> -->
 
     </body>
