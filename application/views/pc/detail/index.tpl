@@ -57,7 +57,7 @@
 		<div class="data_box search_top">
 			<h3 class="serch_hot">热门搜索</h3>
 			<div class="search_word clear">
-				{foreach:items=$keywords}<a href="{url:search/index}/id/{$item['id']}">{$item['name']}</a>{/foreach}
+				{foreach:items=$keywords}<a href="{url:/search/index}/id/{$item['id']}">{$item['name']}</a>{/foreach}
 			</div>
 		</div>
 		<div class="data_box">
@@ -67,12 +67,12 @@
 				</li>
 				{foreach:items=$info['comArcList']}
 				<li>
-					<a href="{url:Detail/index}/id/{$item['id']}">
+					<a href="{url:/Detail/index}/id/{$item['id']}">
 						<img src="{$item['cover'][0]}" title="{$item['name']}" class="list_news_pic">
 					</a>
 					<span class="list_news_title">
 						<p>
-							<a href="{url:Detail/index}/id/{$item['id']}">{$item['name']}</a>
+							<a href="{url:/Detail/index}/id/{$item['id']}">{$item['name']}</a>
 						</p>
 						<p>
 							<span class="time">{$item['create_time']}</span>

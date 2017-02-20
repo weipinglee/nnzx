@@ -4,7 +4,7 @@
 <div class="main">
 	
 	<div class="main_left">
-	<p class="position">您现在的位置： <a href="{url:index/index}">首页</a>&nbsp;>&nbsp;观点</p>
+	<p class="position">您现在的位置： <a href="{url:/index/index}">首页</a>&nbsp;>&nbsp;观点</p>
 		<!-- 轮播代码 -->
 		<div id="banner">
 
