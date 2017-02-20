@@ -51,7 +51,7 @@
 						<img src="images/20170123161308.jpg" class="news_pic">
 						<div class="news_content">
 							<h3>
-								<a href="{url:/Hangye/index}/type/{$type_id}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:/Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
 								<a href="{url:/Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
@@ -69,7 +69,7 @@
 					{else:}
 						<div class="news_content no_pic">
 							<h3>
-								<a href="{url:/Hangye/index}/type/{type_id}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:/Hangye/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
 								<a href="{url:/Detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
