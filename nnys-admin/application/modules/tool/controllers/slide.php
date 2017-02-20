@@ -7,12 +7,14 @@
  * Time: 10:24
  */
 use nainai\system\slide;
+use nainai\system\slidepos;
 use Library\safe;
 use Library\json;
 class slideController extends Yaf\Controller_Abstract{
     private $slideModel='';
     public function init(){
         $this->slideModel=new slide();
+        $this->slideposModel=new slidepos();
         $this->getView()->setLayOut('admin');
     }
 
@@ -27,11 +29,14 @@ class slideController extends Yaf\Controller_Abstract{
             $data['status']=safe::filterPost('status','int');
             $data['order']=safe::filterPost('order','int');
             $data['bgcolor']=safe::filterPost('bgcolor');
+            $data['pos_id']=safe::filterPost('pos_id');
             $slideModel=$this->slideModel;
             $res=$slideModel->addSlide($data);
             die(json::encode($res));
         }
+        $pos_list = $this->slideposModel->getSlideposHtml();
 
+        $this->getView()->assign('pos_list',$pos_list);
     }
 
     /**
@@ -43,6 +48,7 @@ class slideController extends Yaf\Controller_Abstract{
         $this->getView()->assign('slideList',$res[0]);
         $this->getView()->assign('pageBar',$res[1]);
     }
+
 
     /**
      * 删除幻灯片
@@ -71,12 +77,15 @@ class slideController extends Yaf\Controller_Abstract{
             $date['img']=\Library\tool::setImgApp($img);
             $date['status']=safe::filterPost('status','int');
             $date['bgcolor']=safe::filterPost('bgcolor');
+            $date['pos_id']=safe::filterPost('pos_id');
             $res=$this->slideModel->editSlide($date);
             die(json::encode($res));
         }
         $id=safe::filterGet('id');
         $slideInfo=$this->slideModel->getSlideInfo($id);
         if($slideInfo){
+            $pos_list = $this->slideposModel->getSlideposHtml($slideInfo['pos_id']);
+            $this->getView()->assign('pos_list',$pos_list);
             $this->getView()->assign('slideInfo',$slideInfo);
         }else{
             return false;

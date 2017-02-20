@@ -42,9 +42,9 @@ class Thumb
 			$url = url::getConfigHost($imgArr[1]);
 			$cur_url = url::getBaseUrl();
 
-			if(strpos($cur_url, 'nzgw') !== false){
-				$url = 'http://info.nainaiwang.com/nzgw/nnys-admin';
-			}
+			// if(strpos($cur_url, 'nzgw') !== false){
+			// 	$url = 'http://info.nainaiwang.com/nzgw/nnys-admin';
+			// }
 		}else{
 			$sourcePath = trim($imgSrc,'/');
 			$thumbFileName = $preThumb.basename($imgSrc);
@@ -52,7 +52,7 @@ class Thumb
 		}
 		//缩略图目录
 		$thumbDir    = self::getThumbDir().'/';
-
+		
 		$webThumbDir = self::$thumbDir.'/';
 		// var_dump($sourcePath);
 		// var_dump(is_file($sourcePath));exit;

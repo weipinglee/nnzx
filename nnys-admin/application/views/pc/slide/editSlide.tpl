@@ -25,7 +25,15 @@
             <div class="pd-20">
                 <form action="{url:tool/slide/editSlide}" method="post"  class="form form-horizontal"
                       id="adPositionAdd" auto_submit redirect_url="{url:tool/slide/slideList}">
-
+                    <div class="row cl">
+                        <label class="form-label col-2"><span class="c-red">*</span> 位置：</label>
+                        <div class="formControls col-5">
+                            <select name='pos_id'>
+                                {$pos_list}
+                            </select>
+                        </div>
+                        <div class="col-4"> </div>
+                    </div>
                     <div class="row cl">
                         <label class="form-label col-2">名称：</label>
                         <div class="formControls col-10">

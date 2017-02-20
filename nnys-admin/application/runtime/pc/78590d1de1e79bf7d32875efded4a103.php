@@ -29,7 +29,7 @@
         </div>
         <div class="content">
             <div class="pd-20">
-                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://localhost/nnzx/nnys-admin/article/article/addarc/"><i class=" icon-plus fa-plus"></i> 添加资讯</a> </span>  </div>
+                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://localhost/nnzx/nnys-admin//article/article/addarc/"><i class=" icon-plus fa-plus"></i> 添加资讯</a> </span>  </div>
                 <div class="mt-20">
                     <table class="table table-border table-bordered table-hover table-bg table-sort">
                         <thead>
@@ -64,7 +64,7 @@
                                     <?php }elseif($item['status'] == 0){?>
                                         <a style="text-decoration:none" href="javascript:;" title="启用" ajax_status=1 ajax_url="http://localhost/nnzx/nnys-admin/article/article/setstatus/id/<?php echo $item['id'];?>"><i class="icon-play fa-play"></i></a>
                                     <?php }?>
-                                    <a title="编辑" href="http://localhost/nnzx/nnys-admin/article/article/arcedit/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="ml-5" style="text-decoration:none"><i class="icon-edit fa-edit"></i></a>
+                                    <a title="编辑" href="http://localhost/nnzx/nnys-admin//article/article/arcedit/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="ml-5" style="text-decoration:none"><i class="icon-edit fa-edit"></i></a>
                                     <a title="删除" href="javascript:void(0);" onclick="delFundOut('<?php echo isset($item['id'])?$item['id']:"";?>',this)" class="ml-5" style="text-decoration:none"><i class="icon-trash fa-trash"></i></a></td>
                             </tr>
                         <?php }?>
@@ -73,7 +73,7 @@
                             function delFundOut(name,obj){
                                 var obj=$(obj);
                                 var name=name;
-                                var url="http://localhost/nnzx/nnys-admin/article/article/del/";
+                                var url="http://localhost/nnzx/nnys-admin//article/article/del/";
                                 if(confirm("确定要删除吗")){
                                     $.ajax({
                                         type:'get',

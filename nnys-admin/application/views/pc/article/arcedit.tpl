@@ -47,6 +47,13 @@
                     <div class="col-4"> </div>
                 </div>
                 <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span> 关键字(英文分号分隔)：</label>
+                    <div class="formControls col-5">
+                        <input type="text" name="keywords" class="input-text" value="{$info['keywords']}" datatype="*2-100" nullmsg="关键字不能为空">
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span>分类：</label>
                     <div class="formControls col-5">
                         <select name='cate_id'>
@@ -55,7 +62,35 @@
                     </div>
                     <div class="col-4"> </div>
                 </div>
-                
+                <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span>类型：</label>
+                    <div class="formControls col-5">
+                        <select name='type'>
+                            {$typelist}
+                        </select>
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span>是否启用：</label>
+                    <div class="formControls col-5">
+                            
+                            <input type="radio" name="status" value='1' {if:(isset($info) && $info['status']==1) || !isset($info)}checked=1{/if}>是
+                            <input type="radio" name="status" value='0' {if:(isset($info)&&$info['status']==0)}checked=1{/if}>否
+
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span>是否推荐：</label>
+                    <div class="formControls col-5">
+                            
+                            <input type="radio" name="recommend" value='1' {if:(isset($info) && $info['recommend']==1) || !isset($info)}checked=1{/if}>是
+                            <input type="radio" name="recommend" value='0' {if:(isset($info)&&$info['recommend']==0)}checked=1{/if}>否
+
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
                 <div class="row cl">
                     <label class="form-label col-3">封面：</label>
                     <!-- <div class="formControls col-1">
@@ -92,16 +127,7 @@
                     </div>
                     <div class="col-4"> </div>
                 </div>
-                <div class="row cl">
-                    <label class="form-label col-3"><span class="c-red">*</span>是否启用：</label>
-                    <div class="formControls col-5">
-                            
-                            <input type="radio" name="status" value='1' {if:(isset($info) && $info['status']==1) || !isset($info)}checked=1{/if}>是
-                            <input type="radio" name="status" value='0' {if:(isset($info)&&$info['status']==0)}checked=1{/if}>否
-
-                    </div>
-                    <div class="col-4"> </div>
-                </div>
+                
 
                 <div class="row cl">
                     <div class="col-9 col-offset-3">
