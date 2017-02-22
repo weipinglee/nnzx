@@ -59,6 +59,7 @@ class slide{
 
                 }
             }
+
             if($slideObj->where(['id'=>$params['id']])->data($params)->update()){
                 return \Library\tool::getSuccInfo(1,'修改成功');
             }
