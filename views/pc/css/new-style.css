@@ -250,6 +250,7 @@ a, a * { cursor: pointer; }
 }
 .page a{
     text-decoration: none;
+    margin-right: 5px;
 }
 .page .page_first,.page_up{
     padding: 10px 15px;
@@ -297,6 +298,7 @@ a, a * { cursor: pointer; }
     float: left;
     margin-left: 20px;
     width: 97px;
+    margin-bottom:15px;
 }
 .content_title .content_title_ul li a.title_a{
     display: block;
@@ -374,4 +376,11 @@ a, a * { cursor: pointer; }
     -moz-border-radius:5px; 
 }
 /*搜索 end*/
+
+.news_cont{
+    padding: 0 20px;
+}
+.news_cont img{
+    width: 100%;
+}
 

@@ -37,6 +37,15 @@
                 if(k != '' && k != '请输入关键字查询')
                 window.location.href = "{url:/search/index}/keyword/"+k;
             });
+            $('.search .text').keydown(function(e){
+                if(e.keyCode == 13){
+                    e.preventDefault();
+                    var k = $(this).val();
+                    if(k != '' && k != '请输入关键字查询')
+                        window.location.href = "{url:/search/index}/keyword/"+k;
+                    return;
+                }
+            });
         })
     </script>
     

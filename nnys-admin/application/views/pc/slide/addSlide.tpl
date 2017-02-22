@@ -59,9 +59,9 @@
                 </div>
                 
                 <div class="row cl">
-                    <label class="form-label col-3"><span class="c-red"></span> 背景颜色：</label>
+                    <label class="form-label col-3"><span class="c-red"></span> 链接：</label>
                     <div class="formControls col-5">
-                        <input type="text" name="bgcolor" class="input-text" />
+                        <input type="text" name="link" class="input-text" />
                     </div>
                     <div class="col-4"> </div>
                 </div>

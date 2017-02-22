@@ -54,7 +54,7 @@
     <div class="row cl">
       <label class="form-label col-3"><span class="c-red">*</span>备注：</label>
       <div class="formControls col-5">
-        <input type="text" class="input-text" placeholder="@" name="role-remark" value="{$info['remark']}" id="role-remark" datatype="*2-30">
+        <input type="text" class="input-text" placeholder="" name="role-remark" value="{$info['remark']}" id="role-remark" datatype="*2-30">
       </div>
       <div class="col-4"> </div>
     </div>

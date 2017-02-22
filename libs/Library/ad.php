@@ -44,7 +44,7 @@ class ad
 
           if(!$value['content']) continue;
           $content = Thumb::getOrigImg($value['content']);
-          $img = "<a href='{$value['link']}'><img src='{$content}' class='ad_box'/></a>";
+          $img = "<a href='{$value['link']}' target='_blank'><img src='{$content}' class='ad_box'/></a>";
           echo <<<STR
 <script>document.write("{$img}")</script>
 STR;

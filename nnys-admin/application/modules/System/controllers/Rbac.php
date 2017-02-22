@@ -70,6 +70,7 @@ class RbacController extends InitController{
 		}else{
 			$id = intval($this->_request->getParam('id'));
 			$info = $this->rbacModel->roleInfo($id);
+			
 			$this->getView()->assign("info",$info);
 		}
 	}

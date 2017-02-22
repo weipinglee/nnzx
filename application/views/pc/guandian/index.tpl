@@ -15,7 +15,7 @@
 			<div id="banner_info"></div>
 
 			<!--标题-->
-
+			
 			<ul>
 				<li class="on"></li>
 				<li></li>
@@ -26,7 +26,7 @@
 			<div id="banner_list"> 
 
 				{foreach:items=$slides}
-				<a href="#" target="_blank"><img src="{$item['img']}" title="{$item['name']}" alt="{$item['name']}"/></a> 
+				<a target="_blank" href="{$item['link']}"><img src="{$item['img']}" title="{$item['name']}" alt="{$item['name']}"/></a> 
 				{/foreach}
 			</div>
 
@@ -39,8 +39,8 @@
 						<img src="{$item['cover'][0]}" class="news_pic">
 						<div class="news_content">
 							<h3>
-								<a href><span class="trade">{$item['cate_name']}</span></a>
-								<a href><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="{url:/More/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:/detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
@@ -57,8 +57,8 @@
 					{else:}
 						<div class="news_content no_pic">
 							<h3>
-								<a href><span class="trade">{$item['cate_name']}</span></a>
-								<a href><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="{url:/More/index}/type/{$item['type']}/id/{$item['cate_id']}"><span class="trade">{$item['cate_name']}</span></a>
+								<a href="{url:/detail/index}/id/{$item['id']}"><span class="title">{$item['name']}</span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
@@ -98,8 +98,8 @@
 		<div class="data_box">
 			<ul class="data_list addpic">
 				<li class="title">
-					<a href><h3>推荐文章</h3></a>
-					<a href><span>更多</span></a>
+					<a href="#"><h3>推荐文章</h3></a>
+					<!-- <a href><span>更多</span></a> -->
 				</li>
 				{foreach:items=$recommend_list}
 					<li>
@@ -108,7 +108,7 @@
 						</a>
 						<span class="list_news_title">
 							<p>
-								<a href>{$item['name']}</a>
+								<a href="{url:/detail/index}/id/{$item['id']}">{$item['name']}</a>
 							</p>
 							<p>
 								<span class="time">{$item['create_time']}</span>
