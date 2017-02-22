@@ -24,7 +24,7 @@
 
 			<div id="banner_list"> 
 				{foreach:items=$slides}
-				<a href="#" target="_blank"><img src="{$item['img']}" title="{$item['name']}" alt="{$item['name']}"/></a> 
+				<a href="{$item['link']}" target="_blank"><img src="{$item['img']}" title="{$item['name']}" alt="{$item['name']}"/></a> 
 				{/foreach}
 
 			</div>

@@ -29,6 +29,7 @@ class slideController extends Yaf\Controller_Abstract{
             $data['status']=safe::filterPost('status','int');
             $data['order']=safe::filterPost('order','int');
             $data['bgcolor']=safe::filterPost('bgcolor');
+            $data['link']=safe::filterPost('link');
             $data['pos_id']=safe::filterPost('pos_id');
             $slideModel=$this->slideModel;
             $res=$slideModel->addSlide($data);
