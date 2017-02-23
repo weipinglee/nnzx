@@ -28,7 +28,7 @@
 							作者：{$info['author']}
 						</span>
 						<span style="left:450px;">
-							关键字：<a href>{$info['keywords_str']}</a>
+							关键字：<a href>{$info['ori_keywords']}</a>
 						</span>
 					</p>
 

@@ -31,7 +31,9 @@ class Article{
 			$keyword_score = isset($keyword_info[$value]) ? $keyword_info[$value]['search_num']*$keyword_info[$value]['base_score'] : 0.5;//0.5为新关键字权重
 			//已存关键字权重默认为1 可由后台设置
 			$keyword_filter .= "((LENGTH(ifnull(keywords,'')) - LENGTH( REPLACE(ifnull(keywords,''),'{$value}','')))/LENGTH('{$value}'))*{$keyword_score}+";
+			$where['keywords'] = array('like',$value);
 		}
+		if($where) $this->where = $where;
 		$fields .= rtrim($tmp,'+').")*{$title_score}+".rtrim($keyword_filter,'+').') as sign';
 	}
 
@@ -64,51 +66,66 @@ class Article{
 			}
 		}
 		if($where && is_array($where)){
-			foreach ($where as $key => $value) {
-				$key = (strpos($key,'.') ? '' : 'a.').$key;
 
-				$oper = is_array($value) && isset($value[1]) ? $value[0] : '=';
-				
-				switch ($oper) {
-					case 'like':
-						if(is_array($value[1])){
-							$tmp = ' (';
-							foreach ($value[1] as $k => $v) {
-								$tmp .= $key." like '%{$v}%' or ";
-							}
-							$tmp = rtrim($tmp,'or ').') and ';	
-							
-						}else{
-							$tmp = $key." like '%{$value[1]}%' and ";
-						}
-						
-						$where_str .= $tmp;
-						break;
-					case 'neq':
-						$where_str .= $key.'!='.$value[1].' and ';
-						break;
-					case '=':
-						$where_str .= $key.'='.$value.' and ';
-						break;
-					case 'gt':
-						$where_str .= $key.">'".$value[1]."' and ";
-						break;
-					case 'lt':
-						$where_str .= $key."<'".$value[1]."' and ";
-						break;
-					case 'in':
-						$tmp = is_array($value[1]) ? "'".implode("','",$value[1])."'" : $value[1];
-						$where_str .= $key." in (".$tmp.") and ";
-						break;
-					default:
-						break;
-				}
+			if(isset($where['keywords']) && isset($where['name'])){
+				$keywords = $where['keywords'];
+				$keywords[]= 'or';
+				$name = $where['name'];
+				unset($where['keywords']);
+				unset($where['name']);
+				$where_str = '('.$this->switchWhere(array('keywords'=>$keywords,'name'=>$name)).') and ';
 			}
-			$where_str = rtrim($where_str,'and ');
+			$where_str .= $this->switchWhere($where);		
 			// var_dump($where_str);
 		}else{
 			$where_str = 'a.is_del = 0 and a.status <= 1';
 		}
+		return $where_str;
+	}
+	
+	public function switchWhere($where){
+		foreach ($where as $key => $value) {
+			$key = (strpos($key,'.') ? '' : 'a.').$key;
+			
+			$oper = is_array($value) && isset($value[1]) ? $value[0] : '=';
+			$logic = is_array($value) && isset($value[2]) ? " ".$value[2]." " : ' and ';
+
+			switch ($oper) {
+				case 'like':
+					if(is_array($value[1])){
+						$tmp = ' (';
+						foreach ($value[1] as $k => $v) {
+							$tmp .= $key." like '%{$v}%' or ";
+						}
+						$tmp = rtrim($tmp,'or ').') '.$logic;	
+						
+					}else{
+						$tmp = $key." like '%{$value[1]}%' ".$logic;
+					}
+					$where_str .= $tmp;
+					break;
+				case 'neq':
+					$where_str .= $key.'!='.$value[1].$logic;
+					break;
+				case '=':
+					$where_str .= $key.'='.$value.$logic;
+					break;
+				case 'gt':
+					$where_str .= $key.">'".$value[1]."' ".$logic;
+					break;
+				case 'lt':
+					$where_str .= $key."<'".$value[1]."' ".$logic;
+					break;
+				case 'in':
+					$tmp = is_array($value[1]) ? "'".implode("','",$value[1])."'" : $value[1];
+					$where_str .= $key." in (".$tmp.") ".$logic;
+					break;
+				default:
+					break;
+			}
+			
+		}
+		$where_str = rtrim($where_str,' '.$logic.' ');
 		return $where_str;
 	}
 
@@ -125,7 +142,7 @@ class Article{
 	 * @return array
 	 */
 	public function arcList($page = 1,$where=array(),$order='',$fields='',$pageSize=10,$user_id = 0,$author_id = 0,$device=DEVICE_TYPE){
-		
+		if($this->where && $where) $where = array_merge($this->where,$where);
 		$where_str = $this->handleWhere($where);
 		if(!$order) $order = 'update_time desc';
 		$index = 0;

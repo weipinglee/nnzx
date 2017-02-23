@@ -19,7 +19,6 @@ class Keyword{
         // 严格开发模式
         ini_set('display_errors', 'On');
         ini_set('memory_limit', '64M');
-        error_reporting(E_ALL);
 
         header('Content-Type: text/html; charset=utf-8');
 
