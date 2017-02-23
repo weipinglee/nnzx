@@ -17,10 +17,9 @@
 			<!--标题-->
 			
 			<ul>
-				<li class="on"></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				{foreach:items=$slides}
+					<li {if:$key == 0}class="on"{/if}></li>
+				{/foreach}
 			</ul>
 
 			<div id="banner_list"> 
@@ -48,9 +47,7 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
@@ -66,9 +63,7 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
@@ -83,9 +78,9 @@
 	<div class="list_right">
 		<div class="data_box news">
 			<div class="news_top clear">
-				<div class="news_top_img"><img src="{views:images/ad.png}"/></div>
+				<div class="news_top_img"><img src="{views:images/nnzx.png}"/></div>
 				<div class="news_top_right">
-					<h3>耐耐咨讯</h3>
+					<h3>耐耐资讯</h3>
 					<p>浏览量：525212次</p>
 					<p>文&nbsp;&nbsp;&nbsp;章：15236条</p>
 				</div>
@@ -104,7 +99,7 @@
 				{foreach:items=$recommend_list}
 					<li>
 						<a href>
-							<img src="{$item['cover'][0]}" title="新闻图片" class="list_news_pic">
+							<img src="{$item['cover_pic']}" title="新闻图片" class="list_news_pic">
 						</a>
 						<span class="list_news_title">
 							<p>

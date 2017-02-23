@@ -577,7 +577,6 @@ class M{
 			$sql .= '`'.$key.'` = :'.$key.',';
 		}
 		$sql = rtrim($sql,',');
-		var_dump($sql);exit;
 		return $this->bind(array_merge($insert,$update))->query($sql,array(),'UPDATE');
 
 	}
@@ -613,7 +612,6 @@ class M{
 			}
 		}
 		$sql = rtrim($sql,',');
-
 		return $this->bind($bind)->query($sql,array(),'UPDATE');
 
 	}

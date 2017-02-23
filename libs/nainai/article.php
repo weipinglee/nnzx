@@ -162,6 +162,8 @@ class Article{
         	$value['author'] = $value['user_type'] == \nainai\Article::TYPE_ADMIN ? '耐耐资讯' : ($value['author'] ? $value['author']:'佚名');
         	$value['create_time'] = date('Y-m-d',strtotime($value['create_time']));
         	$value['short_content'] = mb_substr(strip_tags(htmlspecialchars_decode($value['content'])),0,300,'utf-8').'...';
+        	$value['cover_pic'] = isset($value['cover'][0]) ? $value['cover'][0] : "/views/pc/images/no_pic.png";
+        	
         	if(isset($value['cover'])){
         		// $thumbs[$key] = Thumb::get($value['img'],180,180);
           //       $photos[$key] = Thumb::getOrigImg($value['img']);
@@ -203,12 +205,17 @@ class Article{
 			$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
 
 		$arcInfo['siblings'] = $this->siblingArticle($arcInfo);
-		
+		$this->viewsNumAdd($arcInfo);
 		return $arcInfo;
 	}
 
 	public function arcids($cate_id=0){
 		
+	}
+
+	public function viewsNumAdd($arcInfo){
+		$model = new M('article');
+		@$model->where(array('id'=>$arcInfo['id']))->data(array('collect_num'=>$arcInfo['collect_num']+1))->update();
 	}
 
 	/**

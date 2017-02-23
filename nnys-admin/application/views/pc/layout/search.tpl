@@ -20,7 +20,7 @@
         <div class="text-c">
             {if:isset($data['search']['time'])}
                 {$data['search']['time']}：
-
+                
                 <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" id="datemin" class="input-text Wdate" name="begin" value="{$begin}" style="width:120px;">
                 -
                 <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })"id="datemax" class="input-text Wdate" name="end" value="{$end}" style="width:120px;">
