@@ -31,8 +31,9 @@ class Article{
 			$keyword_score = isset($keyword_info[$value]) ? $keyword_info[$value]['search_num']*$keyword_info[$value]['base_score'] : 0.5;//0.5为新关键字权重
 			//已存关键字权重默认为1 可由后台设置
 			$keyword_filter .= "((LENGTH(ifnull(keywords,'')) - LENGTH( REPLACE(ifnull(keywords,''),'{$value}','')))/LENGTH('{$value}'))*{$keyword_score}+";
-			$where['keywords'] = array('like',$value);
+			
 		}
+		$where['keywords'] = array('like',$keyword);
 		if($where) $this->where = $where;
 		$fields .= rtrim($tmp,'+').")*{$title_score}+".rtrim($keyword_filter,'+').') as sign';
 	}
@@ -143,6 +144,7 @@ class Article{
 	 */
 	public function arcList($page = 1,$where=array(),$order='',$fields='',$pageSize=10,$user_id = 0,$author_id = 0,$device=DEVICE_TYPE){
 		if($this->where && $where) $where = array_merge($this->where,$where);
+
 		$where_str = $this->handleWhere($where);
 		if(!$order) $order = 'update_time desc';
 		$index = 0;
@@ -301,6 +303,7 @@ class Article{
 		$where = array('id'=>array('neq',$arcInfo['id']),'is_del'=>0,'status'=>1);
 		if($fav_keywords) {
 			$this->setKeywordField($user_fields,$fav_keywords);
+
 			$userarcList = $this->arcList(1,$where,$order,$user_fields,10);
 			$userarcList = DEVICE_TYPE == 'pc' ? $userarcList[0] : $userarcList;
 
@@ -312,15 +315,15 @@ class Article{
 		$arc_keywords = $arcInfo['keywords'];
 
 		$arc_fields = 'a.*';
-		$where = array('cate_id'=>$arcInfo['cate_id'],'id'=>array('neq',$arcInfo['id']));
+		$where = array('id'=>array('neq',$arcInfo['id']));//'cate_id'=>$arcInfo['cate_id'],
 		if($arc_keywords) {
 			$this->setKeywordField($arc_fields,$arc_keywords);
+
 			$arcList = $this->arcList(1,$where,$order,$arc_fields,10);
 			$arcList = DEVICE_TYPE == 'pc' ? $arcList[0] : $arcList;
 		}else{
 			$arcList = array();
 		}
-
 		$list = array_merge(array_slice($arcList,0,$size),array_slice($userarcList, 0,$size));
 
 		$ids = array();
