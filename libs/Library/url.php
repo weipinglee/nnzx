@@ -15,7 +15,6 @@ class url {
      * 如果不是�?’，第一�?/'前的部分是module,后面�?/'分割的依次是控制器、方�?如果缺失/则默认为index,?后面的是参数对，@后面的是主机�?     * 注意:必须�?/?@的顺序，/可以是一个或0�?     * @param string $baseUrl 站点路径 如果传递次参数 会忽�?str中@后面的内�?     * @return string 返回产生的url
      */
     public static function createUrl($str,$baseUrl=null){
-        error_reporting(0);
         $url_str = trim($str);
 
         $pos = array('module'=>'','controller'=>'','action'=>'','param'=>'','host'=>'');
