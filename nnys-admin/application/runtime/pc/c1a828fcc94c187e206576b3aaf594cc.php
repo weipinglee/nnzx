@@ -29,7 +29,20 @@
         </div>
         <div class="content">
             <div class="pd-20">
-                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://info.nainaiwang.com/nnys-admin//article/article/addarc/"><i class=" icon-plus fa-plus"></i> 添加资讯</a> </span>  </div>
+                <div class="cl pd-5 bg-1 bk-gray"> <a class="btn btn-primary radius" href="http://info.nainaiwang.com/nnys-admin//article/article/addarc/"><i class=" icon-plus fa-plus"></i> 添加资讯</a> </span>  
+
+                 </div>
+                <form action="" method="post" >
+                    <div class="text-c">
+                    名称：
+                    <input type="text" class='input' name="name" value="<?php echo isset($name)?$name:"";?>">
+                    分类：
+                    <select name="cate_id" class='select-box' style="width:25%">
+                    <?php echo isset($cates)?$cates:"";?>
+                </select>
+                <button type="submit" class="btn btn-success radius" id="" name=""><i class="icon-search fa-search"></i> 搜索</button>
+                </div>
+                </form>
                 <div class="mt-20">
                     <table class="table table-border table-bordered table-hover table-bg table-sort">
                         <thead>
@@ -38,6 +51,7 @@
 
                             <th width="20">ID</th>
                             <th width="100">名称</th>
+                            <th width="100">所属分类</th>
                             <th width="60">状态</th>
                             <th width="50">作者</th>
                             <th width='100'>操作</th>
@@ -49,6 +63,7 @@
                                 <!-- <td><input type="checkbox" value="" name="check"></td> -->
                                 <td><span><?php echo isset($item['id'])?$item['id']:"";?></span></td>
                                 <td><span><?php echo isset($item['name'])?$item['name']:"";?></span></td>
+                                <td><span><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></td>
                                 <td class="td-status">
                                     <?php if($item['status'] == 1){?>
 

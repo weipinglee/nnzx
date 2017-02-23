@@ -27,8 +27,8 @@ class ArticleModel
      * @param int $page
      * @return array
      */
-    public function arcList($page=1){
-        return $this->article->arcList($page);
+    public function arcList($page=1,$where = array()){
+        return $this->article->arcList($page,$where);
         //var_dump($cateTree);
         // return $this->cate->cateList($page);
     }

@@ -15,14 +15,23 @@ class ArticleController extends InitController {
 		$this->typeModel = new typeModel();
 	}
 	
-	/**
-	 * 分类列表
-	 */
 	public function arcListAction(){
 		$page = safe::filterGet('page','int',1);
-		$list = $this->Model->arcList($page);
+		$cate_id = safe::filterPost('cate_id','int',0);
+		$name = safe::filterPost('name','trim','');
+		$where = array();
+		if($cate_id) $where['cate_id'] = $cate_id;
+		if($name) $where['name'] = array('like',$name);
+
+		$list = $this->Model->arcList($page,$where);
+		$cate_list = $this->cateModel->cateFlowHtml($cate_id);
+		
 		$this->getView()->assign('list', $list[0]);
+		$this->getView()->assign('data', array('search'=>array('name'=>'=')));
 		$this->getView()->assign('pageBar', $list[1]);
+		$this->getView()->assign('cates', $cate_list);
+		$this->getView()->assign('name', $name);
+		$this->getView()->assign('cate_id', $cate_id);
 	}
 	
 	public function addArcAction(){

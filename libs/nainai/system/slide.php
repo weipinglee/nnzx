@@ -44,7 +44,7 @@ class slide{
             return \Library\tool::getSuccInfo(0,'添加失败,原因为:'.$error);
         }
     }
-
+    
     /**
      *  修改幻灯片
      * @param array $params

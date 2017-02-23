@@ -55,15 +55,85 @@
 
             {foreach:items=$cates}
             <li>
+                <img src="{$item['img']}"/>
                 <a class="title_a" href="{url:/Hangye/index}/type/3/id/{$item['id']}">{$item['name']}
-                    <div class="c-tip-arrow" style="left: 38px;"><em></em></div>
+                    <!-- <div class="c-tip-arrow" style="left: 38px;"><em></em></div> -->
                 </a>
             </li>
             {/foreach}
             <!-- <li class="industry1"><a href>建材行业</a></li> -->
         </ul>
     </div>
+    </div>
 {content}
-</body>
 
-</html>
+<!--公用底部控件 开始-->
+<link href="{views:css/footer.css}" rel="stylesheet" type="text/css">
+<div class="clear"></div>
+<div id="footer">
+
+
+
+    <div class="footer_link clearfix">
+        <!-- <div class="foter_width">
+            <ul>
+                {foreach: items=$helpList2}
+                    <li class="footer_li">
+                        <a class="fotter_div" target="_blank"><b>{$item['name']}</b></a>
+                        {foreach: items=$item['data'] item=$v key=$k}
+                            {if:$v['link']}
+                                <a class="fotter_a" href="{$v['link']}" target="_blank">{$v['name']}</a>
+
+                            {else:}
+                                <a class="fotter_a" href="{url:/help/help}?cat_id={$v['cat_id']}&id={$v['id']}" target="_blank">{$v['name']}</a>
+
+                            {/if}
+                         {/foreach}
+                    </li>
+                {/foreach}
+
+            </ul>
+            <ul class="ewm_ul">
+                <li class="ewm_li">
+                    <div class="fotter_div" target="_blank"><b>关注耐火频道</b></div>
+                    <div><img src="{views:images/index/a_naih.png}"></div>
+                </li>
+                <li class="ewm_li">
+                    <div class="fotter_div" target="_blank"><b>关注耐耐网</b></div>
+                    <div><img src="{views:images/index/a_nain.png}"></div>
+                </li>
+                <li class="ewm_li">
+                    <div class="fotter_div" target="_blank"><b>关注建材频道</b></div>
+                    <div><img src="{views:images/index/a_jianc.png}"></div>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="fotter_bq ">
+        <div>
+            Copyright&nbsp;&nbsp; © 2000-2015&nbsp;&nbsp;耐耐云商科技有限公司&nbsp;版权所有&nbsp;&nbsp; 网站备案/许可证号:沪ICP备15028925号
+        </div>
+        <div>
+            服务电话：4006238086 地址:上海浦东新区唐镇上丰路977号b座
+        </div>
+        <div>
+            增值电信业务经营许可证沪B2-20150196
+        </div>
+        <div>
+            违法信息举报邮箱：shensu@nainaiwang.com
+        </div>
+        <div>
+            技术支持：耐耐云商科技有限公司技术部
+        </div>
+
+            <!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260482243'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260482243%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script> -->
+    </div>
+
+</div>
+
+
+
+
+<!--公用底部控件 结束-->
+</body>
+</body>

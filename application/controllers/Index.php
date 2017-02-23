@@ -15,7 +15,8 @@ class IndexController extends InitController {
 		$type = new ArcType();
 		$typelist = $type->typelist(0,'pc',array('pid'=>0));
 		$where = array('type'=>$typelist[0]['id'],'include_child'=>1);
-		$main_data = $this->article->arcList(1,$where,'','',5);	
+		$page = safe::filterGet('page','int',1);
+		$main_data = $this->article->arcList($page,$where,'','',10);	
 		foreach ($typelist as $key => $value) {
 			if($key == 0) continue;
 			$where['type'] = $value['id'];
@@ -25,7 +26,7 @@ class IndexController extends InitController {
 		//获取轮播图
 		$slides = slide::getSlidebyPos('pchome');
 
-		$this->getView()->assign('slides',$slides);
+		$this->getView()->assign('slides',$slides);	
 		$this->getView()->assign('data',$data);
 		$this->getView()->assign('main_data',$main_data);
 

@@ -37,6 +37,15 @@
                 if(k != '' && k != '请输入关键字查询')
                 window.location.href = "http://info.nainaiwang.com//search/index/keyword/"+k;
             });
+            $('.search .text').keydown(function(e){
+                if(e.keyCode == 13){
+                    e.preventDefault();
+                    var k = $(this).val();
+                    if(k != '' && k != '请输入关键字查询')
+                        window.location.href = "http://info.nainaiwang.com//search/index/keyword/"+k;
+                    return;
+                }
+            });
         })
     </script>
     
@@ -130,6 +139,7 @@
 		</div> -->
 	</div>
 	<div class="list_right">
+		<?php if(isset($data[0]['id'])){?>
 		<div class="data_box quotation_top">
 			<ul class="data_list addpic">
 				<li class="title">
@@ -154,7 +164,9 @@
 				<?php }?>
 			</ul>
 		</div>
+		<?php }?>
 		<?php echo \Library\Ad::commonshow('more',0,1);?>
+		<?php if(isset($data[1]['id'])){?>
 		<div class="data_box">
 			<ul class="data_list">
 				<li class="title">
@@ -166,6 +178,7 @@
 				<?php }?>
 			</ul>
 		</div>
+		<?php }?>
 		<?php echo \Library\Ad::commonshow('more',1);?>
 		
 	</div>

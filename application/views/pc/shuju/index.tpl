@@ -17,10 +17,9 @@
 			<!--标题-->
 
 			<ul>
-				<li class="on"></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				{foreach:items=$slides}
+					<li {if:$key == 0}class="on"{/if}></li>
+				{/foreach}
 			</ul>
 
 			<div id="banner_list"> 
@@ -41,7 +40,7 @@
 				</div>
 				<div class="data_content">
 					<div class="hot_news">
-						<a href="{url:/detail/index}/id/{$data[$item['id']][0][0]['id']}"><img src="{$data[$item['id']][0][0]['cover'][0]}"></a>
+						<a href="{url:/detail/index}/id/{$data[$item['id']][0][0]['id']}"><img src="{$data[$item['id']][0][0]['cover_pic']}"></a>
 						<div class="hot_point">
 							<a href="{url:/detail/index}/id/{$data[$item['id']][0][0]['id']}">{$data[$item['id']][0][0]['name']}</a>
 						</div>
@@ -49,7 +48,7 @@
 					<ul>
 						{if:isset($data[$item['id']][0][1]['id'])}
 						<li>
-							<a href="{url:/detail/index}/id/{$data[$item['id']][0][1]['id']}"><img src="{$data[$item['id']][0][1]['cover'][0]}" title="{$data[$item['id']][0][1]['name']}" class="list_hot"></a>
+							<a href="{url:/detail/index}/id/{$data[$item['id']][0][1]['id']}"><img src="{$data[$item['id']][0][1]['cover_pic']}" title="{$data[$item['id']][0][1]['name']}" class="list_hot"></a>
 							<span class="list_hot_cont">
 								<!-- 此处需要控制字数 -->
 								<p><a href="{url:/detail/index}/id/{$data[$item['id']][0][1]['id']}">{$data[$item['id']][0][1]['name']}</a></p>

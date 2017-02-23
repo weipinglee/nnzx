@@ -36,9 +36,7 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
@@ -54,9 +52,7 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>

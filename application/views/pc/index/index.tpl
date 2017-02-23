@@ -16,10 +16,9 @@
 			<!--标题-->
 
 			<ul>
-				<li class="on"></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				{foreach:items=$slides}
+					<li {if:$key == 0}class="on"{/if}></li>
+				{/foreach}
 			</ul>
 
 			<div id="banner_list"> 
@@ -47,9 +46,7 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
@@ -65,21 +62,20 @@
 								<img src="{views:images/20170123161308.jpg}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
-								<span class="share">
-									
-								</span>
+							
 							</p>
-
+						
 						</div>
 					{/if}
 				</div>
 			{/foreach}
-		</div>
-		<div class="load_but">
+			<div class="page">
 			<span>
-				加载更多
+				{$main_data[1]}
 			</span>
 		</div>
+		</div>
+		
 	</div>
 	<div class="list_right">
 		<div class="data_box">
@@ -103,7 +99,7 @@
 				{foreach:items=$data[1][0]}
 				<li>
 					<a href="{url:/Detail/index}/id/{$item['id']}">
-						<img src="{$item['cover'][0]}" title="新闻图片" class="list_news_pic">
+						<img src="{$item['cover_pic']}" title="新闻图片" class="list_news_pic">
 					</a>
 					<span class="list_news_title">
 						<p>

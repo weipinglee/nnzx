@@ -24,7 +24,7 @@ class json
 	 * @return String json数据格式
 	 */
 	public static function encode($param)
-	{
+	{	
 		if(version_compare(phpversion(),'5.4.0') >= 0)
 		{
 			return json_encode($param,JSON_UNESCAPED_UNICODE);
