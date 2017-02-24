@@ -83,7 +83,7 @@ class ArticleController extends AppBaseController{
 		
 		die(json::encode($res));
 	}
-
+	
 	public function arcInfoAction(){
 		// $article_id = safe::filterPost('id','int');
 		$article_id = safe::filter($this->_request->getParam('id'),'int');
