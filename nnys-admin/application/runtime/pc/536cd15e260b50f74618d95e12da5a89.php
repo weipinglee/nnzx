@@ -3,38 +3,38 @@
 <head>
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<script type="text/javascript" src="/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="/nnys-admin/views/pc/css/min.css" />
-	<script type="text/javascript" src="/nnys-admin/views/pc/js/validform/validform.js"></script>
-	<script type="text/javascript" src="/nnys-admin/views/pc/js/validform/formacc.js"></script>
-	<script type="text/javascript" src="/nnys-admin/views/pc/js/layer/layer.js"></script>
-	<link rel="stylesheet" href="/nnys-admin/views/pc/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="/nnys-admin/views/pc/css/H-ui.min.css">
-	<script type="text/javascript" src="/nnys-admin/js/area/Area.js" ></script>
-	<script type="text/javascript" src="/nnys-admin/js/area/AreaData_min.js" ></script>
-	<script type="text/javascript" src="/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
+	<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/css/min.css" />
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/validform.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/formacc.js"></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/layer/layer.js"></script>
+	<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/nnzx/nnys-admin/views/pc/css/H-ui.min.css">
+	<script type="text/javascript" src="/nnzx/nnys-admin/js/area/Area.js" ></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/js/area/AreaData_min.js" ></script>
+	<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
 </head>
 <body>
 
-<script type="text/javascript" src="/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
-<script type="text/javascript" src="/nnys-admin/views/pc/js/validform/validform.js"></script>
-<script type="text/javascript" src="/nnys-admin/views/pc/js/validform/formacc.js"></script>
-<script type="text/javascript" src="/nnys-admin/views/pc/js/layer/layer.js"></script>
-<script type="text/javascript" src="/nnys-admin/views/pc/content/settings/main.js"></script>
-<link rel="stylesheet" href="/nnys-admin/views/pc/content/settings/style.css" />
-<link rel="stylesheet" type="text/css" href="/nnys-admin/views/pc/css/H-ui.admin.css">
-<script type="text/javascript" src="/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/libs/jquery/1.11/jquery.min.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/validform.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/validform/formacc.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/layer/layer.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/content/settings/main.js"></script>
+<link rel="stylesheet" href="/nnzx/nnys-admin/views/pc/content/settings/style.css" />
+<link rel="stylesheet" type="text/css" href="/nnzx/nnys-admin/views/pc/css/H-ui.admin.css">
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/My97DatePicker/WdatePicker.js"></script>
 
-<script type="text/javascript" src='/nnys-admin/js/upload/ajaxfileupload.js'></script>
-<script type="text/javascript" src='/nnys-admin/js/upload/upload.js'></script>
+<script type="text/javascript" src='/nnzx/nnys-admin/js/upload/ajaxfileupload.js'></script>
+<script type="text/javascript" src='/nnzx/nnys-admin/js/upload/upload.js'></script>
 
-<script type="text/javascript" src="/nnys-admin/views/pc/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/ueditor/ueditor.config.js"></script>
 
-<script src="/nnys-admin/views/pc/js/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="/nnys-admin/views/pc/js/uploadify/uploadify.css"> 
+<script src="/nnzx/nnys-admin/views/pc/js/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/nnzx/nnys-admin/views/pc/js/uploadify/uploadify.css"> 
 <!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/nnys-admin/views/pc/js/ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="/nnzx/nnys-admin/views/pc/js/ueditor/ueditor.all.js"></script>
 <!--
       CONTENT
                 -->
@@ -47,7 +47,7 @@
 </style>
 <div id="content" class="white">
 
-    <h1><img src="/nnys-admin/views/pc/img/icons/dashboard.png" alt="" />资讯管理
+    <h1><img src="/nnzx/nnys-admin/views/pc/img/icons/dashboard.png" alt="" />资讯管理
     
     </h1>
     
@@ -57,7 +57,7 @@
         </div>
         <div class="pd-20">
             
-            <form action="<?php echo isset($url)?$url:"";?>" method="post" class="form form-horizontal" id="form-member-add" auto_submit redirect_url="http://info.nainaiwang.com/nnys-admin/article/article/arclist">
+            <form action="<?php echo isset($url)?$url:"";?>" method="post" class="form form-horizontal" id="form-member-add" auto_submit redirect_url="http://localhost/nnzx/nnys-admin/article/article/arclist">
                 <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 标题：</label>
                     <div class="formControls col-5">
@@ -68,7 +68,8 @@
                 <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 关键字(英文分号分隔)：</label>
                     <div class="formControls col-5">
-                        <input type="text" name="keywords" class="input-text" value="<?php echo isset($info['keywords_str'])?$info['keywords_str']:"";?>" datatype="*2-100" nullmsg="关键字不能为空">
+
+                        <input type="text" name="keywords" class="input-text" value="<?php echo isset($info['ori_keywords'])?$info['ori_keywords']:"";?>" datatype="*2-100" nullmsg="关键字不能为空">
                     </div>
                     <div class="col-4"> </div>
                 </div>
@@ -113,7 +114,7 @@
                 <div class="row cl">
                     <label class="form-label col-3">封面：</label>
                     <!-- <div class="formControls col-1">
-                        <input type='file' name="cover" id="cover" style="width:65px;" onchange="javascript:uploadImg(this,'http://info.nainaiwang.com/nnys-admin//index/index/upload/');" />
+                        <input type='file' name="cover" id="cover" style="width:65px;" onchange="javascript:uploadImg(this,'http://localhost/nnzx/nnys-admin//index/index/upload/');" />
                     </div> -->
                     
                     <!-- <div>
@@ -188,8 +189,8 @@ $(function(){
                 'requeueErrors'   : false,              //队列上传出错，是否继续回滚队列  
                 'successTimeout'  : 5,                  //上传超时  
                 'uploadLimit'     : 99,                 //允许上传的最多张数  
-                'swf'  : '/nnys-admin/views/pc/js/uploadify/uploadify.swf', //swfUpload  
-                'uploader': 'http://info.nainaiwang.com/nnys-admin//article/article/uploadify/', //服务器端脚本  
+                'swf'  : '/nnzx/nnys-admin/views/pc/js/uploadify/uploadify.swf', //swfUpload  
+                'uploader': 'http://localhost/nnzx/nnys-admin//article/article/uploadify/', //服务器端脚本  
                 
                 
                 //修改formData数据  

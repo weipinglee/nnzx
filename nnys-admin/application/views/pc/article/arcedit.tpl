@@ -93,6 +93,16 @@
                     <div class="col-4"> </div>
                 </div>
                 <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span>是否广告：</label>
+                    <div class="formControls col-5">
+                            
+                            <input type="radio" name="is_ad" value='1' {if:(isset($info) && $info['is_ad']==1)}checked=1{/if}>是
+                            <input type="radio" name="is_ad" value='0' {if:((isset($info)&&$info['is_ad']==0))||!isset($info)}checked=1{/if}>否
+
+                    </div>
+                    <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
                     <label class="form-label col-3">封面：</label>
                     <!-- <div class="formControls col-1">
                         <input type='file' name="cover" id="cover" style="width:65px;" onchange="javascript:uploadImg(this,'{url:/index/index/upload}');" />

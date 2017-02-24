@@ -9,6 +9,7 @@ use \Library\PlUpload;
 use \nainai\offer\product;
 use \nainai\offer\PurchaseOffer;
 use \nainai\keyword;
+use \Library\ad;
 class ArticleController extends AppBaseController{
 
 	protected function init(){
@@ -20,20 +21,25 @@ class ArticleController extends AppBaseController{
 	public function arcListAction(){
 		$page = safe::filterPost('page','int');
 		$user_id = safe::filterPost('user_id','int');
-		$cate_id = safe::filterPost('id','int');
+		$cate_id = safe::filterPost('id','int',0);
 		$update_time = safe::filterPost('update_time','trim');
 		$keyword = safe::filterPost('keyword','trim');
-
-		$where = array('status'=>1,'is_del'=>0);
-
+		
+		$where = array('status'=>1,'is_del'=>0,'is_ad'=>0);
+		
 		// $update_time = date('Y-m-d H:i:s',time());
 		$order = 'update_time desc';
-		$fields = 'a.id,a.name,a.create_time,a.update_time,a.user_id,a.type,a.user_type,a.keywords';
+		$fields = 'a.id,a.name,a.create_time,a.update_time,a.user_id,a.type,a.user_type,a.keywords,a.is_ad';
 		if($cate_id > 0) {
 			//某一分类文章列表  根据更新时间排序
 			$where = array_merge($where,array('cate_id'=>$cate_id));
+			$size = 10;
+			$slide = 0;
 		}else{
 			//推荐列表
+			$where = array_merge($where,array('recommend'=>1));
+			$size = $page == 1 ? 13 : 10;
+			$slide = 1;
 		}
 		if($keyword){
 			//文章标题相关度与关键字热度排序
@@ -46,12 +52,36 @@ class ArticleController extends AppBaseController{
 			$where = array_merge($where,array('update_time'=>array('gt',$update_time)));
 			$page = 1;
 		}
-		$arcList = $this->article->arcList($page,$where,$order,$fields,10,$user_id);
+		$arcList = $this->article->arcList($page,$where,$order,$fields,$size,$user_id);
 		foreach ($arcList as $key => &$value) {
+			unset($value['content']);
+			unset($value['ori_covers']);
+			unset($value['create_time']);
+			unset($value['cover_pic']);
+			unset($value['user_id']);
+			unset($value['type']);
+			unset($value['user_type']);
 			$value['cover'] = $value['cover'] && $value['cover'][0] ? $value['cover'] : array();
 			$value['create_time'] = date('y/m/d H:i',strtotime($value['create_time']));
+			if(isset($value['cover'][0]) && count($slides) < 5) {
+				$tmp = $value;
+				$tmp['cover'] = $tmp['cover'][0];
+				$slides []= $tmp;
+			}
 		}
-		die(json::encode(tool::getSuccInfo(1,$arcList)));
+		$this->article->where = array();
+		$where['is_ad'] = 1;
+		$ads = $this->article->arcList($page,$where,$order,$fields,1);
+
+		if(isset($ads[0])){
+			array_splice($arcList, rand(1,5),0,$ads);
+		}
+
+		$res = tool::getSuccInfo(1,$arcList);
+		if($cate_id == 0) $res['slides'] = $slides;
+		
+		
+		die(json::encode($res));
 	}
 
 	public function arcInfoAction(){
@@ -65,6 +95,12 @@ class ArticleController extends AppBaseController{
 			echo '不存在的id';
 			return false;
 		}
+	}
+
+	public function adAction(){
+		$ad = ad::getAdData('appindex');
+		$img = !isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
+		die(json::encode(array('img'=>$img,'url'=>$ad[0]['link'])));
 	}
 	public function aaAction(){
 		phpinfo();

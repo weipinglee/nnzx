@@ -31,14 +31,19 @@ class Article{
 			$keyword_score = isset($keyword_info[$value]) ? $keyword_info[$value]['search_num']*$keyword_info[$value]['base_score'] : 0.5;//0.5为新关键字权重
 			//已存关键字权重默认为1 可由后台设置
 			$keyword_filter .= "((LENGTH(ifnull(keywords,'')) - LENGTH( REPLACE(ifnull(keywords,''),'{$value}','')))/LENGTH('{$value}'))*{$keyword_score}+";
-			$where['keywords'] = array('like',$value);
+			
 		}
+		$where['keywords'] = array('like',$keyword);
 		if($where) $this->where = $where;
 		$fields .= rtrim($tmp,'+').")*{$title_score}+".rtrim($keyword_filter,'+').') as sign';
 	}
 
 	private function handleWhere($where){
 		$where_str = '';
+		if(!isset($where['is_del'])) $where['is_del'] = 0;
+		if(!isset($where['status'])) $where['status'] = array('lte',1);
+		if(!isset($where['is_ad'])) $where['is_ad'] = 0;
+
 		if(isset($where['include_child'])){
 			unset($where['include_child']);
 			if(isset($where['cate_id'])){
@@ -77,8 +82,6 @@ class Article{
 			}
 			$where_str .= $this->switchWhere($where);		
 			// var_dump($where_str);
-		}else{
-			$where_str = 'a.is_del = 0 and a.status <= 1';
 		}
 		return $where_str;
 	}
@@ -113,8 +116,14 @@ class Article{
 				case 'gt':
 					$where_str .= $key.">'".$value[1]."' ".$logic;
 					break;
+				case 'gte':
+					$where_str .= $key.">='".$value[1]."' ".$logic;
+					break;
 				case 'lt':
 					$where_str .= $key."<'".$value[1]."' ".$logic;
+					break;
+				case 'lte':
+					$where_str .= $key."<='".$value[1]."' ".$logic;
 					break;
 				case 'in':
 					$tmp = is_array($value[1]) ? "'".implode("','",$value[1])."'" : $value[1];
@@ -143,6 +152,7 @@ class Article{
 	 */
 	public function arcList($page = 1,$where=array(),$order='',$fields='',$pageSize=10,$user_id = 0,$author_id = 0,$device=DEVICE_TYPE){
 		if($this->where && $where) $where = array_merge($this->where,$where);
+
 		$where_str = $this->handleWhere($where);
 		if(!$order) $order = 'update_time desc';
 		$index = 0;
@@ -208,8 +218,8 @@ class Article{
 	public function arcInfo($article_id,$user_id = 10){
 		$article_id = intval($article_id);
 		if(!$article_id || $article_id <= 0) return array();
-
-		$arcList = $this->arcList(0,array('id'=>$article_id),'','a.*',1);
+		
+		$arcList = $this->arcList(0,array('id'=>$article_id,'is_ad'=>array('gte',0)),'','a.*',1);
 		
 		if(!$arcList) return array();
 		$arcInfo = $arcList[0];
@@ -301,6 +311,7 @@ class Article{
 		$where = array('id'=>array('neq',$arcInfo['id']),'is_del'=>0,'status'=>1);
 		if($fav_keywords) {
 			$this->setKeywordField($user_fields,$fav_keywords);
+
 			$userarcList = $this->arcList(1,$where,$order,$user_fields,10);
 			$userarcList = DEVICE_TYPE == 'pc' ? $userarcList[0] : $userarcList;
 
@@ -312,15 +323,15 @@ class Article{
 		$arc_keywords = $arcInfo['keywords'];
 
 		$arc_fields = 'a.*';
-		$where = array('cate_id'=>$arcInfo['cate_id'],'id'=>array('neq',$arcInfo['id']));
+		$where = array('id'=>array('neq',$arcInfo['id']));//'cate_id'=>$arcInfo['cate_id'],
 		if($arc_keywords) {
 			$this->setKeywordField($arc_fields,$arc_keywords);
+
 			$arcList = $this->arcList(1,$where,$order,$arc_fields,10);
 			$arcList = DEVICE_TYPE == 'pc' ? $arcList[0] : $arcList;
 		}else{
 			$arcList = array();
 		}
-
 		$list = array_merge(array_slice($arcList,0,$size),array_slice($userarcList, 0,$size));
 
 		$ids = array();

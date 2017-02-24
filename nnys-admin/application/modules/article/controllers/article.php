@@ -19,7 +19,7 @@ class ArticleController extends InitController {
 		$page = safe::filterGet('page','int',1);
 		$cate_id = safe::filterPost('cate_id','int',0);
 		$name = safe::filterPost('name','trim','');
-		$where = array();
+		$where = array('is_ad'=>array('gte',0));
 		if($cate_id) $where['cate_id'] = $cate_id;
 		if($name) $where['name'] = array('like',$name);
 
@@ -43,6 +43,7 @@ class ArticleController extends InitController {
 			$data['recommend'] = safe::filterPost('recommend');
 			$data['type'] = safe::filterPost('type');
 			$data['keywords'] = safe::filterPost('keywords');
+			$data['is_ad'] = safe::filterPost('is_ad');
 			$imgcover = safe::filterPost('imgcover');
 			foreach ($imgcover as &$value) {
 				$value = str_replace(url::getScriptDir().'/', '',tool::setImgApp($value));
@@ -76,6 +77,7 @@ class ArticleController extends InitController {
 			$data['recommend'] = safe::filterPost('recommend');
 			$data['type'] = safe::filterPost('type');
 			$data['keywords'] = safe::filterPost('keywords');
+			$data['is_ad'] = safe::filterPost('is_ad');
 			$data['update_time'] = date('Y-m-d H:i:s',time());
 			$imgcover = safe::filterPost('imgcover');
 			foreach ($imgcover as &$value) {
