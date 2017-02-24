@@ -40,6 +40,10 @@ class Article{
 
 	private function handleWhere($where){
 		$where_str = '';
+		if(!isset($where['is_del'])) $where['is_del'] = 0;
+		if(!isset($where['status'])) $where['status'] = array('lte',1);
+		if(!isset($where['is_ad'])) $where['is_ad'] = 0;
+
 		if(isset($where['include_child'])){
 			unset($where['include_child']);
 			if(isset($where['cate_id'])){
@@ -78,8 +82,6 @@ class Article{
 			}
 			$where_str .= $this->switchWhere($where);		
 			// var_dump($where_str);
-		}else{
-			$where_str = 'a.is_del = 0 and a.status <= 1';
 		}
 		return $where_str;
 	}
@@ -114,8 +116,14 @@ class Article{
 				case 'gt':
 					$where_str .= $key.">'".$value[1]."' ".$logic;
 					break;
+				case 'gte':
+					$where_str .= $key.">='".$value[1]."' ".$logic;
+					break;
 				case 'lt':
 					$where_str .= $key."<'".$value[1]."' ".$logic;
+					break;
+				case 'lte':
+					$where_str .= $key."<='".$value[1]."' ".$logic;
 					break;
 				case 'in':
 					$tmp = is_array($value[1]) ? "'".implode("','",$value[1])."'" : $value[1];
@@ -210,8 +218,8 @@ class Article{
 	public function arcInfo($article_id,$user_id = 10){
 		$article_id = intval($article_id);
 		if(!$article_id || $article_id <= 0) return array();
-
-		$arcList = $this->arcList(0,array('id'=>$article_id),'','a.*',1);
+		
+		$arcList = $this->arcList(0,array('id'=>$article_id,'is_ad'=>array('gte',0)),'','a.*',1);
 		
 		if(!$arcList) return array();
 		$arcInfo = $arcList[0];
