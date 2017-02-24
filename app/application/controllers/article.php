@@ -99,7 +99,7 @@ class ArticleController extends AppBaseController{
 
 	public function adAction(){
 		$ad = ad::getAdData('appindex');
-		$img = !isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
+		$img = isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
 		die(json::encode(array('img'=>$img,'url'=>$ad[0]['link'])));
 	}
 	public function aaAction(){
