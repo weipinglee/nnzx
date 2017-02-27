@@ -43,7 +43,7 @@ class ArticleController extends InitController {
 			$data['recommend'] = safe::filterPost('recommend');
 			$data['type'] = safe::filterPost('type');
 			$data['keywords'] = safe::filterPost('keywords');
-			$data['is_ad'] = safe::filterPost('is_ad');
+			$data['is_ad'] = safe::filterPost('is_ad'); 
 			$imgcover = safe::filterPost('imgcover');
 			foreach ($imgcover as &$value) {
 				$value = str_replace(url::getScriptDir().'/', '',tool::setImgApp($value));

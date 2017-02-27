@@ -97,7 +97,7 @@
                     <div class="formControls col-5">
                             
                             <input type="radio" name="is_ad" value='1' {if:(isset($info) && $info['is_ad']==1)}checked=1{/if}>是
-                            <input type="radio" name="is_ad" value='0' {if:((isset($info)&&$info['is_ad']==0))||!isset($info)}checked=1{/if}>否
+                            <input type="radio" name="is_ad" value='0' {if:((isset($info)&&$info['is_ad']==0))||!isset($info)}checked=1{/if}>否 
 
                     </div>
                     <div class="col-4"> </div>
