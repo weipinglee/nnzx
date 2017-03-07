@@ -8,6 +8,7 @@ use Library\Query;
 use Library\Thumb;
 use nainai\category\ArcType;
 use nainai\category\ArcCate;
+use nainai\system\friendlyLink;
 class InitController extends Yaf\Controller_Abstract {
 	public function init(){
 		$type_id = safe::filter($this->_request->getParam('type'),'int',0);
@@ -16,7 +17,11 @@ class InitController extends Yaf\Controller_Abstract {
 		$catemodel = new ArcCate();
 		$catelist = $catemodel->cateList(0,0,'pc',array('pid'=>0));
 
+		$fl = new friendlyLink();
+		$fllist = $fl->getfrdLinkList();
+
 		$this->getView()->assign('cates',$catelist);
+		$this->getView()->assign('fl',$fllist[0]);
 		$this->getView()->assign('type_id',$type_id);
 
 		$this->getView()->assign('typelist',$typelist);

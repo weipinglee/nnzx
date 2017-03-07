@@ -17,7 +17,7 @@ class UploadController extends InitController {
 	 * @return bool
 	 */
 	public function uploadAction(){
-
+		
 		//调用文件上传类
 		$photoObj = new photoupload();
 		$photoObj->setThumbParams(array(180,180));

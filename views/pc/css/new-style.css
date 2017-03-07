@@ -82,7 +82,7 @@ a, a * { cursor: pointer; }
 .main .main_left .load_but span{width: 100px;height: 50px;display: block;margin: 0 auto;background: url("../images/load.png") no-repeat 0 center;}
 
 .main .list_right{width: 350px;float: right;}
-.main .list_right .data_box{width: 100%;height: auto;border-radius: 10px;background: #fff;color: #666;}
+.main .list_right .data_box{width: 100%;height: auto;border-radius: 10px;background: #fff;color: #666;margin-bottom: 20px;}
 .main .list_right .ad_box{width: 100%;height: 210px;border-radius: 10px;margin: 10px 0;}
 .data_box .data_list li{height: 50px;line-height: 50px;font-size: 14px;margin: 0 10px;border-bottom: 1px solid #ccc;}
 .data_box li.title{margin: 0;width: 100%;}

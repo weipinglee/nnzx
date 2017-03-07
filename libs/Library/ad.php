@@ -51,6 +51,24 @@ STR;
         }
     }
 
+     public static function combineShow($position='',$start=0,$length=100){
+        $data = self::getAdData($position);
+        error_reporting(0);
+        unset($data['width']);
+        unset($data['height']);
+        $data = array_slice($data, $start,$length);
+        foreach ($data as $key => $value) {
+
+          if(!$value['content']) continue;
+          if($key == 5) break;
+          $content = Thumb::getOrigImg($value['content']);
+          $img = "<a href='{$value['link']}' target='_blank'><img src='{$content}' class='ad_box'/></a>";
+//           echo <<<STR
+// <script>document.write("{$img}")</script>
+// STR;
+        }
+    }
+
     /**
      * @param $position 广告位名称
      */

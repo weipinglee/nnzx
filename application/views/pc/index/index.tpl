@@ -81,15 +81,14 @@
 		<div class="data_box">
 			<ul class="data_list">
 				<li class="title">
-					<a href><h3>{$data[0]['name']}</h3></a>
-					<a href="{url:/More/index}/type/{$data[0]['id']}"><span>更多</span></a>
+					<a href><h3>{$data[2]['name']}</h3></a>
+					<a href="{url:/More/index}/type/{$data[2]['id']}"><span>更多</span></a>
 				</li>
-				{foreach:items=$data[0][0]}
+				{foreach:items=$data[2][0]}
 				<li><a href="{url:/Detail/index}/id/{$item['id']}">{$item['name']}</a></li>
 				{/foreach}
 			</ul>
 		</div>
-		{echo:\Library\Ad::commonshow('index')}
 		<div class="data_box">
 			<ul class="data_list addpic">
 				<li class="title">
@@ -114,6 +113,20 @@
 				{/foreach}
 			</ul>
 		</div>
+		
+		{echo:\Library\Ad::commonshow('index')}
+		<div class="data_box">
+			<ul class="data_list">
+				<li class="title">
+					<a href><h3>{$data[0]['name']}</h3></a>
+					<a href="{url:/More/index}/type/{$data[0]['id']}"><span>更多</span></a>
+				</li>
+				{foreach:items=$data[0][0]}
+				<li><a href="{url:/Detail/index}/id/{$item['id']}">{$item['name']}</a></li>
+				{/foreach}
+			</ul>
+		</div>
+		{echo:\Library\Ad::combineshow('index_firm')}
 	</div>
 
 </div>	

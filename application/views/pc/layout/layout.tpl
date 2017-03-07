@@ -109,6 +109,10 @@
             </ul>
         </div> -->
     </div>
+    友情链接：
+    {foreach:items=$fl}
+        <a href="{$item['link']}">{$item['name']}</a>
+    {/foreach}
     <div class="fotter_bq ">
         <div>
             Copyright&nbsp;&nbsp; © 2000-2015&nbsp;&nbsp;耐耐云商科技有限公司&nbsp;版权所有&nbsp;&nbsp; 网站备案/许可证号:沪ICP备15028925号
