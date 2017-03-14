@@ -89,8 +89,8 @@ class ArticleController extends AppBaseController{
 	}
 	
 	public function arcInfoAction(){
-		// $article_id = safe::filterPost('id','int');
-		$article_id = safe::filter($this->_request->getParam('id'),'int');
+		$article_id = safe::filterPost('id','int');
+		// $article_id = safe::filter($this->_request->getParam('id'),'int');
 		$arcInfo = $this->article->arcInfo($article_id);
 		if($arcInfo){
 			$arcInfo['content'] = htmlspecialchars_decode($arcInfo['content']);//xss
