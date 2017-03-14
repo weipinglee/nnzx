@@ -162,8 +162,8 @@ class slide{
         $slideObj->order='`order` asc';
         $res = $slideObj->find();
         foreach ($res as $key => $value) {
-            $value['img'] = Thumb::getOrigImg($value['img']);
             $value['thumb_img'] = Thumb::get($value['img'],180,180);
+            $value['img'] = Thumb::getOrigImg($value['img']);
             $tmp [$value['id']] = $value;
         }
         // $memcache->set('Slide'.$pos_id,serialize($res));

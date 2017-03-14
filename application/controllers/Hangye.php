@@ -24,9 +24,9 @@ class HangyeController extends InitController {
 			$model = new ArcType();
 			$list = $model->typelist();
 			$children = $model->typeFlow($list,$type);
-
+			
 			foreach ($children as $key => $value) {
-				$tmp = $this->article->arcList(1,array('type'=>$value['id']));
+				$tmp = $this->article->arcList(1,array('type'=>$value['id']),'','',6);
 
 				$data[] = $tmp[0];
 			}

@@ -18,7 +18,7 @@ class ShujuController extends InitController {
 
 			$children = $model->typeFlow($list,$type);
 			foreach ($children as $key => $value) {
-				$data[$value['id']] = $this->article->arcList(1,array('type'=>$value['id']));
+				$data[$value['id']] = $this->article->arcList(1,array('type'=>$value['id']),'','',6);
 			}
 			$main_data = $this->article->arcList(1,array('type'=>$type));
 			$this->getView()->assign('data',$data);
