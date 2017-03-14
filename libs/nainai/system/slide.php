@@ -194,7 +194,7 @@ STR;
 
         $suf_html = "<div id='banner_list'><ul>";
         foreach ($suf_data as $key => $value) {
-            $suf_html .= "<li><a href='#'' target='_blank'><img src='{$value['thumb_img']}' alt='{$value['name']}'' width='190' height='100' class='pic_zoom1'></a><h3><a href=‘#’>{$value['name']}</a> </h3> </li>";
+            $suf_html .= "<li><a href='{$value['link']}' target='_blank'><img src='{$value['thumb_img']}' alt='{$value['name']}'' width='190' height='100' class='pic_zoom1'></a><h3><a href=‘#’>{$value['name']}</a> </h3> </li>";
         }
         $suf_html .= '</ul></div>';
         $html = $html.$pre_html.$suf_html;
