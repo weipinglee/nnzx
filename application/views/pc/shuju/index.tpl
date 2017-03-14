@@ -6,7 +6,7 @@
 	<div class="main_left">
 		<p class="position">您现在的位置： <a href="{url:/index/index}">首页</a>&nbsp;>&nbsp;数据</p>
 		<!-- 轮播代码 -->
-		{echo:\nainai\system\slide::combineShow('pchome')}
+		{echo:\nainai\system\slide::combineShow('pcshuju')}
 		<script type="text/javascript">
 
 		</script>
