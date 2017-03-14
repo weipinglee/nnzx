@@ -175,7 +175,7 @@ opacity:0.50;  /*支持 Chrome, Opera, Safari 等浏览器*/}
 #banner .hide{display: none;}
 
 #banner_list{width: 190px;height: 320px;position: relative;overflow: hidden;float: right;}
-#banner_list li{display: block;width: 190px;height: 100px;position: relative;margin-bottom: 10px;overflow: hidden;}
+#banner_list li{display: block;width: 190px;height: 100px;position: relative;margin-bottom: 10px;overflow: hidden;border-radius: 10px;}
 #banner_list li img{position: absolute;}
 #banner_list li h3{position: absolute;background-color: rgba(0,0,0,.3);color: #fff;bottom: 0;left: 0;right: 0;padding: 6px 8px;font-size: 12px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 #banner_list li h3 a{color: #fff;}
