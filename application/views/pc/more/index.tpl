@@ -33,7 +33,7 @@
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
 							<p class="author">
-								<img src="{views:images/20170123161308.jpg}" class="head_pic">
+								<img src="{views:images/20170123161308.png}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
 								
@@ -49,7 +49,7 @@
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p>{$item['short_content']}</p>
 							<p class="author">
-								<img src="{views:images/20170123161308.jpg}" class="head_pic">
+								<img src="{views:images/20170123161308.png}" class="head_pic">
 								<span class="time">{$item['create_time']}</span>
 								<span class="count">{$item['collect_num']}次</span>
 								
