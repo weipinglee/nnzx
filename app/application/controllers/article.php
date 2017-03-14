@@ -54,6 +54,7 @@ class ArticleController extends AppBaseController{
 		}
 
 		$arcList = $this->article->arcList($page,$where,$order,$fields,$size,$user_id);
+		
 		foreach ($arcList as $key => &$value) {
 			unset($value['content']);
 			unset($value['ori_covers']);
@@ -71,6 +72,7 @@ class ArticleController extends AppBaseController{
 				unset($arcList[$key]);
 			}
 		}
+		$arcList = array_values($arcList);
 		$this->article->where = array();
 		$where['is_ad'] = 1;
 		$ads = $this->article->arcList($page,$where,$order,$fields,1);
