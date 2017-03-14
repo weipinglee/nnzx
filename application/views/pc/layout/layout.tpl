@@ -52,7 +52,7 @@
     <div class="in_nav" id="in_nav">
         <ul>
             <img src="{views:images/nav_top.png}" class="in_nav_top">
-
+            
             {foreach:items=$cates}
             <li>
                 <img style="max-width: 20px;max-height: 20px;border: none;margin-top: 2px;margin-left: 10px" src="{$item['icon']}"/>
