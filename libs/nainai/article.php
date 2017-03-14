@@ -190,7 +190,7 @@ class Article{
         	$value['create_time'] = date('Y-m-d',strtotime($value['create_time']));
 
         	$value['short_content'] = mb_substr(strip_tags(htmlspecialchars_decode($value['content'])),0,150,'utf-8').'...';
-        	$value['cover_pic'] = isset($value['cover'][0]) ? $value['cover'][0] : "/views/pc/images/no_pic.png";
+        	
         	
         	if(isset($value['cover'])){
         		// $thumbs[$key] = Thumb::get($value['img'],180,180);
@@ -205,6 +205,7 @@ class Article{
         	}else{
         		$value['cover'] = array();
         	}
+        	$value['cover_pic'] = isset($value['cover'][0]) ? $value['cover'][0] : "/views/pc/images/no_pic.png";
         }
         return $page > 0 && $device == 'pc' ? array($list,$reBar) : $list;
 	}
@@ -311,10 +312,10 @@ class Article{
 		$where = array('id'=>array('neq',$arcInfo['id']),'is_del'=>0,'status'=>1);
 		if($fav_keywords) {
 			$this->setKeywordField($user_fields,$fav_keywords);
-
+			
 			$userarcList = $this->arcList(1,$where,$order,$user_fields,10);
 			$userarcList = DEVICE_TYPE == 'pc' ? $userarcList[0] : $userarcList;
-
+			
 		}else{
 			$userarcList = array();
 		}

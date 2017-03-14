@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="{views:content/settings/style.css}" />
 <link rel="stylesheet" type="text/css" href="{views:css/H-ui.admin.css}">
 <script type="text/javascript" src="{views:js/My97DatePicker/WdatePicker.js}"></script>
+<script type="text/javascript" src='{root:js/upload/ajaxfileupload.js}'></script>
+<script type="text/javascript" src='{root:js/upload/upload.js}'></script>
 <!--
       CONTENT
                 -->
@@ -37,6 +39,23 @@
                         </select>
                     </div>
                     <div class="col-4"> </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-3"><span class="c-red">*</span>图片：</label>
+                    <div class="formControls col-5">
+                        <div class="">
+                            <input type="hidden" name="uploadUrl"  value="{url:/upload/upload@admin}" />
+                            <input type='file' name="file2" id="file2"  onchange="javascript:uploadImg(this);" />
+                        </div>
+                        <div>
+                            <img name="file2" src="{echo: \Library\Thumb::get($info['icon'],180,180)}"/>
+                            <input type="hidden" name="imgfile2" value="{$info['icon']}" />
+
+                        </div>
+
+                    </div>
+                    <div class="col-4"> </div>
+
                 </div>
                 <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span>同级排序：</label>

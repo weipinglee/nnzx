@@ -55,7 +55,7 @@
 
             {foreach:items=$cates}
             <li>
-                <img src="{$item['img']}"/>
+                <img style="max-width: 20px;max-height: 20px;border: none;margin-top: 2px;margin-left: 30px" src="{$item['icon']}"/>
                 <a class="title_a" href="{url:/Hangye/index}/type/3/id/{$item['id']}">{$item['name']}
                     <!-- <div class="c-tip-arrow" style="left: 38px;"><em></em></div> -->
                 </a>
@@ -72,7 +72,23 @@
 <div class="clear"></div>
 <div id="footer">
 
-
+    <div class="div_flink">
+         <ul>
+            <li class="ul_tit"><b>友情链接</b></li>
+            <ul class="lin_lists">
+                {foreach:items=$fl}
+                    <li class="li_txt">
+                        <a href="{$item['link']}" target="_blank">{$item['name']}</a>
+                    </li> 
+                    <li class="li_l">
+                        <span class="span_l">|</span>
+                    </li>  
+                {/foreach}
+                
+                    
+            </ul> 
+        </ul>
+    </div>
 
     <div class="footer_link clearfix">
         <!-- <div class="foter_width">

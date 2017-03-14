@@ -1,16 +1,23 @@
 
 	<div class="clear"></div>
 </div>
-<div class="main clear">
+<div class="main">
 	
 	<div class="main_left">
 		<!-- 轮播代码 -->
-		
-		 {echo:\nainai\system\slide::combineShow('pchome')}
-		<script type="text/javascript">
+		<div id="banner">
 
-		</script>
-		<div class="clear"></div>
+			<div id="banner_bg"></div>
+
+			<!--标题背景-->
+
+			<div id="banner_info"></div>
+
+			<!--标题-->
+
+			{echo:\nainai\system\slide::combineShow('pchome')}
+
+		</div>
 		<!-- 轮播代码 -->
 		<div class="new_list">
 			{foreach:items=$main_data[0]}
@@ -55,8 +62,9 @@
 			<span>
 				{$main_data[1]}
 			</span>
-			</div>
 		</div>
+		</div>
+		
 	</div>
 	<div class="list_right">
 		<div class="data_box">
@@ -107,46 +115,7 @@
 				{/foreach}
 			</ul>
 		</div>
-		<div class="data_box marig-top ">
-			<ul class="data_list addpic">
-				<li class="title">
-					<a href="javascript:;"><h3>品牌企业</h3></a>
-					<!-- <a href><span>更多</span></a> -->
-				</li>
-			</ul>
-			{echo:\Library\Ad::combineshow('index_firm')}
-		</div>
+		{echo:\Library\Ad::combineshow('index_firm')}
 	</div>
 
-</div>
-<!-- 底部 strat -->	
-
-<!-- 底部 end -->
-<!-- 右侧导航栏 strat -->
-	<div class="floor_left_box" id="floornav" data-tpa="YHD_HOMEPAGE_FLOORNAV" style="display: none;">
-    	<div class="show_div">
-            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
-                <i class="left_iconfont "><img src="{views:images/floor_01.png}">刷新信息</i>
-                <em class="two_line"><img src="{views:images/floor_cur_01.png}">刷新信息</em>
-            </a>
-	        <div class="hover_div">
-	            <em></em>
-	            <a href="" data="#toTop" rel="toTop" class="hove_a">刷新信息</a>
-	        </div>
-       	</div>
-        <div class="show_div">
-            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
-                <i class="left_iconfont "><img src="{views:images/floor_05.png}">返回顶部</i>
-                <em class="two_line"><img src="{views:images/floor_cur_05.png}">返回顶部</em>
-            </a>
-	        <div class="hover_div">
-	            <em></em>
-	            <a href="" data="#toTop" rel="toTop" class="hove_a">返回顶部</a>
-	        </div>
-       	</div>
-
-    </div>
-    <!-- 右侧导航栏 end -->
-</body>
-
-</html>
+</div>	

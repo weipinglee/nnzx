@@ -10,3 +10,18 @@
                 $(this).hide();
             });
  })
+ //楼层电梯 
+
+$(function () {
+    $(window).scroll(function () {
+        var scrollTop = $(document).scrollTop();
+        console.info(scrollTop);
+       
+        if(scrollTop>400){
+            $(".floor_left_box").css("display","block");
+        }else{
+             $(".floor_left_box").css("display","none");
+        }
+
+    });
+});

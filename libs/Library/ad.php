@@ -51,6 +51,29 @@ STR;
         }
     }
 
+     public static function combineShow($position='',$start=0,$length=100){
+        $data = self::getAdData($position);
+        error_reporting(0);
+        unset($data['width']);
+        unset($data['height']);
+        $data = array_slice($data, $start,$length);
+        $html = "<ul class='enterprise clear'>";
+        foreach ($data as $key => $value) {
+
+          if(!$value['content']) continue;
+          if($key == 6) break;
+          $content = Thumb::getOrigImg($value['content']);
+          
+          $html .= "<li><a href='{$value['link']}' target='_blank'><img src='{$content}' class=''/></a></li>";
+          
+//           echo <<<STR
+// <script>document.write("{$img}")</script>
+// STR;
+        }
+        $html .= "</ul>";
+        return $html;
+    }
+
     /**
      * @param $position 广告位名称
      */

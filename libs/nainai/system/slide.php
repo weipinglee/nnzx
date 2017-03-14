@@ -167,5 +167,34 @@ class slide{
         // $memcache->set('Slide'.$pos_id,serialize($res));
         return $res;
     }
+    
+    public static function combineShow($pos_name='',$start=0,$length=4,$attach = 3){
+        $data = self::getSlidebyPos($pos_name);
+        error_reporting(0);
+        // $data = array_slice($data, $start,$length);
+        $suf_data = array_reverse(array_slice(array_reverse($data), 0,$attach));//小图数据
+        $data = array_diff($data,$suf_data);
+        $pre_html = "<ul class='num'></ul><ul class='des'>";
+        $html = "<div id='banner'> <ul class='img'>";
+        foreach ($data as $key => $item) {
+            $is_on = $key == 0 ? "class='on'" : '';
+            $pre_html .= "<li><p>{$item['name']}</p></li>";
+            $html .= <<<STR
+            <li><a href="{$item['link']}" target="_blank"><img src="{$item['img']}" title="{$item['name']}" width="640" height="320" alt="{$item['name']}" class="pic_zoom"/></a></li>
+STR;
+        }
+        $html .= '</ul>';
+        $pre_html .= '</ul><div class="btn"><span class="prev"><</span><span class="next">></span></div></div>';
+
+
+        $suf_html = "<div id='banner_list'><ul>";
+        foreach ($suf_data as $key => $value) {
+            $suf_html .= "<li><a href='#'' target='_blank'><img src='images/20170123161308.jpg' alt='第1张图片'' width='190' height='100' class='pic_zoom1'></a><h3><a href=‘#’>如何做好商家运营</a> </h3> </li>";
+        }
+        $suf_html .= '</ul></div>';
+        $html = $html.$pre_html.$suf_html;
+
+        return $html;   
+    }
 
 }

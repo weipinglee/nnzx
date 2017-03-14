@@ -15,19 +15,16 @@ class ShujuController extends InitController {
 		if($type){
 			$model = new ArcType();
 			$list = $model->typelist();
+			
 			$children = $model->typeFlow($list,$type);
 			foreach ($children as $key => $value) {
 				$data[$value['id']] = $this->article->arcList(1,array('type'=>$value['id']));
 			}
 			$main_data = $this->article->arcList(1,array('type'=>$type));
-			//获取轮播图
-			$slides = slide::getSlidebyPos('pcshuju');
-
-			$this->getView()->assign('slides',$slides);
 			$this->getView()->assign('data',$data);
 			$this->getView()->assign('main_data',$main_data);
 
-			// echo '<pre>';var_dump($data);
+			echo '<pre>';var_dump($data);
 			// var_dump($children);
 			$this->getView()->assign('type',$children);
 		}

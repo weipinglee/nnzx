@@ -22,10 +22,6 @@ class GuandianController extends InitController {
 			
 			$where['recommend'] = 1;
 			$recommend_list = $this->article->arcList($page,$where,'','',5);
-			//获取轮播图
-			$slides = slide::getSlidebyPos('pcguandian');
-
-			$this->getView()->assign('slides',$slides);
 			$this->getView()->assign('recommend_list',$recommend_list[0]);
 			// var_dump($children);
 			$this->getView()->assign('type',$type);

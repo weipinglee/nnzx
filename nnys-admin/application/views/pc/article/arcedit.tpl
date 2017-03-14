@@ -42,7 +42,7 @@
                 <div class="row cl">
                     <label class="form-label col-3"><span class="c-red">*</span> 标题：</label>
                     <div class="formControls col-5">
-                        <input type="text" name="name" class="input-text" value="{$info['name']}" datatype="s2-50" nullmsg="名称不能为空">
+                        <input type="text" name="name" class="input-text" value="{$info['name']}" datatype="*2-50" nullmsg="名称不能为空">
                     </div>
                     <div class="col-4"> </div>
                 </div>
