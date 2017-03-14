@@ -161,19 +161,24 @@ class slide{
         $slideObj->where = " s.status=1 and sp.name='".$pos_name."'";
         $slideObj->order='`order` asc';
         $res = $slideObj->find();
-        foreach ($res as $key => &$value) {
+        foreach ($res as $key => $value) {
             $value['img'] = Thumb::getOrigImg($value['img']);
+            $value['thumb_img'] = Thumb::get($value['img'],180,180);
+            $tmp [$value['id']] = $value;
         }
         // $memcache->set('Slide'.$pos_id,serialize($res));
-        return $res;
+        return $tmp;
     }
     
     public static function combineShow($pos_name='',$start=0,$length=4,$attach = 3){
         $data = self::getSlidebyPos($pos_name);
+        $data = array_reverse($data);
         error_reporting(0);
         // $data = array_slice($data, $start,$length);
-        $suf_data = array_reverse(array_slice(array_reverse($data), 0,$attach));//小图数据
-        $data = array_diff($data,$suf_data);
+        $suf_data = array_reverse(array_slice($data, 0,$attach));//小图数据
+        
+        $data = array_reverse(array_slice($data,$attach,count($data)-$attach));
+
         $pre_html = "<ul class='num'></ul><ul class='des'>";
         $html = "<div id='banner'> <ul class='img'>";
         foreach ($data as $key => $item) {
@@ -189,7 +194,7 @@ STR;
 
         $suf_html = "<div id='banner_list'><ul>";
         foreach ($suf_data as $key => $value) {
-            $suf_html .= "<li><a href='#'' target='_blank'><img src='images/20170123161308.jpg' alt='第1张图片'' width='190' height='100' class='pic_zoom1'></a><h3><a href=‘#’>如何做好商家运营</a> </h3> </li>";
+            $suf_html .= "<li><a href='#'' target='_blank'><img src='{$value['thumb_img']}' alt='{$value['name']}'' width='190' height='100' class='pic_zoom1'></a><h3><a href=‘#’>{$value['name']}</a> </h3> </li>";
         }
         $suf_html .= '</ul></div>';
         $html = $html.$pre_html.$suf_html;
