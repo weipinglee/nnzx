@@ -189,7 +189,7 @@ class Article{
         	$value['author'] = $value['user_type'] == \nainai\Article::TYPE_ADMIN ? '耐耐资讯' : ($value['author'] ? $value['author']:'佚名');
         	$value['create_time'] = date('Y-m-d',strtotime($value['create_time']));
 
-        	$value['short_content'] = mb_substr(strip_tags(htmlspecialchars_decode($value['content'])),0,150,'utf-8').'...';
+        	$value['short_content'] = mb_substr(strip_tags(htmlspecialchars_decode($value['content'])),0,80,'utf-8').'...';
         	
         	
         	if(isset($value['cover'])){
