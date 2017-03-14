@@ -29,6 +29,10 @@ class ArcCate{
         $reModel->where = $where_str.' c.status <= 1 and c.is_del = 0';
         if($page>0) $reModel->page = $page;
         $list = $reModel->find();
+
+        foreach ($list as $key => &$value) {
+        	$value['icon'] = \Library\Thumb::get($value['icon'],180,180);
+        }
         if($page>0 && $device == 'pc'){
         	$reBar = $reModel->getPageBar();
         }

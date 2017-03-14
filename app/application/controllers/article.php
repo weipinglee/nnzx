@@ -19,7 +19,7 @@ class ArticleController extends AppBaseController{
 	
 	//文章列表
 	public function arcListAction(){
-		$page = safe::filterPost('page','int');
+		$page = safe::filterPost('page','int','1');
 		$user_id = safe::filterPost('user_id','int');
 		$cate_id = safe::filterPost('id','int',0);
 		$update_time = safe::filterPost('update_time','trim');
@@ -38,7 +38,7 @@ class ArticleController extends AppBaseController{
 		}else{
 			//推荐列表
 			$where = array_merge($where,array('recommend'=>1));
-			$size = $page == 1 ? 13 : 10;
+			$size = $page == 1 ? 15 : 10;
 			$slide = 1;
 		}
 		if($keyword){
@@ -52,6 +52,7 @@ class ArticleController extends AppBaseController{
 			$where = array_merge($where,array('update_time'=>array('gt',$update_time)));
 			$page = 1;
 		}
+
 		$arcList = $this->article->arcList($page,$where,$order,$fields,$size,$user_id);
 		foreach ($arcList as $key => &$value) {
 			unset($value['content']);
@@ -63,16 +64,17 @@ class ArticleController extends AppBaseController{
 			unset($value['user_type']);
 			$value['cover'] = $value['cover'] && $value['cover'][0] ? $value['cover'] : array();
 			$value['create_time'] = date('y/m/d H:i',strtotime($value['create_time']));
-			if(isset($value['cover'][0]) && count($slides) < 5) {
+			if(isset($value['cover'][0]) && count($slides) < 5 && $page == 1) {
 				$tmp = $value;
 				$tmp['cover'] = $tmp['cover'][0];
 				$slides []= $tmp;
+				unset($arcList[$key]);
 			}
 		}
 		$this->article->where = array();
 		$where['is_ad'] = 1;
 		$ads = $this->article->arcList($page,$where,$order,$fields,1);
-
+		
 		if(isset($ads[0])){
 			array_splice($arcList, rand(1,5),0,$ads);
 		}

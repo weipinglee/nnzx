@@ -29,6 +29,7 @@ class ArcCateController extends InitController {
 			$data['sort'] = safe::filterPost('sort','int');
 			$data['pid'] = safe::filterPost('pid','int');
 			$data['status'] = safe::filterPost('status');
+			$data['icon'] = \Library\tool::setImgApp(safe::filterPost('imgfile2'));
 			$data['create_time'] = date('Y-m-d H:i:s',time());
 			$res = $this->cateModel->cateAdd($data);
 			die(json::encode($res));
@@ -48,6 +49,7 @@ class ArcCateController extends InitController {
 			$data['name'] = safe::filterPost('name');
 			$data['sort'] = safe::filterPost('sort','int');
 			$data['pid'] = safe::filterPost('pid','int');
+			if($_POST['imgfile2'])$data['icon'] = \Library\tool::setImgApp(safe::filterPost('imgfile2'));
 			$data['status'] = safe::filterPost('status');
 			$res = $this->cateModel->cateEdit($data);
 			die(json::encode($res));

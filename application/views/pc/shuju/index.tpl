@@ -6,31 +6,11 @@
 	<div class="main_left">
 		<p class="position">您现在的位置： <a href="{url:/index/index}">首页</a>&nbsp;>&nbsp;数据</p>
 		<!-- 轮播代码 -->
-		<div id="banner">
+		{echo:\nainai\system\slide::combineShow('pchome')}
+		<script type="text/javascript">
 
-			<div id="banner_bg"></div>
-
-			<!--标题背景-->
-
-			<div id="banner_info"></div>
-
-			<!--标题-->
-
-			<ul>
-				{foreach:items=$slides}
-					<li {if:$key == 0}class="on"{/if}></li>
-				{/foreach}
-			</ul>
-
-			<div id="banner_list"> 
-
-				{foreach:items=$slides}
-				<a href="{$item['link']}" target="_blank"><img src="{$item['img']}" title="{$item['name']}" alt="{$item['name']}"/></a> 
-				{/foreach}
-
-			</div>
-
-		</div>
+		</script>
+		<div class="clear"></div>
 		<!-- 轮播代码 -->
 		{foreach:items=$type}
 			<div class="data_list">

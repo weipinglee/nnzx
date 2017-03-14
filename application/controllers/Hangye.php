@@ -32,6 +32,7 @@ class HangyeController extends InitController {
 			}
 			
 			$this->getView()->assign('main_data',$main_data[0]);
+			
 			$this->getView()->assign('data',$data);
 			$this->getView()->assign('cates',$catelist);
 			$this->getView()->assign('pageBar',$main_data[1]);

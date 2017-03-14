@@ -57,16 +57,21 @@ STR;
         unset($data['width']);
         unset($data['height']);
         $data = array_slice($data, $start,$length);
+        $html = "<ul class='enterprise clear'>";
         foreach ($data as $key => $value) {
 
           if(!$value['content']) continue;
-          if($key == 5) break;
+          if($key == 6) break;
           $content = Thumb::getOrigImg($value['content']);
-          $img = "<a href='{$value['link']}' target='_blank'><img src='{$content}' class='ad_box'/></a>";
+          
+          $html .= "<li><a href='{$value['link']}' target='_blank'><img src='{$content}' class=''/></a></li>";
+          
 //           echo <<<STR
 // <script>document.write("{$img}")</script>
 // STR;
         }
+        $html .= "</ul>";
+        return $html;
     }
 
     /**

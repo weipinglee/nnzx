@@ -23,10 +23,6 @@ class IndexController extends InitController {
 			$data[]= array_merge($this->article->arcList(1,$where,'','',4),array('name'=>$value['name'],'id'=>$value['id']));
 		}
 		// echo '<pre>';var_dump($data);
-		//获取轮播图
-		$slides = slide::getSlidebyPos('pchome');
-
-		$this->getView()->assign('slides',$slides);	
 		$this->getView()->assign('data',$data);
 		$this->getView()->assign('main_data',$main_data);
 
