@@ -31,7 +31,7 @@ class ArcCate{
         $list = $reModel->find();
 
         foreach ($list as $key => &$value) {
-        	$value['icon'] = \Library\Thumb::get($value['icon'],180,180);
+        	$value['icon'] = \Library\Thumb::getOrigImg($value['icon']);
         }
         if($page>0 && $device == 'pc'){
         	$reBar = $reModel->getPageBar();
