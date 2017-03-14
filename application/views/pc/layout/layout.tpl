@@ -55,7 +55,7 @@
 
             {foreach:items=$cates}
             <li>
-                <img style="max-width: 20px;max-height: 20px;border: none;margin-top: 2px;margin-left: 30px" src="{$item['icon']}"/>
+                <img style="max-width: 20px;max-height: 20px;border: none;margin-top: 2px;margin-left: 10px" src="{$item['icon']}"/>
                 <a class="title_a" href="{url:/Hangye/index}/type/3/id/{$item['id']}">{$item['name']}
                     <!-- <div class="c-tip-arrow" style="left: 38px;"><em></em></div> -->
                 </a>
