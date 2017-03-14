@@ -31,11 +31,14 @@ class ArcCate{
         $list = $reModel->find();
 
         foreach ($list as $key => &$value) {
-        	$value['icon'] = \Library\Thumb::get($value['icon'],180,180);
+        	if($device == 'pc')
+        		$value['icon'] = \Library\Thumb::get($value['icon'],180,180);
         }
         if($page>0 && $device == 'pc'){
+
         	$reBar = $reModel->getPageBar();
         }
+        
         
         
         return $page > 0 && $device == 'pc' ? array($list,$reBar) : $list;
