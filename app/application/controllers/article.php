@@ -22,6 +22,7 @@ class ArticleController extends AppBaseController{
 		$page = safe::filterPost('page','int','1');
 		$user_id = safe::filterPost('user_id','int');
 		$cate_id = safe::filterPost('id','int',0);
+
 		$update_time = safe::filterPost('update_time','trim');
 		$keyword = safe::filterPost('keyword','trim');
 		
@@ -32,7 +33,12 @@ class ArticleController extends AppBaseController{
 		$fields = 'a.id,a.name,a.create_time,a.update_time,a.user_id,a.type,a.user_type,a.keywords,a.is_ad';
 		if($cate_id > 0) {
 			//某一分类文章列表  根据更新时间排序
-			$where = array_merge($where,array('cate_id'=>$cate_id));
+			$arccate = new \nainai\category\ArcCate();
+			$children = $arccate->getChildren($cate_id,1);
+			foreach ($children as $key => $value) {
+				$tmp .= $value['id'].",";
+			}
+			$where = array_merge($where,array('cate_id'=>array('in',rtrim($tmp,','))));
 			$size = 10;
 			$slide = 0;
 		}else{
@@ -54,7 +60,7 @@ class ArticleController extends AppBaseController{
 		}
 
 		$arcList = $this->article->arcList($page,$where,$order,$fields,$size,$user_id);
-		
+
 		foreach ($arcList as $key => &$value) {
 			unset($value['content']);
 			unset($value['ori_covers']);
@@ -66,7 +72,8 @@ class ArticleController extends AppBaseController{
 			$value['cover'] = $value['cover'] && $value['cover'][0] ? $value['cover'] : array();
 			$value['create_time'] = date('y/m/d H:i',strtotime($value['create_time']));
 
-			if(isset($value['cover'][0]) && count($slides) < 5 && $page == 1) {
+			if(isset($value['cover'][0]) && count($slides) < 5 && $page == 1 && $cate_id == 0) {
+
 				$tmp = $value;
 				$tmp['cover'] = $tmp['cover'][0];
 				$slides []= $tmp;
