@@ -32,7 +32,7 @@ class ArcCate{
 
         foreach ($list as $key => &$value) {
         	if($device == 'pc')
-        		$value['icon'] = \Library\Thumb::get($value['icon'],180,180);
+        		$value['icon'] = \Library\Thumb::getOrigImg($value['icon']);
         }
         if($page>0 && $device == 'pc'){
 

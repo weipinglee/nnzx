@@ -21,7 +21,7 @@ class GuandianController extends InitController {
 			$this->getView()->assign('pageBar',$data[1]);
 			
 			$where['recommend'] = 1;
-			$recommend_list = $this->article->arcList($page,$where,'','',5);
+			$recommend_list = $this->article->arcList($page,$where,'','',6);
 			$this->getView()->assign('recommend_list',$recommend_list[0]);
 			// var_dump($children);
 			$this->getView()->assign('type',$type);
