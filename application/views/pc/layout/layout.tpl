@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>资讯中心</title>
-
+	<meta name="keywords" content="耐耐资讯" />
 
     <script src="{views:js/jquery-1.9.1.min.js}" type="text/javascript" language="javascript"></script>
     <script src="{views:js/new-slide.js}" type="text/javascript" language="javascript"></script>
@@ -19,12 +19,13 @@
 <div class="header">
     <div class="content">
         <div class="logo"></div>
-        <ul class="nav">
+        <ul class="nav" >
             <li><a href='{url:/index/index}' {if:$type_id == 0}class='on'{/if}>首页</a></li>
             <li id="industry"><a href='{url:/hangye/index}/type/{$typelist[0]['id']}' {if:$type_id ==$typelist[0]['id']}class="on"{/if}>行业</a></li>
 
             <li><a href="{url:/shuju/index}/type/{$typelist[1]['id']}" {if:$type_id == $typelist[1]['id']}class="on"{/if}>数据</a></li>
             <li><a href='{url:/guandian/index}/type/{$typelist[2]['id']}' {if:$type_id == $typelist[2]['id']}class="on"{/if}>观点</a></li>
+			 <li><a href='https://www.nainaiwang.com' ></a></li>
         </ul>
         <form class="search">
             <input type="text" placeholder="请输入关键字查询" class="text"><input type="button" value="搜索" class="button">
