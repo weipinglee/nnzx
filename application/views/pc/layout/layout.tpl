@@ -70,7 +70,7 @@
 <!--公用底部控件 开始-->
 <link href="{views:css/footer.css}" rel="stylesheet" type="text/css">
 <div class="clear"></div>
-<div id="footer">
+<div  class='footer'>
 
     <div class="div_flink">
          <ul>
@@ -90,41 +90,7 @@
         </ul>
     </div>
 
-    <div class="footer_link clearfix">
-        <!-- <div class="foter_width">
-            <ul>
-                {foreach: items=$helpList2}
-                    <li class="footer_li">
-                        <a class="fotter_div" target="_blank"><b>{$item['name']}</b></a>
-                        {foreach: items=$item['data'] item=$v key=$k}
-                            {if:$v['link']}
-                                <a class="fotter_a" href="{$v['link']}" target="_blank">{$v['name']}</a>
-
-                            {else:}
-                                <a class="fotter_a" href="{url:/help/help}?cat_id={$v['cat_id']}&id={$v['id']}" target="_blank">{$v['name']}</a>
-
-                            {/if}
-                         {/foreach}
-                    </li>
-                {/foreach}
-
-            </ul>
-            <ul class="ewm_ul">
-                <li class="ewm_li">
-                    <div class="fotter_div" target="_blank"><b>关注耐火频道</b></div>
-                    <div><img src="{views:images/index/a_naih.png}"></div>
-                </li>
-                <li class="ewm_li">
-                    <div class="fotter_div" target="_blank"><b>关注耐耐网</b></div>
-                    <div><img src="{views:images/index/a_nain.png}"></div>
-                </li>
-                <li class="ewm_li">
-                    <div class="fotter_div" target="_blank"><b>关注建材频道</b></div>
-                    <div><img src="{views:images/index/a_jianc.png}"></div>
-                </li>
-            </ul>
-        </div> -->
-    </div>
+    
     <div class="fotter_bq ">
         <div>
             Copyright&nbsp;&nbsp; © 2000-2015&nbsp;&nbsp;耐耐云商科技有限公司&nbsp;版权所有&nbsp;&nbsp; 网站备案/许可证号:沪ICP备15028925号
@@ -148,7 +114,29 @@
 </div>
 
 
+<div class="floor_left_box" id="floornav" data-tpa="YHD_HOMEPAGE_FLOORNAV" style="display: none;">
+        <div class="show_div">
+            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
+                <i class="left_iconfont "><img src="{views:images/floor_01.png}">刷新信息</i>
+                <em class="two_line"><img src="{views:images/floor_cur_01.png}">刷新信息</em>
+            </a>
+            <div class="hover_div">
+                <em></em>
+                <a href="" data="#toTop" rel="toTop" class="hove_a">刷新信息</a>
+            </div>
+        </div>
+        <div class="show_div">
+            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
+                <i class="left_iconfont "><img src="{views:images/floor_05.png}">返回顶部</i>
+                <em class="two_line"><img src="{views:images/floor_cur_05.png}">返回顶部</em>
+            </a>
+            <div class="hover_div">
+                <em></em>
+                <a href="" data="#toTop" rel="toTop" class="hove_a">返回顶部</a>
+            </div>
+        </div>
 
+    </div>
 
 <!--公用底部控件 结束-->
 </body>

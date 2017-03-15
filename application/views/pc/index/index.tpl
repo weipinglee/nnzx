@@ -121,32 +121,4 @@
 </div>
 <!-- 底部 strat -->	
 
-<!-- 底部 end -->
-<!-- 右侧导航栏 strat -->
-	<div class="floor_left_box" id="floornav" data-tpa="YHD_HOMEPAGE_FLOORNAV" style="display: none;">
-    	<div class="show_div">
-            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
-                <i class="left_iconfont "><img src="{views:images/floor_01.png}">刷新信息</i>
-                <em class="two_line"><img src="{views:images/floor_cur_01.png}">刷新信息</em>
-            </a>
-	        <div class="hover_div">
-	            <em></em>
-	            <a href="" data="#toTop" rel="toTop" class="hove_a">刷新信息</a>
-	        </div>
-       	</div>
-        <div class="show_div">
-            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
-                <i class="left_iconfont "><img src="{views:images/floor_05.png}">返回顶部</i>
-                <em class="two_line"><img src="{views:images/floor_cur_05.png}">返回顶部</em>
-            </a>
-	        <div class="hover_div">
-	            <em></em>
-	            <a href="" data="#toTop" rel="toTop" class="hove_a">返回顶部</a>
-	        </div>
-       	</div>
 
-    </div>
-    <!-- 右侧导航栏 end -->
-</body>
-
-</html>
