@@ -23,8 +23,8 @@ class InitController extends Yaf\Controller_Abstract {
 		$this->getView()->assign('cates',$catelist);
 		$this->getView()->assign('fl',$fllist[0]);
 		$this->getView()->assign('type_id',$type_id);
-
-		$this->getView()->assign('typelist',$typelist);
+		
+		$this->getView()->assign('typelist',array_slice($typelist,0,3));
 		$this->getView()->setLayout('layout');
 		// $this->getView()->assign('title','公益基金');
 	}
