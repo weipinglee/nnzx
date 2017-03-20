@@ -48,13 +48,15 @@
             </div>
             <div class="settings">
                 {foreach:items=$info['comArcList']}
-                <div class="item userinfo">
-                    <img class="little-face" src="{$item['cover'][0]}" />
-                    <div class="info-title">
-                        <p class="nick"><a href="{url:/article/arcInfo}/id/{$item['id']}">{$item['name']}</a></p>
-                        <p class="location"><span class="author">{$item['author']}</span><span class="time">{$item['create_time']}</span></p>
+                <a href="{url:/article/arcInfo}/id/{$item['id']}">
+                    <div class="item userinfo">
+                        <img class="little-face" src="{$item['cover'][0]}" />
+                        <div class="info-title">
+                            <p class="nick">{$item['name']}</p>
+                            <p class="location"><span class="author">{$item['author']}</span><span class="time">{$item['create_time']}</span></p>
+                        </div>
                     </div>
-                </div>
+                </a>
                 {/foreach}
             </div>
                
