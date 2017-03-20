@@ -110,7 +110,7 @@ section.current .top-nav-box{position:fixed;display:block;z-index:100;}
 .top-nav.nav-menu .nav-item a{display:block;color:#e67e22;}
 .top-nav.nav-menu .nav-item.active a{color:#fff;}
 .nav-title{position:absolute;left:70px;right:70px;text-align:center;font-size:20px;line-height:20px;margin-top:12px;color:#111;font-weight:normal;}
-.main-body{padding-top:44px;}
+/*.main-body{padding-top:44px;}*/
 .body-top{position:relative;margin:10px;}
 .radio-sel{text-align:center;}
 .radio-sel a{display:inline-block;padding:0 15px;font-size:14px;height:28px;line-height:28px;background-color:#fff;color:#f90;text-align:center;}
@@ -175,7 +175,7 @@ i.col-create{display:block;width:24px;height:24px;background:url(http://mat-cdn2
 .settings .userinfo .info p{font-size:16px;color: #3d3d3d;line-height: 24px;}
 .settings .userinfo .info-title{margin-left: 100px;}
 .settings .userinfo .nick{font-size:20px;color:#111;line-height:24px;margin:0 0 35px 0;font-weight: bold;}
-.settings .userinfo .info-title .nick{font-size: 16px;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; height: 59px;margin: 0;}
+.settings .userinfo .info-title .nick{font-size: 16px;/*overflow: hidden; text-overflow: ellipsis; white-space: nowrap;*/ height: 59px;margin: 0;}
 .settings .userinfo .info-title .nick a{color: #3d3d3d;}
 .settings .userinfo .location{font-size:13px;color:#999;}
 .settings .userinfo .location .author{
