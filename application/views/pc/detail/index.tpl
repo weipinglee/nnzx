@@ -5,6 +5,7 @@
 	.main .main_left .new_list .first{height: 80px;}
 	.news .news_content .title{font-size: 20px;font-weight: bold;}
 	.bshare-custom.icon-medium-plus, .bshare-custom.icon-large{padding-left: 25px;}
+	.main .main_left .new_list .news:hover{background: #fff;}
 </style>
 	
 	<div class="clear"></div>
@@ -17,8 +18,8 @@
 			<div class="news first">
 				<div class="news_content">
 					<h3>
-						<a href><span class="trade">{$info['cate_name']}</span></a>
-						<a href><span class="title">{$info['name']}</span></a><!-- 标题处后台需限制输入字数 -->
+						<span class="trade">{$info['cate_name']}</span>
+						<span class="title">{$info['name']}</span><!-- 标题处后台需限制输入字数 -->
 					</h3>
 					<p class="author">
 						<img src="{views:images/20170123161308.jpg}" class="head_pic">
@@ -35,9 +36,7 @@
 				</div>
 			</div>
 			<div class="news_cont">
-				<p>
 					{$info['content']}
-				</p>
 				<!-- 分享代码 -->
 				<div class="bshare-custom icon-medium-plus"><div class="bsPromo bsPromo2"></div><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a><a title="分享到QQ空间" class="bshare-qzone" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 				<p class="line"></p>

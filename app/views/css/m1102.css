@@ -175,7 +175,7 @@ i.col-create{display:block;width:24px;height:24px;background:url(http://mat-cdn2
 .settings .userinfo .info p{font-size:16px;color: #3d3d3d;line-height: 24px;}
 .settings .userinfo .info-title{margin-left: 100px;}
 .settings .userinfo .nick{font-size:20px;color:#111;line-height:24px;margin:0 0 35px 0;font-weight: bold;}
-.settings .userinfo .info-title .nick{font-size: 16px;/*overflow: hidden; text-overflow: ellipsis; white-space: nowrap;*/ height: 59px;margin: 0;}
+.settings .userinfo .info-title .nick{font-size: 14px;/*overflow: hidden; text-overflow: ellipsis; white-space: nowrap;*/ height: 59px;margin: 0;}
 .settings .userinfo .info-title .nick a{color: #3d3d3d;}
 .settings .userinfo .location{font-size:13px;color:#999;}
 .settings .userinfo .location .author{
