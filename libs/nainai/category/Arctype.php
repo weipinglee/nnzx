@@ -10,6 +10,11 @@ namespace nainai\category;
 use Library\Query;
 use Library\M;
 class ArcType{
+
+
+	//注释参看 lib\nainai\category\ArcCate.php
+
+
 	public function typelist($page = 0,$device='pc',$where=array(),$fields=''){
 		$where_str = '';
 		$index = 0;

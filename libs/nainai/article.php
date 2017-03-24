@@ -20,6 +20,11 @@ class Article{
 	const TYPE_USER = 1;//前台用户发布
 	const TYPE_ADMIN = 2;//后台管理员发布
 
+	/**
+	 * 设置关键字搜索字段排序
+	 * @param string &$fields 查询字段
+	 * @param array $keyword 关键字数组
+	 */
 	public function setKeywordField(&$fields,$keyword){
 		$keyword_info = Keyword::keywordInfo($keyword);
 		$tmp = ',((';
@@ -35,15 +40,24 @@ class Article{
 		}
 		$where['keywords'] = array('like',$keyword);
 		if($where) $this->where = $where;
+		//根据关键字在标题与文章关键字中出现的频率和权重来对文章列表进行排序
 		$fields .= rtrim($tmp,'+').")*{$title_score}+".rtrim($keyword_filter,'+').') as sign';
+
 	}
 
+	/**
+	 * 处理where条件数组
+	 * @param  array $where 条件数组	
+	 * @return  string 条件字符串
+	 */
 	private function handleWhere($where){
 		$where_str = '';
 		if(!isset($where['is_del'])) $where['is_del'] = 0;
 		if(!isset($where['status'])) $where['status'] = array('lte',1);
 		if(!isset($where['is_ad'])) $where['is_ad'] = 0;
 
+		//where数组中cate_id/tyoe 可与include_child同时使用  形如：array('cate_id'=>1,'include_child'=>1)
+		//如设置include_child则表示查询此分类及其下所有子分类
 		if(isset($where['include_child'])){
 			unset($where['include_child']);
 			if(isset($where['cate_id'])){
@@ -71,7 +85,7 @@ class Article{
 			}
 		}
 		if($where && is_array($where)){
-
+			//若where数组中包含keywords 则keywords应与文章关键字与文章标题匹配
 			if(isset($where['keywords']) && isset($where['name'])){
 				$keywords = $where['keywords'];
 				$keywords[]= 'or';
@@ -86,11 +100,17 @@ class Article{
 		return $where_str;
 	}
 	
+	/**
+	 * 解析处理where数组
+	 * @param  array $where 条件数组
+	 * @return string  条件字符串
+	 */
 	public function switchWhere($where){
 		foreach ($where as $key => $value) {
 			$key = (strpos($key,'.') ? '' : 'a.').$key;
-			
+			//操作符
 			$oper = is_array($value) && isset($value[1]) ? $value[0] : '=';
+			//逻辑  and或or
 			$logic = is_array($value) && isset($value[2]) ? " ".$value[2]." " : ' and ';
 
 			switch ($oper) {
@@ -161,11 +181,13 @@ class Article{
 		$reModel->distinct = 1;
 		$reModel->join = 'left join article_content as ac on a.id = ac.article_id left join article_cover as aco on aco.article_id = a.id left join user as u on a.user_id = u.id left join article_category as cc on a.cate_id=cc.id left join article_type as at on a.type=at.id';
 		$bind = array();
+		//若设置了用户id 则获取指定用户收藏的文章列表
         if(intval($user_id)>0){
         	$reModel->join .= 'left join user_favcate as uf on uf.cate_id = c.id';
         	$where = 'uf.user_id=:user_id and';
         	$bind = array_merge($bind,array('user_id'=>intval($user_id)));
         }
+        //若设置了作者id 则获取指定作者发布文章列表(前台)
         if(intval($author_id)>0){
         	$where = 'a.user_id=:author_id and a.user_type='.\nainai\Article::TYPE_USER;
         	$bind = array_merge($bind,array('author_id'=>intval($author_id)));
@@ -207,6 +229,7 @@ class Article{
         	}
         	$value['cover_pic'] = isset($value['cover'][0]) ? $value['cover'][0] : "/views/pc/images/no_pic.png";
         }
+        //若设备为pc且当前页大于0  则显示分页
         return $page > 0 && $device == 'pc' ? array($list,$reBar) : $list;
 	}
 
@@ -231,8 +254,10 @@ class Article{
 		$arcInfo['keywords_str'] = implode(',',$keywords);
 		
 		// if(DEVICE_TYPE != 'pc')
+		//相关推荐文章列表
 			$arcInfo['comArcList'] = $this->comArcList($arcInfo,$user_id);
 
+		//上一篇与下一篇
 		$arcInfo['siblings'] = $this->siblingArticle($arcInfo);
 		$this->viewsNumAdd($arcInfo);
 		return $arcInfo;
@@ -242,6 +267,10 @@ class Article{
 		
 	}
 
+	/**
+	 * 文章点击+1
+	 * @param  array $arcInfo 文章详情数组
+	 */
 	public function viewsNumAdd($arcInfo){
 		$model = new M('article');
 		@$model->where(array('id'=>$arcInfo['id']))->data(array('collect_num'=>$arcInfo['collect_num']+1))->update();
@@ -312,7 +341,7 @@ class Article{
 		$where = array('id'=>array('neq',$arcInfo['id']),'is_del'=>0,'status'=>1);
 		if($fav_keywords) {
 			$this->setKeywordField($user_fields,$fav_keywords);
-			
+			//用户热搜关键字文章列表
 			$userarcList = $this->arcList(1,$where,$order,$user_fields,10);
 			$userarcList = DEVICE_TYPE == 'pc' ? $userarcList[0] : $userarcList;
 			
@@ -327,14 +356,14 @@ class Article{
 		$where = array('id'=>array('neq',$arcInfo['id']));//'cate_id'=>$arcInfo['cate_id'],
 		if($arc_keywords) {
 			$this->setKeywordField($arc_fields,$arc_keywords);
-
+			//文章关键字排序文章列表
 			$arcList = $this->arcList(1,$where,$order,$arc_fields,10);
 			$arcList = DEVICE_TYPE == 'pc' ? $arcList[0] : $arcList;
 		}else{
 			$arcList = array();
 		}
 		$list = array_merge(array_slice($arcList,0,$size),array_slice($userarcList, 0,$size));
-
+		
 		$ids = array();
 		foreach ($list as $key => $value) {
 			

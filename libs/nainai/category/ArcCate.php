@@ -9,7 +9,15 @@
 namespace nainai\category;
 use Library\Query;
 class ArcCate{
-	//获取文章分类列表
+	/**
+	 * 获取文章分类列表	
+	 * @param  integer $page    当前页数
+	 * @param  integer $user_id 用户id
+	 * @param  string  $device  设备pc/app
+	 * @param  array   $where   条件数组	
+	 * @param  string  $fields  查询域
+	 * @return array   列表数组
+	 */
 	public function cateList($page = 0,$user_id = 0,$device='pc',$where=array(),$fields=''){
 		$where_str = '';
 		$index = 0;
@@ -38,11 +46,17 @@ class ArcCate{
         	$reBar = $reModel->getPageBar();
         }
         
-        
+        //若设备为pc且当前页大于1 则显示分页
         return $page > 0 && $device == 'pc' ? array($list,$reBar) : $list;
 	}
 
-	//递归获取分类树
+	/**
+	 * 递归获取分类树	
+	 * @param  array  $list   分类数组
+	 * @param  integer $pid   上级分类id
+	 * @param  integer $level 所属层级
+	 * @return array  
+	 */
 	public function cateTree($list,$pid=0,$level=1){
 		$arr = array();
 		foreach ($list as $key => $value) {
@@ -56,7 +70,16 @@ class ArcCate{
 		return $arr;
 	}
 
-	//顺序分类树
+	/**
+	 * 递归顺序分类树 用于下拉框展示
+	 * @param  array  $list          分类数组
+	 * @param  integer $pid          上级分类id
+	 * @param  integer $include_self 是否包含顶级分类
+	 * @param  integer $level        所属层级
+	 * @param  integer $repeat       前缀重复次数
+	 * @param  array   &$arr         辅助数组		
+	 * @return array
+	 */
 	public function cateFlow($list,$pid=0,$include_self=0,$level=1,$repeat=3,&$arr=array()){
 		foreach ($list as $key => $value) {
 			if($include_self == 1){
@@ -77,11 +100,22 @@ class ArcCate{
 		return $arr;
 	}
 
+	/**
+	 * 获取指定分类所有子分类
+	 * @param  integer $cate_id      分类id
+	 * @param  integer $include_self 是否包含顶级分类
+	 * @return array  分类数组
+	 */
 	public function getChildren($cate_id=0,$include_self=0){
 		$list = $this->cateList();
 		return $this->cateFlow($list,$cate_id,$include_self);
 	}
 
+	/**
+	 * 返回html格式的下拉框内容
+	 * @param  integer $id 分类id
+	 * @return string  
+	 */
 	public function cateFlowHtml($id=0){
 		$list = $this->cateList();
 		$cateFlow = $this->cateFlow($list,0,0,1,1);

@@ -11,7 +11,7 @@ use \Library\M;
 class Keyword{
 
     /**
-     * 常规用法
+     * 字符串分隔函数 将字符串按照常用中文语义 分隔为单词数组   如：耐耐资讯测试  => ['耐耐','资讯','测试']
      * @param  $str
      * @return array
      */
@@ -56,7 +56,7 @@ class Keyword{
     }
 
     /**
-     * 关键字搜索记录添加
+     * 关键字搜索记录添加 在相关表中为关键字查询次数+1
      * @param  array  $keywords 关键字数组
      * @return array
      */
@@ -86,6 +86,7 @@ class Keyword{
         $keywords = array_unique($keywords);
         self::search($keywords);
         
+        //用户访问记录添加
         if(isset($user_id)){
             $res = self::keywordInfo($keywords);
             foreach ($res as $key => $value) {
@@ -93,7 +94,7 @@ class Keyword{
             }
             
             $user_log = new M('user_keywords');
-            //用户访问记录添加
+            
             @$user_log->insertUpdates($data,array('search_num'=>'+1'));
         }
         return $keywords;
@@ -149,7 +150,7 @@ class Keyword{
 
     /**
      * 热门关键字列表
-     * @return [type] [description]
+     * @return array
      */
     public static function hotKeywords($limit = 10){
         $article_keyword = new M('article_keyword');
