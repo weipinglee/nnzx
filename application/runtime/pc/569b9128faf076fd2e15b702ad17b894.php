@@ -5,11 +5,11 @@
     <title>资讯中心</title>
 
 
-    <script src="/views/pc/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
-    <script src="/views/pc/js/new-slide.js" type="text/javascript" language="javascript"></script>
-    <script src="/views/pc/js/style.js" type="text/javascript" language="javascript"></script>
-    <script src="/views/pc/js/new-nav.js" type="text/javascript" language="javascript"></script>
-    <link rel="stylesheet" type="text/css" href="/views/pc/css/new-style.css">
+    <script src="/nnzx/views/pc/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+    <script src="/nnzx/views/pc/js/new-slide.js" type="text/javascript" language="javascript"></script>
+    <script src="/nnzx/views/pc/js/style.js" type="text/javascript" language="javascript"></script>
+    <script src="/nnzx/views/pc/js/new-nav.js" type="text/javascript" language="javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/nnzx/views/pc/css/new-style.css">
 </head>
 <body>
 
@@ -20,10 +20,11 @@
     <div class="content">
         <div class="logo"></div>
         <ul class="nav">
-            <li><a href='http://info.nainaiwang.com//index/index' class="on">首页</a></li>
-            <li id=""><a href='http://info.nainaiwang.com//hangye/index/type/<?php echo isset($typelist[0]['id'])?$typelist[0]['id']:"";?>'>行业</a></li>
-            <li><a href="http://info.nainaiwang.com//shuju/index/type/<?php echo isset($typelist[1]['id'])?$typelist[1]['id']:"";?>">数据</a></li>
-            <li><a href='http://info.nainaiwang.com//guandian/index/type/<?php echo isset($typelist[2]['id'])?$typelist[2]['id']:"";?>'>观点</a></li>
+            <li><a href='http://localhost/nnzx/index/index' <?php if($type_id == 0){?>class='on'<?php }?>>首页</a></li>
+            <li id="industry"><a href='http://localhost/nnzx/hangye/index/type/<?php echo isset($typelist[0]['id'])?$typelist[0]['id']:"";?>' <?php if($type_id ==$typelist[0]['id']){?>class="on"<?php }?>>行业</a></li>
+
+            <li><a href="http://localhost/nnzx/shuju/index/type/<?php echo isset($typelist[1]['id'])?$typelist[1]['id']:"";?>" <?php if($type_id == $typelist[1]['id']){?>class="on"<?php }?>>数据</a></li>
+            <li><a href='http://localhost/nnzx/guandian/index/type/<?php echo isset($typelist[2]['id'])?$typelist[2]['id']:"";?>' <?php if($type_id == $typelist[2]['id']){?>class="on"<?php }?>>观点</a></li>
         </ul>
         <form class="search">
             <input type="text" placeholder="请输入关键字查询" class="text"><input type="button" value="搜索" class="button">
@@ -34,22 +35,37 @@
             $('.search .button').click(function(){
                 var k = $(this).siblings('input').val();
                 if(k != '' && k != '请输入关键字查询')
-                window.location.href = "http://info.nainaiwang.com//search/index/keyword/"+k;
+                window.location.href = "http://localhost/nnzx/search/index/keyword/"+k;
+            });
+            $('.search .text').keydown(function(e){
+                if(e.keyCode == 13){
+                    e.preventDefault();
+                    var k = $(this).val();
+                    if(k != '' && k != '请输入关键字查询')
+                        window.location.href = "http://localhost/nnzx/search/index/keyword/"+k;
+                    return;
+                }
             });
         })
     </script>
+    
+    <div class="in_nav" id="in_nav">
+        <ul>
+            <img src="/nnzx/views/pc/images/nav_top.png" class="in_nav_top">
+            
+            <?php if(!empty($cates)) foreach($cates as $key => $item){?>
+            <li>
+                <img style="max-width: 20px;max-height: 20px;border: none;margin-top: 2px;margin-left: 10px" src="<?php echo isset($item['icon'])?$item['icon']:"";?>"/>
+                <a class="title_a" href="http://localhost/nnzx/hangye/index/type/3/id/<?php echo isset($item['id'])?$item['id']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?>
+                    <!-- <div class="c-tip-arrow" style="left: 38px;"><em></em></div> -->
+                </a>
+            </li>
+            <?php }?>
+            <!-- <li class="industry1"><a href>建材行业</a></li> -->
+        </ul>
+    </div>
+    </div>
 
-<div class="in_nav" id="in_nav">
-		<!-- <ul>
-			<img src="images/nav_top.png" class="in_nav_top">
-			<li class="industry1"><a href>建材行业</a></li>
-			<li class="industry2"><a href>耐火行业</a></li>
-			<li class="industry3"><a href>钢铁行业</a></li>
-			<li class="industry4"><a href>冶金化工行业</a></li>
-			<li class="industry5"><a href>设备行业</a></li>
-			<li class="industry6"><a href>其他行业</a></li>
-		</ul> -->
-	</div>
 	<div class="clear"></div>
 </div>
 <div class="main">
@@ -99,39 +115,35 @@
 			<?php if(!empty($list)) foreach($list as $key => $item){?>
 				<div class="news">
 					<?php if(isset($item['cover'][0])){?>
-						<img src="images/20170123161308.jpg" class="news_pic">
+						<img src="<?php echo isset($item['cover'][0])?$item['cover'][0]:"";?>" class="news_pic">
 						<div class="news_content">
 							<h3>
-								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
-								<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="http://localhost/nnzx/hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+								<a href="http://localhost/nnzx/detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p><?php echo isset($item['short_content'])?$item['short_content']:"";?></p>
 							<p class="author">
-								<img src="/views/pc/images/20170123161308.jpg" class="head_pic">
+								<img src="/nnzx/views/pc/images/20170123161308.jpg" class="head_pic">
 								<span class="time"><?php echo isset($item['create_time'])?$item['create_time']:"";?></span>
 								<span class="count"><?php echo isset($item['collect_num'])?$item['collect_num']:"";?>次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
 					<?php }else{?>
 						<div class="news_content no_pic">
 							<h3>
-								<a href="http://info.nainaiwang.com//hangye/index/type/<?php echo isset($type)?$type:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
-								<a href="http://info.nainaiwang.com//detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
+								<a href="http://localhost/nnzx/hangye/index/type/<?php echo isset($item['type'])?$item['type']:"";?>/id/<?php echo isset($item['cate_id'])?$item['cate_id']:"";?>"><span class="trade"><?php echo isset($item['cate_name'])?$item['cate_name']:"";?></span></a>
+								<a href="http://localhost/nnzx/detail/index/id/<?php echo isset($item['id'])?$item['id']:"";?>"><span class="title"><?php echo isset($item['name'])?$item['name']:"";?></span></a><!-- 标题处后台需限制输入字数 -->
 							</h3>
 							<!-- 程序能否控制这里输出的字数，最后加个省略号 -->
 							<p><?php echo isset($item['short_content'])?$item['short_content']:"";?></p>
 							<p class="author">
-								<img src="/views/pc/images/20170123161308.jpg" class="head_pic">
+								<img src="/nnzx/views/pc/images/20170123161308.jpg" class="head_pic">
 								<span class="time"><?php echo isset($item['create_time'])?$item['create_time']:"";?></span>
 								<span class="count"><?php echo isset($item['collect_num'])?$item['collect_num']:"";?>次</span>
-								<span class="share">
-									
-								</span>
+								
 							</p>
 
 						</div>
@@ -153,7 +165,7 @@
 		<div class="data_box search_top">
 			<h3 class="serch_hot">热门搜索</h3>
 			<div class="search_word clear">
-				<?php if(!empty($keywords)) foreach($keywords as $key => $item){?><a href="http://info.nainaiwang.com//search/index/keyword/<?php echo isset($item['name'])?$item['name']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?></a><?php }?>
+				<?php if(!empty($keywords)) foreach($keywords as $key => $item){?><a href="http://localhost/nnzx/search/index/keyword/<?php echo isset($item['name'])?$item['name']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?></a><?php }?>
 			</div>
 		</div>
 		<!-- <div class="data_box">
@@ -214,6 +226,78 @@
 
 
 
-</body>
 
-</html>
+<!--公用底部控件 开始-->
+<link href="/nnzx/views/pc/css/footer.css" rel="stylesheet" type="text/css">
+<div class="clear"></div>
+<div  class='footer'>
+
+    <div class="div_flink">
+         <ul>
+            <li class="ul_tit"><b>友情链接</b></li>
+            <ul class="lin_lists">
+                <?php if(!empty($fl)) foreach($fl as $key => $item){?>
+                    <li class="li_txt">
+                        <a href="<?php echo isset($item['link'])?$item['link']:"";?>" target="_blank"><?php echo isset($item['name'])?$item['name']:"";?></a>
+                    </li> 
+                    <li class="li_l">
+                        <span class="span_l">|</span>
+                    </li>  
+                <?php }?>
+                
+                    
+            </ul> 
+        </ul>
+    </div>
+
+    
+    <div class="fotter_bq ">
+        <div>
+            Copyright&nbsp;&nbsp; © 2000-2015&nbsp;&nbsp;耐耐云商科技有限公司&nbsp;版权所有&nbsp;&nbsp; 网站备案/许可证号:沪ICP备15028925号
+        </div>
+        <div>
+            服务电话：4006238086 地址:上海浦东新区唐镇上丰路977号b座
+        </div>
+        <div>
+            增值电信业务经营许可证沪B2-20150196
+        </div>
+        <div>
+            违法信息举报邮箱：shensu@nainaiwang.com
+        </div>
+        <div>
+            技术支持：耐耐云商科技有限公司技术部
+        </div>
+
+            <!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260482243'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260482243%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script> -->
+    </div>
+
+</div>
+
+
+<div class="floor_left_box" id="floornav" data-tpa="YHD_HOMEPAGE_FLOORNAV" style="display: none;">
+        <div class="show_div">
+            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
+                <i class="left_iconfont "><img src="/nnzx/views/pc/images/floor_01.png">刷新信息</i>
+                <em class="two_line"><img src="/nnzx/views/pc/images/floor_cur_01.png">刷新信息</em>
+            </a>
+            <div class="hover_div">
+                <em></em>
+                <a href="" data="#toTop" rel="toTop" class="hove_a">刷新信息</a>
+            </div>
+        </div>
+        <div class="show_div">
+            <a href="" class="fhdb_a" data="#toTop" rel="toTop">
+                <i class="left_iconfont "><img src="/nnzx/views/pc/images/floor_05.png">返回顶部</i>
+                <em class="two_line"><img src="/nnzx/views/pc/images/floor_cur_05.png">返回顶部</em>
+            </a>
+            <div class="hover_div">
+                <em></em>
+                <a href="" data="#toTop" rel="toTop" class="hove_a">返回顶部</a>
+            </div>
+        </div>
+
+    </div>
+
+<!--公用底部控件 结束-->
+</body>
+</body>
