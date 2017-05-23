@@ -12,12 +12,7 @@ use \Library\Session\Driver\Db;
 class Bootstrap extends \Yaf\Bootstrap_Abstract{
 
     public function _initConfig(Yaf\Dispatcher $dispatcher) {
-		if(\Library\tool::getConfig('error')){
-			error_reporting(0);
-		}
-		else{
-			error_reporting(0);
-		}
+
 		//把配置保存起来
 		$this->config = Yaf\Application::app()->getConfig();
 		\Yaf\Registry::set('config', $this->config);
@@ -26,6 +21,15 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 			$cookie_domain = Yaf\Registry::get("config")['application']['cookie_domain'];
 			if($cookie_domain!='')
 				ini_set("session.cookie_domain",$cookie_domain);
+		}
+
+		//是否显示错误信息
+		$errorConfig = \Library\tool::getConfig('error');
+		if($errorConfig){
+			error_reporting(E_ALL);
+		}
+		else{
+			error_reporting(E_ALL);
 		}
 		session_start();
 		define('REQUEST_METHOD', strtoupper($dispatcher->getRequest()->getMethod()));

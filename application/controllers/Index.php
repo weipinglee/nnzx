@@ -4,6 +4,7 @@ use \nainai\category\ArcType;
 use Library\safe;
 use \nainai\Article;
 use \nainai\category\ArcCate;
+use local\favorite;
 class IndexController extends InitController {
 	
 	public function init(){
@@ -31,4 +32,5 @@ class IndexController extends InitController {
 		$this->getView()->assign('main_data',$main_data);
 
 	}
+
 }

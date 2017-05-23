@@ -121,12 +121,40 @@ class ArticleController extends AppBaseController{
 		$img = isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
 		die(json::encode(array('img'=>$img,'url'=>$ad[0]['link'])));
 	}
-	// public function aaAction(){
-	// 	phpinfo();
-	// }
-	
-	// public function hotKeywordsAction(){
-	// 	$keywords = Keyword::hotKeywords();
-	// 	// var_dump($keywords);
-	// }
+
+	//文章加入收藏
+	public function addFavoriteAction(){
+		if(IS_POST){
+			$data = array(
+				'user_id'=>'',
+				'article_id' => safe::filterPost('article_id','int'),
+				'time'   => \Library\time::getDateTime()
+			);
+			$obj = new \zixun\articleFavorite();
+			die(json::encode($obj->add($data))) ;
+		}
+
+	}
+
+	//文章取消收藏
+	public function cancleFavoriteAction(){
+		if(IS_POST){
+			$data = array(
+					'user_id'=>'',
+					'article_id' => safe::filterPost('article_id','int'),
+			);
+			$obj = new \zixun\articleFavorite();
+			die(json::encode($obj->cancle($data))) ;
+		}
+	}
+
+	//文章收藏列表
+	public function favoriteListAction(){
+		$page = safe::filterGet('page','int',1);
+		$user_id = 36;
+		$obj = new \zixun\articleFavorite();
+		die(json::encode($obj->getList($user_id,$page)));
+	}
+
+
 }
