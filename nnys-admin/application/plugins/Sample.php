@@ -41,7 +41,7 @@ class SamplePlugin extends Yaf\Plugin_Abstract {
 		// if(strtolower($request->controller) == 'index' && strtolower($request->action) == 'index'){
 		// 	rbac::accessMenu();
 		// }
-		
+
 		
 	}
 

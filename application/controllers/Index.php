@@ -19,7 +19,7 @@ class IndexController extends InitController {
 		$page = safe::filterGet('page','int',1);
 
 		//主体数据
-		$main_data = $this->article->arcList($page,$where,'','',10);	
+		$main_data = $this->article->arcList($page,$where,'','',10);
 		//右侧边栏显示内容
 		foreach ($typelist as $key => $value) {
 			if($key == 0) continue;

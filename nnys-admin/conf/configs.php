@@ -21,6 +21,8 @@ return array(
         'admin'=>'D:\wamp\www\nnzx\nnys-admin'
         
     ),
+    //交易系统数据库名
+    'nn' => 'nn_dev'
 );
 
 
