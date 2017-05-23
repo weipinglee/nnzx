@@ -41,17 +41,7 @@ class SamplePlugin extends Yaf\Plugin_Abstract {
 		// if(strtolower($request->controller) == 'index' && strtolower($request->action) == 'index'){
 		// 	rbac::accessMenu();
 		// }
-
-		//开闭市控制
-		$market = new \nainai\market();
-		$res = $market->checkCanOper($request);
-
-		if(!$res){
-			if(IS_AJAX || IS_POST){
-				die(\Library\json::encode(\Library\tool::getSuccInfo(0,'现在已闭市，无法操作')));
-			}
-
-		}
+		
 		
 	}
 

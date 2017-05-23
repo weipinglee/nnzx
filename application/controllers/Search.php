@@ -1,4 +1,7 @@
 <?php
+/**
+ * 搜索控制器
+ */
 use \nainai\Article;
 use Library\safe;
 use \nainai\Keyword;
@@ -9,6 +12,7 @@ class SearchController extends InitController {
 		$this->article = new Article();
 	}
 
+	//搜索页面
 	public function indexAction(){
 		$page = safe::filterget('page','int',1);
 		$cate_id = safe::filterPost('id','int');

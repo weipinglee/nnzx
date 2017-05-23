@@ -68,7 +68,7 @@
 				</div>
 			</div>
 			<div class="news_mail">
-				<a class="mail_infor">投稿邮箱：nnw@nainaiwang</a>
+				<a class="mail_infor">投稿邮箱：nnw@nainaiwang.com</a>
 			</div>
 		</div>
 		

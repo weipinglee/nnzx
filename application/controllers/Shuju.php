@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * 数据页控制器
+ */
 use \nainai\category\ArcType;
 use Library\safe;
 use \nainai\Article;
@@ -10,7 +14,9 @@ class ShujuController extends InitController {
 		$this->article = new Article();
 	}
 
+	//数据页展示
 	public function indexAction(){
+		//类型id
 		$type = safe::filter($this->_request->getParam('type'));
 		if($type){
 			$model = new ArcType();
@@ -18,8 +24,10 @@ class ShujuController extends InitController {
 
 			$children = $model->typeFlow($list,$type);
 			foreach ($children as $key => $value) {
+				//主体数据
 				$data[$value['id']] = $this->article->arcList(1,array('type'=>$value['id']),'','',6);
 			}
+			//侧边栏数据
 			$main_data = $this->article->arcList(1,array('type'=>$type));
 			$this->getView()->assign('data',$data);
 			$this->getView()->assign('main_data',$main_data);

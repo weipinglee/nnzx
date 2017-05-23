@@ -1,4 +1,8 @@
 <?php
+/**
+ * 文章详情
+ */
+
 use \nainai\category\ArcType;
 use Library\safe;
 
@@ -13,6 +17,8 @@ class DetailController extends InitController {
 		$this->article = new Article();
 	}
 
+
+	//详情页展示
 	public function indexAction(){
 		$id = safe::filter($this->_request->getParam('id'),'int',0);
 		$arcInfo = $this->article->arcInfo($id);
@@ -23,6 +29,7 @@ class DetailController extends InitController {
 		}else{
 			$this->redirect(url::createUrl('/index/index'));
 		}
+		//获取热门搜索关键字列表
 		$keywords = Keyword::hotKeywords(20);
 		$this->getView()->assign('keywords',$keywords);
 	}

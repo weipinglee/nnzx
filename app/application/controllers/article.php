@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * app资讯接口控制器
+ */
+
 use \Library\json;
 use \Library\url;
 use \Library\Safe;
@@ -47,7 +51,9 @@ class ArticleController extends AppBaseController{
 			$size = $page == 1 ? 15 : 10;
 			$slide = 1;
 		}
-		if($keyword){
+
+
+		if($keyword){	
 			//文章标题相关度与关键字热度排序
 			$keyword = Keyword::commonUse($keyword);
 			$this->article->setKeywordField($fields,$keyword);
@@ -55,6 +61,7 @@ class ArticleController extends AppBaseController{
 			$order = 'sign desc,update_time desc';
 		}
 		if($update_time){
+			//按照最后更新时间来筛选刷新数据
 			$where = array_merge($where,array('update_time'=>array('gt',$update_time)));
 			$page = 1;
 		}
@@ -83,9 +90,11 @@ class ArticleController extends AppBaseController{
 		$arcList = array_values($arcList);
 		$this->article->where = array();
 		$where['is_ad'] = 1;
+		//广告列表
 		$ads = $this->article->arcList($page,$where,$order,$fields,1);
 		
 		if(isset($ads[0])){
+			//在文章列表随机位置插入广告
 			array_splice($arcList, rand(1,5),0,$ads);
 		}
 
@@ -109,17 +118,18 @@ class ArticleController extends AppBaseController{
 		}
 	}
 
+	//启动页广告
 	public function adAction(){
 		$ad = ad::getAdData('appindex');
 		$img = isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
 		die(json::encode(array('img'=>$img,'url'=>$ad[0]['link'])));
 	}
-	public function aaAction(){
-		phpinfo();
-	}
+	// public function aaAction(){
+	// 	phpinfo();
+	// }
 	
-	public function hotKeywordsAction(){
-		$keywords = Keyword::hotKeywords();
-		// var_dump($keywords);
-	}
+	// public function hotKeywordsAction(){
+	// 	$keywords = Keyword::hotKeywords();
+	// 	// var_dump($keywords);
+	// }
 }

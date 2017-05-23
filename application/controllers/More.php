@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * 点击’更多‘跳转列表页
+ */
 use \nainai\category\ArcType;
 use Library\safe;
 
@@ -11,10 +15,11 @@ class MoreController extends InitController {
 		$this->article = new Article();
 	}
 
+	//'更多'列表页展示
 	public function indexAction(){
 		$page = safe::filterget('page','int',1);
-		$type = safe::filter($this->_request->getParam('type'));
-		$id = safe::filter($this->_request->getParam('id'),'int',0);
+		$type = safe::filter($this->_request->getParam('type'));//文章类型id
+		$id = safe::filter($this->_request->getParam('id'),'int',0);//分类id
 		if($type){
 
 			$model = new ArcType();
@@ -24,13 +29,14 @@ class MoreController extends InitController {
 			$list = $model->typeFlow($list,$ptype);
 			$where = array('include_child'=>1);
 			if($id) $where['cate_id'] = $id;
-			// echo '<pre>';var_dump($list);
 			foreach ($list as $key => $value) {
 				$where ['type'] = $value['id'];
 				if($value['id'] != $type){
+					//主体内容
 					$data[] = array_merge($this->article->arcList(1,$where,'','',5),array('name'=>$value['name'],'id'=>$value['id']));
 					// $data[]['name'] = $value['name'];
 				}else{
+					//侧边栏数据
 					$main_data = $this->article->arcList($page,$where,'','',5);
 					$bread = $value['name'];
 				}
