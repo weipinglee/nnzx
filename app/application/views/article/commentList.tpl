@@ -21,7 +21,7 @@
     .settings .userinfo .info-title .nick{font-size: 12px;margin: 0;font-weight: normal;line-height: 15px;}
     .settings .userinfo .info-title .nick.time{font-size: 10px;color: #aaa;}
     .settings .userinfo{padding-bottom:5px; }
-    .bottom-nav .send{background: #c81623;border-radius: 20px;width: 15%;color: #fff;height: 33px;border: 0;}
+    .bottom-nav .send{background: #c81623;border-radius: 20px;width: 15%;color: #fff;height: 33px;border: 0;margin: 2% 0;}
     .settings .userinfo .location{color: #333;}
 </style>
 
@@ -154,6 +154,8 @@
     addHandler(window,"load",function(){
         autoTextArea("target");
     });
+
+                   
 </script>
 
     <div class="bottom-nav-box">
