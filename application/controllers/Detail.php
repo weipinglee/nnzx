@@ -34,7 +34,7 @@ class DetailController extends InitController {
 		$this->getView()->assign('keywords',$keywords);
 	}
 
-	public function commentList(){
-		
+	public function commentListAction(){
+
 	}
 }
