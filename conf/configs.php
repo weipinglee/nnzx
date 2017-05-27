@@ -23,7 +23,7 @@ return array(
 
     ),
     //交易系统数据库名
-    'nn' => 'nn_dev'
+    'nn' => 'nn'
 
 );
 

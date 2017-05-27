@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2017/5/27 0027
- * Time: ÉÏÎç 9:07
+ * Time: ä¸Šåˆ 9:07
  */
 use \Library\checkRight;
 use \Library\safe;
@@ -13,9 +13,9 @@ class Ucenter extends \Yaf\Controller_Abstract{
 
     public function init(){
         $right = new checkRight();
-        $right->checkLogin($this);//Î´µÇÂ¼×Ô¶¯Ìøµ½µÇÂ¼Ò³
+        $right->checkLogin($this);//æœªç™»å½•è‡ªåŠ¨è·³åˆ°ç™»å½•é¡µ
     }
-    //ÎÄÕÂ¼ÓÈëÊÕ²Ø
+    //æ–‡ç« åŠ å…¥æ”¶è—
     public function addFavoriteAction(){
         if(IS_POST){
             $data = array(
@@ -26,11 +26,11 @@ class Ucenter extends \Yaf\Controller_Abstract{
             $obj = new \zixun\articleFavorite();
             die(json::encode($obj->add($data))) ;
         }
-        die(json::encode(tool::getSuccInfo(0,'²Ù×÷´íÎó')));
+        die(json::encode(tool::getSuccInfo(0,'æ“ä½œé”™è¯¯')));
 
     }
 
-    //ÎÄÕÂÈ¡ÏûÊÕ²Ø
+    //æ–‡ç« å–æ¶ˆæ”¶è—
     public function cancleFavoriteAction(){
         if(IS_POST){
             $data = array(
@@ -42,7 +42,7 @@ class Ucenter extends \Yaf\Controller_Abstract{
         }
     }
 
-    //ÎÄÕÂÊÕ²ØÁĞ±í
+    //æ–‡ç« æ”¶è—åˆ—è¡¨
     public function favoriteListAction(){
         if(IS_POST){
             $page = safe::filterGet('page','int',1);
@@ -53,37 +53,71 @@ class Ucenter extends \Yaf\Controller_Abstract{
 
     }
 
-    //·¢²¼ÆÀÂÛ
+    //å‘å¸ƒè¯„è®º
     public function addCommentAction(){
         if(IS_POST){
             $data = array(
                 'article_id'=>safe::filterPost('article_id','int'),
                 'text'      => safe::filterPost('text')
             );
-            if($data['article_id'] && $data['text']){
-                die(json::encode(tool::getSuccInfo()));
-            }
-            else{
-                die(json::encode(tool::getSuccInfo(0,'Ê§°Ü')));
-            }
+            $commentObj = new \zixun\articleComment();
+            $res = $commentObj->addComment($data['article_id'],$data['text'],$this->user_id)
+           die(json::encode($res));
 
         }
-        die(json::encode(tool::getSuccInfo(0,'Ê§°Ü')));
+        die(json::encode(tool::getSuccInfo(0,'å¤±è´¥')));
     }
 
-    //»Ø¸´ÆÀÂÛ,Õë¶ÔÆÀÂÛµÄÆÀÂÛ
+    //å›å¤è¯„è®º,é’ˆå¯¹è¯„è®ºçš„è¯„è®º
     public function reCommentAction(){
         if(IS_POST){
             $data = array(
                 'comment_id'=>safe::filterPost('comment_id','int'),
                 'text'      => safe::filterPost('text')
             );
-            if($data['comment_id'] && $data['text']){
-                die(json::encode(tool::getSuccInfo()));
-            }
+            $commentObj = new \zixun\articleComment();
+            $res = $commentObj->replyComment($data['comment_id'],$data['text'],$this->user_id);
+            die(json::encode($res));
         }
-        die(json::encode(tool::getSuccInfo(0,'Ê§°Ü')));
+        die(json::encode(tool::getSuccInfo(0,'å¤±è´¥')));
     }
+
+    /**
+     * è·å–ä¸»è¯„è®ºåˆ—è¡¨
+     */
+    public function commentListAction(){
+        $article_id = safe::filterGet('article_id','int',0);
+        $page = safe::filterGet('page','int',1);
+        $commentObj = new \zixun\articleComment();
+        $res = $commentObj->commentList($article_id,$page);
+        $this->getView()->assign('list',$res);
+
+    }
+
+    /**
+     * å›å¤è¯„è®ºåˆ—è¡¨
+     */
+    public function replyCommentListAction(){
+        $comment_id = safe::filterGet('comment_id','int');
+        $page = safe::filterGet('page','int',1);
+        $commentObj = new \zixun\articleComment();
+        $mainComment = $commentObj->getComment($comment_id);
+        $res = $commentObj->replyCommentList($comment_id,$page);
+        $this->getView()->assign('mainComment',$mainComment);
+        $this->getView()->assign('replyList',$res);
+    }
+
+    //é’ˆå¯¹è¯„è®ºç‚¹èµ
+    public function dianzanAction(){
+        if(IS_POST){
+            $comment_id = safe::filterPost('comment_id','int');
+            $commentObj = new \zixun\articleComment();
+            $res = $commentObj->addFavorite($comment_id,$this->user_id);
+            die(json::encode($res));
+        }
+        die(json::encode(tool::getSuccInfo(0,'éæ³•æ“ä½œ')));
+    }
+
 
 
 

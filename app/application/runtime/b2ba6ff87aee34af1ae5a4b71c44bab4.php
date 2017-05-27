@@ -10,7 +10,7 @@
 <meta name="baidu-tc-cerfication" content="e08afafaa2ad8ee624b1d14e86f076b0" />
 <link rel="apple-touch-icon-precomposed" href=http://wap.baidu.com/static/img/webapp/img/icon_114.png/>
 <meta name="apple-itunes-app" content="app-id=869266629, app-argument=mlj://" />
-<link href="/app/views///css/m1102.css" rel="stylesheet" />
+<link href="/nnzx/app/views///css/m1102.css" rel="stylesheet" />
 
 <title>APP详情页</title>
 </head>
@@ -48,13 +48,15 @@
             </div>
             <div class="settings">
                 <?php if(!empty($info['comArcList'])) foreach($info['comArcList'] as $key => $item){?>
-                <div class="item userinfo">
-                    <img class="little-face" src="<?php echo isset($item['cover'][0])?$item['cover'][0]:"";?>" />
-                    <div class="info-title">
-                        <p class="nick"><a href="http://info.nainaiwang.com/app//article/arcinfo/id/<?php echo isset($item['id'])?$item['id']:"";?>"><?php echo isset($item['name'])?$item['name']:"";?></a></p>
-                        <p class="location"><span class="author"><?php echo isset($item['author'])?$item['author']:"";?></span><span class="time"><?php echo isset($item['create_time'])?$item['create_time']:"";?></span></p>
+                <a href="http://124.166.246.120:8000/nnzx/app/article/arcinfo/id/<?php echo isset($item['id'])?$item['id']:"";?>">
+                    <div class="item userinfo">
+                        <img class="little-face" src="<?php echo isset($item['cover'][0])?$item['cover'][0]:"";?>" />
+                        <div class="info-title">
+                            <p class="nick"><?php echo isset($item['name'])?$item['name']:"";?></p>
+                            <p class="location"><span class="author"><?php echo isset($item['author'])?$item['author']:"";?></span><span class="time"><?php echo isset($item['create_time'])?$item['create_time']:"";?></span></p>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <?php }?>
             </div>
                
