@@ -33,4 +33,8 @@ class DetailController extends InitController {
 		$keywords = Keyword::hotKeywords(20);
 		$this->getView()->assign('keywords',$keywords);
 	}
+
+	public function commentList(){
+		
+	}
 }
