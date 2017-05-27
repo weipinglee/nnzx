@@ -20,6 +20,7 @@ return array(
         // 'admin'=>'/Users/panduo/Sites/nn2info/nnys-admin///'
         
     ),
+	'nn'=>'nn'
 );
 
 
