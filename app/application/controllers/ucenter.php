@@ -25,7 +25,7 @@ class UcenterController extends AppBaseController{
                 'time'   => \Library\time::getDateTime()
             );
             $obj = new \zixun\articleFavorite();
-            die(json::encode($obj->data($data)->add())) ;
+            die(json::encode($obj->add($data))) ;
         }
         die(json::encode(tool::getSuccInfo(0,'操作错误')));
 
