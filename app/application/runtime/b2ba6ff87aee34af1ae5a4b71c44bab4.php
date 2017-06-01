@@ -11,6 +11,9 @@
 <link rel="apple-touch-icon-precomposed" href=http://wap.baidu.com/static/img/webapp/img/icon_114.png/>
 <meta name="apple-itunes-app" content="app-id=869266629, app-argument=mlj://" />
 <link href="/nnzx/app/views///css/m1102.css" rel="stylesheet" />
+<script src="/nnzx/app/views///js/jQuery/jquery-1.8.0.min.js" type="text/javascript" language="javascript"></script>
+<script src="/nnzx/app/views///js/zepto.min.js" type="text/javascript" language="javascript"></script>
+<script src="/nnzx/app/views///js/main.js" type="text/javascript" language="javascript"></script>
 
 <title>APP详情页</title>
 </head>
@@ -59,8 +62,47 @@
                 </a>
                 <?php }?>
             </div>
-               
-            <div style='margin-bottom:100px'></div>
+               <div style="display:block;width:100%;height:66px;"></div>
+    <div class="bottom-nav-box">
+        <div class="bottom-nav">
+            <a href="http://124.166.246.120:8000/nnzx/app/article/commentlist/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="textview">
+                <img src="/nnzx/app/views///images/pen.png">
+                <span>想说点什么？</span>
+            </a>
+            <a href="http://124.166.246.120:8000/nnzx/app/article/commentlist/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="talkview">
+                <img src="/nnzx/app/views///images/talk.png" />
+                <span>评论</span><!-- 没有评论时显示评论有评论时显示数量 -->
+            </a>
+            <div class="collect">
+                <img src="/nnzx/app/views///images/savebtnno.png" id="collect" value="collected"/>
+                <span>收藏</span>
+            </div>
+            <div class="shareview" id="share">
+                <img src="/nnzx/app/views///images/share.png" />
+                <span>分享</span>
+            </div>
+        </div>
+    </div>
+    <section class="screenW">
+        <div class="subW">
+            <div class="info">
+                <div class="shareBox">
+                    <h2>请选择您的分享方式：</h2>
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+                    </div>
+                    <div class="bdsharebuttonbox">
+                        <a href="#" onclick="return false;" class="popup_more" data-cmd="more"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="close">关闭</div>
+        </div>
+    </section>
 
 </body>
 </html>
