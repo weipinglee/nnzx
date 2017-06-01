@@ -65,15 +65,15 @@
                <div style="display:block;width:100%;height:66px;"></div>
     <div class="bottom-nav-box">
         <div class="bottom-nav">
-            <a href="{url:/article/commentList}/id/{$item['id']}" class="textview">
+            <a href class="textview">
                 <img src="{views:images/pen.png}">
                 <span>想说点什么？</span>
             </a>
-            <a href="{url:/article/commentList}/id/{$item['id']}" class="talkview">
+            <a href="{url:/article/arcInfo}/id/{$item['id']}" class="talkview">
                 <img src="{views:images/talk.png}" />
                 <span>评论</span><!-- 没有评论时显示评论有评论时显示数量 -->
             </a>
-            <div class="collect">
+            <div class="collect" id = "colection" onClick ="coll()">
                 <img src="{views:images/savebtnno.png}" id="collect" value="collected"/>
                 <span>收藏</span>
             </div>

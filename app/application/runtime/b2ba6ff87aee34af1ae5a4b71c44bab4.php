@@ -65,15 +65,15 @@
                <div style="display:block;width:100%;height:66px;"></div>
     <div class="bottom-nav-box">
         <div class="bottom-nav">
-            <a href="http://124.166.246.120:8000/nnzx/app/article/commentlist/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="textview">
+            <a href class="textview">
                 <img src="/nnzx/app/views///images/pen.png">
                 <span>想说点什么？</span>
             </a>
-            <a href="http://124.166.246.120:8000/nnzx/app/article/commentlist/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="talkview">
+            <a href="http://124.166.246.120:8000/nnzx/app/article/arcinfo/id/<?php echo isset($item['id'])?$item['id']:"";?>" class="talkview">
                 <img src="/nnzx/app/views///images/talk.png" />
                 <span>评论</span><!-- 没有评论时显示评论有评论时显示数量 -->
             </a>
-            <div class="collect">
+            <div class="collect" id = "colection" onClick ="coll()">
                 <img src="/nnzx/app/views///images/savebtnno.png" id="collect" value="collected"/>
                 <span>收藏</span>
             </div>

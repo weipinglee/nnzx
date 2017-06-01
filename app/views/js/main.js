@@ -1,4 +1,21 @@
- $(function(){
+function coll(){
+   $(".collect").click(function(){
+            var value=$("#collect").attr("value");
+       
+            if(value == "collect"){ 
+                $("#collect").attr("src","/nnzx/app/views///images/savebtnyes.png");
+                $("#collect").val("collected");
+                s.collectionYes();
+                
+            }else if(value == "collected"){              
+                $("#collect").attr("src","/nnzx/app/views///images/savebtnno.png");
+                $("#collect").val("collect");
+                s.collectionNo();
+            }
+        });
+
+}
+/* $(function(){
         $(".collect").click(function(){
             var value=$("#collect").attr("value");
        
@@ -13,7 +30,7 @@
         });
 
 
-    });
+    });*/
 
 
 
