@@ -10,7 +10,7 @@ function coll(){
             }else if(value == "collected"){              
                 $("#collect").attr("src","/nnzx/app/views///images/savebtnno.png");
                 $("#collect").val("collect");
-                s.collectionNo();
+               /* s.collectionNo();*/
             }
         });
 

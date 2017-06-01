@@ -20,7 +20,11 @@ return array(
         // 'admin'=>'/Users/panduo/Sites/nn2info/nnys-admin///'
         
     ),
-	'nn'=>'nn'
+	'nn'=>'nn',
+	'db'=>array(
+		'trade'=>'nn',
+		'info' => 'nn_information'
+	),
 );
 
 
