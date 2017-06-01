@@ -9,7 +9,7 @@ use \Library\checkRight;
 use \Library\safe;
 use \Library\json;
 use \Library\tool;
-class Ucenter extends \Yaf\Controller_Abstract{
+class UcenterController extends AppBaseController{
 
     public function init(){
         $right = new checkRight();
@@ -24,7 +24,7 @@ class Ucenter extends \Yaf\Controller_Abstract{
                 'time'   => \Library\time::getDateTime()
             );
             $obj = new \zixun\articleFavorite();
-            die(json::encode($obj->add($data))) ;
+            die(json::encode($obj->data($data)->add())) ;
         }
         die(json::encode(tool::getSuccInfo(0,'操作错误')));
 
@@ -61,7 +61,7 @@ class Ucenter extends \Yaf\Controller_Abstract{
                 'text'      => safe::filterPost('text')
             );
             $commentObj = new \zixun\articleComment();
-            $res = $commentObj->addComment($data['article_id'],$data['text'],$this->user_id)
+            $res = $commentObj->addComment($data['article_id'],$data['text'],$this->user_id);
            die(json::encode($res));
 
         }

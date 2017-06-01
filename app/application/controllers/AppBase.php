@@ -33,7 +33,7 @@ class AppBaseController extends Yaf\Controller_Abstract{
 
 
 	protected function init(){
-       
+
 	}
 
 	
