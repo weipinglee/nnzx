@@ -71,13 +71,13 @@ class ArticleController extends AppBaseController{
 		foreach ($arcList as $key => &$value) {
 			unset($value['content']);
 			unset($value['ori_covers']);
-			unset($value['create_time']);
 			unset($value['cover_pic']);
 			unset($value['user_id']);
 			unset($value['type']);
 			unset($value['user_type']);
 			$value['cover'] = $value['cover'] && $value['cover'][0] ? $value['cover'] : array();
 			$value['create_time'] = date('y/m/d H:i',strtotime($value['create_time']));
+			$slides = array();
 			if(isset($value['cover'][0]) && count($slides) < 5 && $page == 1 && $cate_id == 0) {
 				$tmp = $value;
 				$tmp['cover'] = $tmp['cover'][0];
