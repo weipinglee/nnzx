@@ -12,7 +12,8 @@ use \Library\tool;
 class UcenterController extends AppBaseController{
 
     public function init(){
-        $right = new checkRight();
+		$db = tool::getGlobalConfig(array('db','trade'));
+        $right = new checkRight($db);
         $right->checkLogin($this);//未登录自动跳到登录页
     }
     //文章加入收藏

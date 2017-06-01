@@ -1,5 +1,5 @@
 function coll(){
-   $(".collect").click(function(){
+   
             var value=$("#collect").attr("value");
        
             if(value == "collect"){ 
@@ -12,7 +12,6 @@ function coll(){
                 $("#collect").val("collect");
                /* s.collectionNo();*/
             }
-        });
 
 }
 /* $(function(){
