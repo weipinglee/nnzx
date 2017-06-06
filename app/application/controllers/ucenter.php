@@ -46,7 +46,7 @@ class UcenterController extends AppBaseController{
     //文章收藏列表
     public function favoriteListAction(){
         if(IS_POST){
-            $page = safe::filterGet('page','int',1);
+            $page = safe::filterPost('page','int',1);
             $user_id = $this->user_id;
             $obj = new \zixun\articleFavorite();
             die(json::encode($obj->getList($user_id,$page)));

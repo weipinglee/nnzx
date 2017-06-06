@@ -1,37 +1,30 @@
+
 function coll(){
 
     var value=$("#collect").attr("value");
        
     if(value == "collect"){ 
+         s.collectionYes();//调用android收藏功能  
         $("#collect").attr("src","/nnzx/app/views///images/savebtnyes.png");
         $("#collect").val("collected");
-         s.collectionYes();
-                
-        }else if(value == "collected"){              
+       
+        }else if(value == "collected"){ 
+             s.collectionNo();//调用Android取消收藏功能
             $("#collect").attr("src","/nnzx/app/views///images/savebtnno.png");
             $("#collect").val("collect");
-               /* s.collectionNo();*/
+           
         }
 
 }
-/* $(function(){
-        $(".collect").click(function(){
-            var value=$("#collect").attr("value");
-       
-            if(value == "collect"){ 
-                $("#collect").attr("src","/nnzx/app/views///images/savebtnyes.png");
-                $("#collect").val("collected");
-                
-            }else if(value == "collected"){              
-                $("#collect").attr("src","/nnzx/app/views///images/savebtnno.png");
-                $("#collect").val("collect");
-            }
-        });
+function noColl() {
 
-
-    });*/
-
-
+    $("#collect").attr("src","/nnzx/app/views///images/savebtnno.png");
+    $("#collect").val("collect");
+}
+function yesColl() {
+    $("#collect").attr("src","/nnzx/app/views///images/savebtnyes.png");
+    $("#collect").val("collected");
+}
 
 $(function() {
     $("#share").click(function(){
