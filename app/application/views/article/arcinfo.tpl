@@ -69,12 +69,12 @@
                 <img src="{views:images/pen.png}">
                 <span>想说点什么？</span>
             </a>
-            <a href="{url:/article/arcInfo}/id/{$item['id']}" class="talkview">
+            <a onClick="window.s.commentListTo()" class="talkview">
                 <img src="{views:images/talk.png}" />
                 <span>评论</span><!-- 没有评论时显示评论有评论时显示数量 -->
             </a>
             <div class="collect" id = "colection" onClick ="coll()">
-                <img src="{views:images/savebtnno.png}" id="collect" value="collected"/>
+                <img src="{views:images/savebtnno.png}" id="collect" value="collect"/>
                 <span>收藏</span>
             </div>
             <div class="shareview" id="share">

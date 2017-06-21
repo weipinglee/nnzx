@@ -87,11 +87,11 @@ class UcenterController extends AppBaseController{
      * 获取主评论列表
      */
     public function commentListAction(){
-        $article_id = safe::filterGet('article_id','int',0);
-        $page = safe::filterGet('page','int',1);
+        $article_id = safe::filterPost('article_id','int',0);
+        $page = safe::filterPost('page','int',1);
         $commentObj = new \zixun\articleComment();
         $res = $commentObj->commentList($article_id,$page);
-        $this->getView()->assign('list',$res);
+        die(json::encode($res));
 
     }
 
