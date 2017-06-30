@@ -25,7 +25,6 @@
 
             <li><a href="{url:/shuju/index}/type/{$typelist[1]['id']}" {if:$type_id == $typelist[1]['id']}class="on"{/if}>数据</a></li>
             <li><a href='{url:/guandian/index}/type/{$typelist[2]['id']}' {if:$type_id == $typelist[2]['id']}class="on"{/if}>观点</a></li>
-			 <li><a href='https://www.nainaiwang.com' ></a></li>
         </ul>
         <form class="search">
             <input type="text" placeholder="请输入关键字查询" class="text"><input type="button" value="搜索" class="button">
