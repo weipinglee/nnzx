@@ -4,6 +4,7 @@ use \nainai\category\ArcType;
 use Library\safe;
 use \nainai\Article;
 use \nainai\category\ArcCate;
+use local\favorite;
 class IndexController extends InitController {
 	
 	public function init(){
@@ -19,7 +20,7 @@ class IndexController extends InitController {
 		$page = safe::filterGet('page','int',1);
 
 		//主体数据
-		$main_data = $this->article->arcList($page,$where,'','',10);	
+		$main_data = $this->article->arcList($page,$where,'','',10);
 		//右侧边栏显示内容
 		foreach ($typelist as $key => $value) {
 			if($key == 0) continue;
@@ -31,4 +32,5 @@ class IndexController extends InitController {
 		$this->getView()->assign('main_data',$main_data);
 
 	}
+
 }

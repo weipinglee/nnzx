@@ -179,7 +179,8 @@ class Article{
 		
 		$reModel = new Query('article as a');
 		$reModel->distinct = 1;
-		$reModel->join = 'left join article_content as ac on a.id = ac.article_id left join article_cover as aco on aco.article_id = a.id left join user as u on a.user_id = u.id left join article_category as cc on a.cate_id=cc.id left join article_type as at on a.type=at.id';
+		$trade_db = tool::getGlobalConfig('nn');
+		$reModel->join = 'left join article_content as ac on a.id = ac.article_id left join article_cover as aco on aco.article_id = a.id  left join article_category as cc on a.cate_id=cc.id left join article_type as at on a.type=at.id';
 		$bind = array();
 		//若设置了用户id 则获取指定用户收藏的文章列表
         if(intval($user_id)>0){
