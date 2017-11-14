@@ -40,13 +40,20 @@ class ArcCate{
         $list = $reModel->find();
 
         foreach ($list as $key => &$value) {
-        	$value['icon'] = \Library\Thumb::getOrigImg($value['icon']);
+        	if($device == 'pc')
+        		$value['icon'] = \Library\Thumb::getOrigImg($value['icon']);
         }
         if($page>0 && $device == 'pc'){
+
         	$reBar = $reModel->getPageBar();
         }
         
+<<<<<<< HEAD
+        
+        
+=======
         //若设备为pc且当前页大于1 则显示分页
+>>>>>>> cfd9bc49a641cf3179cf9d572bb04c9b6bcc3ca3
         return $page > 0 && $device == 'pc' ? array($list,$reBar) : $list;
 	}
 
