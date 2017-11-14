@@ -174,39 +174,51 @@ class Article{
 		if($this->where && $where) $where = array_merge($this->where,$where);
 
 		$where_str = $this->handleWhere($where);
-		if(!$order) $order = 'update_time desc';
+		if(!$order) $order = 'a.update_time desc';
 		$index = 0;
 		
-		$reModel = new Query('article as a');
-		$reModel->distinct = 1;
-		$trade_db = tool::getGlobalConfig('nn');
-		$reModel->join = 'left join article_content as ac on a.id = ac.article_id left join article_cover as aco on aco.article_id = a.id  left join article_category as cc on a.cate_id=cc.id left join article_type as at on a.type=at.id';
+
+		$reModel1 = new Query('article as a');
 		$bind = array();
-		//若设置了用户id 则获取指定用户收藏的文章列表
-        if(intval($user_id)>0){
-        	$reModel->join .= 'left join user_favcate as uf on uf.cate_id = c.id';
-        	$where = 'uf.user_id=:user_id and';
-        	$bind = array_merge($bind,array('user_id'=>intval($user_id)));
-        }
+
+
         //若设置了作者id 则获取指定作者发布文章列表(前台)
         if(intval($author_id)>0){
         	$where = 'a.user_id=:author_id and a.user_type='.\nainai\Article::TYPE_USER;
         	$bind = array_merge($bind,array('author_id'=>intval($author_id)));
         	
         }
-        if($pageSize>0) $reModel->pagesize=$pageSize;
 
-        $reModel->bind = $bind;
-        $reModel->group = 'a.id';
-        $reModel->order = $order;
-        $reModel->fields = ($fields ? $fields:'a.*').",GROUP_CONCAT(url) as cover,u.username as author,cc.name as cate_name,ac.content,at.name as type_name";
+		$reModel1->where = $where_str;
+		$reModel1->bind = $bind;
+		$reModel1->fields = 'a.id';
+		$reModel1->group = 'a.id';
+		$reModel1->order = 'a.update_time desc';
+		$reModel1->page = $page;
+		if($pageSize>0) $reModel1->pagesize=$pageSize;
+		$res = $reModel1->find();
+		$where_ids = '';
+		if(!empty($res)){
+			foreach($res as $val){
+				$where_ids .= $where_ids=='' ?  $val['id'] :  ','.$val['id'];
+			}
+		}
 
-        $reModel->where = $where_str;
-        $reModel->page = $page;
+
+		if($where_ids=='')
+			return array();
+		$reModel = new Query('article as a');
+		$reModel->distinct = 1;
+		$trade_db = tool::getGlobalConfig('nn');
+		$reModel->join = 'left join article_content as ac on a.id = ac.article_id left join article_cover as aco on aco.article_id = a.id left join '.$trade_db.'.user as u on a.user_id = u.id left join article_category as cc on a.cate_id=cc.id left join article_type as at on a.type=at.id';
+        $reModel->fields = ($fields ? $fields:'a.*').",GROUP_CONCAT(aco.url) as cover,u.username as author,cc.name as cate_name,ac.content,at.name as type_name";
+        $reModel->where = 'a.id in ('.$where_ids.')';
+		$reModel->order = $order;
+		$reModel->group = 'a.id';
         $list = $reModel->find();
         
         if($page>0 && $device == 'pc'){
-        	$reBar = $reModel->getPageBar();
+        	$reBar = $reModel1->getPageBar();
         }
         foreach ($list as $key => &$value) {
         	$value['author'] = $value['user_type'] == \nainai\Article::TYPE_ADMIN ? '耐耐资讯' : ($value['author'] ? $value['author']:'佚名');

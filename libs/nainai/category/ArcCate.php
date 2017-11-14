@@ -35,6 +35,7 @@ class ArcCate{
         }
         $reModel->fields = $fields ? $fields:'c.*';
         $reModel->where = $where_str.' c.status <= 1 and c.is_del = 0';
+       // var_dump($reModel);
         $reModel->order = 'pid asc,sort asc';
         if($page>0) $reModel->page = $page;
         $list = $reModel->find();
