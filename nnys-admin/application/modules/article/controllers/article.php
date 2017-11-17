@@ -19,7 +19,7 @@ class ArticleController extends InitController {
 		$page = safe::filterGet('page','int',1);
 		$cate_id = safe::filterPost('cate_id','int',0);
 		$name = safe::filterPost('name','trim','');
-		$where = array('is_ad'=>array('gte'=>0));
+		$where = array('is_ad'=>array('gte',0));
 		if($cate_id) $where['cate_id'] = $cate_id;
 		if($name) $where['name'] = array('like',$name);
 
