@@ -16,7 +16,7 @@ class IndexController extends InitController {
 	public function indexAction(){
 		$type = new ArcType();
 		$typelist = $type->typelist(0,'pc',array('pid'=>0));
-		$where = array('type'=>$typelist[0]['id'],'include_child'=>1);
+		$where = array('type'=>$typelist[0]['id'],'include_child'=>1,'status'=>1);
 		$page = safe::filterGet('page','int',1);
 
 		//主体数据

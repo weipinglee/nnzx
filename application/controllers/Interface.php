@@ -22,7 +22,7 @@ class InterfaceController extends Yaf\Controller_Abstract {
 			$page = safe::filterGet('page','int',1);
 
 			//主体数据
-			$main_data = $this->article->arcList($page,array(),'','',10,0,0,'INTERFACE');
+			$main_data = $this->article->arcList($page,array('status'=>1,'is_del'=>0),'','',10,0,0,'INTERFACE');
 			$result = $main_data;
 			if($cacheObj->isActive()){
 				$cacheObj->set('TRADEWEB_INFO',$result);
