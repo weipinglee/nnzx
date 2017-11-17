@@ -159,7 +159,7 @@ class ArticleModel
     public function delarc($id){
         $articleModel=$this->articleModel;
         $where=array('id'=>$id);
-        if($articleModel->data(array('is_del'=>1))->where($where)->update()){
+        if($articleModel->where($where)->delete()){
             return tool::getSuccInfo(1,'删除成功');
         }else{
             return tool::getSuccInfo(0,'删除失败');
