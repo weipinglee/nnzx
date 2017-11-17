@@ -11,6 +11,7 @@ class InterfaceController extends Yaf\Controller_Abstract {
 
 	//交易网站首页资讯数据
 	public function tradewebInfoAction(){
+		$jsonp = safe::filterGet('callback');
 		$cacheObj = new Cache(array('type'=>'m','expire'=>60));
 		$result = '';
 		if($cacheObj->isActive()){
@@ -28,7 +29,7 @@ class InterfaceController extends Yaf\Controller_Abstract {
 			}
 		}
 
-		die(JSON::encode($result));
+		die($jsonp.'('.JSON::encode($result).')');
 
 	}
 
