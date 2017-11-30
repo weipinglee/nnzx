@@ -10,8 +10,8 @@ class InterfaceController extends Yaf\Controller_Abstract {
 	}
 
 	//交易网站首页资讯数据
-	public function tradewebInfoAction(){
-		$jsonp = safe::filterGet('callback');
+	public function tradewebInfoAction(){//return array('a','b');
+		//$jsonp = safe::filterGet('callback');
 		$cacheObj = new Cache(array('type'=>'m','expire'=>60));
 		$result = '';
 		if($cacheObj->isActive()){
@@ -29,7 +29,7 @@ class InterfaceController extends Yaf\Controller_Abstract {
 			}
 		}
 
-		die($jsonp.'('.JSON::encode($result).')');
+		die(json::encode($result));
 
 	}
 
