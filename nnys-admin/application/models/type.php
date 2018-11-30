@@ -10,7 +10,7 @@ class TypeModel
 
     public function __construct()
     {   
-        $this->type = new \nainai\category\Arctype();
+        $this->type = new \nainai\category\ArcType();
         $this->typeModel = new M('article_type');
     }
 
