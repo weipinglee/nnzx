@@ -6,7 +6,6 @@
  *
  */
 use \Library\M;
-use \Library\Query;
 use \Library\tool;
 class baseModel{
 

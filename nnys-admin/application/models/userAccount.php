@@ -4,9 +4,6 @@
  * User: panduo
  * Date: 2016-06-28
  */
-use \Library\Query;
-use \Library\M;
-use \Library\tool;
 use \admintool\adminQuery;
 class userAccountModel {
 

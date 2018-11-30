@@ -4,7 +4,6 @@
  * 管理员常用方法
  */
 namespace admintool;
-use \Library\safe;
 class admin{
 
 	/**
@@ -19,7 +18,7 @@ class admin{
 			$adminModel = new \Library\M('admin');
 			$name = $adminModel->where(array('id'=>$id))->getField('name');
 		}else{
-			$name = \Library\Session::get(\Library\tool::getConfig('rbac')['user_session'])['name'];
+			$name = \Library\session::get(\Library\tool::getConfig('rbac')['user_session'])['name'];
 		}
 		return in_array($name,$super_admin) ? true : false;
 	}
@@ -29,7 +28,7 @@ class admin{
 	 * @return array
 	 */
 	public static function sessionInfo(){
-		return \Library\Session::get(isset(\Library\tool::getConfig('rbac')['user_session']) ? \Library\tool::getConfig('rbac')['user_session'] : '');
+		return \Library\session::get(isset(\Library\tool::getConfig('rbac')['user_session']) ? \Library\tool::getConfig('rbac')['user_session'] : '');
 	}
 
 

@@ -4,9 +4,7 @@
  */
 namespace config;
 use \Library\M;
-use \Library\Query;
 use \Library\tool;
-use \Library\Thumb;
 class ConfscaleOfferModel{
 
 	//模型对象实例

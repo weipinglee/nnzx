@@ -1,5 +1,5 @@
 <?php 
-use Library\Safe;
+use Library\safe;
 
 class InitController extends Yaf\Controller_Abstract{
 

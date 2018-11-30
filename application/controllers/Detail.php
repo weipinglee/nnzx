@@ -3,18 +3,16 @@
  * 文章详情
  */
 
-use \nainai\category\ArcType;
 use Library\safe;
 
-use \nainai\Article;
-use \nainai\category\ArcCate;
+use \nainai\article;
 use \nainai\keyword;
 use Library\url;
 class DetailController extends InitController {
 	
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 

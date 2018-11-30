@@ -1,8 +1,8 @@
 <?php
 
 use \Library\url;
-use \Library\Safe;
-use \Library\Tool;
+use \Library\safe;
+use \Library\tool;
 use \Library\json;
 use \member\agentModel;
 /**
@@ -14,10 +14,10 @@ class AgentController extends InitController{
 	 * 代理商列表
 	 */
 	public function agentListAction(){
-		$page = Safe::filterGet('page', 'int', 0);
-		$startDate = Safe::filterGet('startDate');
-		$endDate = Safe::filterGet('endDate');
-		$username = Safe::filterGet('username');
+		$page = safe::filterGet('page', 'int', 0);
+		$startDate = safe::filterGet('startDate');
+		$endDate = safe::filterGet('endDate');
+		$username = safe::filterGet('username');
 
 		$where = ' 1 ';
 		$bind = array();
@@ -49,17 +49,17 @@ class AgentController extends InitController{
 	public function addAgentAction(){
 		if (IS_POST) {
 			$agentData = array(
-				'id' => Safe::filterPost('id', 'int', 0),
-				'username' => Safe::filterPost('username'),
-				'mobile' => Safe::filterPost('mobile'),
-				'email' => Safe::filterPost('email'),
-				'company_name' => Safe::filterPost('company'),
-				'area' => Safe::filterPost('area', 'int'),
-				'contact' => Safe::filterPost('contactName'),
-				'contact_phone' => Safe::filterPost('contacttel'),
-				'address' => Safe::filterPost('contactAddress'),
-				'status' => Safe::filterPost('status', 'int'),
-				'create_time' => \Library\Time::getDateTime()
+				'id' => safe::filterPost('id', 'int', 0),
+				'username' => safe::filterPost('username'),
+				'mobile' => safe::filterPost('mobile'),
+				'email' => safe::filterPost('email'),
+				'company_name' => safe::filterPost('company'),
+				'area' => safe::filterPost('area', 'int'),
+				'contact' => safe::filterPost('contactName'),
+				'contact_phone' => safe::filterPost('contacttel'),
+				'address' => safe::filterPost('contactAddress'),
+				'status' => safe::filterPost('status', 'int'),
+				'create_time' => \Library\time::getDateTime()
 			);
 
 			$agentModel = new agentModel();
@@ -86,7 +86,7 @@ class AgentController extends InitController{
 	 */
 	public function deleteAgentAction(){
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		$agentModel = new agentModel();
 		$returnData = $agentModel->delete($id);
@@ -101,7 +101,7 @@ class AgentController extends InitController{
 	public function ajaxUpdateAgentStatusAction(){
 		$id = $this->getRequest()->getParam('id');
 		$status = safe::filterPost('status','int',0);
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 
 		$agentData = array(

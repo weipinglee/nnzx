@@ -3,7 +3,6 @@
 /**
  * 分类管理
  */
-use Library\Query;
 use Library\M;
 use Library\tool;
 class ArticleModel
@@ -11,7 +10,7 @@ class ArticleModel
 
     public function __construct()
     {   
-        $this->article = new \nainai\Article();
+        $this->article = new \nainai\article();
         $this->articleModel = new M('article');
         $this->articleConModel = new M('article_content');
         $this->articleCovModel = new M('article_cover');

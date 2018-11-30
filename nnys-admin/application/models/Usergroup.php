@@ -4,9 +4,9 @@
  */
 
 use \Library\M;
-use \Library\Query;
+use \Library\query;
 use \Library\tool;
-use \Library\Thumb;
+use \Library\thumb;
 class UsergroupModel{
 
 	//模型对象实例
@@ -36,7 +36,7 @@ class UsergroupModel{
 	 * @return array
 	 */
 	public function getList($page){
-		$Q = new Query('user_group');
+		$Q = new query('user_group');
 		$Q->page = $page;
 		$Q->pagesize = 5;
 		$Q->order = "create_time desc";
@@ -44,7 +44,7 @@ class UsergroupModel{
 		$pageBar =  $Q->getPageBar();
 		foreach ($data as $key => &$value) {
 			if(isset($value['icon']))
-				$value['icon_thumb'] = Thumb::get($value['icon'],180,180);
+				$value['icon_thumb'] = thumb::get($value['icon'],180,180);
 		}
 		return array('data'=>$data,'bar'=>$pageBar);
 	}

@@ -9,7 +9,7 @@ use \Library\url;
 use \Library\adminrbac\rbac;
 use \Library\session;
 use \Library\tool;
-use \Library\JSON;
+use \Library\json;
 class SamplePlugin extends Yaf\Plugin_Abstract {
 
 	public function routerStartup(Yaf\Request_Abstract $request, Yaf\Response_Abstract $response) {

@@ -34,7 +34,7 @@ class RbacController extends InitController{
 			$roleData['remark']  = safe::filterPost('role-remark');
 			$roleData['status']  = 0;
             $res = $this->rbacModel->roleUpdate($roleData);
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 	}
@@ -48,7 +48,7 @@ class RbacController extends InitController{
 			$roleData['id'] = intval($this->_request->getParam('id'));
 			$res = $this->rbacModel->roleUpdate($roleData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 		return false;
@@ -65,7 +65,7 @@ class RbacController extends InitController{
 			$roleData['remark'] = safe::filterPost('role-remark');
 			$res = $this->rbacModel->roleUpdate($roleData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}else{
 			$id = intval($this->_request->getParam('id'));
@@ -83,7 +83,7 @@ class RbacController extends InitController{
 		$id = intval($this->_request->getParam('id'));
 		$res = $this->rbacModel->roleDel($id);
 
-		echo JSON::encode($res);
+		echo json::encode($res);
         return false;
 	}
 
@@ -106,7 +106,7 @@ class RbacController extends InitController{
 			if(safe::filterPost('action_title'))
 				$data['action_title'] = safe::filterPost('action_title');
 			$res = $this->rbacModel->nodeAdd($data);
-			echo JSON::encode($res);exit;
+			echo json::encode($res);exit;
 		}else{
 			//显示权限节点添加列表,取出所有模块列表
 			$modules = $this->rbacModel->moduleList();
@@ -121,7 +121,7 @@ class RbacController extends InitController{
 		$node_id = safe::filterPost('node_id');
 
 		$res = $this->rbacModel->nodeDel($node_id);
-		echo JSON::encode($res);exit;
+		echo json::encode($res);exit;
 	}
 
 	/**
@@ -134,7 +134,7 @@ class RbacController extends InitController{
 		if(!$module_name) return false;
 		
 		$controllers = $this->rbacModel->controllerList($module_name,true);
-		echo JSON::encode($controllers);
+		echo json::encode($controllers);
 		return false;
 	}
 
@@ -150,7 +150,7 @@ class RbacController extends InitController{
 
 		error_reporting(E_ERROR);
 		$actions = $this->rbacModel->actionList($module_name,$controller_name,true);
-		echo JSON::encode($actions);
+		echo json::encode($actions);
 		return false;
 	}
 
@@ -166,7 +166,7 @@ class RbacController extends InitController{
 		if(!($controller_name && $module_name && $action_name)) return false;
 
 		$action_title = $this->rbacModel->actionTitle($module_name,$controller_name,$action_name);
-		echo JSON::encode($action_title);
+		echo json::encode($action_title);
 		return false;
 	}
 
@@ -194,7 +194,7 @@ class RbacController extends InitController{
 		$role_id = safe::filterPost('role_id','int');
 		$node_id = safe::filterPost('node_id');
 		$res = $this->rbacModel->accessAdd($role_id,is_array($node_id) ? $node_id : array());
-		echo JSON::encode($res);
+		echo json::encode($res);
 		return false;
 	} 
 }

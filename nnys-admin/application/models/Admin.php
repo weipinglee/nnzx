@@ -6,7 +6,7 @@
  */
 
 use \Library\M;
-use \Library\Query;
+use \Library\query;
 use \Library\searchQuery;
 use \Library\tool;
 class AdminModel{
@@ -34,7 +34,7 @@ class AdminModel{
 	 */
 	public function getList($page,$name){
 		$super_admin = tool::getConfig(array("rbac","super_admin"));
-		$Q = new Query('admin as a');
+		$Q = new query('admin as a');
 		$Q->join = 'left join admin_role as r on a.role = r.id';
 		$Q->page = $page;
 		$Q->pagesize = 5;

@@ -7,7 +7,6 @@
 use \Library\safe;
 use \Library\url;
 use \Library\json;
-use \Library\cache\driver;
 use \Library\tool;
 class AdminController extends InitController {
 
@@ -47,7 +46,7 @@ class AdminController extends InitController {
 			$adminData['last_time'] = $adminData['create_time'] = date('Y-m-d H:i:s');
 			$adminData['status']    = 0;
             $res = $this->adminModel->adminUpdate($adminData);
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 		$this->getView()->assign('admin_roles',$this->rbacModel->roleList(1,10000,'status=0')['data']);
@@ -66,7 +65,7 @@ class AdminController extends InitController {
 			$adminData['role'] = safe::filterPost('admin-role','int');
 			$res = $this->adminModel->adminUpdate($adminData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}else{
 			//输出页面
@@ -89,7 +88,7 @@ class AdminController extends InitController {
 			$adminData['password'] = sha1(safe::filterPost("admin-pwd"));
 			$res = $this->adminModel->adminUpdate($adminData);
 
-	        echo JSON::encode($res);
+	        echo json::encode($res);
 	        return false;
 	    }else{
 	    	$id = intval($this->_request->getParam('id'));
@@ -109,7 +108,7 @@ class AdminController extends InitController {
 				die(json::encode(tool::getSuccInfo(0,'原密码错误')));
 			$res = $this->adminModel->adminUpdate($adminData);
 
-	        echo JSON::encode($res);
+	        echo json::encode($res);
 	        return false;
 	    }else{
 	    	$id = intval($this->_request->getParam('id'));
@@ -127,7 +126,7 @@ class AdminController extends InitController {
 			$adminData['id'] = intval($this->_request->getParam('id'));
 			$res = $this->adminModel->adminUpdate($adminData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 		return false;

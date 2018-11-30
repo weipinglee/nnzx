@@ -3,8 +3,7 @@
 namespace member;
 
 use \Library\M;
-use \Library\Query;
-use \Library\Tool;
+use \Library\query;
 
 /**
  * 代理商的数据处理
@@ -46,7 +45,7 @@ class agentModel extends \baseModel{
      * @return [Array.pageHtml]            [代理商分页数据]
      */
     public function getAgentList($page, $where='', $bind=array()){
-    	$query = new Query('agent');
+    	$query = new query('agent');
     	$query->fields = '*';
     	$query->page = $page;
     	$query->pagesize = 20;

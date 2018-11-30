@@ -2,14 +2,14 @@
 /**
  * 搜索控制器
  */
-use \nainai\Article;
+use \nainai\article;
 use Library\safe;
 use \nainai\Keyword;
 class SearchController extends InitController {
 		
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//搜索页面

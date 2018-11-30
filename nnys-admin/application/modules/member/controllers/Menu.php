@@ -1,7 +1,6 @@
 <?php
 
-use \Library\Safe;
-use \Library\Thumb;
+use \Library\safe;
 use \Library\url;
 use \Library\json;
 use \Library\tool;
@@ -27,14 +26,14 @@ class MenuController extends InitController {
 		$menuModel = new \nainai\user\Menu();
 		if (IS_POST) {
 			$menuData = array(
-				'menu_zn' => Safe::filterPost('name'),
-				'menu_url' => Safe::filterPost('url'),
-				'pid' => Safe::filterPost('pid', 'int'),
+				'menu_zn' => safe::filterPost('name'),
+				'menu_url' => safe::filterPost('url'),
+				'pid' => safe::filterPost('pid', 'int'),
 				'create_time' => \Library\Time::getDateTime(),
-				'sort' => Safe::filterPost('sort', 'int'),
-				'status' => Safe::filterPost('status', 'int'),
-				'position' => Safe::filterPost('position', 'int'),
-				'subacc_show' => Safe::filterPost('subacc_show', 'int'), 
+				'sort' => safe::filterPost('sort', 'int'),
+				'status' => safe::filterPost('status', 'int'),
+				'position' => safe::filterPost('position', 'int'),
+				'subacc_show' => safe::filterPost('subacc_show', 'int'),
 			);
 
 			$returnData = $menuModel->addMenu($menuData);
@@ -55,16 +54,16 @@ class MenuController extends InitController {
 	 */
 	public function updateMenuAction(){
 		if (IS_POST) {
-			$id = Safe::filterPost('id', 'int');
+			$id = safe::filterPost('id', 'int');
 			if (intval($id) > 0) {
 				$menuData = array(
-					'menu_zn' => Safe::filterPost('name'),
-					'menu_url' => Safe::filterPost('url'),
-					'sort' => Safe::filterPost('sort', 'int'),
-					'status' => Safe::filterPost('status', 'int'),
-					'pid' => Safe::filterPost('pid', 'int'),
-					'position' => Safe::filterPost('position', 'int'),
-					'subacc_show' => Safe::filterPost('subacc_show', 'int'), 
+					'menu_zn' => safe::filterPost('name'),
+					'menu_url' => safe::filterPost('url'),
+					'sort' => safe::filterPost('sort', 'int'),
+					'status' => safe::filterPost('status', 'int'),
+					'pid' => safe::filterPost('pid', 'int'),
+					'position' => safe::filterPost('position', 'int'),
+					'subacc_show' => safe::filterPost('subacc_show', 'int'),
 				);
 				$menuModel = new \nainai\user\Menu();
 				$returnData = $menuModel->updateMenu($menuData, $id);
@@ -77,7 +76,7 @@ class MenuController extends InitController {
 		}
 
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		if (intval($id) > 0) {
 			$menuModel = new \nainai\user\Menu();
@@ -97,7 +96,7 @@ class MenuController extends InitController {
 	 */
 	public function deleteMenuAction(){
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		if (intval($id) > 0) {
 			$condition = array(
@@ -129,9 +128,9 @@ class MenuController extends InitController {
 	public function RoleAddAction(){
 		if (IS_POST) {
 			$menuData = array(
-				'name' => Safe::filterPost('name'),
+				'name' => safe::filterPost('name'),
 				'cert' => safe::filterPost('name_en'),
-				'explanation' => Safe::filterPost('comment')
+				'explanation' => safe::filterPost('comment')
 			);
 
 			$menuModel = new \nainai\user\MenuRole();
@@ -152,12 +151,12 @@ class MenuController extends InitController {
 	 */
 	public function RoleEditAction(){
 		if (IS_POST) {
-			$id = Safe::filterPost('id', 'int');
+			$id = safe::filterPost('id', 'int');
 			if (intval($id) > 0) {
 				$menuData = array(
-					'name' => Safe::filterPost('name'),
+					'name' => safe::filterPost('name'),
 					'cert' => safe::filterPost('name_en'),
-					'explanation' => Safe::filterPost('comment')
+					'explanation' => safe::filterPost('comment')
 				);
 
 				$menuModel = new \nainai\user\MenuRole();
@@ -171,7 +170,7 @@ class MenuController extends InitController {
 		}
 
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		if (intval($id) > 0) {
 			$menuModel = new \nainai\user\MenuRole();
@@ -189,7 +188,7 @@ class MenuController extends InitController {
 	 */
 	public function RoleDelAction(){
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		if (intval($id) > 0) {
 			$menuModel = new \nainai\user\MenuRole();
@@ -210,14 +209,14 @@ class MenuController extends InitController {
 			$usergroupData = array(
 				'purview' => serialize(Safe::filterPost('node_id', 'int')),
 			);
-			$id = Safe::filterPost('id', 'int');
+			$id = safe::filterPost('id', 'int');
 			$menuModel = new \nainai\user\MenuRole();
 			$res = $menuModel->updateMenuRole($usergroupData, $id);
 			exit(json::encode($res));
 		}
 		
 		$id = $this->_request->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		if (intval($id) <= 0) {
 			$this->redirect('menuRoleList');

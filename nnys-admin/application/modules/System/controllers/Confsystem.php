@@ -5,7 +5,7 @@
  */
 use \Library\safe;
 use \Library\tool;
-use \Library\JSON;
+use \Library\json;
 use \Library\url;
 class ConfsystemController extends Yaf\Controller_Abstract{
 
@@ -50,7 +50,7 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 				$confcreditData['ori_name'] = safe::filterPost('ori_name');
 			}
 			$res = $this->confcredit->confcreditUpdate($confcreditData);
-			echo JSON::encode($res);
+			echo json::encode($res);
 			return false;
 		}else{
 			$oper_type = intval($this->_request->getParam('oper_type'));
@@ -73,7 +73,7 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 	public function creditDelAction(){
 		$name = $this->_request->getParam('name');
 		$res = $this->confcredit->creditDel($name);
-		die(JSON::encode($res));
+		die(json::encode($res));
 	}
 
 
@@ -88,7 +88,7 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 			$confscaleOfferData['fee']      = safe::filterPost('fee');
 			$confscaleOfferData['id']		= 1;
 			$res = $this->confscaleOffer->confscaleOfferUpdate($confscaleOfferData);
-			echo JSON::encode($res);
+			echo json::encode($res);
 			return false;
 		}else{
 			$confscaleOfferInfo = $this->confscaleOffer->getconfscaleOfferInfo(1);
@@ -198,7 +198,7 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 			);
 			$model = new \nainai\system\EntrustSetting();
 			$res = $model->addEntrustSetting($data);
-			exit(JSON::encode($res));
+			exit(json::encode($res));
 		}
 		$productModel = new productModel();
 		$cateTree = $productModel->getCateTree();//获取分类树
@@ -227,7 +227,7 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 
 	public function entrustdelAction(){
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		$agentModel = new \nainai\system\EntrustSetting();
 		$returnData = $agentModel->deleteEntrustSetting($id);
@@ -248,10 +248,10 @@ class ConfsystemController extends Yaf\Controller_Abstract{
 			);
 			$model = new \nainai\system\EntrustSetting();
 			$res = $model->updateEntrustSetting($data, $id);
-			exit(JSON::encode($res));
+			exit(json::encode($res));
 		}
 		$id = $this->getRequest()->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = safe::filter($id, 'int', 0);
 
 		$agentModel = new \nainai\system\EntrustSetting();
 		$detail = $agentModel->getDetail($id);

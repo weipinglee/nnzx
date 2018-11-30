@@ -6,13 +6,13 @@
 use \nainai\category\ArcType;
 use Library\safe;
 
-use \nainai\Article;
+use \nainai\article;
 use \nainai\category\ArcCate;
 class MoreController extends InitController {
 	
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//'更多'列表页展示

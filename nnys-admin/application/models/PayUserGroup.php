@@ -4,9 +4,9 @@
  */
 
 use \Library\M;
-use \Library\Query;
+use \Library\query;
 use \Library\tool;
-use \Library\Thumb;
+use \Library\thumb;
 class PayUserGroupModel{
 
 	//模型对象实例
@@ -31,7 +31,7 @@ class PayUserGroupModel{
 	 * @return array
 	 */
 	public function getList($page){
-		$Q = new Query('pay_user_group');
+		$Q = new query('pay_user_group');
 		$Q->page = $page;
 		$Q->pagesize = 5;
 		$Q->order = "create_time desc";

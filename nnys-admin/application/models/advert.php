@@ -7,7 +7,7 @@
  * Time: 10:41
  * 广告管理
  */
-use Library\Query;
+use Library\query;
 use Library\M;
 use Library\tool;
 class advertModel
@@ -41,7 +41,7 @@ class advertModel
      * @return array
      */
     public function getAdManageList($page=1){
-        $reModel = new Query('ad_manage as m');
+        $reModel = new query('ad_manage as m');
         $reModel->join=' left join ad_position as p on m.position_id=p.id';
         $reModel->fields='m.name,p.name as pname,m.order,m.start_time,m.end_time,m.id';
         $reModel->where = 'm.is_del = 0';
@@ -72,7 +72,7 @@ class advertModel
      * @return array
      */
     public function getAdPositionList($page=1){
-        $reModel=new Query('ad_position as p');
+        $reModel=new query('ad_position as p');
         $reModel->where='is_del=0';
         $reModel->page=$page;
         $adPositionList=$reModel->find();
@@ -186,7 +186,7 @@ class advertModel
      * @return array|bool
      */
     public function getAdManageInfo($id){
-        $adMaModel=new Query('ad_manage as m');
+        $adMaModel=new query('ad_manage as m');
         $adMaModel->join='left join ad_position as p on m.position_id=p.id';
         $adMaModel->where='m.id= :id';
         $adMaModel->bind=array('id'=>$id);

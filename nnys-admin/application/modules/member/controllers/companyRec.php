@@ -72,7 +72,7 @@ class companyRecController extends Yaf\Controller_Abstract {
 
     	}
 
-    	$cInfoModel=new \Library\Query('company_info as i');
+    	$cInfoModel=new \Library\query('company_info as i');
     	$cInfoModel->fields='i.user_id,i.company_name';
     	$res=$cInfoModel->find();
         //var_dump($res);
@@ -144,13 +144,13 @@ class companyRecController extends Yaf\Controller_Abstract {
 			}
 			if(empty($error)){
 				$recObj->commit();
-				die(JSON::encode(\Library\tool::getSuccInfo(1,'添加成功')));
+				die(json::encode(\Library\tool::getSuccInfo(1,'添加成功')));
 			}else{
 				$recObj->rollBack();
 				$cInfo=$recModel->getCompanyInfo($error);
 				$error=implode(',',$cInfo);
 
-				die(JSON::encode(\Library\tool::getSuccInfo(0,'以下商户添加失败:'.$error)));
+				die(json::encode(\Library\tool::getSuccInfo(0,'以下商户添加失败:'.$error)));
 			}
 
 		}
@@ -166,7 +166,7 @@ class companyRecController extends Yaf\Controller_Abstract {
 			$data['id'] = intval($this->_request->getParam('id'));
 			$res = $recModel->setStatus($data['id'],$data['status']);
 
-			echo JSON::encode($res);
+			echo json::encode($res);
 			return false;
 		}
 		return false;

@@ -5,10 +5,10 @@
  */
 use \Library\safe;
 use \nainai\certificate;
-use \Library\Thumb;
+use \Library\thumb;
 use \nainai\subRight;
 use \Library\tool;
-use \Library\JSON;
+use \Library\json;
 use \Library\url;
 class UsergroupController extends Yaf\Controller_Abstract{
 
@@ -44,7 +44,7 @@ class UsergroupController extends Yaf\Controller_Abstract{
 			$usergroupData['depute_fee']      = safe::filterPost('depute_fee');
 			$usergroupData['create_time']    = date("Y-m-d H:i:s",time());
             $res = $this->usergroupModel->usergroupUpdate($usergroupData);
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 	}
@@ -63,14 +63,14 @@ class UsergroupController extends Yaf\Controller_Abstract{
 			$usergroupData['depute_fee'] = safe::filterPost('depute_fee');
 			$res = $this->usergroupModel->usergroupUpdate($usergroupData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}else{
 			//输出页面
 			$id = intval($this->_request->getParam('id'));
 			$usergroupInfo = $this->usergroupModel->getusergroupInfo($id);
 			if($usergroupInfo && isset($usergroupInfo['icon']))
-				$usergroupInfo['icon_thumb'] = Thumb::get($usergroupInfo['icon'],180,180);
+				$usergroupInfo['icon_thumb'] = thumb::get($usergroupInfo['icon'],180,180);
 			$this->getView()->assign('info',$usergroupInfo);
 		}
 	}
@@ -81,7 +81,7 @@ class UsergroupController extends Yaf\Controller_Abstract{
 	public function groupDelAction(){
 		$id = intval($this->_request->getParam('id'));
 		$res = $this->usergroupModel->groupDel($id);
-		die(JSON::encode($res));
+		die(json::encode($res));
 	}
 
 	/**
@@ -93,7 +93,7 @@ class UsergroupController extends Yaf\Controller_Abstract{
 			$usergroupData['id'] = intval($this->_request->getParam('id'));
 			$res = $this->usergroupModel->usergroupUpdate($usergroupData);
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
 		}
 		return false;
@@ -106,8 +106,8 @@ class UsergroupController extends Yaf\Controller_Abstract{
 
 		if (IS_POST) {
 			$usergroupData = array(
-				'menu_ids' => serialize(Safe::filterPost('menuIds', 'int')),
-				'id' => Safe::filterPost('id', 'int')
+				'menu_ids' => serialize(json::filterPost('menuIds', 'int')),
+				'id' => json::filterPost('id', 'int')
 			);
 			$res = $this->usergroupModel->usergroupUpdate($usergroupData);
 
@@ -120,7 +120,7 @@ class UsergroupController extends Yaf\Controller_Abstract{
 		}
 		
 		$id = $this->_request->getParam('id');
-		$id = Safe::filter($id, 'int', 0);
+		$id = json::filter($id, 'int', 0);
 
 		if (intval($id) <= 0) {
 			$this->redirect('groupList');

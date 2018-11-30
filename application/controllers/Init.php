@@ -1,11 +1,6 @@
 <?php
 
 use Library\safe;
-use Library\tool;
-use Library\M;
-use Library\json;
-use Library\Query;
-use Library\Thumb;
 use nainai\category\ArcType;
 use nainai\category\ArcCate;
 use nainai\system\friendlyLink;

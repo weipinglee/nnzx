@@ -9,9 +9,8 @@
 use \Library\safe;
 use \nainai\cert\certDealer;
 use \nainai\cert\certStore;
-use \Library\Thumb;
 use \Library\url;
-use \Library\JSON;
+use \Library\json;
 class certManageController extends InitController {
 
 
@@ -95,7 +94,7 @@ class certManageController extends InitController {
                $m = new certDealer();
                $res = $m->verify($user_id,$status,$info);
 
-               echo JSON::encode($res);
+               echo json::encode($res);
 
           }
           return false;
@@ -163,7 +162,7 @@ class certManageController extends InitController {
                $m = new certStore();
                $res = $m->verify($user_id,$status,$info);
 
-               echo JSON::encode($res);
+               echo json::encode($res);
 
           }
           return false;

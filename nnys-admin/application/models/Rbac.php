@@ -6,7 +6,7 @@
  * 2016-4-8
  */
 use \Library\M;
-use \Library\Query;
+use \Library\query;
 use \Library\tool;
 class RbacModel{
 	private $role;//角色模型
@@ -260,7 +260,7 @@ class RbacModel{
 	 * @return [type] [description]
 	 */
 	public function actionTitle($module_name,$controller_name,$action_name){
-		$query = new Query('admin_node as n1');
+		$query = new query('admin_node as n1');
 		$query->join = 'left join admin_node as n2 on n1.id = n2.pid left join admin_node as n3 on n2.id = n3.pid';
 		$query->where = " n1.name = '$module_name' and n2.name = '$controller_name' and n3.name = '$action_name'";
 		$query->fields = "n3.title";
@@ -378,7 +378,7 @@ class RbacModel{
 	 */
 	public function nodeTree($pid = 0,$level = 1,$role_id = 0){
 		//缓存TODO
-		$query = new Query('admin_node as n');
+		$query = new query('admin_node as n');
 		$where = ' n.level='.$level.' and n.pid= '.$pid.' and n.status=0';
 		if(is_int($role_id) && $role_id > 0){
 			$query->join = ' right join admin_access as a on n.id = a.node_id ';

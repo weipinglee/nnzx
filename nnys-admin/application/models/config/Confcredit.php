@@ -4,9 +4,9 @@
  */
 namespace config;
 use \Library\M;
-use \Library\Query;
+use \Library\query;
 use \Library\tool;
-use \Library\Thumb;
+use \Library\thumb;
 class ConfcreditModel{
 
 	//模型对象实例
@@ -34,7 +34,7 @@ class ConfcreditModel{
 	 * @return array
 	 */
 	public function getList($page){
-		$Q = new Query('configs_credit');
+		$Q = new query('configs_credit');
 		$Q->page = $page;
 		$Q->pagesize = 5;
 

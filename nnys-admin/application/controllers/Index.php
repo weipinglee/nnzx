@@ -7,7 +7,6 @@
  */
 use \Library\photoupload;
 use \Library\json;
-use \Library\Session;
 use \Library\adminrbac\rbac;
 class IndexController extends InitController {
 

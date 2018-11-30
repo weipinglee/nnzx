@@ -1,12 +1,12 @@
 <?php
-use Library\safe;
-use \nainai\Article;
+use \Library\safe;
+use \nainai\article;
 use \Library\cache\Cache;
 use \Library\json;
 class InterfaceController extends Yaf\Controller_Abstract {
 	
 	public function init(){
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//交易网站首页资讯数据

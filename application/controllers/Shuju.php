@@ -5,13 +5,13 @@
  */
 use \nainai\category\ArcType;
 use Library\safe;
-use \nainai\Article;
+use \nainai\article;
 use \nainai\system\slide;
 class ShujuController extends InitController {
 	
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//数据页展示

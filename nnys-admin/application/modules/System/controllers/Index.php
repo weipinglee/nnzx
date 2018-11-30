@@ -7,7 +7,6 @@
  */
 use \Library\photoupload;
 use \Library\json;
-use \Library\Session;
 use \Library\adminrbac\rbac;
 class IndexController extends InitController {
 
@@ -17,7 +16,7 @@ class IndexController extends InitController {
 		if (!\admintool\admin::is_admin()) {
 			// $menus = \Library\Session::get('admin_menus');
 			$menus = rbac::accessMenu();
-			$this->getView()->assign('menus',JSON::encode($menus));
+			$this->getView()->assign('menus',json::encode($menus));
 		}else{
 			$this->getView()->assign('menus','admin');
 		}
@@ -65,7 +64,7 @@ class IndexController extends InitController {
 		{
 			$result = array('flag'=> $photo['flag'],'error'=>$photo['errInfo']);
 		}
-		echo JSON::encode($result);
+		echo json::encode($result);
 
 		return false;
 	}

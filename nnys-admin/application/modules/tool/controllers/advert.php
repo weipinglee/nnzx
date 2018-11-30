@@ -7,12 +7,9 @@
  * 广告管理类
  * Time: 10:14
  */
-use Library\ad;
-use Library\M;
-use Library\Query;
 use Library\safe;
 use Library\url;
-use Library\JSON;
+use Library\json;
 use Library\tool;
 class advertController extends Yaf\Controller_Abstract{
     /**
@@ -41,7 +38,7 @@ class advertController extends Yaf\Controller_Abstract{
         if(IS_AJAX||IS_POST) {
            $content=safe::filterPost('imgfile2');
            if($content==""){
-               die(JSON::encode(array('success'=>0,'info'=>'请上传图片')));
+               die(json::encode(array('success'=>0,'info'=>'请上传图片')));
            }
             $content = tool::setImgApp($content);
            $date=array(
@@ -55,7 +52,7 @@ class advertController extends Yaf\Controller_Abstract{
                'description'=>safe::filterPost('description')
            );
            $res=$adObj->adManageAdd($date);
-           die(JSON::encode($res));
+           die(json::encode($res));
         }
 
         $adPoDate=$adObj->getAdPositionList();
@@ -86,13 +83,13 @@ class advertController extends Yaf\Controller_Abstract{
                 $data['content']=tool::setImgApp($content);
             }
             $res=$adModel->adManageEdit($data);
-            die(JSON::encode($res));
+            die(json::encode($res));
         }
 
         $id=safe::filterGet('id');
         $info=$adModel->getAdManageInfo($id);
         $adPoDate=$adModel->getAdPositionList();
-        $info['content']=\Library\Thumb::get($info['content'],180,180);
+        $info['content']=\Library\thumb::get($info['content'],180,180);
        // var_dump($info);
         $this->getView()->assign('info',$info);
         $this->getView()->assign('adPoDate',$adPoDate[0]);
@@ -112,7 +109,7 @@ class advertController extends Yaf\Controller_Abstract{
                 );
             $adPoModel=new advertModel();
             $res=$adPoModel->adPositionAdd($data);
-            die(JSON::encode($res));
+            die(json::encode($res));
         }
     }
 
@@ -130,7 +127,7 @@ class advertController extends Yaf\Controller_Abstract{
                 'status'=>safe::filterPost('status','int')
             );
             $res=$adPoModel->adPositionEdit($data);
-            die(JSON::encode($res));
+            die(json::encode($res));
 
         }
         $id=safe::filterGet('id','int');
@@ -164,7 +161,7 @@ class advertController extends Yaf\Controller_Abstract{
             $id=safe::filter($id,'int');
             $adModel=new advertModel();
             $res=$adModel->delAdManage($id);
-            die(JSON::encode($res));
+            die(json::encode($res));
         }
         return false;
     }
@@ -179,7 +176,7 @@ class advertController extends Yaf\Controller_Abstract{
             $id=safe::filter($id,'int');
             $adModel=new advertModel();
             $res=$adModel->delAdPosition($id);
-            die(JSON::encode($res));
+            die(json::encode($res));
         }
         return false;
     }

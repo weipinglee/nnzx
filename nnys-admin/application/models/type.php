@@ -3,7 +3,6 @@
 /**
  * 分类管理
  */
-use Library\Query;
 use Library\M;
 use Library\tool;
 class TypeModel

@@ -5,8 +5,6 @@
  * @desc 用户管理控制器
  */
 use \Library\safe;
-use \nainai\certificate;
-use \Library\Thumb;
 use \nainai\subRight;
 use \Library\url;
 use \nainai\member;
@@ -445,7 +443,7 @@ class MemberController extends InitController {
 			$str = '耐耐网客服人员已将您的支付密码进行重置，新密码为：'. $pwd .'。为了您的账户安全请及时进行修改。';
 
 			if ($info['status'] == $model::APPLY_OK) {
-				$hsms=new Library\Hsms();
+				$hsms=new Library\hsms();
 				if(!$hsms->send($info['mobile'],$str)){
 					$res = tool::getSuccInfo(0, '发送短信失败');
 				}else{
@@ -489,7 +487,7 @@ class MemberController extends InitController {
 			$str = '【耐耐云商】您修改手机号的申诉已通过审核，耐耐网客服人员已将'.$mobile.'修改为新的手机号。';
 
 			if ($info['status'] == $model::APPLY_OK) {
-				$hsms=new Library\Hsms();
+				$hsms=new Library\hsms();
 				if(!$hsms->send($info['mobile'],$str)){
 
 					$res = tool::getSuccInfo(0, '发送短信失败');

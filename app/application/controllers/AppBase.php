@@ -1,12 +1,9 @@
 <?php
 
-use \Library\checkRight;
-use \Library\PlUpload;
-use \Library\photoupload;
 use \Library\json;
 use \Library\url;
-use \Library\Safe;
-use \Library\Thumb;
+use \Library\safe;
+use \Library\thumb;
 use \Library\tool;
 
 /**
@@ -98,9 +95,9 @@ class AppBaseController extends Yaf\Controller_Abstract{
     	 * 默认的处理返回页面
     	 */
       	public function defaultHtmlAction(){
-    		$success = Safe::filterGet('success', 'int');
-    		$msg = Safe::filterGet('info');
-    		$Url = Safe::filterGet('url');
+    		$success = safe::filterGet('success', 'int');
+    		$msg = safe::filterGet('info');
+    		$Url = safe::filterGet('url');
 
     		$this->getView()->assign('success', $success);
     		$this->getView()->assign('msg', $msg);
@@ -149,7 +146,7 @@ class AppBaseController extends Yaf\Controller_Abstract{
             $valid = $user->validPaymentPassword($pay_secret);
             $res = $valid === true ? tool::getSuccInfo() : tool::getSuccInfo(0,'支付密码错误');
 
-            echo JSON::encode($res);
+            echo json::encode($res);
             return false;
         }
 

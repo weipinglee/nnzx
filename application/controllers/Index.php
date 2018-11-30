@@ -2,14 +2,13 @@
 use \nainai\system\slide;
 use \nainai\category\ArcType;
 use Library\safe;
-use \nainai\Article;
+use \nainai\article;
 use \nainai\category\ArcCate;
-use local\favorite;
 class IndexController extends InitController {
 	
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//首页展示

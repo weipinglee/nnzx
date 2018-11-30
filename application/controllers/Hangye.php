@@ -5,13 +5,13 @@
  */
 use \nainai\category\ArcType;
 use Library\safe;
-use \nainai\Article;
+use \nainai\article;
 use \nainai\category\ArcCate;
 class HangyeController extends InitController {
 	
 	public function init(){
 		parent::init();
-		$this->article = new Article();
+		$this->article = new article();
 	}
 
 	//行业页展示

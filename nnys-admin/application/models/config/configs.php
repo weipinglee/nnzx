@@ -8,10 +8,6 @@
 
 namespace config;
 use admintool\adminQuery;
-use \Library\M;
-use \Library\Query;
-use \Library\tool;
-use \Library\Thumb;
 class configsModel extends \baseModel{
 
     //配置表名

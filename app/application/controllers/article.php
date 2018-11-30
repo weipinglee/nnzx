@@ -6,19 +6,16 @@
 
 use \Library\json;
 use \Library\url;
-use \Library\Safe;
-use \Library\Thumb;
+use \Library\safe;
+use \Library\thumb;
 use \Library\tool;
-use \Library\PlUpload;
-use \nainai\offer\product;
-use \nainai\offer\PurchaseOffer;
 use \nainai\keyword;
-use \Library\ad;
+use \Library\Ad;
 class ArticleController extends AppBaseController{
 
 	protected function init(){
 		parent::init();
-		$this->article = new \nainai\Article();
+		$this->article = new \nainai\article();
 	}
 	
 	//文章列表
@@ -55,7 +52,7 @@ class ArticleController extends AppBaseController{
 
 		if($keyword){	
 			//文章标题相关度与关键字热度排序
-			$keyword = Keyword::commonUse($keyword);
+			$keyword = keyword::commonUse($keyword);
 			$this->article->setKeywordField($fields,$keyword);
 			$where = array_merge($where,array('name' => array('like',$keyword)));		
 			$order = 'sign desc,update_time desc';
@@ -120,8 +117,8 @@ class ArticleController extends AppBaseController{
 
 	//启动页广告
 	public function adAction(){
-		$ad = ad::getAdData('appindex');
-		$img = isset($ad[0]['content']) ? Thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
+		$ad = Ad::getAdData('appindex');
+		$img = isset($ad[0]['content']) ? thumb::getOrigImg($ad[0]['content']) : url::getHost().'/views/pc/images/no_pic.png';
 		die(json::encode(array('img'=>$img,'url'=>$ad[0]['link'])));
 	}
 

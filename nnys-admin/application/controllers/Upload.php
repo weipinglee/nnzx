@@ -7,8 +7,6 @@
  */
 use \Library\photoupload;
 use \Library\json;
-use \Library\Session;
-use \Library\adminrbac\rbac;
 class UploadController extends InitController {
 
 
@@ -35,7 +33,7 @@ class UploadController extends InitController {
 		{
 			$result = array('flag'=> $photo['flag'],'error'=>$photo['errInfo']);
 		}
-		echo JSON::encode($result);
+		echo json::encode($result);
 
 		return false;
 	}

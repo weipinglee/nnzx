@@ -1,7 +1,7 @@
 <?php
 
-use \Library\Safe;
-use \Library\Thumb;
+use \Library\safe;
+use \Library\thumb;
 use \Library\url;
 use \Library\json;
 use \Library\tool;

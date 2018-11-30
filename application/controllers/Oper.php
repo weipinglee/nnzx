@@ -1,6 +1,6 @@
 <?php 
 
-use \Library\Safe;
+use \Library\safe;
 class OperController extends \Yaf\Controller_Abstract{
 
      public function init(){
