@@ -29,7 +29,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 			error_reporting(E_ALL);
 		}
 		else{
-			error_reporting(E_ALL);
+			error_reporting(0);
 		}
 		session_start();
 		define('REQUEST_METHOD', strtoupper($dispatcher->getRequest()->getMethod()));
