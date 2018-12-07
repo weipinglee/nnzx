@@ -29,7 +29,6 @@ class InterfaceController extends Yaf\Controller_Abstract {
 			}
 		}
 
-        header('content-type:application/json;charset=utf-8');
 		die(json::encode($result));
 
 	}
