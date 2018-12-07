@@ -28,8 +28,9 @@ class InterfaceController extends Yaf\Controller_Abstract {
 				$cacheObj->set('TRADEWEB_INFO',$result);
 			}
 		}
-        $callback = $_GET['callback'];
-		die($callback.'('.json::encode($result).')');
+
+        header('content-type:application/json;charset=utf-8');
+		die(json::encode($result));
 
 	}
 
